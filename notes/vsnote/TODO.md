@@ -7,7 +7,65 @@
 - [] Test **scope by users** for client request / work request
 - [] Study **systemFunctions** code under organizations
 
-## A
+## Notes
+
+### MailChimp integration
+
+host: smtp.mandrillapp.com
+You can use any active API key for your account as your SMTP password.
+but we recommend using your Mailchimp account’s primary contact email as the username.
+Use ports 25, 587, or 2525 for non-encrypted communication between your system and Mailchimp Transactional.
+For secure SSL connections, use port 465.
+Make sure your hosting provider or ISP allows outbound SMTP connections.	
+
+### Gatepass Vamp Callbacks
+
+    select * from system_functions;
+    select * from system_entities;
+    select * from system_entity_params;
+    select * from system_event_triggers;
+    select * from system_events;
+    select * from system_event_web_hook;
+    select * from web_hooks;
+
+    select * from web_hook_params;
+    select * from web_hooks;
+    select * from system_entities;
+    select * from system_entity_params;
+    select * from web_hooks where id=8;
+
+
+    select * from work_requests;
+    select * from client_requests;
+    select * from equipment_criticalities;
+    select * from work_request_items;
+    select * from materials;
+
+    ------------------------------------------------------------
+
+    select * from users;
+    select * from residences;
+    select * from requests;
+    select * from request_statuses;
+    select * from request_logs;
+    select * from messages;
+    select * from estates;
+    select * from chat_groups;
+    select * from chat_group_user;
+    ----------------------------------------------------------------
+
+    select * from users;
+    select * from stages;
+    select * from requests;
+
+    ------------------------------------------------------------------------------
+
+    select * from users;
+    select * from occupants;
+    select * from unit_hierarchies;
+    select * from units;
+
+[CallBack Route](http://127.0.0.1:3333/callbacks/request/approved)
 
 ### Work on ppms
 
@@ -44,7 +102,7 @@
 
 ### Fix the delete user issue on loadstat
 
-I took the dates of all the pending ad campaing and and those from the the running and approved 
+I took the dates of all the pending ad campaign ignorant and those from the running and approved 
 
 ## B
 
