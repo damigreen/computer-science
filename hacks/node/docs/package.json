@@ -1,0 +1,21 @@
+{
+  "name": "docs",
+  "version": "1.0.0",
+  "description": "Node js package documents",
+  "main": "index.js",
+  "repository": "http://github.com/damigreen",
+  "author": "Damilola Faseun",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.17.1",
+    "luxon": "^2.0.2",
+    "mongoose": "^6.0.12",
+    "mongoose-unique-validator": "^3.0.0",
+    "mysql": "^2.18.1",
+    "nodemon": "^2.0.14"
+  },
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js"
+  }
+}
