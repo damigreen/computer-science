@@ -1,11 +1,23 @@
 import { HttpContextContract } from '@ioc:Adonis/Core/HttpContext'
 import UsersService from 'App/Services/UsersService';
+import Mail from '@ioc:Adonis/Addons/Mail';
+import mailConfig from 'Config/mail';
 
 export default class UsersController {
     public async index ({ response, view }: HttpContextContract) {
-        
+        // Send message using mailchimp
+        // console.log('sending message')
+        await Mail.send((message) => {
+            message
+              .from(mailConfig.sender)
+              .to("fashfired@gmail.com")
+              .subject("Resido Password Reset")
+              .htmlView("users")
+          }).catch(error => console.log(error))
+        // console.log('message sent')
+
         // return view.render("users");
-        response.json({ userNamespace: true });
+        response.json({ userNamespace: "God hand will be with me always" });
     }
     public async show ({ request, response, params }: HttpContextContract) {
         const test = UsersService.test()
