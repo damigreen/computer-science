@@ -19,7 +19,6 @@
 */
 
 import Route from '@ioc:Adonis/Core/Route'
-import { HttpContextContract } from "@ioc:Adonis/Core/HttpContext";
 
 Route.get('/', async ({ view }) => {
   return view.render('welcome')
@@ -28,30 +27,27 @@ Route.get('/', async ({ view }) => {
 /**
  * Users
  */
-Route.group(() => {
-  Route.get("/", async ({ view }: HttpContextContract) => {
-    // console.log(ctx)
-    return view.render("users");
-  }).as("index")
+// Route.group(() => {
+//   Route.get("/", "UsersController.index").as("index").namespace("App/Controllers/Http/Users")
 
-  Route.get("/:id?", async ({ response, params }: HttpContextContract) => {
+//   // Route.get("/:id?", "UsersController.show").as("show")
+//   Route.get("/:id", "UsersController.show").as("show")
 
-    // return ctx.response.json({ userId: ctx.params.id });
-    return response.json({ userId: params.id });
-  }).as("show")
+//   Route.get("/new", "UsersController.create").as("create")
 
-  Route.post("/", async (ctx: HttpContextContract) => {
+//   Route.post("/", "UsersController.store").as("store")
 
-  }).as("store")
+//   Route.post("/:id/edit", "UsersController.edit").as("edit")
 
-  Route.put("/", async (ctx: HttpContextContract) => {
+//   Route.put("/", "UsersController.update").as("update")
 
-  }).as("update")
+//   Route.delete("/:id", "UsersController.destroy").as("delete")
+// }).prefix("/users").as("users.")
 
-  Route.delete("/:id", async (ctx: HttpContextContract) => {
-
-  }).as("delete")
-}).prefix("/users").as("users.")
+Route.resource("users", "UsersController")
+  .namespace("App/Controllers/Http")
+  // .as()
+  // .middleware
 
 /**
  * Gatepass Callbacks
