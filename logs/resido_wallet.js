@@ -1,5 +1,9 @@
 /**
  * * TODO
+ * 
+ * * Update wallet ballance for residences with no wallet ballance i.e wallet_balance = NULL
+ * * Add new user credit to residence wallet_balance
+ * 
  * * Make transaction reflect on the resido wallet for users and residents
    * Make api call to wema api for each residents
    * get transactions
