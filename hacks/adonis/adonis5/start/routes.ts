@@ -45,7 +45,7 @@ Route.get('/', async ({ view }) => {
 // }).prefix("/users").as("users.")
 
 Route.resource("users", "UsersController")
-  .namespace("App/Controllers/Http")
+  .namespace("App/Controllers/Http/Users")
   // .as()
   // .middleware
 
