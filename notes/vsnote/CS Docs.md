@@ -9,6 +9,7 @@
 - Validators
 
         node ace invoke @adonisjs/lucid
+        node ace make:migration create_users_table --table users
 
 ### Legacy AdonisJs
 
@@ -604,8 +605,19 @@ provides an excellent solution to the navigational management of a react applica
 #### Commands - mysql
 
       mysql -u root -p
+      CREATE DATABASE adonis5
       SELECT User, Host FROM mysql.user; - get all users from mysql
+      ALTER USER 'user-name'@'localhost' IDENTIFIED BY 'NEW_USER_PASSWORD';FLUSH PRIVILEGES;
+      SET PASSWORD FOR 'user-name'@'localhost' = PASSWORD('NEW_USER_PASSWORD');FLUSH PRIVILEGES;
 
+      USE mysql;
+
+      UPDATE user 
+      SET password = PASSWORD('dolphin')
+      WHERE user = 'dbadmin' AND 
+            host = 'localhost';
+
+      FLUSH PRIVILEGES;
 
 ### GraphQL
 
