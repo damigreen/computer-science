@@ -1,6 +1,8 @@
 /**
  * TODO
  * 
+ * * Mail for subscription reminder one week to subscription deduction
+ * 
  * * Send mail when subscription plan is activated
  * subscription plan update controller
  * 
