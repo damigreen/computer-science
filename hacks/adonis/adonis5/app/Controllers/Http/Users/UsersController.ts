@@ -8,13 +8,14 @@ export default class UsersController {
         // Send message using mailchimp
         // console.log('sending message')
         await Mail.send((message) => {
+            console.log(mailConfig.sender)
             message
               .from(mailConfig.sender)
               .to("fashfired@gmail.com")
               .subject("Resido Password Reset")
-              .htmlView("users")
+            //   .htmlView("users")
           }).catch(error => console.log(error))
-        // console.log('message sent')
+        console.log('message sent')
 
         // return view.render("users");
         response.json({ userNamespace: "God hand will be with me always" });
