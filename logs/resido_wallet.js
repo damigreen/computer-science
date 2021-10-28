@@ -1,5 +1,13 @@
 /**
- * * TODO
+ * TODO
+ * 
+ * * Send mail when subscription plan is activated
+ * subscription plan update controller
+ * 
+ * * send mail when there is not enough balance on wallet
+ * check if the wallet_balance is greater than or equal to plan
+ * 
+ * 
  * 
  * * Update wallet ballance for residences with no wallet ballance i.e wallet_balance = NULL
  * * Add new user credit to residence wallet_balance
