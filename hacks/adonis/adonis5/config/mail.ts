@@ -20,7 +20,7 @@ const mailConfig: MailConfig & { sender: string }= {
   */
   mailer: 'smtp',
 
-  sender: Env.get("MYSQL_FROM") as string,
+  sender: Env.get("MAIL_FROM") as string,
 
   /*
   |--------------------------------------------------------------------------
@@ -49,6 +49,7 @@ const mailConfig: MailConfig & { sender: string }= {
       host: Env.get('SMTP_HOST'),
       port: Env.get('SMTP_PORT'),
       secure: false,
+      pool: true,
 			auth: {
 				user: Env.get('SMTP_USERNAME') as string,
 				pass: Env.get('SMTP_PASSWORD') as string,
