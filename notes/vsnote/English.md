@@ -2,6 +2,7 @@
 
 ## English resources
 
+- [colins](https://grammar.collinsdictionary.com/easy-learning)
 - [English Club](https://www.englishclub.com/learn-english.htm)
 - [BBC learning english](https://www.bbc.co.uk/learningenglish/english/)
 - [USA Learn](https://www.usalearns.org/)
@@ -57,7 +58,7 @@ s    N     LV     Adj      SC            N   V         N
     Speak!  
     Speak         clearly 
 
-    Pattern 2 
+    Pattern 2 (N1-V-N2)
 
        (Q)    (Aux)    (D)      N1      (Aux)       V         (D)         N2        (Adv)       
                               Children            like                   candy 
@@ -68,7 +69,7 @@ s    N     LV     Adj      SC            N   V         N
       Why     did     the     children             eat        the        candy? 
                                                    Eat        the        candy      slowly 
 
-    Pattern 3 
+    Pattern 3 (N1-V-N2-N3)
 
     (Q)    (Aux)     (D)        N1        (Aux)          V         (D)         N2         (D)        N3         (Adv)     
                                Jack                     sent                   me                   gifts  
@@ -79,7 +80,8 @@ s    N     LV     Adj      SC            N   V         N
     When    did                you                      sent                   them        the      tickets? 
                                                         Lend                   me          your     notebook 
 
-    Pattern 4  
+    Pattern 4 (N1-LV-N1)
+
      (Q)     (Aux)      (D)       N1         (Aux)         LV        (D)         N1            (Adv) 
                                  Whales                    are                 mammals 
                         That     boy                       was        my       friend           once 
@@ -89,8 +91,9 @@ s    N     LV     Adj      SC            N   V         N
     How       did                you                       become              friends? 
                                                            Be         a        friend 
      
-    Pattern 5 
-     (Q)     (Aux)    (D)       N1        (Aux)     LV         Adj           (Adv)        
+    Pattern 5 (N1-LV-ADJ)
+
+     (Q)     (Aux)    (D)       N1        (Aux)     LV         ADJ           (Adv)        
                                 She                seems      sincere 
                       Our       work               was        harder         yesterday 
                       This      cake       has     become     stale          already 
@@ -99,7 +102,7 @@ s    N     LV     Adj      SC            N   V         N
     Why      did                George             remain     silent         then? 
                                                    Be         quiet! 
 
-    Pattern 6
+    Pattern 6 (N1-V-N2-N2)
     (Q)       (Aux)      (D)      N1        (Aux)         V         (D)       N2       (D)        N2          (Adv) 
                                  They                  elected               john                captain 
                          My      agent                 consider      my      voice      an       asset 
@@ -110,10 +113,9 @@ s    N     LV     Adj      SC            N   V         N
                                                        Make                  john       a        member.  
 
      
+    Pattern 7 (N1-V-N2-ADJ)
 
-    Pattern 7 
-
-     (Q)      (Aux)    (D)        N1         (Aux)         V           (D)         N2        (Adj)         (Adv) 
+     (Q)      (Aux)    (D)        N1         (Aux)         V           (D)         N2         ADJ          (Adv) 
                                   I                     consider                  her       foolish 
                       Every      critic                 called         the        cast      talented       today 
                       The        frosting     can       make           a          cake      beautiful  
@@ -196,7 +198,9 @@ s    N     LV     Adj      SC            N   V         N
 3. than (in)
 4. particular
 5. assign
-6. 
+6. why - for what reason
+7. who - sking which person or people, when asking for someones name
+8. 
 
 ### Tech
 
