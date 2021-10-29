@@ -1,0 +1,13 @@
+{
+  "name": "vsnote",
+  "version": "1.0.0",
+  "description": "vs note",
+  "main": "index.js",
+  "repository": "http://github.com/damigreen",
+  "author": "Damilola Faseun",
+  "license": "MIT",
+  "dependencies": {
+    "luxon": "^2.0.2"
+  },
+  "type": "module"
+}
