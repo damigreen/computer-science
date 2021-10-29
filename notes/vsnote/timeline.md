@@ -4,12 +4,14 @@
 
 ### 29:10:21
 
-- [] Write your goals down - [Goals](Goals.md) - **07:00:00**
-- [x] practice english for - **07:30:00**
 - [x] watch an adonisjs video on jagr channel - **11:45:00**
 - [] Finish the resido alert task - **15:00:00**
   - test the subscription feature and confirm the date works fine 
 - [] Work on integratiing **mailchimp** with **landwey** - **XX:XX:XX**
+
+- [] Write your goals down - [Goals](Goals.md) - **07:00:00**
+- [x] practice english for - [English](English.md) **07:30:00**
+- [x] Read a book - [Books](books.md)
 - [] Start **blog** writing on writing file - [Writing](writing.md) - **21:00:00**
 
 ### 31:09:21
