@@ -10,6 +10,8 @@
 
         node ace invoke @adonisjs/lucid
         node ace make:migration create_users_table --table users
+        node ace make:model -h
+        node ace make:model -mc // create migration and controller for the model
 
 ### Legacy AdonisJs
 
