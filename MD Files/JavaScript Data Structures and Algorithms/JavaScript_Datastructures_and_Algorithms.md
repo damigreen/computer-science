@@ -447,6 +447,7 @@ Check whether a number is a prime number
 
 
 
+    // O(sqrt(n))
     function primFactors(n) {
         // n = 12 12/2=6 6/2=3 3/2=1r1
         while(n % 2 == 0) {
@@ -470,3 +471,22 @@ Check whether a number is a prime number
 
     // console.log(primFactors(12));
     primFactors(30)
+
+### Random Number Generator
+
+Random number generation is important to simulate conditions. JavaScript has a built- in function for generating numbers: `Math.random()`.
+
+`Math.random()` returns a float between 0 and 1.
+
+To get floating points higher than 1, simply multiply `Math.random()` by the range.
+Add or subtract from it to set the base.
+
+- `Math.random() * 100`; // floats between 0 and 100
+- `Math.random() * 25 + 5`; // floats between 5 and 30
+- `Math.random() * 10 - 100`; // floats between -100 and -90
+
+To get random integers, simply use `Math.floor()`, `Math.round()`, or `Math.ceil()` to round to an integer.
+
+- `Math.floor(Math.random() * 100)`; // integer between 0 and 99
+- `Math.round(Math.random() * 25) + 5`; // integer between 5 and 30
+- `Math.ceil(Math.random() * 10) - 100`; // integer between -100 and -90
