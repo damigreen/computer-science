@@ -9,4 +9,3 @@
 
 - [TypeScript Docs](https://www.typescriptlang.org/docs/)
 - [TypeScript handbook](https://www.typescriptlang.org/docs/handbook/intro.html)
-
