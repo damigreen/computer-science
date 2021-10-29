@@ -4,21 +4,26 @@
 
 ### 29:10:21
 
-- [x] practice english for - 00:30:00
-- [] watch an adonisjs video on jagr channel - 00:60:00
-- [] Finish the resido alert task - 02:30:00
+- [] Write your goals down - [Goals](Goals.md) - **07:00:00**
+- [x] practice english for - **07:30:00**
+- [x] watch an adonisjs video on jagr channel - **11:45:00**
+- [] Finish the resido alert task - **15:00:00**
   - test the subscription feature and confirm the date works fine 
-- [] Work on integratiing **mailchimp** with **landwey** - 01:00:00
-- [] 
+- [] Work on integratiing **mailchimp** with **landwey** - **XX:XX:XX**
+- [] Start **blog** writing on writing file - [Writing](writing.md) - **21:00:00**
 
 ### 31:09:21
 
-- [] Remove **deleted schedules** from schedule **column**
-- [] Test **landmark** and **landwey** **send routine request** event listeners
-- [] **remove rejected** job schedules on **status page**
+- [x] Remove **deleted schedules** from schedule **column**
+- [x] Test **landmark** and **landwey** **send routine request** event listeners
+- [x] **remove rejected** job schedules on **status page**
   - remove totaly
-- [] Test **scope by users** for client request / work request
+- [x] Test **scope by users** for client request / work request
 - [] Study **systemFunctions** code under organizations
+
+### XX:XX:XX
+
+- start working on portfolio [Portfolio](projects.md)
 
 ## Notes
 
@@ -140,3 +145,21 @@ I took the dates of all the pending ad campaign ignorant and those from the runn
 
     Please note that you can review and re-record your audio multiple times before submitting it.
 
+## Learn
+
+- [] learn
+- [] Study **systemFunctions** code under organizations
+- [] Study adonis scopes
+- [] study adonis auth
+
+## Links
+
+- [Console](console.js)
+- [English](English.md)
+- [Goals](Goals.md)
+- [Interview Questions](Interview-Questions.md)
+- [Interview Questions](CS%20Docs.md)
+- [Notes](notes.md)
+- [Resources](resources.md)
+- [Timeline](timeline.md)
+- [Writing](writing.md)
