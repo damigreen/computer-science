@@ -1,6 +1,15 @@
 # Writing
 
-## Writing Topics
+## Tech
+
+- nuxt tutorial
+- vue router
+- vuex store
+- uploading files to gcp using node and vue
+
+### Nuxt tutorial
+
+## General
 
 - Write about a problem that you have or want to solve. It can be as big or as small as you can think of
 - Write about a moment that illustrated your shift from child to adult within your community or family.
