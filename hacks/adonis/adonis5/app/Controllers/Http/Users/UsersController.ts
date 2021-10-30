@@ -5,15 +5,12 @@ import mailConfig from 'Config/mail';
 
 export default class UsersController {
     public async index ({ response, view }: HttpContextContract) {
-        // Send message using mailchimp
-        // console.log('sending message')
         await Mail.send((message) => {
-            console.log(mailConfig.sender)
             message
               .from(mailConfig.sender)
               .to("fashfired@gmail.com")
-              .subject("Resido Password Reset")
-            //   .htmlView("users")
+              .subject("Testing mailgun!!!")
+              .htmlView("users")
           }).catch(error => console.log(error))
         console.log('message sent')
 
