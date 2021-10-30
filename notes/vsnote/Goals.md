@@ -2,6 +2,13 @@
 
 ## Goals
 
+`30:10:21`
+
+- Start a business
+- Increase your income
+- Move out of mafoluku - Buy a house in Victoria Island
+- Start a family
+
 `28:09:21`
 
 - Get an appartment before the end of the year
