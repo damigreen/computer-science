@@ -99,4 +99,6 @@ function arrayNUglyNumbers (n) {
   }
   return uglyNumbers;
 }
-console.log(arrayNUglyNumbers(12))
+// console.log(arrayNUglyNumbers(12))
+
+console.log(new Date(1640563200000))
