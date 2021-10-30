@@ -83,7 +83,7 @@ s    N     LV     Adj      SC            N   V         N
     Pattern 4 (N1-LV-N1)
 
      (Q)     (Aux)      (D)       N1         (Aux)         LV        (D)         N1            (Adv) 
-                                 Whales                    are                 mammals 
+                                 Whales                    are                 mammals
                         That     boy                       was        my       friend           once 
                                  He          has           become     my       friend           again 
                                  Who                       is         your     friend? 
