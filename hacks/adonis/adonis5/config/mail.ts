@@ -59,7 +59,12 @@ const mailConfig: MailConfig & { sender: string }= {
       maxMessages: 100,
       rateLimit: 10
     },
-
+    mailgun: {
+      driver: "mailgun",
+      baseUrl: "https://api.mailgun.net/v3",
+      key: Env.get("MAILGUN_API_KEY") as string,
+      domain:"postmaster@sandboxff67107106d54319b47746525abba36d.mailgun.org"
+    },
   },
 }
 
