@@ -2,13 +2,14 @@
 
 ## timetable
 
+- [] Fix **loatsadd** data error
 - [] Watch a **jagr** youtube video
-- [] Study from **Javascript datastructures and algorithms**
-- [] Create a subscription **reminder** timer feature
-- [] Integrate **mailchimp** with **landwey** app for email notifications
+- [x] Study from **Javascript datastructures and algorithms**
+- [x] Create a subscription **reminder** timer feature
+- [x] Integrate **mailchimp** / **mailgun** with **landwey** app for email notifications
 
 - [x] Write your goals down - [Goals](Goals.md) - **07:00:00**
-- [] practice english for - [English](English.md) **07:30:00**
+- [x] practice english for - [English](English.md) **07:30:00**
 - [] Read a book - [Books](books.md)
 - [] Start **blog** writing on writing file - [Writing](writing.md) - **21:00:00**
 
