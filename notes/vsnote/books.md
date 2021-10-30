@@ -3,8 +3,9 @@
 
 ## Reading
 
+- Vue Docs [Vue](https://v3.vuejs.org/guide/template-syntax.html#interpolations)
 - Javascript data structures and algorithms
-- Adonis manual
+- Adonis manual [Adonis5](https://docs.adonisjs.com/guides/introduction) || [Adonis Legacy](https://legacy.adonisjs.com/docs/4.1/installation)
 - Think and grow rich
 
 ## Reading Completed
