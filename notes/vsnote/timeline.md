@@ -2,13 +2,20 @@
 
 ## timetable
 
+### 31:10:21
+
+- [] Learn **Vue Router** on youtube
+- [] Learn **google cloud platform**
+
+### 30:10:21
+
 - [] Fix **loatsadd** data error
 - [] Watch a **jagr** youtube video
 - [x] Study from **Javascript datastructures and algorithms**
 - [x] Create a subscription **reminder** timer feature
 - [x] Integrate **mailchimp** / **mailgun** with **landwey** app for email notifications
 
-- [x] Write your goals down - [Goals](Goals.md) - **07:00:00**
+- [x] Waarnarite your goals down - [Goals](Goals.md) - **07:00:00**
 - [x] practice english for - [English](English.md) **07:30:00**
 - [] Read a book - [Books](books.md)
 - [] Start **blog** writing on writing file - [Writing](writing.md) - **21:00:00**
@@ -38,7 +45,20 @@
 
 - start working on portfolio [Portfolio](projects.md)
 
+## Pending
+
+- Learn **google cloud platform** from videos **SimpliLearn**
+- Complete **Jagr** Course - Video from youtube
+
 ## Notes
+
+### Google Cloud Platform SimpliLearn
+
+What is cloud computing - It is the use of hardware and software components to deliver a service to a network.
+Users can also acces the files and application from any device that can access the internet.
+
+cloud providers privide access to resources e.g computing, memory, storage
+
 
 ### Adonis 5 -JAGR
 
