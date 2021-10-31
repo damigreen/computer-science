@@ -6,6 +6,8 @@
 
 - [] Learn **Vue Router** on youtube
 - [] Learn **google cloud platform**
+- [] Start **blog** writing on writing file - [Writing](writing.md) - **21:00:00**
+  - Write on **Vue Router**
 
 ### 30:10:21
 

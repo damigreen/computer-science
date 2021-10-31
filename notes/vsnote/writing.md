@@ -7,7 +7,15 @@
 - vuex store
 - uploading files to gcp using node and vue
 
+### Vue Router
+
+#### Note - Vue Router
+
+- Routing 
+
 ### Nuxt tutorial
+
+
 
 ## General
 
