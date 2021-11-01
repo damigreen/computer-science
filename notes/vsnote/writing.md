@@ -9,9 +9,22 @@
 
 ### Vue Router
 
+#### Vue 3: Getting Started with Vue Router
+
+- Introduction
+- Importance
+- installing the vue cli
+- options for installation
+
+Routing lets you display specific view depending on the URL path
+
+Routing is a very important *aspect* in building single page applications.
+Most javascript frontend frameworks like Vue, React, Svelte, Angular etc have **liibraries** that handle routing
+and defines how users navigate through the application. These libraries goes to the 
+
 #### Note - Vue Router
 
-- Routing 
+
 
 ### Nuxt tutorial
 
