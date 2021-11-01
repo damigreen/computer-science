@@ -490,3 +490,4 @@ To get random integers, simply use `Math.floor()`, `Math.round()`, or `Math.ceil
 - `Math.floor(Math.random() * 100)`; // integer between 0 and 99
 - `Math.round(Math.random() * 25) + 5`; // integer between 5 and 30
 - `Math.ceil(Math.random() * 10) - 100`; // integer between -100 and -90
+
