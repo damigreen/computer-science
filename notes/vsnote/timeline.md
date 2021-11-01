@@ -2,37 +2,49 @@
 
 ## timetable
 
+### 01:11:21
+
+- [ ] Set up **mailgun** configuration for **landmark** dev
+- [ ] Complete **GCP** tutorial **simplilearn** video
+- [x] Complete the resido **subscription feature**
+
+- [x] Write your goals down - [Goals](Goals.md) - **07:00:00**
+- [x] practice english for - [English](English.md) **07:30:00**
+- [x] Read a book - [Books](books.md)
+- [ ] Complete **vue router** tutorial writeup - [Writing](writing.md) - **21:00:00**
+
+
 ### 31:10:21
 
-- [] Learn **Vue Router** on youtube
-- [] Learn **google cloud platform**
-- [] Start **blog** writing on writing file - [Writing](writing.md) - **21:00:00**
-  - Write on **Vue Router**
+- [ ] Learn **Vue Router** on youtube
+- [ ] Learn **google cloud platform**
+- [ ] Start **blog** writing on writing file - [Writing](writing.md) - **21:00:00**
+- [ ] Write on **Vue Router**
 
 ### 30:10:21
 
-- [] Fix **loatsadd** data error
-- [] Watch a **jagr** youtube video
+- [ ] Fix **loatsadd** data error
+- [ ] Watch a **jagr** youtube video
 - [x] Study from **Javascript datastructures and algorithms**
 - [x] Create a subscription **reminder** timer feature
 - [x] Integrate **mailchimp** / **mailgun** with **landwey** app for email notifications
 
-- [x] Waarnarite your goals down - [Goals](Goals.md) - **07:00:00**
+- [x] Write your goals down - [Goals](Goals.md) - **07:00:00**
 - [x] practice english for - [English](English.md) **07:30:00**
-- [] Read a book - [Books](books.md)
-- [] Start **blog** writing on writing file - [Writing](writing.md) - **21:00:00**
+- [x] Read a book - [Books](books.md)
+- [ ] Start **blog** writing on writing file - [Writing](writing.md) - **21:00:00**
 
 ### 29:10:21
 
 - [x] watch an adonisjs video on jagr channel - **11:45:00**
 - [x] Finish the resido alert task - **15:00:00**
   - test the subscription feature and confirm the date works fine 
-- [] Work on integratiing **mailchimp** with **landwey** - **XX:XX:XX**
+- [ ] Work on integratiing **mailchimp** with **landwey** - **XX:XX:XX**
 
-- [] Write your goals down - [Goals](Goals.md) - **07:00:00**
+- [ ] Write your goals down - [Goals](Goals.md) - **07:00:00**
 - [x] practice english for - [English](English.md) **07:30:00**
 - [x] Read a book - [Books](books.md)
-- [] Start **blog** writing on writing file - [Writing](writing.md) - **21:00:00**
+- [ ] Start **blog** writing on writing file - [Writing](writing.md) - **21:00:00**
 
 ### 31:09:21
 
@@ -41,7 +53,7 @@
 - [x] **remove rejected** job schedules on **status page**
   - remove totaly
 - [x] Test **scope by users** for client request / work request
-- [] Study **systemFunctions** code under organizations
+- [ ] Study **systemFunctions** code under organizations
 
 ### XX:XX:XX
 
@@ -60,7 +72,6 @@ What is cloud computing - It is the use of hardware and software components to d
 Users can also acces the files and application from any device that can access the internet.
 
 cloud providers privide access to resources e.g computing, memory, storage
-
 
 ### Adonis 5 -JAGR
 
