@@ -11,6 +11,10 @@
 
 #### Vue 3: Getting Started with Vue Router
 
+- [Vue 1](https://www.vuemastery.com/blog/vue-router-a-tutorial-for-vue-3/)
+- [Vue 2](https://vueschool.io/articles/vuejs-tutorials/how-to-use-vue-router-a-complete-tutorial/)
+- [Vue 3](https://www.vuemastery.com/courses/vue-3-essentials/teleport/)
+
 - Introduction
 - Importance
 - installing the vue cli
