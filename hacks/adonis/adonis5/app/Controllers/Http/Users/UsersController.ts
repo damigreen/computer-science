@@ -5,13 +5,14 @@ import mailConfig from 'Config/mail';
 
 export default class UsersController {
     public async index ({ response, view }: HttpContextContract) {
-        await Mail.send((message) => {
-            message
-              .from(mailConfig.sender)
-              .to("fashfired@gmail.com")
-              .subject("Testing mailgun!!!")
-              .htmlView("users")
-          }).catch(error => console.log(error))
+        // await Mail.send((message) => {
+        //     message
+        //       .from(mailConfig.sender)
+        //       .to("fashfired@gmail.com")
+        //       .subject("Testing mailgun!!!")
+        //       .htmlView("users")
+        //   }).catch(error => console.log(error))
+        // console.log('message sent')
         console.log('message sent')
 
         // return view.render("users");
