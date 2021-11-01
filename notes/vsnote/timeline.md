@@ -77,7 +77,35 @@ cloud providers privide access to resources e.g computing, memory, storage
 
 `build` - compile typescript
 `invoke` - get instructions for installing new modules with adonis project
-`serrve` - Serve application
+`serve` - Serve application
+
+Users can create many tasks tasks belongs to a user
+
+    Migrations
+          Users                Tasks           Projects
+
+          id                    id                id
+          username              name              name
+          password              descrtiption      description
+          remember_me_token     due_at            satus_id
+                                created_by
+                                assigned_to
+                                status_id
+
+    project_users               project_tasks
+        id                          id
+        project_id                  project_id
+        user_id                     task_id
+        role_id                     sort_order
+
+        -------------------------------------------------------------------
+
+        ENUMS
+
+            Role                    Status
+                member                  idle
+                admin                   in_progress
+                                        complete
 
 ### MailChimp integration
 
