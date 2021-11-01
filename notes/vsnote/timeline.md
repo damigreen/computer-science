@@ -4,22 +4,23 @@
 
 ### 01:11:21
 
-- [ ] Set up **mailgun** configuration for **landmark** dev
-- [ ] Complete **GCP** tutorial **simplilearn** video
+- [x] Set up **mailgun** configuration for **landmark** dev
 - [x] Complete the resido **subscription feature**
 
 - [x] Write your goals down - [Goals](Goals.md) - **07:00:00**
 - [x] practice english for - [English](English.md) **07:30:00**
 - [x] Read a book - [Books](books.md)
-- [ ] Complete **vue router** tutorial writeup - [Writing](writing.md) - **21:00:00**
+- [x] Improve memory [Memory](memory.md)
 
+- [ ] Complete **GCP** tutorial **simplilearn** video
+- [ ] Complete **vue router** tutorial writeup - [Writing](writing.md) - **21:00:00**
 
 ### 31:10:21
 
-- [ ] Learn **Vue Router** on youtube
-- [ ] Learn **google cloud platform**
-- [ ] Start **blog** writing on writing file - [Writing](writing.md) - **21:00:00**
-- [ ] Write on **Vue Router**
+- [x] Learn **Vue Router** on youtube
+- [x] Learn **google cloud platform**
+- [x] Start **blog** writing on writing file - [Writing](writing.md) - **21:00:00**
+- [x] Write on **Vue Router**
 
 ### 30:10:21
 
