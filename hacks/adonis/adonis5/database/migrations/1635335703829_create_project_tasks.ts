@@ -9,22 +9,24 @@ export default class ProjectTasks extends BaseSchema {
         .increments('id')
         .primary()
       table
-        .integer('role_id')
+        .integer('sort_order')
         .unsigned()
         .notNullable()
-        .defaultTo(1)
+        .defaultTo(0)
       table
         .integer('project_id')
         .unsigned()
+        .notNullable()
         .references('id')
         .inTable('projects')
-        .nullable()
         .onDelete("CASCADE");
       table
-        .integer('user_id')
+        .integer('task_id')
         .unsigned()
+        .notNullable()
         .references('id')
-        .inTable('users')
+        .inTable('tasks')
+        .onDelete("CASCADE");
       table.timestamps(true, true)
     })
   }
