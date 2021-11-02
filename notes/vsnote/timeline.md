@@ -2,6 +2,14 @@
 
 ## timetable
 
+### 02:11:21
+
+- [x] Practice **JavaScript DataStructures and Algorithms** from the **book**
+- [ ] Complete **GCP** tutorial **simplilearn** video
+- [ ] Watch a **jagr** youtube video
+- [ ] Learn **nuxt** from **Youtube** and find a blog
+- [ ] **Write** on **Vue Router**
+
 ### 01:11:21
 
 - [x] Set up **mailgun** configuration for **landmark** dev
