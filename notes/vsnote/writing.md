@@ -28,10 +28,7 @@ and defines how users navigate through the application. These libraries goes to 
 
 #### Note - Vue Router
 
-
 ### Nuxt tutorial
-
-
 
 ## General
 
