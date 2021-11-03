@@ -1,77 +1,49 @@
-// JavaScript Strings
+var DICTIONARY = "abcdefghijklmnopqrstuvwxyz0123456789".split("");
+// console.log(DICTIONARY)
 
-var str = "Jesus is King"
+function encodeId(num) {
+    var base = DICTIONARY.length; //36
+    var encoded = "";
 
-const a = str.substring(9, 10)
-const b = str.indexOf('Jesus')
-const c = str.indexOf('Nothing')
-// console.log(b)
-// console.log(c)
+    if (num == 0){
+        return DICTIONARY[0 ]
+    }
 
-function existsInString(stringValue, search) {
-    return stringValue.indexOf(search) !== -1
-};
-// console.log(existsInString(str, "King"))
+    while(num > 0) {
+        encoded += DICTIONARY[(num % base)]
+        num = Math.floor(num / base);
+    }
 
-// Get the count  of a
-var str = "He's my king from this day until the last day";
-var count = 0;
-var pos = str.indexOf('a')
-while(pos !== -1) {
-    pos = str.indexOf('a', pos + 1);
-    count ++;
+    // encoded = "9ujd88"
+    
+    // console.log(encoded);
+    return reverseWord(encoded)
 }
-// console.log(count)
 
-// String Decomposition
-var test1 = "My head is blessed"
-// console.log(test1.split('e'));
+function reverseWord(str) {
+    var reversed = "";
+    for (var i = str.length - 1; i >= 0; i--) {
+        // reversed += str[i]
+        reversed += str.charAt(i)
+    }
+    return reversed
+}
+// console.log(encodeId(11231230));
 
-// String Replace
-// console.log(test1.replace("head", "life"));
+function decodeId(id) {
+    var base = DICTIONARY.length;
+    var decoded = "";
+    for (var i = 0; i < id.split("").length; i++) {
+        decoded = decoded * base + DICTIONARY.indexOf(id.charAt(i))
+        console.log('decoded',decoded, base, DICTIONARY.indexOf(id.charAt(i)))
+        // 6 36 6
+        // 240 36 24
+        // 8666 36 26
+        // 311978 36 2
+        // 11231230 36 22
+        // 11231230
+    }
+    return decoded
+}
 
-const ab = new String("A Good Day")
-// console.log(ab)
-
-const kdjd = "JavaScript DataStructures";
-var n = kdjd.search(/^Ja/)
-// n = kdjd.search(\d:ava)
-// console.log(n)
-n = kdjd.search(/[aSp]/)
-n = kdjd.match(/[aSp]/)
-n = kdjd.matchAll("Java").next()
-n = kdjd.match(/[^Data]/)
-n = kdjd.search(/[^u]/)
-n = kdjd.search((/uu | Data/)) //Alternatives
-// console.log(n)
-
-var myRe = /d(b+)d/g;
-var myArray = myRe.exec('cdbbdbsbz');
-var myArray = /d(b+)d/g.exec('cdbbdbsbz');
-console.log(myArray)
-
-// Regex Validation
-// var reg = /\d+/;
-var reg = new RegExp(/\d+/); //Any Numeric character
-var reg = new RegExp(/^\d+$/) // Only numeric characters
-var reg = /^[0-9]*.[0-9]*[1-9]+$/; // Floating Numeric characters
-// console.log(reg.test("123.344"))
-// console.log(reg.exec("123.344"))
-// console.log(reg.test("12"))
-// console.log(reg.exec("12"))
-// console.log(reg.match(/12/))
-var reg = /[a-zA-Z0-9]/ // Alph Numeric
-// console.log(reg.test("Damigreen2992"))
-// console.log(reg.exec(/DamiII990393/))
-var reg = /([^?=&])(=([^&]*))/ // Query String
-
-var uri = 'http://your.domain/product.aspx?category=4&product_id=2140&query=lcd+tv';
-var queryString = {};
-uri.replace(
-    new RegExp("([^?=&]+)(=([^&]*))?", "g"),
-    function($0, $1, $2, $3) { queryString[$1] = $3; }
-    )
-// console.log(uri.)
-// console.log('ID: ' + queryString['product_id' ]); // ID: 2140
-// console.log('Name: ' + queryString['product_name' ]); // Name: undefined
-// console.log('Category: ' + queryString['category' ]); // Category: 4
+console.log(decodeId(encodeId(11231230)))
