@@ -46,4 +46,14 @@ function decodeId(id) {
     return decoded
 }
 
-console.log(decodeId(encodeId(11231230)))
+// console.log(decodeId(encodeId(11231230)))
+
+var dict = 'ABCDEFG'
+var num = 12;
+var base = '';
+while (num > 0) {
+    base += dict[( num % 7)]
+    num = Math.floor(num / 7)
+    console.log(base, dict[( num % 7)], num)
+}
+console.log(base)
