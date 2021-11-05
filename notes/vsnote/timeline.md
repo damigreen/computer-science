@@ -2,6 +2,18 @@
 
 ## timetable
 
+### 05:11:21
+
+- [ ] Plan new software **portfolio**
+  - [ ] plan the **structure**
+- [ ] Watch a **Jagr** video
+- [ ] Learn **Angular**
+
+### 04:11:21
+
+- [x] Watch a **Jagr** video
+- [x] Javascript Data structures and algorithms
+
 ### 03:11:21
 
 - [x]Re-build **landmark api** and **mail** functionality
@@ -84,10 +96,11 @@
 
 ### Learn
 
-- [] learn
 - [] Study **systemFunctions** code under organizations
+- [] Study **scope** under vamp
 - [] Study adonis scopes
 - [] study adonis auth
+- [] learn **Advanced** **Node(Express JS)** from Udemy*
 
 ## Links
 
