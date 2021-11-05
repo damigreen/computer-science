@@ -2,6 +2,18 @@
 
 ## Tech
 
+### Firebase
+
+#### Firebase commands
+
+      npm install -g firebase-tools
+      firebase login
+      firebase logout
+firebase init
+      firebase serve
+      firebase deploy
+      firebase emulators:start
+
 ### Adonis
 
 - { schema } validator - "@ioc:Adonis/Core/Validator";
@@ -15,7 +27,7 @@
 
 ### Legacy AdonisJs
 
-### Commands
+#### Commands
 
     Model.query()
         .paginate(1, 30)
