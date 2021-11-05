@@ -63,6 +63,25 @@ cloud providers privide access to resources e.g computing, memory, storage
 
 ### Adonis 5 -JAGR
 
+    @column()
+    public description?: string
+
+    @column.dateTime({ autoCreate: true })
+    public createdAt
+
+    @column.dateTime({ autoCreate: true, autoUpdate: true })
+    public updatedAt
+
+    @hasMany(() => Task, {
+      localKey: "createdBy"
+    })
+    public tasks: hasMany<typeof Task>
+
+    @hasMany(() => User, {
+      foreignKey: "createdBy"
+    })
+    public creator: hasMany<typeof Task>
+
 `build` - compile typescript
 `invoke` - get instructions for installing new modules with adonis project
 `serve` - Serve application
