@@ -4,15 +4,27 @@
 
 ### Firebase
 
+#### Firebase Auth: Google Implementation
+
+`signInWithPopup(GoogleAuthProviderObj)`
+`getRedirectResult()`
+`onAuthStateChanged()` - Check user state (Login or Not)
+`signOut()`
+
 #### Firebase commands
 
       npm install -g firebase-tools
       firebase login
       firebase logout
-firebase init
+      firebase init
       firebase serve
       firebase deploy
       firebase emulators:start
+
+      <!-- Firebase Auth -->
+      const auth = getAuth()
+      const provider = new GoogleAuthProvider()
+      signInWithPopup(auth, provider).then(res => console.log(res))
 
 ### Adonis
 
