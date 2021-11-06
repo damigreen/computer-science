@@ -49,6 +49,8 @@ Route.resource("users", "UsersController")
   // .as()
   // .middleware
 
+Route.resource("projects", "ProjectsController");
+
 /**
  * Gatepass Callbacks
 */
