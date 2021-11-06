@@ -38,17 +38,39 @@ export default class ProjectsController {
     // const projects = await Project.query().where("id", params.id).first()
     // const project = await Project.find(params.id)
     // const project = await Project.findBy("id", params.id)
-    const project = await Project.findOrFail(params.id)
+    // const project = await Project.findOrFail(params.id);
 
+    const project = await Database.from("projects").where("id", params.id).firstOrFail();
+    
     return response.json({ project })
   }
 
   public async edit({ }: HttpContextContract) {
   }
 
-  public async update({ }: HttpContextContract) {
+  public async update({ request, response, params }: HttpContextContract) {
+    const data = request.only(["name", "description"])
+    // const project = await Project.findOrFail(params.id);
+
+    // project.name = request.input('name');
+    // project.description = request.input('description');
+
+    const project = await Database.from("projects").where("id", params.id).update(data);
+
+    // project.merge(data);
+    // await project.save();
+
+
+    return response.json({ project })
   }
 
-  public async destroy({ }: HttpContextContract) {
+  public async destroy({ response, params }: HttpContextContract) {
+    // const project = await Project.findByOrFail("id", params.id)
+    // await project.delete();
+
+    const project = await Database.from("projects").where("id", params.id).delete();
+
+
+    await response.json({ project })
   }
 }
