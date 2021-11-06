@@ -57,3 +57,5 @@ while (num > 0) {
     console.log(base, dict[( num % 7)], num)
 }
 console.log(base)
+
+console.log(new Date(1636146298918))
