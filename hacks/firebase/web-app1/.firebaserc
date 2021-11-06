@@ -1,0 +1,5 @@
+{
+  "projects": {
+    "default": "myapp-auth-email-pass"
+  }
+}
