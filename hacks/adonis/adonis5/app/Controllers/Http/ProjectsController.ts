@@ -34,10 +34,13 @@ export default class ProjectsController {
   }
 
   public async show({ params, response }: HttpContextContract) {
-    const projects = await Project.query().where("id", params.id).firstOrFail();
+    // const project = await Project.query().where("id", params.id).firstOrFail();
     // const projects = await Project.query().where("id", params.id).first()
+    // const project = await Project.find(params.id)
+    // const project = await Project.findBy("id", params.id)
+    const project = await Project.findOrFail(params.id)
 
-    return response.json({ projects })
+    return response.json({ project })
   }
 
   public async edit({ }: HttpContextContract) {
