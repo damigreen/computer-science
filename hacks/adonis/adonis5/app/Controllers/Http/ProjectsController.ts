@@ -5,7 +5,8 @@ import Project from 'App/Models/Project'
 
 export default class ProjectsController {
   public async index({ response }: HttpContextContract) {
-    const projects = await Project.query().where("statusId", Status.IDLE)
+    // const projects = await Project.query().where("statusId", Status.IDLE)
+    const projects = await Project.findMany([1, 4])
 
     return response.json({ projects })
   }
