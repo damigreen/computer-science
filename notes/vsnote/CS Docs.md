@@ -7,7 +7,15 @@
 #### Firebase Auth: Google Implementation
 
 `signInWithPopup(GoogleAuthProviderObj)`
+      `signInWithPopup(provider)`
 `getRedirectResult()`
+`onAuthStateChanged()` - Check user state (Login or Not)
+`signOut()`
+
+#### Firebase Auth: Emamil Password
+
+`createUserWithEmailAndPassword(email, password)`
+`signInWithEmailAndPassword(email, password)`
 `onAuthStateChanged()` - Check user state (Login or Not)
 `signOut()`
 
