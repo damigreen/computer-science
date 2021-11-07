@@ -18,8 +18,12 @@
 `signInWithEmailAndPassword(email, password)`
 `onAuthStateChanged()` - Check user state (Login or Not)
 `signOut()`
+sendSignInLinkToEmail,
+        // verifyBeforeUpdateEmail,
+        sendEmailVerification,
+        signOut,
 
-#### Firebase commands
+#### Firebase commands [Firebase API](https://firebase.google.com/docs/reference/js)
 
       npm install -g firebase-tools
       firebase login
