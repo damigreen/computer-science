@@ -7,7 +7,7 @@
 - [x] Watch a **jagr video** on adonis5
 - [ ] Watch a **firebase** video from **techdrill**
 - [ ] Learn the **scopeBy** logic on vamp
-  - [ ] Study all use case on the platform and implement a single feature [ Equipment |Gg Unit ]
+  - [ ] Study all use case on the platform and implement a single feature [ Equipment | Unit ]
 
 ### 05:11:21
 
