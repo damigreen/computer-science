@@ -27,6 +27,11 @@ export default class Project extends BaseModel {
     pivotColumns: ["role_id"]
   })
   public users: ManyToMany<typeof User>
+  // @manyToMany(() => User, {
+  //   pivotTable: 'projecct_users'
+  //   pivotColumns: ["role_id"]
+  // })
+  // public users: ManyToMany<typeof User>
 
   @manyToMany(() => Task, {
     pivotColumns: ["sort_order"]
