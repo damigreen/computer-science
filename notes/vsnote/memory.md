@@ -52,6 +52,21 @@
 
 ## Notes
 
+  ### Single Sign On
+
+https://accounts.datoms.io/login
+Username: demo12@iobotech.com
+Password: 123456
+
+    {
+        email_id: "demo12@iobotech.com",
+        password: "123456",
+        source: "website",
+        source_id: 1,
+        target:
+          "https://app.datoms.io/enterprise/1083/dg-monitoring/detailed-view/?thing_id=7284",
+    }
+
 ### Termii Integration with Vamp
 
 ### Google Cloud Platform SimpliLearn
