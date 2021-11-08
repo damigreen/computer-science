@@ -2,6 +2,13 @@
 
 ## timetable
 
+### 08:11:21
+
+- [x] Watch a **jagr video** on adonis5
+- [ ] Watch a **firebase** video from **techdrill**
+- [ ] Learn the **scopeBy** logic on vamp
+  - [ ] Study all use case on the platform and implement a single feature [ Equipment |Gg Unit ]
+
 ### 05:11:21
 
 - [ ] Plan new software **portfolio**
@@ -88,10 +95,16 @@
 
 ### Extras
 
+- [ ] modify the **maintenance cycle** list on vamp frontend (**status page**)
+  - [ ] use the **backend** to filter by **due date**
+- [ ] 
+
 ### Pending
 
-- Learn **google cloud platform** from videos **SimpliLearn**
-- Complete **Jagr** Course - Video from youtube
+- [ ] Learn **google cloud platform** from videos **SimpliLearn**
+  - [x] **Watch** the Video
+  - [ ] **Implement** the video
+- [ ] Complete **Jagr** Course - Video from youtube
 - [ ] Fix **loatsadd** data error
 
 ### Learn
