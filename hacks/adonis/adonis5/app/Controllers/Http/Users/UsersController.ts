@@ -2,6 +2,7 @@ import { HttpContextContract } from '@ioc:Adonis/Core/HttpContext'
 import UsersService from 'App/Services/UsersService';
 import Mail from '@ioc:Adonis/Addons/Mail';
 import mailConfig from 'Config/mail';
+import User from 'App/Models/User';
 
 export default class UsersController {
     public async index ({ response, view }: HttpContextContract) {
@@ -28,9 +29,25 @@ export default class UsersController {
         
         return view.render("users");
     }
-    public async store({ view }: HttpContextContract) {
+    public async store({ request, response }: HttpContextContract) {
+        const user1 = {
+            username: "testuser1",
+            email: "testuser1@test.com",
+            password: "test123"
+        }
         
-        return view.render("users");
+        const user2 = {
+            username: "testuser2",
+            email: "testuser2@test.com",
+            password: "test456"
+        }
+
+        const users = await User.createMany([user1, user2])
+        // const users = await User.find()
+
+        return response.json({
+            users
+        })
     }
     public async edit({ view }: HttpContextContract) {
         
