@@ -5,7 +5,9 @@
 ### 08:11:21
 
 - [x] Watch a **jagr video** on adonis5
-- [ ] Watch a **firebase** video from **techdrill**
+- [x] Watch a **firebase** video from **techdrill**
+- [ ] Fix datoms api login
+
 - [ ] Learn the **scopeBy** logic on vamp
   - [ ] Study all use case on the platform and implement a single feature [ Equipment | Unit ]
 
