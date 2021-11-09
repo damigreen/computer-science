@@ -122,5 +122,15 @@ function getNthFibo(n) {
     }
     return sum;
 }
-console.log(getNthFibo(6));
 
+// console.log(getNthFibo(6));
+function getNthFiboRec(n) {
+    console.log(n)
+    if (n <= 1) {
+        return n;
+    }
+    // console.log(n);
+    // console.log(getNthFiboRec(n - 1) + getNthFiboRec(n-2))
+    return getNthFiboRec(n - 1) + getNthFiboRec(n - 2);
+}
+console.log(getNthFiboRec(6))
