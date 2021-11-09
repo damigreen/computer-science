@@ -52,7 +52,7 @@
 
 ## Notes
 
-  ### Single Sign On
+### Single Sign On
 
 https://accounts.datoms.io/login
 Username: demo12@iobotech.com
