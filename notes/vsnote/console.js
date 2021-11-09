@@ -56,6 +56,71 @@ while (num > 0) {
     num = Math.floor(num / 7)
     console.log(base, dict[( num % 7)], num)
 }
-console.log(base)
+// console.log(base)
 
-console.log(new Date(1636146298918))
+// console.log(new Date(1636146298918))
+
+function modInverse(e, phi) {
+    var m0 = phi, t, q;
+    var x0 = 0, x1 = 1;
+
+    if (phi == 1) {
+        return 0;
+    }
+
+    console.log("e, phi, m0, x0, t, q, x1",e, phi, m0, x0, t, q, x1)
+    console.log("------------------------")
+
+    while (e > 1) {
+        q = Math.floor(e / phi)
+        t = phi;
+        phi = e % phi, e = t;
+        t = x0
+        x0 = x1 - q * x0
+        x1 = t;
+
+        console.log("e, phi, m0, x0, t, q, x1",e, phi, m0, x0, t, q, x1)
+    }
+
+    if (x1 < 0) {
+        x1 += m0;
+        console.log(">>------------>")
+        console.log("e, phi, m0, x0, t, q, x1",e, phi, m0, x0, t, q, x1)
+
+    }
+
+    return x1;
+}
+// modInverse(7, 40);
+// console.log(Math.floor(3/10))
+
+function countDownToZero(n) {
+    // Base case. Stop at 0
+    if (n < 0) {
+        return; //Stop the function
+    } else {
+        console.log(n)
+        countDownToZero(n - 1); // Count down 1
+    }
+}
+
+// Iterative Solution
+// 0 1 1 2 3 5 8
+// 2: last 1, lastlast = 0, sum = 1
+// 3: last: sum = 1, lastlast = last = 1 sum = 2
+// countDownToZero(10)
+function getNthFibo(n) {
+    if (n <= 1) return n;
+    var sum = 0,
+        last = 1,
+        lastlast = 0;
+
+    for(var i = 1; i < n; i++) {
+        sum = last + lastlast;
+        lastlast = last;
+        last = sum;
+    }
+    return sum;
+}
+console.log(getNthFibo(6));
+
