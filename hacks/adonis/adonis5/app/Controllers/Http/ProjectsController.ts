@@ -89,7 +89,6 @@ export default class ProjectsController {
     project.merge(data);
     await project.save();
 
-
     return response.json({ project })
   }
 
