@@ -2,6 +2,13 @@
 
 ## timetable
 
+### 09:11:21
+
+- [x] **JavaScript** datastructures and **algorithms**
+- [x] Learn a little bit of **vim**
+- [x] Fix the text change on **resido**
+- [xs] Reminder **meeting** by 1pm
+
 ### 08:11:21
 
 - [x] Watch a **jagr video** on adonis5
