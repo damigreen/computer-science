@@ -2,6 +2,11 @@
 
 ## timetable
 
+### 10:11:21
+
+- [ ] Learn a little bit of **docker**
+- [ ] Implement the algorithm with the **hash map** on JavaScript DataStructures and algorithms
+
 ### 09:11:21
 
 - [x] **JavaScript** datastructures and **algorithms**
