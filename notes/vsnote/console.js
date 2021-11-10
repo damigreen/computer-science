@@ -123,9 +123,16 @@ function getNthFibo(n) {
     return sum;
 }
 
+getNthFiboRec()
+getNthFiboRec(5) +  // getNthFiboRec(4) + getNthFiboRec(3) = 
+getNthFiboRec(4) +  // getNthFiboRec(3) + getNthFiboRec(2)
+getNthFiboRec(3) +  // getNthFiboRec(3) + getNthFiboRec(2)
+getNthFiboRec(2) +  // getNthFiboRec(2) + getNthFiboRec(1)
+getNthFiboRec(1) +  // getNthFiboRec(0)
+
+
 // console.log(getNthFibo(6));
 function getNthFiboRec(n) {
-    console.log(n)
     if (n <= 1) {
         return n;
     }
