@@ -52,6 +52,12 @@
 
 ## Notes
 
+### Docker tutorial for beginners
+
+#### Docker tutorial for beginners - Timelines
+
+    43.10, 52.00, 56.49, 56,19, 1:01:00, 01:03:09, 01:05:09, 01:07:24, 01:13:00, 01:31:00, 01:35:47, 01:57:49
+
 ### Single Sign On
 
 https://accounts.datoms.io/login
