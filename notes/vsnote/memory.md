@@ -60,7 +60,12 @@
 
 ### Single Sign On
 
-https://accounts.datoms.io/login
+- Login to account session
+- Return token from api
+- on the frontend setToken for Authorization
+- Redirect to the dashboard
+
+[IOT Login](https://accounts.datoms.io/login)
 Username: demo12@iobotech.com
 Password: 123456
 
