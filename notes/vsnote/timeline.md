@@ -2,6 +2,10 @@
 
 ## timetable
 
+### 13:11:21
+
+- [ ] Implement authentication for IOT Dashboard
+
 ### 10:11:21
 
 - [ ] Learn a little bit of **docker**
