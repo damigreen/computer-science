@@ -1,0 +1,14 @@
+{
+  "name": "jherr-tdd-dev",
+  "version": "1.0.0",
+  "description": "Test driven development by jherr",
+  "main": "index.ts",
+  "repository": "https://github.com/damigreen",
+  "author": "Damilola Faseun",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/jest": "^27.0.2",
+    "jext": "^0.4.3",
+    "ts-jest": "^27.0.7"
+  }
+}
