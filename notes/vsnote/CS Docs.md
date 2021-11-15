@@ -411,6 +411,7 @@ To serve static files such as images, css, use the `express.static` built in mid
 #### typscript commands
 
       tc, tsc --init, tsc -w, tsc --project . --pretty --skipLibCheck --diagnostics, implements,
+      yarn add jext ts-jest @types/jest -D
 
 #### typescript keywords
 
