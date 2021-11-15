@@ -96,6 +96,10 @@ function modInverse(e, phi) {
 // modInverse(7, 40);
 // console.log(Math.floor(3/10))
 
+
+/**
+ * Recursion
+ */
 function countDownToZero(n) {
   // Base case. Stop at 0
   if (n < 0) {
@@ -195,4 +199,4 @@ function findSumHash(arr, weight) {
   }
   return -1;
 }
-console.log(findSumHash([1, 3, 3,7, 4, 12, 2, 9, 2], 14));
+// console.log(findSumHash([1, 3, 3,7, 4, 12, 2, 9, 2], 14));
