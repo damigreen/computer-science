@@ -2,6 +2,11 @@
 
 ## timetable
 
+### 16:11:21
+
+- [ ] Add **request_id** field to **client request** for gatepass integration
+- [ ] Add **location filter** to **scheduler** page
+
 ### 13:11:21
 
 - [ ] Implement authentication for IOT Dashboard
