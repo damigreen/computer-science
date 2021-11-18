@@ -20,8 +20,14 @@
 
 import Route from '@ioc:Adonis/Core/Route'
 
-Route.get('/', async ({ view }) => {
-  return view.render('welcome')
+// Route.get('/', async ({ view }) => {
+//   return view.render('welcome')
+// });
+Route.get('/', async ({ view, response }) => {
+  return response.json({
+    status: true,
+    message: "God is good"
+  });
 });
 
 /**
@@ -63,3 +69,5 @@ Route.post("request/approved", "GatepassCallbackController.approve")
   .namespace("App/Controllers/Http/CallBacks");
 
   Route.post("webhook/approve", "WebhooksController.approve");
+
+Route.post("message/send", "MessagesController.send")
