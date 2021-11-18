@@ -2,7 +2,7 @@
 
 ## List
 
-<!-- ### 01:11:21 -->
+### Week 0
 
 - javascript string accessing
   - `.charAt(index)`
@@ -50,6 +50,18 @@
     - integer based id
     - shortend string
 
+- Slot
+  - API
+
+- Searching and Sorting
+  - Techniques used
+  - Searching [technique used, sorted, unsorted]
+    - Linear search [sequentially, ]
+    - Binary search [check, sorted data, desired value, greater of less middle value, upper half, middle half, dividing, two sections]
+  - Sorting (advantages, locate, faster, easier, naive, efficient, trade-offs)
+    - Bubble Sort [simplest, iterate, swap, bigger than other, entire. swap function, switches]
+    - 
+  
 ## Notes
 
 ### Docker tutorial for beginners
@@ -150,6 +162,8 @@ For secure SSL connections, use port 465.
 Make sure your hosting provider or ISP allows outbound SMTP connections.
 
 ### Gatepass Vamp Callbacks
+
+    https://us-central1-gatepass-test-environment.cloudfunctions.net/api/vampfi/callback/request/approved
 
     select * from system_functions;
     select * from system_entities;
