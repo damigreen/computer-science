@@ -271,7 +271,6 @@ function swap(array, index1, index2) {
 function bubbleSort(array) {
   for (var i = 0, arrayLength = array.length; i < arrayLength; i++) {
     for (var j = 0; j <= i; j++) {
-      console.log(array[i], array[j]);
       if (array[i] < array[j]) {
         swap(array, j, i);
       }
@@ -279,5 +278,42 @@ function bubbleSort(array) {
   }
   return array;
 }
-console.log(bubbleSort([2,1,7,4,6,4,1,3]));
+// console.log(bubbleSort([2,1,7,4,6,4,1,3]));
 
+
+/**
+ * Selection Sort
+ * [3,2,7,5]
+ * [3,2,7,5] => 0:[2,3,7,5]
+ * [2,3,7,5] => 1:[]
+ * [2,3,7,5] => 2:[2,3,5,7]
+ * x[j] < x[min]
+ * i != min
+ * 0: min=0, i:0[3] j:1[2] 2<
+ * 
+ */
+function selectionSort(items) {
+  var len = items.length,
+      min;
+  
+  for (var i = 0; i < len; i++) {
+    // Set min to this position(index)
+    min = i;
+    // Check the rest of the array to see if anything is smaller
+    for (var j = i + 1; j < len; j++) {
+      console.log(items[j], items[min])
+      if (items[j] < items[min]) {
+        min = j;
+      }
+      // if the minimum isn't in the position, swap it
+      console.log(i, min)
+      if (i != min) {
+        // swap(items, i, min);
+        swap(items, i, min);
+        console.log(items)
+      }
+    }
+    return items;
+  }
+}
+console.log(selectionSort([9,3,5,2]));
