@@ -96,7 +96,6 @@ function modInverse(e, phi) {
 // modInverse(7, 40);
 // console.log(Math.floor(3/10))
 
-
 /**
  * Recursion
  */
@@ -200,3 +199,49 @@ function findSumHash(arr, weight) {
   return -1;
 }
 // console.log(findSumHash([1, 3, 3,7, 4, 12, 2, 9, 2], 14));
+
+const a = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+console.log(a.slice(0, 3));
+
+/**
+ * Linear Search
+ * time complexity O(n)
+ *
+ */
+function linearSearch(array, n) {
+  for (var i = 0; i < array.length; i++) {
+    if (array[i] == n) {
+      return true;
+    }
+  }
+  return false;
+}
+// console.log(linearSearch([2, 3, 5, 8, 6, 5, 0, 9, 6, 4], 8));
+
+/**
+ * Binary Search
+ *
+ * [1,2,3,4,5,6,7,8]: n = 7 mid=3[4], low=0[1] high=7[8]
+ * [4,5,6,7,8]: n = 7 mid=5[6], low=4[5] high=7[8]
+ * [6,7,8]: n=7 mid=6[7]
+ */
+function binarySearch(array, n) {
+  var lowIndex = 0,
+    highIndex = array.length - 1;
+
+  while (lowIndex <= highIndex) {
+    var midIndex = Math.floor((lowIndex + highIndex) / 2);
+    if (array[midIndex] == n) {
+      return midIndex;
+    } else if (n > array[midIndex]) {
+      lowIndex = midIndex;
+      console.log(n, array[midIndex], midIndex, lowIndex, highIndex);
+    } else {
+      highIndex = midIndex;
+    }
+    if (highIndex - lowIndex == 1) return highIndex;
+  }
+  return -1;
+}
+console.log(binarySearch([4, 5, 6, 8, 9, 8, 23, 78, 9, 12, 22, 67, 0], 0));
+// console.log(binarySearch([4,5,9],9));
