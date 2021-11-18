@@ -201,7 +201,7 @@ function findSumHash(arr, weight) {
 // console.log(findSumHash([1, 3, 3,7, 4, 12, 2, 9, 2], 14));
 
 const a = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-console.log(a.slice(0, 3));
+// console.log(a.slice(0, 3));
 
 /**
  * Linear Search
@@ -243,16 +243,40 @@ function binarySearch(array, n) {
   }
   return -1;
 }
-console.log(binarySearch([4, 5, 6, 8, 9, 8, 23, 78, 9, 12, 22, 67, 0], 0));
+// console.log(binarySearch([4, 5, 6, 8, 9, 8, 23, 78, 9, 12, 22, 67, 0], 0));
 // console.log(binarySearch([4,5,9],9));
-
 
 /**
  * Swap Function
- * 
+ *
  */
 function swap(array, index1, index2) {
   var temp = array[index1];
   array[index1] = array[index2];
   array[index2] = temp;
 }
+// console.log(swap([1, 2, 4, 5], 2, 3));
+
+/**
+ * Bubble Sort
+ * Time Complexity: O(n2)
+ * Space Complexity: O(1)
+ * Swap when outer loop iterator(element) is less than the inner loop element
+ * [2,1,4,3]: (0[2]): 0[2]  2==2//no swap
+ * [2,1,4,3]: (1[1]): 0[2] => 1<2//swap, 1[1] => 1==1
+ * [1,2,4,3]: (2[4]): 0[1] => 4>1, 1[2] => 4>2, 2[4] => 4==3
+ * [1,2,4,3]: (3[3]): 0[1] => 3>1, 1[2] => 3>2, 2[4] => 3<4//swap, 3[3] => 3==3
+ *
+ */
+function bubbleSort(array) {
+  for (var i = 0, arrayLength = array.length; i < arrayLength; i++) {
+    for (var j = 0; j <= i; j++) {
+      console.log(array[i], array[j]);
+      if (array[i] < array[j]) {
+        swap(array, j, i);
+      }
+    }
+  }
+  return array;
+}
+console.log(bubbleSort([2,1,7,4,6,4,1,3]));
