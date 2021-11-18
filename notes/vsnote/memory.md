@@ -61,6 +61,7 @@
   - Sorting (advantages, locate, faster, easier, naive, efficient, trade-offs)
     - Bubble Sort [simplest, iterate, swap, bigger than other, entire, swap function, switches, worst, possible pair]
     - Algorithms steps
+    - Selection Sort [scanning, inserting, current position, one for loop, nested for loop, scan, get minimum element]
   
 ## Notes
 
