@@ -59,8 +59,8 @@
     - Linear search [sequentially, ]
     - Binary search [check, sorted data, desired value, greater of less middle value, upper half, middle half, dividing, two sections]
   - Sorting (advantages, locate, faster, easier, naive, efficient, trade-offs)
-    - Bubble Sort [simplest, iterate, swap, bigger than other, entire. swap function, switches]
-    - 
+    - Bubble Sort [simplest, iterate, swap, bigger than other, entire, swap function, switches, worst, possible pair]
+    - Algorithms steps
   
 ## Notes
 
@@ -277,5 +277,3 @@ I took the dates of all the pending ad campaign ignorant and those from the runn
 ## Algorithms
 
 ### String Shortening
-
-
