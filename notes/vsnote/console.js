@@ -245,3 +245,14 @@ function binarySearch(array, n) {
 }
 console.log(binarySearch([4, 5, 6, 8, 9, 8, 23, 78, 9, 12, 22, 67, 0], 0));
 // console.log(binarySearch([4,5,9],9));
+
+
+/**
+ * Swap Function
+ * 
+ */
+function swap(array, index1, index2) {
+  var temp = array[index1];
+  array[index1] = array[index2];
+  array[index2] = temp;
+}
