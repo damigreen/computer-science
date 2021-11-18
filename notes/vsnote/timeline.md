@@ -2,10 +2,21 @@
 
 ## timetable
 
+### 18:11:21
+
+- [ ] Study **datastructures and algorithms** from the book
+  - [ ] Implement **searching** and **sorting** algoroithms
+- [ ] Start working on integrating **termii** with vamp
+
+### 17:11:21
+
+- [*] Add **request_id** field to **client request** for gatepass integration
+- [*] Add **location filter** to **scheduler** page
+
 ### 16:11:21
 
-- [ ] Add **request_id** field to **client request** for gatepass integration
-- [ ] Add **location filter** to **scheduler** page
+- [*] Add **request_id** field to **client request** for gatepass integration
+- [*] Add **location filter** to **scheduler** page
 
 ### 13:11:21
 
