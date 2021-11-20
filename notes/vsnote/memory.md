@@ -63,6 +63,99 @@
     - Algorithms steps
     - Selection Sort [scanning, inserting, current position, one for loop, nested for loop, scan, get minimum element]
   
+## Vocabulary
+
+e.g => following
+
+following
+
+### Nouns
+
+- format - [specified format]
+- ability
+- word
+- unit
+- language
+- information
+- thoughts
+- Feelings
+- 
+
+### Verbs
+
+- represent (ted, ing, s)
+
+- format (ing, ted)
+
+- perform
+
+- develop
+
+- ability
+
+- treat
+
+- recall
+  
+- Write
+  - To make marks which represent letters, words, and numbers on a surface such as paper
+  - or a computer screen
+  - To send a letter to someone or similar message, giving them information or expressing
+  - your thoughts or feelings
+
+### Adverbs
+
+### Adjectives
+
+### Prepositions
+
+- After
+  - Following in time space and order
+  - To be looking for someone or something and trying to get them or thing
+  - to Politely say to someone they can go in front of you or
+  - serve themselves with food before you
+
+  - You can come back to town after you pay me my money
+  - You can call mery after calling john
+  - Three months after graduation i started my businnes
+  - soon after he left his girlfriend  he started making plans and working toward
+  - his dream in life of traveling and learning more about life and his carrer
+  - Expanding is the keyword here it should be your baltle cry when you wake up in the morning
+  - 
+
+## ReCall
+
+### Thoughts
+
+
+
+### Process of Total Recall
+
+- ReRead
+- Review
+- Scan for **Words**
+- Search words in **Dictionary**
+
+### 20:11:2021
+
+
+- Selection sort
+  - invloves scanning through an array for the smallest item in the array
+  and putting it in the the current position of the array..
+  - Ite
+  
+## Blink
+
+- Always remember to think and formulate your thoughts completely
+  before you **write** down again on this **space**
+
+  - It helps in you to develop the ability to retrieve information quickly
+    and ultimately increase your memory shortterm
+
+- ability
+- Make english your **thought** language and `write` every thought you have in memory in english
+- Aways remain focused averytime you are learning something new and
+
 ## Notes
 
 ### Docker tutorial for beginners
@@ -266,14 +359,6 @@ I took the dates of all the pending ad campaign ignorant and those from the runn
     You can record straight from your browser – no app installation necessary.
 
     Please note that you can review and re-record your audio multiple times before submitting it.
-
-## Vocabulary
-
-- format (ing, ted) [specified format]
-- represent (ted, ing, s)
-- perform
-- After
-- treat
 
 ## Algorithms
 
