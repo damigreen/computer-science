@@ -59,7 +59,27 @@ export default class ProjectsController {
     // const project = await Project.findBy("id", params.id)
     // const project = await Project.findOrFail(params.id);
 
-    const project = await Database.from("projects").where("id", params.id).firstOrFail();
+    // const project = await Database.from("projects").where("createdAt", "<=" DateTime.local().toSQL()).firstOrFail();
+    // const project = await Database.from("projects").where("createdAt", "LIKE", "Damilola").firstOrFail();
+    // const project = await Database.from("projects").where("createdAt", "LIKE", "Damilola%").firstOrFail(); //starts with Damilola
+    // const project = await Database.from("projects").where("createdAt", "LIKE", "%Damilola%").firstOrFail(); //contains Damilola
+    // const project = await Database.from("projects").where("id", params.id).firstOrFail();
+    // const project = await Database.from("projects")
+    //   .where("name", "My project 2")
+    //   // .orWhere("status_id", 2)
+    //   // .orWhereNot("status_id", 2)
+    //   // .where("name", "My project 5")
+    //   .where(query => query.where("status_id", 1)) // AND OR statement
+
+    const ids = [3,4,5]
+    // const project = await Database.from("projects").whereIn("id", ids).orderBy("name", "asc")
+    // const project = await Database.from("projects").where("status_id", 1).orderBy("name", "asc").limit(2)
+    // const project = await Database.from("projects").where("status_id", 1).orderBy("name", "asc").count("*")
+    // const project = await Database.from("projects").where("status_id", 1).orderBy("name", "asc").count("* as total")
+    // const project = await Database.from("project_task").orderBy("name", "asc").count("* as total")
+    // const project = await Database.from("project_task").sum("sort_order as Sum")
+    // const project = await Database.from("project_task").avg("sort_order as Avg")
+    const project = await Database.from("project_task").min("sort_order as minSort")
 
     return response.json({ project })
   }
