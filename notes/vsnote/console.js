@@ -356,12 +356,13 @@ function generatePassword() {
 }
 // console.log(generatePassword())
 
-
-
 /**
  * Insertion Sort
  * outer for loop iterates over the array indices
  * inner for loop moves the unsorted items into the sorted sublist on the lerf side of the array
+ * 
+ * Time Complexity: O(n2)
+ * Space Complexity: O(1)
  * 
  * [4,2,1]
  * item[i] = value
@@ -400,4 +401,4 @@ function insertionSort(items) {
   return items;
 }
 // console.log(insertionSort([4,2,5,7,2,1]))
-console.log(insertionSort([2,5,3]))
+console.log(insertionSort([2,5,3]));
