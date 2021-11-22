@@ -167,6 +167,14 @@ following
 
 ## Notes
 
+### Resido Revamp
+
+- Add delete button from residence(clients)
+- remove client onboarding
+- remove manage and add to side bar
+- Clear resido database
+  - Create new database
+
 ### Docker tutorial for beginners
 
 #### Docker tutorial for beginners - Timelines
