@@ -52,8 +52,8 @@ Route.get('/', async ({ view, response }) => {
 
 Route.resource("users", "UsersController")
   .namespace("App/Controllers/Http/Users")
-  // .as()
-  // .middleware
+// .as()
+// .middleware
 
 Route.resource("projects", "ProjectsController");
 
@@ -68,6 +68,6 @@ Route.post("request/approved", "GatepassCallbackController.approve")
   .prefix("callbacks")
   .namespace("App/Controllers/Http/CallBacks");
 
-  Route.post("webhook/approve", "WebhooksController.approve");
+Route.post("webhook/approve", "WebhooksController.approve");
 
 Route.post("message/send", "MessagesController.send")
