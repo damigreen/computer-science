@@ -79,7 +79,13 @@ export default class ProjectsController {
     // const project = await Database.from("project_task").orderBy("name", "asc").count("* as total")
     // const project = await Database.from("project_task").sum("sort_order as Sum")
     // const project = await Database.from("project_task").avg("sort_order as Avg")
-    const project = await Database.from("project_task").min("sort_order as minSort")
+    // const project = await Database.from("project_task").min("sort_order as minSort")
+    // const project = await Database.from("projects").where("role_id", 1).select(["id", "name"])
+    // const project = await Database.from("projects").where("role_id", 1).select(["id", "name"]).groupBy(["user_id", "role_id"])
+    // const project = await Database.from("projects").where("role_id", 1).distinct("user_id");
+    // const statusFilter = 2;
+    // const project = await Project.query().if(statusFilter, query => query.where("status_id", statusFilter)).where("user_id", 1)
+    const project = await Project.query().paginate(2, 100)
 
     return response.json({ project })
   }
@@ -99,11 +105,10 @@ export default class ProjectsController {
     await project.related("users").sync({
       [user1.id]: { role_id: 1},
       [user2.id]: { role_id: 2},
-    })
+    });
 
     // project.name = request.input('name');
     // project.description = request.input('description');
-
     // const project = await Database.from("projects").where("id", params.id).update(data);
 
     project.merge(data);
@@ -117,7 +122,6 @@ export default class ProjectsController {
     // await project.delete();
 
     const project = await Database.from("projects").where("id", params.id).delete();
-
 
     await response.json({ project })
   }
