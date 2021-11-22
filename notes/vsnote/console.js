@@ -332,15 +332,72 @@ function selectionSort(items) {
 //    1:2
 // [1,2,8,4,3,6]
 // 2: 8:1, 8:2 8:4, 8:3 8:6
-//    [1,2,8,]  
+//    [1,2,8,]
 function bS(items) {
   for (var i = 0; i < items.length; i++) {
     for (var j = 0; j <= i; j++) {
       if (items[i] < items[j]) {
-        swap(items, i, j)
+        swap(items, i, j);
       }
     }
   }
   return items;
 }
-console.log(bS([2,1,8,4,3,6]));
+// console.log(bS([2,1,8,4,3,6]));
+
+function generatePassword() {
+  var length = 42,
+    charset = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789",
+    retVal = "";
+  for (var i = 0, n = charset.length; i < length; ++i) {
+    retVal += charset.charAt(Math.floor(Math.random() * n));
+  }
+  return retVal;
+}
+// console.log(generatePassword())
+
+
+
+/**
+ * Insertion Sort
+ * outer for loop iterates over the array indices
+ * inner for loop moves the unsorted items into the sorted sublist on the lerf side of the array
+ * 
+ * [4,2,1]
+ * item[i] = value
+ * j = i - 0; j > -1
+ * 
+ * 0:   item[i] value items[j] items[j+1]    items
+ * -1   4       4     und       4            [4,2,1]
+ * 
+ *  1:
+ * 0    2       2     4         2->4         [4,4,1]
+ * -1   2       2     und       4->2         [2,4,1]
+ * 
+ *  2:
+ * 1    1       1     4         1->4         [2,4,4]
+ * 0    1       1     2         4->2         [2,2,4]
+ * -1   1       1     und       2->1         [1,2,4]
+ *
+ */
+
+function insertionSort(items) {
+  var len = items.length,
+      value,
+      i,
+      j;
+
+  for (i = 0; i < len; i++) {
+    value = items[i];
+    for (j = i - 1; j > -1 && items[j] > value; j--) {
+      // if (items[j] > value) {
+        items[j+1] = items[j];
+      // }
+    }
+    items[j+1] = value;
+  }
+
+  return items;
+}
+// console.log(insertionSort([4,2,5,7,2,1]))
+console.log(insertionSort([2,5,3]))
