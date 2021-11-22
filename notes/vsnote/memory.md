@@ -62,7 +62,11 @@
     - Bubble Sort [simplest, iterate, swap, bigger than other, entire, swap function, switches, worst, possible pair]
     - Algorithms steps
     - Selection Sort [scanning, inserting, current position, one for loop, nested for loop, scan, get minimum element]
-  
+
+## Information
+
+- facebook password - DDQl6HQEhShZBxriaB2UlXdm5Lu7cLsze4f0NXK41I
+
 ## Vocabulary
 
 e.g => following
@@ -115,19 +119,25 @@ following
   - to Politely say to someone they can go in front of you or
   - serve themselves with food before you
 
-  - You can come back to town after you pay me my money
+  - You can come back to town after you p ay me my money
   - You can call mery after calling john
   - Three months after graduation i started my businnes
   - soon after he left his girlfriend  he started making plans and working toward
   - his dream in life of traveling and learning more about life and his carrer
   - Expanding is the keyword here it should be your baltle cry when you wake up in the morning
-  - 
 
 ## ReCall
 
+### Bubble Sort - JD&A
+
+### Selection Sort - JD&A
+
+- Selection sort: scanning through the array for the smallest item and putting it in the current position in the iteratiion
+- Iside the loop, it searches for the smallest element, and move them to the current position
+- Also it checks if the smaller element (after comparison with the iterator(item) position) has been assigned to current position
+  - If not swaps the smaller element with the current element
+
 ### Thoughts
-
-
 
 ### Process of Total Recall
 
@@ -137,7 +147,6 @@ following
 - Search words in **Dictionary**
 
 ### 20:11:2021
-
 
 - Selection sort
   - invloves scanning through an array for the smallest item in the array

@@ -2,6 +2,11 @@
 
 ## timetable
 
+### 22:11:21
+
+- [ ] Continue with **insertion sort** from JavaScript datastructure and algorithms
+- [ ] Watch the completed **JAGR** video on youtube
+
 ### 18:11:21
 
 - [ ] Study **datastructures and algorithms** from the book
