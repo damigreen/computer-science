@@ -283,6 +283,9 @@ function bubbleSort(array) {
 /**
  * Selection Sort
  *
+ * Compare every element on the right side of the array with the current element and
+ * swap when the elements are less than the current element
+ * 
  * [3,2,7,5]
  *  0,1,2,3
  *
@@ -364,6 +367,11 @@ function generatePassword() {
  * Time Complexity: O(n2)
  * Space Complexity: O(1)
  * 
+ * Compare every element to the left of the current element(iterator) 
+ * with the current element
+ * Swap the current with that element (for every iteration cycle)
+ * 
+ * 
  * [4,2,1]
  * item[i] = value
  * j = i - 0; j > -1
@@ -402,3 +410,4 @@ function insertionSort(items) {
 }
 // console.log(insertionSort([4,2,5,7,2,1]))
 console.log(insertionSort([2,5,3]));
+
