@@ -285,7 +285,7 @@ function bubbleSort(array) {
  *
  * Compare every element on the right side of the array with the current element and
  * swap when the elements are less than the current element
- * 
+ *
  * [3,2,7,5]
  *  0,1,2,3
  *
@@ -363,26 +363,26 @@ function generatePassword() {
  * Insertion Sort
  * outer for loop iterates over the array indices
  * inner for loop moves the unsorted items into the sorted sublist on the lerf side of the array
- * 
+ *
  * Time Complexity: O(n2)
  * Space Complexity: O(1)
- * 
- * Compare every element to the left of the current element(iterator) 
+ *
+ * Compare every element to the left of the current element(iterator)
  * with the current element
  * Swap the current with that element (for every iteration cycle)
- * 
- * 
+ *
+ *
  * [4,2,1]
  * item[i] = value
  * j = i - 0; j > -1
- * 
+ *
  * 0:   item[i] value items[j] items[j+1]    items
  * -1   4       4     und       4            [4,2,1]
- * 
+ *
  *  1:
  * 0    2       2     4         2->4         [4,4,1]
  * -1   2       2     und       4->2         [2,4,1]
- * 
+ *
  *  2:
  * 1    1       1     4         1->4         [2,4,4]
  * 0    1       1     2         4->2         [2,2,4]
@@ -392,22 +392,141 @@ function generatePassword() {
 
 function insertionSort(items) {
   var len = items.length,
-      value,
-      i,
-      j;
+    value,
+    i,
+    j;
 
   for (i = 0; i < len; i++) {
     value = items[i];
     for (j = i - 1; j > -1 && items[j] > value; j--) {
       // if (items[j] > value) {
-        items[j+1] = items[j];
+      items[j + 1] = items[j];
       // }
     }
-    items[j+1] = value;
+    items[j + 1] = value;
   }
 
   return items;
 }
 // console.log(insertionSort([4,2,5,7,2,1]))
-console.log(insertionSort([2,5,3]));
+// console.log(insertionSort([2,5,3]));
 
+/**
+ * Quick Sort
+ * [2,3,7,4,1]
+ * low = 1
+ * hight = 5
+ * leftArr
+ * rightArr
+ * pivot=7
+ * 0: [(2<7),3,7,4,(1<7)]
+ *    leftArr=[2,1], rightArr=[]
+ * 1: [(2<7),3,7,4,(1<7)]
+ * 
+ */
+function partition(array, left, right) {
+  var pivot = array[Math.floor((left + right) / 2)];
+  while (left <= right) {
+    while (pivot > array[left]) {
+      //pivot=5, arr[left]=8
+      left++;
+    }
+    while (pivot < array[right]) {
+      right--;
+    }
+    if (left <= right) {
+      var temp = array[left];
+      array[left] = array[right];
+      array[right] = temp;
+      left++;
+      right--;
+    }
+  }
+
+  console.log("Array Partition->", array);
+
+  return left;
+}
+const ar = [6,1,23,4,2,3];
+// console.log(partition([8,4,7,2,5,1,3,5,9], 0, 9));
+// console.log(partition([8,3,7,4,1,9], 0, 5));
+console.log(partition([2,1,3,4,6,23], 0, 5));
+// console.log(partition(ar, 0, ar.length-1));
+
+function quickSortHelper(items, left, right) {
+  var index;
+  if (items.length > 1) {
+    index = partition(items, left, right);
+    console.log("index",index)
+    console.log("left->",left, "right->", right);
+
+    if (left < index - 1) {
+      quickSortHelper(items, left, index - 1);
+    }
+    if (index < right) {
+      quickSortHelper(items, index, right);
+    }
+  }
+  return items;
+}
+
+function quickSort(items) {
+  return quickSortHelper(items, 0, items.length - 1);
+}
+// console.log('ar',ar)
+// console.log(quickSort(ar))
+
+// [2, [3,4,5,6,7]]
+// [[3,4,5,6], 7]
+// [[3,4,5], 6]
+// [[3,4], 5]
+// [[3], 4]
+function quickSortFCC(array) {
+  if (array.length <= 1) {
+    return array;
+  }
+
+  const pivot = array[array.length - 1];
+  const leftArr = [];
+  const rightArr = [];
+  for (let i = 0; i < array.length - 1; i++) {
+    if (array[i] < pivot) {
+      leftArr.push(array[i]);
+    } else {
+      rightArr.push(array[i]);
+    }
+  }
+  console.log(leftArr);
+  console.log(rightArr);
+  console.log(array);
+
+  return [...quickSortFCC(leftArr), pivot, ...quickSortFCC(rightArr)];
+}
+function quickSortFCC1(array) {
+  if (array.length === 1) {
+    return array;
+  }
+
+  const pivot = array[array.length - 1];
+  const leftArr = [];
+  const rightArr = [];
+  for (let i = 0; i < array.length - 1; i++) {
+    if (array[i] < pivot) {
+      leftArr.push(array[i]);
+    } else {
+      rightArr.push(array[i]);
+    }
+  }
+  console.log(leftArr);
+  console.log(rightArr);
+  console.log(array);
+
+  if (leftArr.length > 0 && rightArr.length > 0) {
+    return [...quickSortFCC(leftArr), pivot, ...quickSortFCC(rightArr)];
+  } else if (leftArr.length > 0) {
+    return [...quickSortFCC(leftArr), pivot];
+  } else {
+    return [pivot, ...quickSortFCC(rightArr)];
+  }
+}
+// console.log(quickSortFCC([3, 4, 5, 6, 7, 2]));
