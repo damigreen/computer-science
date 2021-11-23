@@ -2,6 +2,11 @@
 
 ## timetable
 
+### 23:11:21
+
+- [*] Further **studies** on **Quick Sort** Algorithm
+- [ ] 
+
 ### 22:11:21
 
 - [ ] Continue with **insertion sort** from JavaScript datastructure and algorithms
@@ -128,23 +133,19 @@
 - [x] Test **scope by users** for client request / work request
 - [ ] Study **systemFunctions** code under organizations
 
-### XX:XX:XX
-
-- start working on portfolio [Portfolio](projects.md)
-
 ### Extras
 
 - [ ] modify the **maintenance cycle** list on vamp frontend (**status page**)
   - [ ] use the **backend** to filter by **due date**
-- [ ] 
-
-### Pending
-
+- [ ] Implement the **docker** codes from **youtube** video
+- [ ] Learn the new **firebase / firestore** JavaScript syntax and implement the `get()`
 - [ ] Learn **google cloud platform** from videos **SimpliLearn**
   - [x] **Watch** the Video
   - [ ] **Implement** the video
 - [ ] Complete **Jagr** Course - Video from youtube
 - [ ] Fix **loatsadd** data error
+- [ ] Start working on portfolio [Portfolio](projects.md)
+- [ ] Continue with the **vue router** blog **writing**
 
 ### Learn
 
