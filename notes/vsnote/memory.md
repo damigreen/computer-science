@@ -167,6 +167,25 @@ following
 
 ## Notes
 
+Some Links
+Residencies
+https://residencies.io/
+
+Canada PR
+https://www.youtube.com/redirect?event=video_description&redir_token=QUFFLUhqbGZiZXZwdE5ucmJYYkdWbVc4R1BiSS1qVHpRQXxBQ3Jtc0tsNFR5ZzRTaV9LcE90YkxSZDJqQmFucUM5ZW9yaFhOdUtBMmdMVEZ0Wm1HU3Q5Y2xhTTg5UUhfeVlTc2NxODl4SUFQQS1pdUp1NnBJX3loYlFoT2p6UUFFTWFPeHRzRk9HYndkdV85TFZLV3UwZVVIRQ&q=https%3A%2F%2Fwww.canada.ca%2Fen%2Fimmigration-refugees-citizenship%2Fservices%2Fimmigrate-canada.html
+https://www.youtube.com/redirect?event=video_description&redir_token=QUFFLUhqbjdIZFJXcUVpb0J3X0txeW12RmZWQnVVT0Nyd3xBQ3Jtc0tuczNxNWVCUU1XeUU0REMwMlEtZzc4QzJuMDNaUDlOLUtVWEw4Y0RraVp0RkM3dXktMFhid01aMmhlS1ltVG1LZlNVeEF5SGpjTkxaWlcxYThtWTVUOW5yRnR6akM1dUU5NFdjNjFGVTJRanVsaU11dw&q=https%3A%2F%2Ftrello.com%2Fb%2F5Ye8Khdx%2Fmoving-to-canada-getting-a-pr
+
+UK
+Technation: https://youtu.be/P_QmVVzJz9U 
+https://www.gov.uk/global-talent
+https://www.gov.uk/skilled-worker-visa
+
+Portugal D7 Visa
+https://www.d7visa.com/
+
+Digital Nomad Visa
+https://www.youtube.com/redirect?event=video_description&redir_token=QUFFLUhqbFZxcDd6VVRUNVZmSHZLdnJqTXZhQWhmb2tNd3xBQ3Jtc0ttaW83b3BoM1cxeDFLeEN6NXdUR0NqemlTNm81ZW1DVWc2Z3JFYnE2QTJ6Qy0wbFlTSUNjWVpaMTFocU9wV1hxWUlmQmJCWXYyTG9qZkN3bERXNWdWaks4Zk1vbWNCZ3loVlNUa0pkN1piSWs5SDB3SQ&q=https%3A%2F%2Fexpertvagabond.com%2Fdigital-nomad-work-visas%2F
+
 ### Resido Revamp
 
 - Add delete button from residence(clients)
