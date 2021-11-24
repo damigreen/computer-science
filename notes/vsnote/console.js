@@ -413,7 +413,9 @@ function insertionSort(items) {
 
 /**
  * Quick Sort
+ *
  * [2,3,7,4,1]
+ * [2, 4]->[2,3,7,4,1] [2,3]->[2,3,1,4,7] [2,2]->[2,3,1,4,7]
  * low = 1
  * hight = 5
  * leftArr
@@ -423,6 +425,43 @@ function insertionSort(items) {
  *    leftArr=[2,1], rightArr=[]
  * 1: [(2<7),3,7,4,(1<7)]
  * 
+ *  * [4,9,2,8,5,4,6,3]
+ * [4,9,2,8,5,4,6,3]  [4,3,2,8,5,4,6,9]  [4,3,2,8,5,4,6,9] [4,3,2,4,5,8,6,9] [4,3,2,4,5,8,6,9]
+ *    i           j        i       j            i   j              ij               j   i
+ * left=0,1,2,3,4,5
+ * right=7,6,5,4,3
+ * pivot=5
+ * 
+ * [4,3,2,4,5,8,6,9] [2,3,4,4,5,8,6,9]
+ *    ij
+ * left=0,1,2
+ * right=index-1=4,3,2,1,0
+ * pivot=2
+ * ***************************************************
+ * 
+ * [4,9,2,8,5,4,6,3]  --> [4,3,2,6,5,4,8,9]
+ * left=6
+ * right=5
+ * pivot=8
+ * 
+ * [4,3,2,6,5,4,8,9] [2,3,4,6,5,4,8,9]
+ *  i   j             j   i
+ * index=6
+ * left=0,1
+ * right=5,4,3,2,1,0
+ * pivot=2
+ *  
+ * left < index - 1
+ * index < right
+ * 
+ * [2,3,4,6,5,4,8,9] -> [2,3,4,4,5,6,8,9]
+ *  ij
+ * index=1
+ * pivot=6
+ * left=0,1,2,3,4,5
+ * right=4
+ * 
+ *
  */
 function partition(array, left, right) {
   var pivot = array[Math.floor((left + right) / 2)];
@@ -447,18 +486,17 @@ function partition(array, left, right) {
 
   return left;
 }
-const ar = [6,1,23,4,2,3];
 // console.log(partition([8,4,7,2,5,1,3,5,9], 0, 9));
 // console.log(partition([8,3,7,4,1,9], 0, 5));
-console.log(partition([2,1,3,4,6,23], 0, 5));
+// console.log(partition([2,1,3,4,6,23], 0, 5));
 // console.log(partition(ar, 0, ar.length-1));
 
 function quickSortHelper(items, left, right) {
   var index;
   if (items.length > 1) {
     index = partition(items, left, right);
-    console.log("index",index)
-    console.log("left->",left, "right->", right);
+    console.log("index", index);
+    console.log("left->", left, "right->", right);
 
     if (left < index - 1) {
       quickSortHelper(items, left, index - 1);
@@ -473,8 +511,11 @@ function quickSortHelper(items, left, right) {
 function quickSort(items) {
   return quickSortHelper(items, 0, items.length - 1);
 }
-// console.log('ar',ar)
-// console.log(quickSort(ar))
+// const ar = [6,1,23,4,2,3];
+// const ar = [2, 3, 7, 4, 1];
+const ar = [4,9,2,8,5,4,6,3]
+// console.log("ar", ar);
+// console.log(quickSort(ar));
 
 // [2, [3,4,5,6,7]]
 // [[3,4,5,6], 7]
@@ -530,3 +571,76 @@ function quickSortFCC1(array) {
   }
 }
 // console.log(quickSortFCC([3, 4, 5, 6, 7, 2]));
+
+// [4,7,2,9,5,4,6,3]
+// [4,2,4,3] [5] [7,9,6]
+// [2,3] [4] [4]  [5]  [6,7] [9]
+// [2][3][4][5][6][7][9]
+function qS1(array) {
+  if (array.length <= 1) {
+    return array;
+  }
+
+  let leftArr = [], rightArr = [];
+  let pivot = array[Math.floor(array.length / 2)]
+  for (var i = 0; i < array.length; i++) {
+    // move element less than pivot to leftArr
+    // move element greather than pivot to rightArr
+    if (pivot > array[i] && array[i] != pivot) {
+      leftArr.push(array[i]);
+    } else if (pivot < array[i] && array[i] != pivot) rightArr.push(array[i]);
+  }
+
+  return [...qS1(leftArr), pivot, ...qS1(rightArr)];
+}
+// console.log(qS1([4,3,1,8,2,9,7,6,5,9,23,9,2,1,6]));
+
+/**
+ * Quickselect
+ * Time complecity O(n)
+ * [4,1,3,2] -> [2,1,3,4]
+ *  i     j        j,i
+ * p = 2
+ */
+function quickSelectInPlace(A, l, h, k) {
+  var p = partition(A, l, h)
+  if (p == (k - 1)) {
+    return A[p];
+  } else if (p > (k - 1)) {
+    return quickSelectInPlace(A, l, p - 1, k);
+  } else {
+    return quickSelectInPlace(A, p + 1, h, k);
+  }
+}
+function medianQuickselect(array) {
+  return quickSelectInPlace(array, 0, array.length-1, Math.floor(array.length / 2));
+}
+// console.log(medianQuickselect([1,2,5,7,9]));
+// console.log(quickSelectInPlace([1,2,3,5,7,9], 0, 4, 3));
+
+
+/**
+ * Merge Sort
+ * [5,1,9,2]
+ * [5,1] [9,2]
+ * [5][1]  [9][2]
+ * [1,5] [2,9]
+ * 
+ */
+function merge(leftA, rightA) {
+  var results = [], leftIndex = 0, rightIndex = 0;
+
+  while (leftIndex < leftA.length && rightIndex < rightA.length) {
+    if (leftA[leftIndex] < rightA[rightIndex]) {
+      results.push(leftA[leftIndex++])
+    } else {
+      results.push(rightA[rightIndex++]);
+    }
+  }
+  var leftRemains = leftA.slice(leftIndex), 
+      rightRemains = rightA.slice(rightIndex)
+
+  // Add remaining to resultant array
+  return results.concat(leftRemains).concat(rightRemains);
+}
+console.log(merge([3,4,9], [2,6,1]));
