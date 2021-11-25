@@ -2,6 +2,11 @@
 
 ## timetable
 
+### 25:11:21
+
+- [ ] Fix **resido deployement error**
+- [ ] Create **trigger button** for subscription
+
 ### 23:11:21
 
 - [*] Further **studies** on **Quick Sort** Algorithm
