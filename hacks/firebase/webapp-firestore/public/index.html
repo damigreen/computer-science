@@ -11,7 +11,7 @@
         getFirestore,
         collection,
         addDoc,
-        doc
+        doc,
       } from "https://www.gstatic.com/firebasejs/9.3.0/firebase-firestore.js";
       // TODO: Add SDKs for Firebase products that you want to use
       // https://firebase.google.com/docs/web/setup#available-libraries
@@ -36,30 +36,33 @@
         const nameData = document.getElementById("name").value;
         const ageData = document.getElementById("age").value;
 
-        console.log(nameData, ageData)
+        console.log(nameData, ageData);
         try {
           const docRef = addDoc(collection(db, "users"), {
             name: nameData,
-            age: ageData
-          })
+            age: ageData,
+          });
 
           // doc(collection(db, "users"), "doc").set({
           //   name: "Simi",
           //   age: 34
           // })
 
-          alert("Document Added!!")
-        } catch(e) {
-          console.log(e)
+          alert("Document Added!!");
+        } catch (e) {
+          console.log(e);
         }
       }
 
       function readData() {
         // doc(collection(db, "users"))
-        doc(db, "docs")
+        // const docRef = doc(db, "Users", "collection");
+        const colRef = collection(db, "users")
+        const docRef = doc(colRef, "user2");
+        console.log(docRef)
       }
 
-      readData()
+      readData();
     </script>
     <title>Firestore Database</title>
   </head>
