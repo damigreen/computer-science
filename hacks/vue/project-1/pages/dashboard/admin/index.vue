@@ -1,7 +1,7 @@
 <template>
-  <app-layout>
+  <!-- <app-layout> -->
     <h1>Admin</h1>
-  </app-layout>
+  <!-- </app-layout> -->
 </template>
 
 <script>
