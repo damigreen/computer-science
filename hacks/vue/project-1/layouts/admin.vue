@@ -1,100 +1,67 @@
 <template>
   <app-layout>
-    <div class="slim-navbar">
-      <div class="container">
-        <ul class="nav">
-          <nuxt-link
-            tag="li"
-            exact-active-class="active"
-            class="nav-item"
-            to="/dashboard/admin"
-          >
-            <a class="nav-link">
-              <i class="icon ion-ios-briefcase-outline"></i>
-              <span>Dashboard</span>
-            </a>
-          </nuxt-link>
-          <li
-            class="nav-item with-sub"
-            :class="{ active: $route.fullPath.includes('maintenance') }"
-          >
-            <a class="nav-link" href="#">
-              <i class="icon ion-ios-cog-outline"></i>
-              <span>Work</span>
-            </a>
-            <div class="sub-item">
-              <ul>
-                <li>
-                  <nuxt-link to="/maintenance/requests">Activity</nuxt-link>
-                </li>
-                <li>
-                  <nuxt-link to="/maintenance/float-requests">Float</nuxt-link>
-                </li>
-                <li>
-                  <nuxt-link to="/maintenance/routines">Scheduler</nuxt-link>
-                </li>
-              </ul>
-            </div>
-          </li>
-          <li
-            class="nav-item with-sub"
-            :class="{ active: currentActiveRoutes.includes('manage') }"
-          >
-            <a class="nav-link" href="#">
-              <i class="icon ion-ios-grid-view-outline"></i>
-              <span>Manage</span>
-            </a>
-            <div class="sub-item">
-              <ul>
-                <li>
-                  <nuxt-link to="/onboarding/organizations"
-                    >Organizations</nuxt-link
-                  >
-                </li>
-                <li class="sub-with-sub">
-                  <nuxt-link to="/people/users">People</nuxt-link>
-                  <ul>
-                    <li><nuxt-link to="/people/users">Users</nuxt-link></li>
-                    <li><nuxt-link to="/people/trades">Trades</nuxt-link></li>
-                    <li>
-                      <nuxt-link to="/onboarding/vendor-pool"
-                        >Vendor Pool</nuxt-link
-                      >
-                    </li>
-                    <li><nuxt-link to="/people/technicians">Technicians</nuxt-link></li>
-                  </ul>
-                </li>
-                <li>
-                  <nuxt-link to="/assets">Equipment</nuxt-link>
-                </li>
-                <li class="sub-with-sub">
-                  <nuxt-link to="/performance/slas">Reports</nuxt-link>
-                  <ul>
-                    <li>
-                      <nuxt-link to="/performance/slas"
-                        >SLA Performance</nuxt-link
-                      >
-                    </li>
-                    <li>
-                      <nuxt-link to="/reports/incident-reports"
-                        >Incidents</nuxt-link
-                      >
-                    </li>
-                  </ul>
-                </li>
-              </ul>
-            </div>
+    <div>
+      <h1>hi</h1>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta corrupti
+        asperiores rem incidunt ullam animi voluptate repellat quis placeat,
+        alias exercitationem corporis ea iusto molestiae non recusandae
+        similique ipsum obcaecati tempora esse necessitatibus at repudiandae
+        pariatur. Cupiditate voluptates, sunt exercitationem cum recusandae
+        dolorem voluptas nihil dignissimos labore sit accusamus doloribus fuga
+        vel suscipit maxime laboriosam id aliquam commodi modi saepe rem
+        temporibus. Iure iusto deserunt maxime incidunt, vitae quis aspernatur
+        quos error praesentium magni porro veniam sit, minus inventore,
+        laboriosam nesciunt fuga? Ut necessitatibus consequuntur odio quasi!
+        Corrupti iure aliquam vero at in, veritatis vel accusantium, fuga animi
+        quibusdam minima.
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta corrupti
+        asperiores rem incidunt ullam animi voluptate repellat quis placeat,
+        alias exercitationem corporis ea iusto molestiae non recusandae
+        similique ipsum obcaecati tempora esse necessitatibus at repudiandae
+        pariatur. Cupiditate voluptates, sunt exercitationem cum recusandae
+        dolorem voluptas nihil dignissimos labore sit accusamus doloribus fuga
+        vel suscipit maxime laboriosam id aliquam commodi modi saepe rem
+        temporibus. Iure iusto deserunt maxime incidunt, vitae quis aspernatur
+        quos error praesentium magni porro veniam sit, minus inventore,
+        laboriosam nesciunt fuga? Ut necessitatibus consequuntur odio quasi!
+        Corrupti iure aliquam vero at in, veritatis vel accusantium, fuga animi
+        quibusdam minima.
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta corrupti
+        asperiores rem incidunt ullam animi voluptate repellat quis placeat,
+        alias exercitationem corporis ea iusto molestiae non recusandae
+        similique ipsum obcaecati tempora esse necessitatibus at repudiandae
+        pariatur. Cupiditate voluptates, sunt exercitationem cum recusandae
+        dolorem voluptas nihil dignissimos labore sit accusamus doloribus fuga
+        vel suscipit maxime laboriosam id aliquam commodi modi saepe rem
+        temporibus. Iure iusto deserunt maxime incidunt, vitae quis aspernatur
+        quos error praesentium magni porro veniam sit, minus inventore,
+        laboriosam nesciunt fuga? Ut necessitatibus consequuntur odio quasi!
+        Corrupti iure aliquam vero at in, veritatis vel accusantium, fuga animi
+        quibusdam minima.
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta corrupti
+        asperiores rem incidunt ullam animi voluptate repellat quis placeat,
+        alias exercitationem corporis ea iusto molestiae non recusandae
+        similique ipsum obcaecati tempora esse necessitatibus at repudiandae
+        pariatur. Cupiditate voluptates, sunt exercitationem cum recusandae
+        dolorem voluptas nihil dignissimos labore sit accusamus doloribus fuga
+        vel suscipit maxime laboriosam id aliquam commodi modi saepe rem
+        temporibus. Iure iusto deserunt maxime incidunt, vitae quis aspernatur
+        quos error praesentium magni porro veniam sit, minus inventore,
+        laboriosam nesciunt fuga? Ut necessitatibus consequuntur odio quasi!
+        Corrupti iure aliquam vero at in, veritatis vel accusantium, fuga animi
+        quibusdam minima.s
+      </p>
+    </div>
 
-            <!-- dropdown-menu -->
-          </li>
-        </ul>
-      </div>
-      <!-- container -->
-    </div>
-    <!-- slim-navbar -->
-    <div class="slim-mainpanel">
-      <nuxt />
-    </div>
+    
+    <nuxt />
   </app-layout>
 </template>
 
@@ -103,17 +70,17 @@ import layoutMixin from "@/mixins/layout";
 
 export default {
   components: {
-    "app-layout": () => import("@/components/layouts/app")
+    "app-layout": () => import("@/components/layouts/app"),
   },
   head: () => ({
     link: [
       {
         rel: "icon",
         type: "image/x-icon",
-        href: process.env.APP_URL + "/favicon.ico"
-      }
-    ]
+        href: process.env.APP_URL + "/favicon.ico",
+      },
+    ],
   }),
-  mixins: [layoutMixin]
+  mixins: [layoutMixin],
 };
 </script>
