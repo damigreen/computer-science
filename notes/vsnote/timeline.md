@@ -2,6 +2,10 @@
 
 ## timetable
 
+### 26:11:21
+
+- [ ] Create **sidebar** for **IOT Dashboard**
+
 ### 25:11:21
 
 - [ ] Fix **resido deployement error**
@@ -138,7 +142,7 @@
 - [x] Test **scope by users** for client request / work request
 - [ ] Study **systemFunctions** code under organizations
 
-### Extras
+## Extras
 
 - [ ] modify the **maintenance cycle** list on vamp frontend (**status page**)
   - [ ] use the **backend** to filter by **due date**
@@ -152,13 +156,14 @@
 - [ ] Start working on portfolio [Portfolio](projects.md)
 - [ ] Continue with the **vue router** blog **writing**
 
-### Learn
+## Learn
 
 - [] Study **systemFunctions** code under organizations
 - [] Study **scope** under vamp
 - [] Study adonis scopes
 - [] study adonis auth
 - [] learn **Advanced** **Node(Express JS)** from Udemy*
+- [] **Vue Layouts** from blog or video
 
 ## Links
 
