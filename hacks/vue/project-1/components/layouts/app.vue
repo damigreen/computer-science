@@ -1,8 +1,15 @@
 <template>
-  <!-- <app-layout id="layout-app" v-if="checkAuth"> -->
-  <app-layout id="layout-app">
-      <toast />
-  </app-layout>
+  <div class="app-layout">
+    <h1>App Component</h1>
+    <p>App app app app app app app app app app app app app app app app app app app app </p>
+    <p>App app app app app app app app app app app app app app app app app app app app </p>
+    <p>App app app app app app app app app app app app app app app app app app app app </p>
+    <p>App app app app app app app app app app app app app app app app app app app app </p>
+    <p>App app app app app app app app app app app app app app app app app app app app </p>
+
+    <slot></slot>
+
+  </div>
 </template>
 
 <script>
@@ -17,3 +24,9 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+  .app-layout {
+    background-color: lightgreen;
+  }
+</style>
