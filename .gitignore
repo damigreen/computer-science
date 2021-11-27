@@ -1,2 +1,11 @@
 projects
 notes/vsnote/node_modules
+hacks/js/node_modules
+hacks/node/authorization header with axios/node_modules
+hacks/node/docs/node_modules
+hacks/node/greenmtech-chatbot/node_modules
+hacks/node/login-website-node-superagent/node_modules
+hacks/node/sso/node_modules
+hacks/node/web-scrapper-with-nodejs-puppeteer/node_modules
+hacks/node/node-docs/node_modules
+hacks/typescript/jherr-tdd-dev/node_modules
