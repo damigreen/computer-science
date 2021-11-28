@@ -157,7 +157,11 @@
 
 ## Extras
 
+- [ ] Create **Dashboard** for **subscription feature**
+  - [ ] Add **contorller** trigger for **subscription feature**
+    - [ ] **Trigger** from **homepage**
 - [ ] modify the **maintenance cycle** list on vamp frontend (**status page**)
+  - [ ] Change the **sort order** for the cycles
   - [ ] use the **backend** to filter by **due date**
 - [ ] Implement the **docker** codes from **youtube** video
 - [ ] Learn the new **firebase / firestore** JavaScript syntax and implement the `get()`
@@ -168,6 +172,8 @@
 - [ ] Fix **loatsadd** data error
 - [ ] Start working on portfolio [Portfolio](projects.md)
 - [ ] Continue with the **vue router** blog **writing**
+- [ ] **Implement** vamp from **scratch**
+  - [ ] Use to **Build** to new **cannabis app** 
 
 ## Learn
 
