@@ -5,6 +5,7 @@
 ### 29:11:21
 
 - [ ] Find **template** for vamp **iot dashboard**
+- [ ] Add theme to app **assets**
 - [ ] **Build** the first component for **power systems**
 
 ### 28:11:21
