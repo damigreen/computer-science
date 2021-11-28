@@ -190,7 +190,33 @@ following
 
 ### Iot Dashboard Vamp
 
-#### Loatsadd Case study
+#### Generator Performance
+
+##### Parameters
+
+- Voltage
+- Current
+- Power Factor
+- Frequency
+- Power
+- RPM
+- Battery Voltage
+- Coolant Temperature
+
+- Runhour
+- Fuel consumed
+- Energy Generated
+- Energy Generated per Unit Litre Fuel Consumed
+
+- Todays Runhour
+- Todays Energy
+- Fuel Consumed today
+
+- Daily  Report
+  - Summary report
+  - Daily report
+
+#### Loatsadd Case study / Sidebar
 
 - styles
   - nav-item toggle-sidebar
