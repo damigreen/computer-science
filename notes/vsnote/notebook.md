@@ -188,7 +188,14 @@ following
 
 ## Notes
 
+### Brownies CBD Other Cannabis product
+
+- Browse for **similar** **sites** on the web
+
 ### Iot Dashboard Vamp
+
+- Change menu and submenu **icons**
+- Look for **dashboard chart** **themes**
 
 #### Generator Performance
 
