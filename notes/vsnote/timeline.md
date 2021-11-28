@@ -2,30 +2,43 @@
 
 ## timetable
 
+### 29:11:21
+
+- [ ] Find **template** for vamp **iot dashboard**
+- [ ] **Build** the first component for **power systems**
+
+### 28:11:21
+
+- [*] Link **IOT menu** to dashboard
+
+### 27:11:21
+
+- [*] Fix the **resido deployment** issue
+- [*] Implement a **sidebar** on **vamp dashboard**
+
 ### 26:11:21
 
-- [ ] Create **sidebar** for **IOT Dashboard**
+- [*] Create **sidebar** for **IOT Dashboard**
 
 ### 25:11:21
 
-- [ ] Fix **resido deployement error**
+- [*] Fix **resido deployement error**
 - [ ] Create **trigger button** for subscription
 
 ### 23:11:21
 
 - [*] Further **studies** on **Quick Sort** Algorithm
-- [ ] 
 
 ### 22:11:21
 
-- [ ] Continue with **insertion sort** from JavaScript datastructure and algorithms
-- [ ] Watch the completed **JAGR** video on youtube
+- [*] Continue with **insertion sort** from JavaScript datastructure and algorithms
+- [*] Watch the completed **JAGR** video on youtube
 
 ### 18:11:21
 
-- [ ] Study **datastructures and algorithms** from the book
+- [*] Study **datastructures and algorithms** from the book
   - [ ] Implement **searching** and **sorting** algoroithms
-- [ ] Start working on integrating **termii** with vamp
+- [] Start working on integrating **termii** with vamp
 
 ### 17:11:21
 
