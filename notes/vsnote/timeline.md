@@ -2,11 +2,16 @@
 
 ## timetable
 
+### 02:11:21
+
+- [ ] Complete **IOT** **dashboard** **layout**
+- [ ] Create **theme** for **iot dashboard**
+
 ### 29:11:21
 
-- [ ] Fix **n-bar-nav** **width** issue
-- [ ] Extend **vamp template** for **iot dashboard**
-- [ ] **Build** the first component for **power systems**
+- [*] Fix **n-bar-nav** **width** issue
+- [*] Extend **vamp template** for **iot dashboard**
+- [*] **Build** the first component for **power systems**
 
 ### 28:11:21
 
