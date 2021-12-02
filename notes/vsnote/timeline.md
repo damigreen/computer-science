@@ -4,8 +4,8 @@
 
 ### 29:11:21
 
-- [ ] Find **template** for vamp **iot dashboard**
-- [ ] Add theme to app **assets**
+- [ ] Fix **n-bar-nav** **width** issue
+- [ ] Extend **vamp template** for **iot dashboard**
 - [ ] **Build** the first component for **power systems**
 
 ### 28:11:21
