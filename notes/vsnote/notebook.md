@@ -194,8 +194,13 @@ following
 
 ### Iot Dashboard Vamp
 
+- Make **stat metrics** and **charts** responsive on breakpoint **992px**
+  - Increase **stats metrics** and **charts** to 100% at **992px**
+  - Make **info metric** responsive, fall below **charts** and **increase** div to **100%** at breakpoint **992px**
 - Change menu and submenu **icons**
 - Look for **dashboard chart** **themes**
+- Use apex chart **responsive option** to make chart responsive
+- Remove **row wrapper** for chart dashboard
 
 #### Generator Performance
 
