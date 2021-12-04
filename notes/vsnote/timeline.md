@@ -2,6 +2,14 @@
 
 ## timetable
 
+### 04:12:21
+
+- Find a way to make the **charts** fill the **parent** **divs**
+
+### 03:12:21
+
+- [ ] Move resido **subscription logic** to **frontend**
+
 ### 29:11:21
 
 - [ ] Fix **n-bar-nav** **width** issue
