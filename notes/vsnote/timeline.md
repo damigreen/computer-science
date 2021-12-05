@@ -5,7 +5,7 @@
 ### 05:12:21
 
 - [*] Add iot **submenu icons** to **application**
-- [*] 
+- [*] Fix the **pageName** permission error for **iot page**
 
 ### 04:12:21
 
