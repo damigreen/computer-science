@@ -2,6 +2,11 @@
 
 ## timetable
 
+### 05:12:21
+
+- [*] Add iot **submenu icons** to **application**
+- [*] 
+
 ### 04:12:21
 
 - Find a way to make the **charts** fill the **parent** **divs**
@@ -192,6 +197,7 @@
 - [] study adonis auth
 - [] learn **Advanced** **Node(Express JS)** from Udemy*
 - [] **Vue Layouts** from blog or video
+- [] Learn **vue route** and **paths** in vamp i.e **currentRoute**
 
 ## Links
 
