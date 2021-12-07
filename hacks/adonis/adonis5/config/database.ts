@@ -45,6 +45,12 @@ const databaseConfig: DatabaseConfig & { orm: Partial<OrmConfig> } = {
       },
       healthCheck: false,
 			debug: false,
+      migrations: {
+        // disableTransactions: false,
+        paths: ['./database/migrations'],
+        tableName: 'adonis_schema',
+        disableRollbacksInProduction: true,
+      }
     },
 
   },
