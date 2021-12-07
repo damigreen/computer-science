@@ -206,6 +206,7 @@ following
 
 - Added **Generator Metrics** to**system_entities** with `id = 68`
 - Added **Diesel Tank** to **system_entities** with `id = 68`
+- Added **system functions** for listing generator metrics and diesel tanks
 
 ##### Parameters
 
