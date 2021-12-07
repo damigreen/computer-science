@@ -207,6 +207,8 @@ following
 - Added **Generator Metrics** to**system_entities** with `id = 68`
 - Added **Diesel Tank** to **system_entities** with `id = 68`
 - Added **system functions** for listing generator metrics and diesel tanks
+- Allowable roles `1-FM,2-SYS,5-OA,7-TCHN`
+- Add **roles** **access** to **system function**
 
 ##### Parameters
 
