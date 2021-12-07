@@ -204,6 +204,9 @@ following
 
 #### Generator Performance
 
+- Added **Generator Metrics** to**system_entities** with `id = 68`
+- Added **Diesel Tank** to **system_entities** with `id = 68`
+
 ##### Parameters
 
 - Voltage
