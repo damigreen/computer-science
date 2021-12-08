@@ -199,6 +199,7 @@
   - [ ] Use to **Build** to new **cannabis app**
 - [ ] **Modal Mixins** Vamp
 - [ ] Study the **role** **system function** **user** relationship on vamp
+- [ ] Study **modal** open and close and **vue refs**
 
 ## Learn
 
