@@ -9,4 +9,22 @@ export default class WebhooksController {
             status: true
         })
     }
+    
+    public async started({ request, response }) {
+        console.log("getting request ---->")
+        console.log(request.all())
+
+        return response.json({
+            status: true
+        })
+    }
+
+    public async completed({ request, response }) {
+        console.log("getting request ---->")
+        console.log(request.all())
+
+        return response.json({
+            status: true
+        })
+    }
 }
