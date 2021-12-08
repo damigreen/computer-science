@@ -643,3 +643,6 @@ function merge(leftA, rightA) {
   // Add remaining to resultant array
   return results.concat(leftRemains).concat(rightRemains);
 }
+
+
+console.log(new Date(1641642624000))
