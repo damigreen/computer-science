@@ -2,6 +2,12 @@
 
 ## timetable
 
+### 09:12:21
+
+- [ ] Test **work completed** and **work started** callbacks
+- [ ] Resolve the **resido subsciption** issue from the backend
+- [ ] Work on **UI** for **IOT dashboard**
+
 ### 07:12:21
 
 - [*] Create **Dashboard** for **subscription feature**
