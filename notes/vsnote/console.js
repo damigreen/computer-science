@@ -651,5 +651,8 @@ console.log(new Date(1641665920000))
 console.log(new Date().getTime())
 console.log(new Date(1641665920000))
 console.log(new Date(1641665920000))
-console.log(new Date(1639052160000))
 console.log(new Date(1641730560000))
+
+console.log(new Date(1639052160000))
+console.log(new Date(1639452160000))
+console.log(Date.now()-Date.parse("2021-10-20T15:24:15.000+01:00"));
