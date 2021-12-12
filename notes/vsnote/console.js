@@ -1,3 +1,7 @@
+import helpers from "lodash";
+const { concat, findIndex, orderBy, uniqBy } = helpers;
+// const { concat, findIndex, orderBy, uniqBy } = require("lodash")
+
 var DICTIONARY = "abcdefghijklmnopqrstuvwxyz0123456789".split("");
 // console.log(DICTIONARY)
 
@@ -424,43 +428,43 @@ function insertionSort(items) {
  * 0: [(2<7),3,7,4,(1<7)]
  *    leftArr=[2,1], rightArr=[]
  * 1: [(2<7),3,7,4,(1<7)]
- * 
+ *
  *  * [4,9,2,8,5,4,6,3]
  * [4,9,2,8,5,4,6,3]  [4,3,2,8,5,4,6,9]  [4,3,2,8,5,4,6,9] [4,3,2,4,5,8,6,9] [4,3,2,4,5,8,6,9]
  *    i           j        i       j            i   j              ij               j   i
  * left=0,1,2,3,4,5
  * right=7,6,5,4,3
  * pivot=5
- * 
+ *
  * [4,3,2,4,5,8,6,9] [2,3,4,4,5,8,6,9]
  *    ij
  * left=0,1,2
  * right=index-1=4,3,2,1,0
  * pivot=2
  * ***************************************************
- * 
+ *
  * [4,9,2,8,5,4,6,3]  --> [4,3,2,6,5,4,8,9]
  * left=6
  * right=5
  * pivot=8
- * 
+ *
  * [4,3,2,6,5,4,8,9] [2,3,4,6,5,4,8,9]
  *  i   j             j   i
  * index=6
  * left=0,1
  * right=5,4,3,2,1,0
  * pivot=2
- *  
+ *
  * left < index - 1
  * index < right
- * 
+ *
  * [2,3,4,6,5,4,8,9] -> [2,3,4,4,5,6,8,9]
  *  ij
  * index=1
  * pivot=6
  * left=0,1,2,3,4,5
  * right=4
- * 
+ *
  *
  */
 function partition(array, left, right) {
@@ -513,7 +517,7 @@ function quickSort(items) {
 }
 // const ar = [6,1,23,4,2,3];
 // const ar = [2, 3, 7, 4, 1];
-const ar = [4,9,2,8,5,4,6,3]
+const ar = [4, 9, 2, 8, 5, 4, 6, 3];
 // console.log("ar", ar);
 // console.log(quickSort(ar));
 
@@ -581,8 +585,9 @@ function qS1(array) {
     return array;
   }
 
-  let leftArr = [], rightArr = [];
-  let pivot = array[Math.floor(array.length / 2)]
+  let leftArr = [],
+    rightArr = [];
+  let pivot = array[Math.floor(array.length / 2)];
   for (var i = 0; i < array.length; i++) {
     // move element less than pivot to leftArr
     // move element greather than pivot to rightArr
@@ -603,21 +608,25 @@ function qS1(array) {
  * p = 2
  */
 function quickSelectInPlace(A, l, h, k) {
-  var p = partition(A, l, h)
-  if (p == (k - 1)) {
+  var p = partition(A, l, h);
+  if (p == k - 1) {
     return A[p];
-  } else if (p > (k - 1)) {
+  } else if (p > k - 1) {
     return quickSelectInPlace(A, l, p - 1, k);
   } else {
     return quickSelectInPlace(A, p + 1, h, k);
   }
 }
 function medianQuickselect(array) {
-  return quickSelectInPlace(array, 0, array.length-1, Math.floor(array.length / 2));
+  return quickSelectInPlace(
+    array,
+    0,
+    array.length - 1,
+    Math.floor(array.length / 2)
+  );
 }
 // console.log(medianQuickselect([1,2,5,7,9]));
 // console.log(quickSelectInPlace([1,2,3,5,7,9], 0, 4, 3));
-
 
 /**
  * Merge Sort
@@ -625,34 +634,92 @@ function medianQuickselect(array) {
  * [5,1] [9,2]
  * [5][1]  [9][2]
  * [1,5] [2,9]
- * 
+ *
  */
 function merge(leftA, rightA) {
-  var results = [], leftIndex = 0, rightIndex = 0;
+  var results = [],
+    leftIndex = 0,
+    rightIndex = 0;
 
   while (leftIndex < leftA.length && rightIndex < rightA.length) {
     if (leftA[leftIndex] < rightA[rightIndex]) {
-      results.push(leftA[leftIndex++])
+      results.push(leftA[leftIndex++]);
     } else {
       results.push(rightA[rightIndex++]);
     }
   }
-  var leftRemains = leftA.slice(leftIndex), 
-      rightRemains = rightA.slice(rightIndex)
+  var leftRemains = leftA.slice(leftIndex),
+    rightRemains = rightA.slice(rightIndex);
 
   // Add remaining to resultant array
   return results.concat(leftRemains).concat(rightRemains);
 }
 
+// console.log(new Date(1641665920000))
+// console.log(new Date(1638987520000))
+// console.log(new Date(1641665920000))
+// console.log(new Date().getTime())
+// console.log(new Date(1641665920000))
+// console.log(new Date(1641665920000))
+// console.log(new Date(1641730560000))
 
-console.log(new Date(1641665920000))
-console.log(new Date(1638987520000))
-console.log(new Date(1641665920000))
-console.log(new Date().getTime())
-console.log(new Date(1641665920000))
-console.log(new Date(1641665920000))
-console.log(new Date(1641730560000))
+// console.log(new Date(1639052160000))
+// console.log(new Date(1639452160000))
+// console.log(Date.now()-Date.parse("2021-10-20T15:24:15.000+01:00"));
 
-console.log(new Date(1639052160000))
-console.log(new Date(1639452160000))
-console.log(Date.now()-Date.parse("2021-10-20T15:24:15.000+01:00"));
+const populateList = (
+  targetArray,
+  newArray,
+  uniqId = "id",
+  sortBy,
+  sortOrder = "asc"
+) => {
+  newArray = uniqBy(concat(newArray, targetArray), uniqId);
+  newArray = orderBy(newArray, [sortOrder], [sortBy]);
+
+  return newArray;
+};
+
+console.log(populateList([{ a: 12, b: 89, id: 21 }], [{ a: 73, b: 34, id: 1 }], "b"));
+
+// const a = { a: 2, b: 23, id: 42 }
+const b = [{ a: 73, b: 34, id: 1 }, { a: 2, b: 23, id: 1 }]
+const c = { a: 2, b: 23, id: 1 }
+
+const addObjectToList = (
+  targetArray,
+  newObject,
+  uniqId = "id",
+  sortBy,
+  sortOrder = "asc"
+) => {
+    let newArray = targetArray.map(element => {
+      if (newObject[uniqId] == element[uniqId]) {
+        element = newObject;
+      }
+      console.log(element)
+      return element;
+    })
+    
+    return populateList({
+      targetArray: newArray,
+      newArray: [newObject],
+      uniqId,
+      sortBy,
+      sortOrder
+    })
+};
+
+// const day = addObjectToList([{ a: 12, b: 89, id: 21 }, { a: 73, b: 34, id: 1 }], b)
+// console.log(day);
+
+
+const phone = "+23409017755801"
+const x = phone.replace("0", "+234")
+console.log(x)
+console.log(phone.length)
+const y = "+234" + phone.substring(5);
+console.log(phone[5])
+console.log(y)
+
+
