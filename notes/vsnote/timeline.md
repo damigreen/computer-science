@@ -2,6 +2,12 @@
 
 ## timetable
 
+### 13:12:21
+
+- [ ] Complete **merge sort**
+- [ ] Test resido **subscription status**
+- [ ] Create component for other **IOT** pages
+
 ### 09:12:21
 
 - [ ] Test **work completed** and **work started** callbacks
