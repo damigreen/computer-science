@@ -2,6 +2,15 @@
 
 ## Goals
 
+### 13:12:21
+
+- [ ] Start a business making **candy** (chocolate)
+- [ ] Start a business selling **brownies**
+- [ ] Start a business selling **smoke accessories**
+- [ ] Move out of your current **loci**
+
+### xx:xx:xx
+
 `30:10:21`
 
 - Start a business
