@@ -1,5 +1,5 @@
-import helpers from "lodash";
-const { concat, findIndex, orderBy, uniqBy } = helpers;
+// import helpers from "lodash";
+// const { concat, findIndex, orderBy, uniqBy } = helpers;
 // const { concat, findIndex, orderBy, uniqBy } = require("lodash")
 
 var DICTIONARY = "abcdefghijklmnopqrstuvwxyz0123456789".split("");
@@ -628,14 +628,39 @@ function medianQuickselect(array) {
 // console.log(medianQuickselect([1,2,5,7,9]));
 // console.log(quickSelectInPlace([1,2,3,5,7,9], 0, 4, 3));
 
-/**
- * Merge Sort
- * [5,1,9,2]
- * [5,1] [9,2]
- * [5][1]  [9][2]
- * [1,5] [2,9]
- *
- */
+
+/*
+
+Merge Sort
+Time Complexity: O(nlog2n)
+Space Complexity: O(n)
+
+r1 = [4, 2, 5, 3, 6, 1, 8, 7]
+leftA                                 rightA
+[4,2,8,7]                             [5,3,6,1]
+merge([4,2] [8,7])                    merge([5,3] [6,1])
+merge (merge([4] [2]) merge([8] [7])  merge([5] [3]) merge([6] [1]) )
+merge([2,4] [7,8]   [3,5] [1,6])
+
+[4,2] [8,7]                       [5,3] [6,1]
+[4] [2] [8] [7]                     [5][3] [6][1]
+
+
+
+MergeSort ;{
+[5,4,8,1]                         [4,2,8,7]
+[5,4] [8,1]                       [4,2] [8,7]
+[5][4] [8][1]                     [4][2] [8][7]
+-------------------------------------------------
+
+Merge :(
+[4,5]  [1,8]                      [2,4] [7,8]
+[1,4,5,8]                         [2,4,7,8]
+
+leftIndex: 0
+rightIndex: 0
+
+*/
 function merge(leftA, rightA) {
   var results = [],
     leftIndex = 0,
@@ -654,18 +679,36 @@ function merge(leftA, rightA) {
   // Add remaining to resultant array
   return results.concat(leftRemains).concat(rightRemains);
 }
+// const rightA = [5,3,6,1], leftA = [4,2,8,7]
+const leftA = [4,5], rightA = [1,8]
+// const rightA = [4], leftA = [2];
+console.log(merge(leftA, rightA));
 
-// console.log(new Date(1641665920000))
-// console.log(new Date(1638987520000))
-// console.log(new Date(1641665920000))
-// console.log(new Date().getTime())
-// console.log(new Date(1641665920000))
-// console.log(new Date(1641665920000))
-// console.log(new Date(1641730560000))
+function mergeSort(array) {
+  if (array.length < 2) {
+    return array;
+  }
 
-// console.log(new Date(1639052160000))
-// console.log(new Date(1639452160000))
-// console.log(Date.now()-Date.parse("2021-10-20T15:24:15.000+01:00"));
+  var midpoint = Math.floor((array.length) / 2),
+      leftArray = array.slice(0, midpoint),
+      rightArray = array.slice(midpoint);
+
+  return merge(mergeSort(leftArray), mergeSort(rightArray));
+}
+// const arrayyy = [9,4,6,1,7,6,3,8,2]
+// console.log(mergeSort(arrayyy));
+
+
+/**
+ * Count Sort
+ * 
+ */
+function countSort(array) {
+  var hash = {}, countArr = [];
+
+  return countArr;
+}
+
 
 const populateList = (
   targetArray,
@@ -679,8 +722,7 @@ const populateList = (
 
   return newArray;
 };
-
-console.log(populateList([{ a: 12, b: 89, id: 21 }], [{ a: 73, b: 34, id: 1 }], "b"));
+// console.log(populateList([{ a: 12, b: 89, id: 21 }], [{ a: 73, b: 34, id: 1 }], "b"));
 
 // const a = { a: 2, b: 23, id: 42 }
 const b = [{ a: 73, b: 34, id: 1 }, { a: 2, b: 23, id: 1 }]
@@ -709,17 +751,14 @@ const addObjectToList = (
       sortOrder
     })
 };
-
 // const day = addObjectToList([{ a: 12, b: 89, id: 21 }, { a: 73, b: 34, id: 1 }], b)
 // console.log(day);
 
 
-const phone = "+23409017755801"
-const x = phone.replace("0", "+234")
-console.log(x)
-console.log(phone.length)
-const y = "+234" + phone.substring(5);
-console.log(phone[5])
-console.log(y)
-
-
+// const phone = "+23409017755801"
+// const x = phone.replace("0", "+234")
+// console.log(x)
+// console.log(phone.length)
+// const y = "+234" + phone.substring(5);
+// console.log(phone[5])
+// console.log(y)
