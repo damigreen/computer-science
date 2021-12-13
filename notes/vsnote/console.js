@@ -645,8 +645,6 @@ merge([2,4] [7,8]   [3,5] [1,6])
 [4,2] [8,7]                       [5,3] [6,1]
 [4] [2] [8] [7]                     [5][3] [6][1]
 
-
-
 MergeSort ;{
 [5,4,8,1]                         [4,2,8,7]
 [5,4] [8,1]                       [4,2] [8,7]
@@ -705,9 +703,23 @@ function mergeSort(array) {
  */
 function countSort(array) {
   var hash = {}, countArr = [];
+  for (var i = 0; i < array.length; i++) {
+    if (!hash[array[i]]) {
+      hash[array[i]] = 1;
+    } else {
+      hash[array[i]]++;
+    }
+  }
+  for (var key in hash) {
+    for (var i = 0; i < hash[key]; i++) {
+      countArr.push(parseInt(key))
+    }
+  }
+
 
   return countArr;
 }
+console.log(countSort([1,2,9,7,8,5,3,2,5]));
 
 
 const populateList = (
