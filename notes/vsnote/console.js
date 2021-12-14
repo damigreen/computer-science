@@ -628,7 +628,6 @@ function medianQuickselect(array) {
 // console.log(medianQuickselect([1,2,5,7,9]));
 // console.log(quickSelectInPlace([1,2,3,5,7,9], 0, 4, 3));
 
-
 /*
 
 Merge Sort
@@ -678,7 +677,8 @@ function merge(leftA, rightA) {
   return results.concat(leftRemains).concat(rightRemains);
 }
 // const rightA = [5,3,6,1], leftA = [4,2,8,7]
-const leftA = [4,5], rightA = [1,8]
+const leftA = [4, 5],
+  rightA = [1, 8];
 // const rightA = [4], leftA = [2];
 console.log(merge(leftA, rightA));
 
@@ -687,22 +687,23 @@ function mergeSort(array) {
     return array;
   }
 
-  var midpoint = Math.floor((array.length) / 2),
-      leftArray = array.slice(0, midpoint),
-      rightArray = array.slice(midpoint);
+  var midpoint = Math.floor(array.length / 2),
+    leftArray = array.slice(0, midpoint),
+    rightArray = array.slice(midpoint);
 
   return merge(mergeSort(leftArray), mergeSort(rightArray));
 }
 // const arrayyy = [9,4,6,1,7,6,3,8,2]
 // console.log(mergeSort(arrayyy));
 
-
 /**
  * Count Sort
- * 
+ * Time Complexity O(k+n)
+ * Space Complexity O(k)
  */
 function countSort(array) {
-  var hash = {}, countArr = [];
+  var hash = {},
+    countArr = [];
   for (var i = 0; i < array.length; i++) {
     if (!hash[array[i]]) {
       hash[array[i]] = 1;
@@ -710,16 +711,107 @@ function countSort(array) {
       hash[array[i]]++;
     }
   }
+
   for (var key in hash) {
     for (var i = 0; i < hash[key]; i++) {
-      countArr.push(parseInt(key))
+      countArr.push(parseInt(key));
     }
   }
 
-
   return countArr;
 }
-console.log(countSort([1,2,9,7,8,5,3,2,5]));
+// console.log(countSort([5,2,1,5,3,6,4]));
+
+/**
+ * Exercises
+ */
+/**
+ * Square Root Native
+ * O(n)
+ */
+function sqrtInNative(number) {
+  if (number == 0 || number == 1) {
+    return number;
+  }
+
+  var index = 1,
+    square = 1;
+
+  while (index < number) {
+    if (square == number) {
+      return index;
+    }
+
+    index++;
+    square = index * index;
+  }
+
+  return index;
+}
+console.log(sqrtInNative(4));
+
+/**
+ * Square Root of a Float
+ * threshold number upper          lower      (upper - lower) middle (middle * middle) return
+ * 0.1       9      9->4.5         0           9              4.5     20.25
+ *                  4.5            0->2.25     4.5            2.25    5.0625
+ *                  4.5->3.375     2.25        2.25           3.375   11.39065
+ *                  3.375          2.25        1.125          2.8125  7.910156
+ */
+function sqrtDouble(number) {
+  var threshold = 0.1;
+  var upper = number;
+  var lower = 0;
+  var middle;
+
+  while (upper - lower > threshold) {
+    middle = (upper + lower) / 2;
+    if (middle * middle > number) {
+      upper = middle;
+    } else {
+      lower = middle;
+    }
+  }
+  return middle;
+}
+// console.log(sqrtDouble(4))
+
+/**
+ * Find if two elements of an array add up to a number
+ * Time Complexity O(n2)
+ * Space Complexity O(1)
+ */
+function findTwoSum(array, sum) {
+  for (var i = 0, arrayLength = array.length; i < arrayLength; i++) {
+    for (var j = i + 1; j < arrayLength; j++) {
+      if(array[j] + array[i] == sum) {
+        return true;
+      }
+    }
+  }
+  return false;
+}
+// console.log(findTwoSum([2,5,6,8], 7));
+
+/**
+ * Find if two elements of an array add up to a number using a Hash taable
+ * Store the already vidited number and check against them
+ * Time Complexity O(n)
+ * Space Complexity O(n)
+ */
+function findTwoSumHash(array, sum) {
+  var store = {};
+
+  for (var i = 0, arrayLength = array.length; i < arrayLength; i++) {
+    if (store[array[i]]) {
+      return true;
+    } else store[sum - array[i]] = array[i];
+  } 
+  return false;
+}
+// console.log(findTwoSumHash([3,7,4,11], 7))
+
+
 
 
 const populateList = (
@@ -737,8 +829,11 @@ const populateList = (
 // console.log(populateList([{ a: 12, b: 89, id: 21 }], [{ a: 73, b: 34, id: 1 }], "b"));
 
 // const a = { a: 2, b: 23, id: 42 }
-const b = [{ a: 73, b: 34, id: 1 }, { a: 2, b: 23, id: 1 }]
-const c = { a: 2, b: 23, id: 1 }
+const b = [
+  { a: 73, b: 34, id: 1 },
+  { a: 2, b: 23, id: 1 },
+];
+const c = { a: 2, b: 23, id: 1 };
 
 const addObjectToList = (
   targetArray,
@@ -747,25 +842,24 @@ const addObjectToList = (
   sortBy,
   sortOrder = "asc"
 ) => {
-    let newArray = targetArray.map(element => {
-      if (newObject[uniqId] == element[uniqId]) {
-        element = newObject;
-      }
-      console.log(element)
-      return element;
-    })
-    
-    return populateList({
-      targetArray: newArray,
-      newArray: [newObject],
-      uniqId,
-      sortBy,
-      sortOrder
-    })
+  let newArray = targetArray.map((element) => {
+    if (newObject[uniqId] == element[uniqId]) {
+      element = newObject;
+    }
+    console.log(element);
+    return element;
+  });
+
+  return populateList({
+    targetArray: newArray,
+    newArray: [newObject],
+    uniqId,
+    sortBy,
+    sortOrder,
+  });
 };
 // const day = addObjectToList([{ a: 12, b: 89, id: 21 }, { a: 73, b: 34, id: 1 }], b)
 // console.log(day);
-
 
 // const phone = "+23409017755801"
 // const x = phone.replace("0", "+234")
@@ -774,3 +868,6 @@ const addObjectToList = (
 // const y = "+234" + phone.substring(5);
 // console.log(phone[5])
 // console.log(y)
+console.log(new Date(1641125760000))
+console.log(new Date(1641730560000))
+console.log(new Date().getTime())

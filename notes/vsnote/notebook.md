@@ -68,6 +68,7 @@
 ### General Info
 
 - facebook password - DDQl6HQEhShZBxriaB2UlXdm5Lu7cLsze4f0NXK41I
+- Secret recovery phrase **Meta mask**: fiction member dose occur decade fiscal shallow magnet lend gun deputy pilot
 
 ### Travel Links
 
