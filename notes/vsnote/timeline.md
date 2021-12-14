@@ -2,24 +2,30 @@
 
 ## timetable
 
+### 14:12:21
+
+- [*] Javascript **datastructures and algorithms**
+- [*] Update resido **subscription feature**
+- [*] Fix **bug** in feature
+
 ### 13:12:21
 
-- [ ] Complete **merge sort**
-- [ ] Test resido **subscription status**
+- [*] Complete **merge sort**
+- [*] Test resido **subscription status**
 - [ ] Create component for other **IOT** pages
 
 ### 09:12:21
 
-- [ ] Test **work completed** and **work started** callbacks
-- [ ] Resolve the **resido subsciption** issue from the backend
-- [ ] Work on **UI** for **IOT dashboard**
+- [*] Test **work completed** and **work started** callbacks
+- [*] Resolve the **resido subsciption** issue from the backend
+- [*] Work on **UI** for **IOT dashboard**
 
 ### 07:12:21
 
 - [*] Create **Dashboard** for **subscription feature**
   - [ ] **Trigger** from **homepage**
 - [ ] Arrange **iot** **frontend** into **components**
-- [ ] Create webhook Logic for **work request started** and **work request completed**
+- [*] Create webhook Logic for **work request started** and **work request completed**
 - [ ] Learn something
 - [ ] Contine with JS Algorithms **Merge Sort**
 
