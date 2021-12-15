@@ -871,3 +871,6 @@ const addObjectToList = (
 console.log(new Date(1641125760000))
 console.log(new Date(1641730560000))
 console.log(new Date().getTime())
+console.log(new Date())
+console.log(new Date("2021-12-15T09:04:29.018Z").getTime())
+console.log(new Date("2021-11-15T09:04:29.018Z").getTime())
