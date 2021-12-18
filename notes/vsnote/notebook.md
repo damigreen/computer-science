@@ -1,6 +1,29 @@
 # NOTEBOOK
 
-## Memory
+## DG
+
+<!-- Weekly actities -->
+
+### Mnemonics Cache ~ 18:12:2021
+
+                   Creativity inersia
+
+  DG-Vile, that is what i am naming my **memory palace** for now,
+and inside the mansion, there are several beautiful tings that you will find
+of course because it is collosal art I want to leave behind for future enthusiast on thw art of **|**
+
+  I have come up with a method, yet I havent tested it amd this note is a reminder to
+continue writing on this note-pad so that you build the habit of documenting your thought process
+in order to attach meemory key to subjects (words) we want to memorize
+and help in improve ones ability in storing and retreiving information from the brain
+
+So it realy something somple and I know I will have a lot of fun practicalizing evetything
+I comeup with. Every thoughts and observation. any changes in the mind 
+
+
+    record(v) information(n)
+
+- Use Keywods for
 
 ### Week 0
 
