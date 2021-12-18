@@ -2,6 +2,16 @@
 
 ## timetable
 
+### 18:12:21
+
+- Fixed the residents residence update issue
+- Changed IoT dashboard direcrory structure
+- Modified dashboard UI
+
+- Fix the residents residence update issue
+- Change **IoT dashboard** **direcrory structure**
+- **Modify** dashboard UI
+
 ### 14:12:21
 
 - [*] Javascript **datastructures and algorithms**
