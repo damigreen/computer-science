@@ -3,10 +3,9 @@
 ## DG
 
 <!-- Weekly actities -->
-
 ### Mnemonics Cache ~ 18:12:2021
 
-                   Creativity inersia
+                   Creative inersia
 
   DG-Vile, that is what i am naming my **memory palace** for now,
 and inside the mansion, there are several beautiful tings that you will find
@@ -14,12 +13,24 @@ of course because it is collosal art I want to leave behind for future enthusias
 
   I have come up with a method, yet I havent tested it amd this note is a reminder to
 continue writing on this note-pad so that you build the habit of documenting your thought process
-in order to attach meemory key to subjects (words) we want to memorize
+in order to attach **meemory key** to subjects (words) we want to memorize
 and help in improve ones ability in storing and retreiving information from the brain
 
 So it realy something somple and I know I will have a lot of fun practicalizing evetything
-I comeup with. Every thoughts and observation. any changes in the mind 
+I comeup with. Every thoughts and observation. any changes in the mind
 
+  So generally the idea is I select a memory of random **hooks** (word | an part of speech
+that accurately describe the **situation**) on each palaces and place them chronologically
+on different **levels** in the palace
+
+  The first level which is `level-0` I have decided to use to memorize my **NOT TO DO LIST**
+So I will assign hooks to every one of the list.
+
+- No masturbation [red cross]
+- No **streaming youtube** anytime of the day. If you cannot download it do not watch it [stream]
+- NO **movies**, do not **download** movies, do not **watch** anu movie except on programming [google]
+
+        level 0 
 
     record(v) information(n)
 
