@@ -2,6 +2,11 @@
 
 ## timetable
 
+### 22:12:21
+
+- [*] Fix firebase notification error
+- [*] Removed logs and refactor code base
+
 ### 18:12:21
 
 - Fixed the residents residence update issue
