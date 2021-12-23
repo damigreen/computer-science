@@ -2,6 +2,11 @@
 
 ## timetable
 
+### 23:12:21
+
+- [ ] JavaScript **datastructures** and **algorithms**
+- [ ] Work on **vamp**
+
 ### 22:12:21
 
 - [*] Fix firebase notification error
