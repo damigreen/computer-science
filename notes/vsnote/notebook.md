@@ -2,6 +2,12 @@
 
 ## DG
 
+### 23:12:21
+
+#### Hash Tables
+
+- What are hash tables
+
 <!-- Weekly actities -->
 ### Mnemonics Cache ~ 18:12:2021
 
