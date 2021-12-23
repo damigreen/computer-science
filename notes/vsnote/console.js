@@ -784,7 +784,7 @@ function sqrtDouble(number) {
 function findTwoSum(array, sum) {
   for (var i = 0, arrayLength = array.length; i < arrayLength; i++) {
     for (var j = i + 1; j < arrayLength; j++) {
-      if(array[j] + array[i] == sum) {
+      if (array[j] + array[i] == sum) {
         return true;
       }
     }
@@ -806,13 +806,10 @@ function findTwoSumHash(array, sum) {
     if (store[array[i]]) {
       return true;
     } else store[sum - array[i]] = array[i];
-  } 
+  }
   return false;
 }
 // console.log(findTwoSumHash([3,7,4,11], 7))
-
-
-
 
 const populateList = (
   targetArray,
@@ -868,9 +865,68 @@ const addObjectToList = (
 // const y = "+234" + phone.substring(5);
 // console.log(phone[5])
 // console.log(y)
-console.log(new Date(1641125760000))
-console.log(new Date(1641730560000))
-console.log(new Date().getTime())
-console.log(new Date())
-console.log(new Date("2021-12-15T09:04:29.018Z").getTime())
-console.log(new Date("2021-11-15T09:04:29.018Z").getTime())
+/**
+ * JavaScript sort comparator tha sort strings by length
+ */
+var mythical = ["dragon", "slayer", "majic", "wizard of oz"];
+
+function sorComparator(a, b) {
+  return a.length - b.length;
+}
+console.log(mythical.sort(sorComparator));
+
+console.log(new Date(1641125760000));
+console.log(new Date(1641730560000));
+console.log(new Date().getTime());
+console.log(new Date());
+console.log(new Date("2021-12-15T09:04:29.018Z").getTime());
+console.log(new Date("2021-11-15T09:04:29.018Z").getTime());
+
+/**
+ * Sor element by number of properties
+ */
+var mythical = [
+  { prop1: "", prop2: "" },
+  { prop1: "", prop2: "", prop3: "" },
+  { prop1: "" },
+];
+
+function sorComparator2(a, b) {
+  return Object.keys(a).length - Object.keys(b).length;
+}
+console.log(mythical.sort(sorComparator2));
+
+function wordCount(sentence) {
+  var wordArray = sentence.replace(/[.,?!]/g, "").split(" "), occurenceList = {}, answerList = {};
+
+  for (var i = 0; i < wordArray.length; i++) {
+    var currentWord = wordArray[i];
+
+    // doesn't exist, set as 1st occurrence
+    if (!occurenceList[currentWord]) {
+      occurenceList[currentWord] = 1;
+    } else {
+      occurenceList[currentWord]++ // add occurrences
+    }
+  }
+  var arrayTemp = [];
+  for (var prop in occurenceList) {
+    arrayTemp.push([occurenceList[prop], prop])
+  }
+
+  function sortComp(a, b) {
+    // return a[0]-b[0] // compare the first element of the arrays
+    return b[0]-a[0] // compare the first element of the arrays
+  }
+  arrayTemp.sort(sortComp);
+  // console.log(arrayTemp);
+
+  for (var i = 0; i < arrayTemp.length; i++) {
+    var current = arrayTemp[i];
+    answerList[current[1]] = current[0];
+  }
+
+  return answerList;
+}
+console.log(wordCount("Where is my money!!! Bitch better have my money"));
+console.log(wordCount("practice makes perfect, get perfect by practice. just practice"));
