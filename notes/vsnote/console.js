@@ -897,7 +897,9 @@ function sorComparator2(a, b) {
 console.log(mythical.sort(sorComparator2));
 
 function wordCount(sentence) {
-  var wordArray = sentence.replace(/[.,?!]/g, "").split(" "), occurenceList = {}, answerList = {};
+  var wordArray = sentence.replace(/[.,?!]/g, "").split(" "),
+    occurenceList = {},
+    answerList = {};
 
   for (var i = 0; i < wordArray.length; i++) {
     var currentWord = wordArray[i];
@@ -906,17 +908,17 @@ function wordCount(sentence) {
     if (!occurenceList[currentWord]) {
       occurenceList[currentWord] = 1;
     } else {
-      occurenceList[currentWord]++ // add occurrences
+      occurenceList[currentWord]++; // add occurrences
     }
   }
   var arrayTemp = [];
   for (var prop in occurenceList) {
-    arrayTemp.push([occurenceList[prop], prop])
+    arrayTemp.push([occurenceList[prop], prop]);
   }
 
   function sortComp(a, b) {
     // return a[0]-b[0] // compare the first element of the arrays
-    return b[0]-a[0] // compare the first element of the arrays
+    return b[0] - a[0]; // compare the first element of the arrays
   }
   arrayTemp.sort(sortComp);
   // console.log(arrayTemp);
@@ -928,5 +930,81 @@ function wordCount(sentence) {
 
   return answerList;
 }
-console.log(wordCount("Where is my money!!! Bitch better have my money"));
-console.log(wordCount("practice makes perfect, get perfect by practice. just practice"));
+// console.log(wordCount("Where is my money!!! Bitch better have my money"));
+// console.log(
+//   wordCount("practice makes perfect, get perfect by practice. just practice")
+// );
+
+/**
+ * Hash Tables
+ * 
+ */
+
+/**
+ * Lineaar probing
+ * initArray = [null, null,, null, ...] -> 
+ * size = 13
+ * (key, value), (7, 'hi')
+ * hash = 7%13 = 6
+ * put ()
+  * hashedIndex = hash(7) = 6
+  * keys[hashedIndex] = keys[6] =  7
+  * hashedIndex++ = 7
+  * hashedIndex = 6
+  * newAray {}
+      i:   [0,..., 4,    5,    6,    7, ...]
+      key: [..., null, null,   7,    null, ...]
+      value: [..., null, null, 'hi', null]
+ * 
+ * 
+ * 
+ */
+
+function HashTable(size) {
+  this.size = size;
+  this.keys = this.initArray(size);
+  this.values = this.initArray(size);
+  this.limit = 0;
+}
+
+HashTable.prototype.put = function (key, value) {
+  if (this.limit >= this.size) throw "hash table is full";
+  var hashedIndex = this.hash(key);
+
+  // Linear probing
+  while (this.keys[hashedIndex] != null) {
+    hashedIndex++;
+    hashedIndex = hashedIndex % this.size;
+  }
+  this.keys[hashedIndex] = key;
+  this.values[hashedIndex] = value;
+  this.limit++;
+};
+
+HashTable.prototype.get = function (key) {
+  var hashedIndex = this.hash(key);
+  while (this.keys[hashedIndex] != key) {
+    hashedIndex++;
+    hashedIndex = hashIndex % this.size;
+  }
+  return this.values[hashedIndex];
+};
+
+HashTable.prototype.hash = function (key) {
+  // Check if init
+  if (!Number.isInteger(key)) throw "must be init";
+  return key % this.size;
+};
+
+HashTable.prototype.initArray = function (size) {
+  var array = [];
+  for (var i = 0; i < size; i++) {
+    array.push(null);
+  }
+  return array;
+};
+
+const exampletable = new HashTable(13);
+exampletable.put(7, "hi");
+console.log(exampletable)
+console.log("--------------------->")
