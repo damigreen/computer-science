@@ -2,11 +2,17 @@
 
 ## DG
 
-### 23:12:21
+### Hash Tables
 
-#### Hash Tables
+`24:12:21`
 
 - What are hash tables
+- How to prevent index collision
+- Explani probing list exapmpels
+- How does linear probing technique resolve conflicts
+- How does quadratic probing technique resolve conflicts
+
+      available index, incremental trials 
 
 <!-- Weekly actities -->
 ### Mnemonics Cache ~ 18:12:2021
