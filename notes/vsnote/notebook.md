@@ -156,6 +156,15 @@ https://www.d7visa.com/
 Digital Nomad Visa
 https://www.youtube.com/redirect?event=video_description&redir_token=QUFFLUhqbFZxcDd6VVRUNVZmSHZLdnJqTXZhQWhmb2tNd3xBQ3Jtc0ttaW83b3BoM1cxeDFLeEN6NXdUR0NqemlTNm81ZW1DVWc2Z3JFYnE2QTJ6Qy0wbFlTSUNjWVpaMTFocU9wV1hxWUlmQmJCWXYyTG9qZkN3bERXNWdWaks4Zk1vbWNCZ3loVlNUa0pkN1piSWs5SDB3SQ&q=https%3A%2F%2Fexpertvagabond.com%2Fdigital-nomad-work-visas%2F
 
+## How Tos
+
+### How to avoid watching pornography
+
+- Read the bible
+- Code as much as possible
+- To **refocus** your mind, Read about business, do a lot of brainstorm and take a lot of notes
+- Think about some smoke
+
 ## Vocabulary
 
 e.g => following
