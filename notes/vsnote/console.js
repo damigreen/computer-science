@@ -237,7 +237,7 @@ var stack1 = new Stack([8, 1, 10, 7, 4, 9, 2]);
 // stack1.push(12);
 // console.log(stack1.peek());
 // console.log(stack1.array);
-console.log(stackAccessNthTopNode(stack1, 5));
+// console.log(stackAccessNthTopNode(stack1, 5));
 // console.log([1,2,3,4,5].pop())
 
 /**
@@ -255,7 +255,85 @@ function stackSearch(stack, element) {
   }
   return false;
 }
-console.log(stackSearch(stack1, 9))
-console.log(stackSearch(stack1, 1))
-console.log(stackSearch(stack1, 0))
-console.log(stackSearch(stack1, 3))
+// console.log(stackSearch(stack1, 9))
+// console.log(stackSearch(stack1, 1))
+// console.log(stackSearch(stack1, 0))
+// console.log(stackSearch(stack1, 3))
+
+
+/**
+ * Queues
+ */
+function Queue(array) {
+  this.array = [];
+  if (array) this.array = array;
+}
+
+Queue.prototype.getBuffer = function() {
+  return this.array.slice();
+}
+
+Queue.prototype.isEmpty = function() {
+  return this.array.length == 0;
+}
+
+/**
+ * Peek
+ */
+Queue.prototype.peek = function() {
+  return this.array[0]
+}
+
+// Insertion
+// O(1)
+Queue.prototype.enqueue = function(value) {
+  return this.array.push(value);
+}
+
+// Deletion
+// O(n)
+Queue.prototype.dequeue = function() {
+  return this.array.shift();
+}
+
+// Access
+// O(n)
+function queueAccessNthTopNode(queue, n) {
+  var bufferArray = queue.getBuffer();
+  if (n <= 0) throw 'error';
+
+  var bufferQueue = new Queue(bufferArray);
+
+  while(--n !== 0) {
+    bufferQueue.dequeue()
+  }
+  return bufferQueue.dequeue()
+}
+
+var queue1 = new Queue([3,4,5,0,9]);
+queue1.enqueue(8)
+queue1.enqueue(9)
+queue1.enqueue(10)
+// console.log(queue1)
+queue1.dequeue()
+queue1.dequeue()
+console.log(queue1)
+console.log(queueAccessNthTopNode(queue1, 1)) // 3
+
+/**
+ * Search
+ * O(n)
+ */
+function queueSearch(queue, element) {
+  var bufferArray = queue.getBuffer();
+
+  var bufferQueue = new Queue(bufferArray);
+
+  while(!bufferQueue.isEmpty()) {
+    if (bufferQueue.dequeue() == element) return true;
+  }
+  return false
+}
+// console.log(queueSearch(queue1, 10))
+// console.log(queueSearch(queue1, 2))
+
