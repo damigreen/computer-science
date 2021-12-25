@@ -34,6 +34,22 @@
       cluster issue, perfect squares, uniformly distribute the kwys, second hash function,
       original, result
 
+- stacks and Queues
+  - describe them
+
+  - What is a stack / What are **Stacks**
+  - Limitation of stack
+  - Stack implementation
+    - `getBuffer()` `isEmpty()` `peek()` `push()` `pop()` `stackAccessNthTopNode(stack, n)` `stackSearch()`
+
+  - What are **Queues**
+  - Queue implementation / **methods**
+    - `getBuffer()` `isEmpty()` `peek()` `enqueue()` `dequeue()` `queueAccessNthTopNode(stack, n)` `queueSearch()`
+
+      last inserted element, removed, accessed, LIFO, priciple, constant time, lookup, insertion, first added element
+      FIFO, buffer, prevent(avoid), modification, original
+
+
 <!-- Weekly actities -->
 ### Mnemonics Cache ~ 18:12:2021
 
