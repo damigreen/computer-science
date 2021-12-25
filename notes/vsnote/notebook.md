@@ -1,18 +1,38 @@
 # NOTEBOOK
 
-## DG
+## Daily Guard
 
-### Hash Tables
-
-`24:12:21`
+### Hash Tables - 24:12:21
 
 - What are hash tables
 - How to prevent index collision
-- Explani probing list exapmpels
+- Explaining probing list exapmpels
 - How does linear probing technique resolve conflicts
 - How does quadratic probing technique resolve conflicts
+- How many functions does a hashtable has
+- What is `put()` and `get()` and time complexity
+- Example of datastructure base on a **hash table**
+- What is the most important part of a **hash table**
+- What does the **hash function** do?
+- Three Requirements for a good hash function
+- First technique of hashing
+- What is prime number hashing
+- What hashing method guarantees the best **distibution** for a fixed size hash table
+- What is **probing**
+- Describe the **probing hashing technique**
+- What method does **linear probing techniques** uses to resolve confilcts
+- Describe **linear probing**
+- Describe **Quadratic probing**
+- Describe **Rehashing/Double-Hashing**
+- What are the requirement for a good **second hash function**
+- Write the **formala** describing the second hash function
+- `code` Implement hash table (`put()` and `get()`) using the three techniques described
 
-      available index, incremental trials 
+      available index, incremental trials, quick storage and retrieval, key value pairs,
+      native javascript object, persist, specified key, equal keys, equal hash values,
+      modulus division, using (testing), occuring collisions, next available index, distribution
+      cluster issue, perfect squares, uniformly distribute the kwys, second hash function,
+      original, result
 
 <!-- Weekly actities -->
 ### Mnemonics Cache ~ 18:12:2021
@@ -193,6 +213,10 @@ following
   - soon after he left his girlfriend  he started making plans and working toward
   - his dream in life of traveling and learning more about life and his carrer
   - Expanding is the keyword here it should be your baltle cry when you wake up in the morning
+
+## Quotes
+
+- Because you didn’t get this far by being average.
 
 ## ReCall
 
