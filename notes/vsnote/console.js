@@ -337,7 +337,11 @@ function queueSearch(queue, element) {
 // console.log(queueSearch(queue1, 10))
 // console.log(queueSearch(queue1, 2))
 
-function reverseArray(array) {
+
+/**
+ * Reverse Array
+ */
+ function reverseArray(array) {
   let length = array.length - 1;
 
   // return array.map(() => array[--length])
