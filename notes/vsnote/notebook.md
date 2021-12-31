@@ -28,6 +28,7 @@
 - Write the **formala** describing the second hash function
 - `code` Implement hash table (`put()` and `get()`) using the three techniques described
 
+      hashing, unique keys, generating
       available index, incremental trials, quick storage and retrieval, key value pairs,
       native javascript object, persist, specified key, equal keys, equal hash values,
       modulus division, using (testing), occuring collisions, next available index, distribution
@@ -271,6 +272,8 @@ following
   - Ite
   
 ## Blink
+
+- No **porn** through out the new year
 
 - Always remember to think and formulate your thoughts completely
   before you **write** down again on this **space**
