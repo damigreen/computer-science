@@ -554,3 +554,8 @@ I took the dates of all the pending ad campaign ignorant and those from the runn
 ## Algorithms
 
 ### String Shortening
+
+## Rules
+
+- Put God first
+- Dont be basic
