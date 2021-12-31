@@ -50,7 +50,6 @@
       last inserted element, removed, accessed, LIFO, priciple, constant time, lookup, insertion, first added element
       FIFO, buffer, prevent(avoid), modification, original
 
-
 <!-- Weekly actities -->
 ### Mnemonics Cache ~ 18:12:2021
 
@@ -186,7 +185,7 @@ https://www.youtube.com/redirect?event=video_description&redir_token=QUFFLUhqbFZ
 
 e.g => following
 
-following
+   following, memory location, unique index,
 
 ### Nouns
 
