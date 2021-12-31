@@ -339,26 +339,17 @@ function queueSearch(queue, element) {
 
 
 /**
- * Reverse Array
+ * Dynamic Array
+ * Query: 1 x y
+  * let idx = ((x (+) lastAnswer) % n)
+  * append integer y to idx
+ * Query: 2 x y
+  * let idx = ((x (+) lastAnswer) % n)
+  * assign the value arr[idx][y % size(arr[idx])] to lastAnswer
+  * store tne new value of lastAnswer to an answer array
+ * 
  */
- function reverseArray(array) {
-  let length = array.length - 1;
-
-  // return array.map(() => array[--length])
-  // return array.map(() => array.pop())
-  return array.map(() => array[length--])
+function dynamicArray(arr) {
+  let lastAnswer = 0
+  // let idx = 
 }
-
-// initialize and return a new array
-const ReverseArray2 = (array) => {
-  const newArray = [];
-  let len = array.length;
-
-  while (len--) {
-      newArray.push(array[len]);
-  }
-
-  return newArray;
-}
-console.log(reverseArray([3,2,1]));
-console.log(ReverseArray2([1,2,3,4,5]))//[5,4,3,2,1]
