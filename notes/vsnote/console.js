@@ -336,4 +336,3 @@ function queueSearch(queue, element) {
 }
 // console.log(queueSearch(queue1, 10))
 // console.log(queueSearch(queue1, 2))
-
