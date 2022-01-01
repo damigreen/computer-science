@@ -2,6 +2,18 @@
 
 ## timetable
 
+### 01:01:22
+
+- [ ] Review work
+
+- [ ] Hackerrank challenge
+- [ ] Start **Angular** application
+- [ ] Continue with **web3.0**
+
+- [ ] Continue research on **side hustle**
+
+- [ ] Continue with **JavaScript Datastructures and algorithms**
+
 ### 23:12:21
 
 - [ ] JavaScript **datastructures** and **algorithms**
