@@ -5,8 +5,14 @@
     "version": "0.2.0",
     "configurations": [
         {
+            "type": "java",
+            "name": "Launch HelloWorld",
+            "request": "launch",
+            "mainClass": "HelloWorld",
+            "projectName": "VSCode_f36ec50d"
+        },
+        {
             "name": "Launch Program Logs",
-            // "program": "${workspaceFolder}/app.js",
             "program": "${workspaceFolder}\\logs\\staircase.js",
             "request": "launch",
             "skipFiles": [
