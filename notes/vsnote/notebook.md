@@ -1,39 +1,44 @@
 # NOTEBOOK
 
-## Daily Guard
+## Mind
 
 ### Hash Tables - 24:12:21
 
-- What are hash tables
-- How to prevent index collision
-- Explaining probing list exapmpels
-- How does linear probing technique resolve conflicts
-- How does quadratic probing technique resolve conflicts
-- How many functions does a hashtable has
-- What is `put()` and `get()` and time complexity
-- Example of datastructure base on a **hash table**
-- What is the most important part of a **hash table**
-- What does the **hash function** do?
-- Three Requirements for a good hash function
-- First technique of hashing
-- What is prime number hashing
-- What hashing method guarantees the best **distibution** for a fixed size hash table
-- What is **probing**
-- Describe the **probing hashing technique**
-- What method does **linear probing techniques** uses to resolve confilcts
-- Describe **linear probing**
-- Describe **Quadratic probing**
-- Describe **Rehashing/Double-Hashing**
-- What are the requirement for a good **second hash function**
-- Write the **formala** describing the second hash function
-- `code` Implement hash table (`put()` and `get()`) using the three techniques described
+- Hash Tables
+  - What are hash tables
+  - What other **thing** is synonymous in use to an hash table
+  - What is index collision
+  - How to prevent index collision
+  - Explaining probing list exapmpels
+  - How does linear probing technique resolve conflicts
+  - How does quadratic probing technique resolve conflicts
+  - How many functions does a hashtable has
+  - What is `put()` and `get()` and time complexity
+  - Example of datastructure base on a **hash table**
+  - What is the most important part of a **hash table**
+  - What does the **hash function** do?
+  - Three Requirements for a good hash function
+  - First technique of hashing
+  - What is prime number hashing
+  - What hashing method guarantees the best **distibution** for a fixed size hash table
+  - What is **probing**
+  - Describe the **probing hashing technique**
+  - What method does **linear probing techniques** uses to resolve confilcts
+  - Describe **linear probing**
+  - Describe **Quadratic probing**
+  - Describe **Rehashing/Double-Hashing**
+  - What are the requirement for a good **second hash function**
+  - Write the **formala** describing the second hash function
+  - `code` Implement hash table (`put()` and `get()`) using the three techniques described
 
-      hashing, unique keys, generating
-      available index, incremental trials, quick storage and retrieval, key value pairs,
-      native javascript object, persist, specified key, equal keys, equal hash values,
-      modulus division, using (testing), occuring collisions, next available index, distribution
-      cluster issue, perfect squares, uniformly distribute the kwys, second hash function,
-      original, result
+        hashing, unique keys, generating, array index
+        available index, incremental trials, quick storage and retrieval, key value pairs,
+        native javascript object, persist, specified key, equal keys, equal hash values,
+        modulus division, using (testing), occuring collisions, next available index, distribution
+        cluster issue, perfect squares, uniformly distribute the kwys, second hash function,
+        original, result
+
+        yeild, 
 
 - stacks and Queues
   - describe them
@@ -49,6 +54,18 @@
 
       last inserted element, removed, accessed, LIFO, priciple, constant time, lookup, insertion, first added element
       FIFO, buffer, prevent(avoid), modification, original
+
+#### Answers ~ Hash Tables
+
+`Hashtables` are fixed-sized data strtucture. Its lenght is ususlly defined at the start. They can be used for / 
+they are best used for quick retrival and storage of daata in key value pair.
+Objects also works similarly by defining a key(property) and its associated value
+`index collision` e.g. When trying to create an hashtable with distributed array index using `prime number hashing`
+and there is a collision between two different keys for particular a index location.
+`prime number hashing` is the modulus division using prime nubers to get array index that are in a distributed
+manner
+
+
 
 <!-- Weekly actities -->
 ### Mnemonics Cache ~ 18:12:2021
@@ -144,6 +161,14 @@ So I will assign hooks to every one of the list.
     - Bubble Sort [simplest, iterate, swap, bigger than other, entire, swap function, switches, worst, possible pair]
     - Algorithms steps
     - Selection Sort [scanning, inserting, current position, one for loop, nested for loop, scan, get minimum element]
+
+## After Nine
+
+- Delete unactive git repositories
+- Smoke some weed
+- Play some game
+- Watch videos on youtube
+- Social media e.g whatsapp status instagram etc
 
 ## Information
 
