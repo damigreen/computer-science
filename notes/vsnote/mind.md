@@ -2,8 +2,6 @@
 
 ## Mind Cloud
 
-
-
 ## Mind Notes
 
 divide your thinking into sections by labelling them using `titles`, `sections` 
