@@ -2,6 +2,73 @@
 
 ## Mind
 
+### Hash Tables```
+
+- Hash Tables
+  - Fixed size data structure
+  - there length are defined at the start
+  - Best for quick storage and retrieval of data usnig key value pair
+  - Also like objects that defines key and associated values
+
+  - Hashing Techniques
+    - Hashing is `converting` a specified key into an array index
+    - for array that stores all the data / for the array that will be
+      used to store the data
+
+    - Prime Number Hashing
+      - modulus division using prime numbers
+      - to yield array index in a distributed manner
+      - to get array of larger sizes use larger prime numbers
+
+      - Probing
+        - work around occuring collision
+        - prevent array index collision
+        - distribute array index `evenly`
+        - `evenly` distribution of **array indices**
+
+        - Linear Probing
+          - Resove Conflict by
+          - Finding the next available index by
+          - incrementing one index at time or
+          - by **incremental trials**
+
+        - Quadratic Probing
+          - `Resolves` conflicts using
+          - perfect squares rather than
+          - incrementing the index one step at a time
+          - Incrementing one index at a time
+
+    - Rehashing / Double-Hashing
+      - Another (good / great) way to
+      - `uniformly` distrubute the keys accross array indices is by
+      - having a second hash function that
+      - reharshing the result from the original (first hash function)
+
+      - Requirement for a good second hash function
+        - Different
+          - It needs to be different to **distribure better**
+        - Efficient
+          - It should still be in **`O(1)` time**
+        - Non Zero
+          - Should never evaluate to zero
+          - zero gives the initial hash value
+
+      - Second Hash Function Formula
+        - `hash2(x) = R - (x % R)`
+        - `x` is the result from the first hash
+        - `R` is a value less than the size of the array
+
+  - Hash table Implementation
+    - Using linear probing
+
+          function HashTable()
+
+#### Recap - Hash Tables
+
+Hash tables are fixed size data structures whose length are defined at the start. They are best
+used for quick storage and retrival of data base on key value pairs. they are similar to objects
+that defines keys and associated values.
+
 ### Hash Tables - 24:12:21
 
 - Hash Tables
@@ -65,8 +132,6 @@ and there is a collision between two different keys for particular a index locat
 `prime number hashing` is the modulus division using prime nubers to get array index that are in a distributed
 manner
 
-
-
 <!-- Weekly actities -->
 ### Mnemonics Cache ~ 18:12:2021
 
@@ -101,7 +166,7 @@ So I will assign hooks to every one of the list.
 
 - Use Keywods for
 
-### Week 0
+### JavaScript Strigs
 
 - javascript string accessing
   - `.charAt(index)`
@@ -170,6 +235,27 @@ So I will assign hooks to every one of the list.
 - Watch videos on youtube
 - Social media e.g whatsapp status instagram etc
 
+## People
+
+### Bukunmi
+
+### Joseph
+
+### Fola
+
+### Hadijat
+
+Hello, Have you help to change the credit card information on the mailgun site.
+Let me send you the login for the site
+On the site go to ...
+
+### Iya Ariyo
+
+### Kunle
+
+Did you get any good tutorial to work with
+Find a tutorial that teaches you the basics
+
 ## Information
 
 ### General Info
@@ -204,7 +290,7 @@ https://www.youtube.com/redirect?event=video_description&redir_token=QUFFLUhqbFZ
 - Read the bible
 - Code as much as possible
 - To **refocus** your mind, Read about business, do a lot of brainstorm and take a lot of notes
-- Think about some smoke
+- Think about some smoke (after nine)
 
 ## Vocabulary
 
@@ -268,7 +354,7 @@ e.g => following
 
 - Because you didn’t get this far by being average.
 
-## ReCall
+## ReCall / Run Downs
 
 ### Bubble Sort - JD&A
 
