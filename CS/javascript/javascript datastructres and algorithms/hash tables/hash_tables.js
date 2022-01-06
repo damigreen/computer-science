@@ -19,10 +19,28 @@
       key: [..., null, null,   7,    null, ...]
       value: [..., null, null, 'hi', null]
  * 
- * 
+ * HashTable
+  * define size of the array
+  * create an array for the keys of the table
+  * create an array for the values of the table
+  * track the limits (!>size)
+  * 
+  * put
+    * check for the limit of the table
+      * throw error if full
+    * get the hashed index using
+    * the hash function
+    * for a given key
+    * 
+    * check if given key is not null
+    * check if the given key has a value
+      * if it has a value
+      * increment the hashed index by one
+      * re-calculate the hashed index
  * 
  */
 
+    
 function HashTable(size) {
   this.size = size;
   this.keys = this.initArray(size);
