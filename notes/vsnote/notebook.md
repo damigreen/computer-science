@@ -2,9 +2,47 @@
 
 ## Mind
 
+### Work
 
+#### Data Spooling
 
-### Stacks and Queues
+### Courses
+
+#### Angular & Typescript Tutorial by Mosh
+
+- Angular
+  - Component
+    - Encapsulates the data, html mock-up, and logic for the view
+    - Angular embraces component based architecture
+      - build small, maintainable,and reusable pieces
+
+  - Module
+    - Container for a group of related component
+    - Every anagular app has at least one module called
+    - the app module
+    - Can be broken into smaller, maintenanble modules
+      - e.g.
+        - Courses module
+        - Messaging module
+        - Instructor module
+
+    - Process of creating app
+      - Crete a component
+      - Register component in module
+      - Add elements in the HTML markup
+
+      - with selectors
+      - extend html vocabulary
+      - selectors reference element
+      - template html markup to render
+
+    class component decorator, decorator function { selector, template}
+
+### Books
+
+#### JavaScript Data Structures and Algorithms
+
+##### Stacks and Queues
 
 - Stacks
   - data structure in which
@@ -29,7 +67,7 @@
     - in addition, accessing deeper elements requires you to
     - remove all the elements from the data structure
 
-  - Stacks Implementation
+  - Stacks Implementation [hashtables](../../cs/algorithms%20&%20data%20structures/stacks.js)
     - Define the Stacks class
     - create `Stack.prototype.getBuffer()`
     - create `Stack.prototype.isEmpty()`
@@ -41,11 +79,13 @@
       - Time complexity O(1)
 
     - Insertion
+      - `Stack.prototype.put`
       - Adding an element into a stack
       - `this.array.push(value)`
       - time complexity O(1)
 
     - Deletion
+      - `Stack.prototype.pop`
       - Removing the last added element from the stack
       - `this.array.pop(value)`
       - time complexity O(1)
@@ -54,12 +94,15 @@
       - Access specific element
       - time complexity O(1)
         - PSEUDOCODE
-        - 
+          - BEGIN
           - INTEGER n //  nth element from the top
           - ARRAY [len] bufferStack
           - WHILE (decrementing n by one does not equal zero)
-          - remove `pop()` one element from bufferStack
+            - remove `pop()` one element from bufferStack
           - END
+          - remove `pop()` one element from bufferStack
+          - OUTPUT
+            - the element
           - END
 
     - Search
@@ -68,7 +111,7 @@
       - this way the original stack is not mutated and
       - nothing is removed
   
-      - PSEUDOCODE 
+      - PSEUDOCODE
         - BEGIN
         - CLASS stack
         - INTEGER element
@@ -85,7 +128,85 @@
       - Time complexity is O(n)
             <!-- OUTPUT return the  -->
 
-### Hash Tables```
+- Queues
+  - Data structures in which
+  - only the first added element can be
+  - removed ~~and accessed~~
+  - A principle called First in, first out (FIFO)
+
+  - Pros
+    - Operates in constant time
+
+  - Cons
+    - Can only be used to access one element at a time
+    - can only access the first added element
+
+    - `shift()` method removes and returns the first element from the queue
+    - Adding to a queue is called **enqueueing**
+    - `push()` is used for enqueueing
+    - `shift()` is used for dequeueing
+    - Removing from a queue is called **dequeueing**
+
+    - Queues Operation
+      - Peek
+        - Look at the first element in the queue
+        - return `this.array[0]`
+
+      - Insertion
+        - `Queue.prototype.enqueue`
+        - also known as `enqueueing`
+        - return `this.array.push(value)`
+
+      - Deletion
+        - `Queue.prototype.dequeue`
+        - Removing an element from the queue
+        - also known as `dequeueing`
+        - return `this.array.shift(value)`
+
+      - Access
+        - Access specific element
+        - time complexity O(1)
+          - PSEUDOCODE
+            - BEGIN
+            - INTEGER n //  nth element from the top
+            - QUEUE queue
+            - ARRAY [len] bufferQueue
+            - WHILE (decrementing n by one does not equal zero)
+              - remove `dequeue()` one element from bufferQueue
+            - END
+            - return `dequeue()` one element from bufferQueue
+            - END
+
+      - Search
+        - create a buffer stack and
+        - call `dequeue()` on the buffer stask
+        - this way the original stack is not mutated and
+        - nothing is removed
+
+        - PSEUDOCODE
+          - BEGIN
+          - CLASS stack
+          - INTEGER element
+          - ARRAY bufferQueue
+          - WHILE (bufferQueue is not empty)
+            <!-- - the last element removed from the top -->
+            - remove the last element in bufferQueue and
+            - compare it with the provided element
+            - OUTPUT
+              - true
+          - OUTPUT
+            - false
+
+        - Time complexity is O(n)
+              <!-- OUTPUT return the  -->
+- Queue and Stack Time Complexity Summary
+
+|       | Access | Search | Peek | Insertion | Deletion |
+|-------|--------|--------|------|-----------|----------|
+| Queue | O(n)   | O(n)   | O(1) | O(1)      | O(n)     |
+| Stack | O(n)   | O(n)   | O(1) | O(1)      | O(1)     |
+
+##### Hash Tables```
 
 - Hash Tables
   - Fixed size data structure
@@ -156,13 +277,13 @@
       - implement put
       - implement get
 
-#### Recap - Hash Tables
+###### Recap - Hash Tables
 
 Hash tables are fixed size data structures whose length are defined at the start. They are best
 used for quick storage and retrival of data base on key value pairs. they are similar to objects
 that defines keys and associated values.
 
-### Hash Tables - 24:12:21
+##### Hash Tables - 24:12:21
 
 - Hash Tables
   - What are hash tables
@@ -215,7 +336,7 @@ that defines keys and associated values.
       last inserted element, removed, accessed, LIFO, priciple, constant time, lookup, insertion, first added element
       FIFO, buffer, prevent(avoid), modification, original
 
-#### Answers ~ Hash Tables
+###### Answers ~ Hash Tables
 
 `Hashtables` are fixed-sized data strtucture. Its lenght is ususlly defined at the start. They can be used for / 
 they are best used for quick retrival and storage of daata in key value pair.
@@ -226,7 +347,7 @@ and there is a collision between two different keys for particular a index locat
 manner
 
 <!-- Weekly actities -->
-### Mnemonics Cache ~ 18:12:2021
+##### Mnemonics Cache ~ 18:12:2021
 
                    Creative inersia
 
@@ -259,7 +380,7 @@ So I will assign hooks to every one of the list.
 
 - Use Keywods for
 
-### JavaScript Strigs
+##### JavaScript Strigs
 
 - javascript string accessing
   - `.charAt(index)`
