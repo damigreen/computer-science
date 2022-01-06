@@ -2,6 +2,89 @@
 
 ## Mind
 
+
+
+### Stacks and Queues
+
+- Stacks
+  - data structure in which
+  - only the last **inserted element** can be
+  - removed and accessed
+
+  - Stacking plates on a table
+  - to get to the bottom plate you must
+  - remove all the other plates at the top
+  - this principle is known as last in, first out (LIFO)
+
+  - Pros
+    - they are great because
+    - they are fast and
+    - since it is known that
+    - the last inserted element is to be removed
+    - the lookup and insertion happens
+    - in a constant time of O(1).
+
+  - Cons
+    - They cannot access the non-last added element
+    - in addition, accessing deeper elements requires you to
+    - remove all the elements from the data structure
+
+  - Stacks Implementation
+    - Define the Stacks class
+    - create `Stack.prototype.getBuffer()`
+    - create `Stack.prototype.isEmpty()`
+
+    - Peek
+      - returning the last added element without
+      - removing it from the data structure
+      - `this.array[this.array.length - 1]`
+      - Time complexity O(1)
+
+    - Insertion
+      - Adding an element into a stack
+      - `this.array.push(value)`
+      - time complexity O(1)
+
+    - Deletion
+      - Removing the last added element from the stack
+      - `this.array.pop(value)`
+      - time complexity O(1)
+
+    - Access
+      - Access specific element
+      - time complexity O(1)
+        - PSEUDOCODE
+        - 
+          - INTEGER n //  nth element from the top
+          - ARRAY [len] bufferStack
+          - WHILE (decrementing n by one does not equal zero)
+          - remove `pop()` one element from bufferStack
+          - END
+          - END
+
+    - Search
+      - create a buffer stack and
+      - call `pop()` on the buffer stask
+      - this way the original stack is not mutated and
+      - nothing is removed
+  
+      - PSEUDOCODE 
+        - BEGIN
+        - CLASS stack
+        - INTEGER element
+        - ARRAY bufferStack
+        - WHILE (bufferStack is not empty)
+          <!-- - the last element removed from the top -->
+          - remove the last element in bufferStack and
+          - compare it with the provided element
+          - OUTPUT
+            - true
+        - OUTPUT
+          - false
+
+      - Time complexity is O(n)
+            <!-- OUTPUT return the  -->
+
 ### Hash Tables```
 
 - Hash Tables
@@ -58,10 +141,20 @@
         - `x` is the result from the first hash
         - `R` is a value less than the size of the array
 
-  - Hash table Implementation
-    - Using linear probing
-
-          function HashTable()
+  - Hash table Implementation [hashtables](../../cs/algorithms%20&%20data%20structures/../books/JavaScript%20Data%20Structures%20and%20Algorithms/hash_tables.js)
+    - Hashing using **Linear Probing**
+      - implement hash function
+      - implement put
+      - implement get
+    - Hashing using **Quadratic Probing**
+      - implement hash function
+      - implement put
+      - implement get
+    - Hashing using Double-Hashing with Linear Probing
+      - implement hash function
+      - implement second hash function
+      - implement put
+      - implement get
 
 #### Recap - Hash Tables
 
