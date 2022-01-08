@@ -246,3 +246,35 @@ stack.push(9);
 console.log(stack);
 console.log(stack.inbox);
 console.log(stack.pop());
+
+
+/**
+ * DESIGN A CASHIER CLASS THAT TAKES IN A CUSTOMER OBJECT AND HANDLES FOOD
+ * ORDERING ON A FIRST-COME, FIRST-SERVED BASIS
+ */
+function Customer(name, order) {
+  this.name = name;
+  this.order = order;
+}
+
+function Cashier() {
+  this.customers = new Queue();
+}
+
+Cashier.prototype.addOrder = function (customer) {
+  this.customers.enqueue(customer);
+};
+
+Cashier.prototype.deliverOrder = function () {
+  var finishedCustomer = this.customers.dequeue();
+
+  console.log(
+    finishedCustomer.name + " your " + finishedCustomer.order + " is ready!"
+  );
+};
+
+var cashier = new Cashier()
+var customer = new Customer("dami", "Burger");
+var customer1 = new Customer("sun", "Moon");
+cashier.addOrder(customer)
+cashier.deliverOrder()
