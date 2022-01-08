@@ -31,12 +31,22 @@
       - Register component in module
       - Add elements in the HTML markup
 
+    - Notes
       - with selectors
       - extend html vocabulary
       - selectors reference element
       - template html markup to render
+      - data binding
+        - binding the view to a field in the component
+      - string interpolation
+      - use backtick to beaak up into multiple line
+        - make it readable
+      - add service class as a dependency of a component
+        - pass it as a parameter for the component constructor
+        - i.e inject it into the component
+        - Register the service as a provider in the app module
 
-    class component decorator, decorator function { selector, template}
+    class component decorator, decorator function { selector, template }
 
 ### Books
 
@@ -442,6 +452,9 @@ So I will assign hooks to every one of the list.
     - Selection Sort [scanning, inserting, current position, one for loop, nested for loop, scan, get minimum element]
 
 ## After Nine
+
+- Check instagram for some
+- 
 
 - Delete unactive git repositories
 - Smoke some weed
