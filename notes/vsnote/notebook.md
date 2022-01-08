@@ -2,6 +2,8 @@
 
 ## Mind
 
+### Misc
+
 ### Work
 
 #### Data Spooling
@@ -26,13 +28,14 @@
         - Messaging module
         - Instructor module
 
+      `07:01:21`
     - Process of creating app
       - Crete a component
       - Register component in module
       - Add elements in the HTML markup
 
     - Notes
-      - with selectors
+      - with `selectors`
       - extend html vocabulary
       - selectors reference element
       - template html markup to render
@@ -215,6 +218,8 @@
 |-------|--------|--------|------|-----------|----------|
 | Queue | O(n)   | O(n)   | O(1) | O(1)      | O(n)     |
 | Stack | O(n)   | O(n)   | O(1) | O(1)      | O(1)     |
+
+###### Exercise ~ Stack and Queues
 
 ##### Hash Tables```
 
