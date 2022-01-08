@@ -17,9 +17,18 @@ export class CoursesComponent {
     title = "Course Description";
     // courses = ["Course1","Course2","Course3","Course4"]
     courses;
-    constructor() {
-        let service = new CoursesService();
-        this.courses = service.getCourses()
+    // constructor() {
+    //     let service = new CoursesService();
+    //     this.courses = service.getCourses()
+    // }
+    constructor(service: CoursesService) {
+        this.courses = service.getCourses();
+        // dependency injection
+        // create instance of service
+        // pass it to component
+        // inject dependency of a component
+        // into its contructor
+
     }
 
     getTitle() {
