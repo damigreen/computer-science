@@ -278,3 +278,27 @@ var customer = new Customer("dami", "Burger");
 var customer1 = new Customer("sun", "Moon");
 cashier.addOrder(customer)
 cashier.deliverOrder()
+
+
+/**
+ * Paranthesis Validation Checker using Stack
+ */
+function isParenthesisValid(validationString) {
+  var stack = new Stack();
+  for (var i = 0; i < validationString.length; i++) {
+    var currentChar = validationString.charAt(i);
+    if (currentChar == "(") {
+      stack.push(currentChar);
+    }else if(currentChar == ")") {
+      if (stack.isEmpty()) return false;
+      stack.pop();
+    }
+  }
+
+  return stack.isEmpty();
+}
+
+console.log("Valid Parenthesis >>----------->");
+console.log(isParenthesisValid("((()))"));
+console.log(isParenthesisValid("((())"));
+console.log(isParenthesisValid("()))"));
