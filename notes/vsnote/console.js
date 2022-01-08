@@ -209,3 +209,40 @@ var queue2 = new TwoStackQueue();
 // queue2.enqueue(5);
 // queue2.dequeue(5);
 // console.log(queue2);
+
+/**
+ * Stack Using Stacks
+ * inbox:  [1,2,3,4,5]
+ * [5,4,3,2,1]
+ * dequeue 5 => [5]
+ * dequeue 4 => [5,4] ...
+ *
+ */
+function QueueStack() {
+  this.inbox = new Queue();
+}
+QueueStack.prototype.push = function (val) {
+  this.inbox.enqueue(val);
+};
+QueueStack.prototype.pop = function () {
+  var size = this.inbox.array.length - 1;
+  var counter = 0;
+  var bufferQueue = new Queue();
+
+  while (++counter <= size) {
+    bufferQueue.enqueue(this.inbox.dequeue());
+  }
+
+  var popped = this.inbox.dequeue();
+  this.inbox = bufferQueue;
+  return popped;
+};
+
+var stack = new QueueStack();
+stack.push(4);
+stack.push(5);
+stack.push(7);
+stack.push(9);
+console.log(stack);
+console.log(stack.inbox);
+console.log(stack.pop());
