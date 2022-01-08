@@ -5,5 +5,9 @@
         "xstring": "cpp",
         "iostream": "cpp",
         "iosfwd": "c"
-    }
+    },
+    "java.project.sourcePaths": [
+        "cs/algorithms & data structures/java/dynamic array",
+        "cs/algorithms & data structures/java/hello world"
+    ]
 }
