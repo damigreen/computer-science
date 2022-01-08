@@ -1,6 +1,6 @@
 /**
  * Stacks
- * @param {*} array 
+ * @param {*} array
  */
 function Stack(array) {
   this.array = [];
@@ -43,8 +43,8 @@ Stack.prototype.pop = function () {
             0:8    0:8 
 
             n = 3
-              a: pop*4   l=7
-              b: pop*5   l=8
+              a: pop*4 l=7
+              b: pop*5 l=8
           }
  */
 function stackAccessNthTopNode(stack, n) {
@@ -175,22 +175,37 @@ function queueSearch(queue, element) {
   }
   return false;
 }
-// console.log(queueSearch(queue1, 10))
-// console.log(queueSearch(queue1, 2))
+console.log(queueSearch(queue1, 10));
+console.log(queueSearch(queue1, 2));
 
 /**
- * Dynamic Array
- * Query: 1 x y
- * let idx = ((x (+) lastAnswer) % n)
- * append integer y to idx
- * Query: 2 x y
- * let idx = ((x (+) lastAnswer) % n)
- * assign the value arr[idx][y % size(arr[idx])] to lastAnswer
- * store tne new value of lastAnswer to an answer array
+ * Queue Using Stacks
+ * inbox:  [1,2,3,4,5]
+ * outbox: [5,4,3,2,1]
  *
  */
-function dynamicArray(arr) {
-  let lastAnswer = 0;
-  // let idx =
+function TwoStackQueue() {
+  this.inbox = new Stack();
+  this.outbox = new Stack();
 }
 
+TwoStackQueue.prototype.enqueue = function (val) {
+  console.log(this.inbox);
+  this.inbox.push(val);
+};
+
+TwoStackQueue.prototype.dequeue = function () {
+  if (this.outbox.isEmpty()) {
+    while (!this.inbox.isEmpty()) {
+      console.log("inbox", this.inbox.array);
+      this.outbox.array.push(this.inbox.array.pop());
+    }
+  }
+  return this.outbox.pop();
+};
+var queue2 = new TwoStackQueue();
+// queue2.enqueue(3);
+// queue2.enqueue(4);
+// queue2.enqueue(5);
+// queue2.dequeue(5);
+// console.log(queue2);
