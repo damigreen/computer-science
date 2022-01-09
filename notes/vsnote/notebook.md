@@ -1,16 +1,145 @@
-# NOTEBOOK
+# Note
 
-## Mind
+## Misc
 
-### Misc
+### Brownies CBD Other Cannabis product
 
-### Work
+- Browse for **similar** **sites** on the web
 
-#### Data Spooling
+## Work
 
-### Courses
+### Data Spooling
 
-#### Angular & Typescript Tutorial by Mosh
+### Iot Dashboard Vamp
+
+- Make **stat metrics** and **charts** responsive on breakpoint **992px**
+  - Increase **stats metrics** and **charts** to 100% at **992px**
+  - Make **info metric** responsive, fall below **charts** and **increase** div to **100%** at breakpoint **992px**
+- Change menu and submenu **icons**
+- Look for **dashboard chart** **themes**
+- Use apex chart **responsive option** to make chart responsive
+- Remove **row wrapper** for chart dashboard
+
+#### Generator Performance
+
+- Added **Generator Metrics** to**system_entities** with `id = 68`
+- Added **Diesel Tank** to **system_entities** with `id = 68`
+- Added **system functions** for listing generator metrics and diesel tanks
+- Allowable roles `1-FM,2-SYS,5-OA,7-TCHN`
+- Add **roles** **access** to **system function**
+
+#### Parameters
+
+- Voltage
+- Current
+- Power Factor
+- Frequency
+- Power
+- RPM
+- Battery Voltage
+- Coolant Temperature
+
+- Runhour
+- Fuel consumed
+- Energy Generated
+- Energy Generated per Unit Litre Fuel Consumed
+
+- Todays Runhour
+- Todays Energy
+- Fuel Consumed today
+
+- Daily  Report
+  - Summary report
+  - Daily report
+
+### Loatsadd Case study / Sidebar
+
+- styles
+  - nav-item toggle-sidebar
+
+- Files
+  - static/assets/js/app.js
+    - toggleFunction()
+
+### Resido Revamp
+
+- Add delete button from residence(clients)
+- remove client onboarding
+- remove manage and add to side bar
+- Clear resido database
+  - Create new database
+
+### Single Sign On
+
+- Login to account session
+- Return token from api
+- on the frontend setToken for Authorization
+- Redirect to the dashboard
+
+[IOT Login](https://accounts.datoms.io/login)
+Username: demo12@iobotech.com
+Password: 123456
+
+    {
+        email_id: "demo12@iobotech.com",
+        password: "123456",
+        source: "website",
+        source_id: 1,
+        target:
+          "https://app.datoms.io/enterprise/1083/dg-monitoring/detailed-view/?thing_id=7284",
+    }
+
+### Termii Integration with Vamp
+
+#### MailChimp integration
+
+host: smtp.mandrillapp.com
+You can use any active API key for your account as your SMTP password.
+but we recommend using your Mailchimp account’s primary contact email as the username.
+Use ports 25, 587, or 2525 for non-encrypted communication between your system and Mailchimp Transactional.
+For secure SSL connections, use port 465.
+Make sure your hosting provider or ISP allows outbound SMTP connections.
+
+#### Work on ppms
+
+- [] create a new **relationship table** between **cycles** and **schedules**
+  - [] use relationship on the frontend
+- [] create a new **relationship table** between **cycles** and **work_request**
+
+- [x] Work on PPM **frontend**
+  - Add links to **location**
+  - Fix for both landmark and landwey
+
+- [x] Work on **ppm backend**
+
+- [x] Make reject button work
+
+- Learn how the **ppm** works, study the **flow** of the ppm or better yet **create** a new flow
+
+#### Fix sales order on live version of landmark server
+
+`components/hagul/dashboard/request.vue`
+`pages/hagul/index`
+
+    data
+      requests: {
+        code,
+        workRequests,
+        salesOrder,
+
+      }
+
+- On work request delivery clicked, a **sales order** is generated
+
+      <span style='color:red'>Remove !!! Remove !!! Remove !!! Remove !!!</span>
+
+### Fix the delete user issue on loadstat
+
+I took the dates of all the pending ad campaign ignorant and those from the running and approved 
+
+## Courses
+
+### Angular & Typescript Tutorial by Mosh
 
 - Angular
   - Component
@@ -51,11 +180,77 @@
 
     class component decorator, decorator function { selector, template }
 
-### Books
+### Google Cloud Platform SimpliLearn
 
-#### JavaScript Data Structures and Algorithms
+What is cloud computing - It is the use of hardware and software components to deliver a service to a network.
+Users can also acces the files and application from any device that can access the internet.
 
-##### Stacks and Queues
+cloud providers privide access to resources e.g computing, memory, storage
+
+### Adonis 5 -JAGR
+
+    @column()
+    public description?: string
+
+    @column.dateTime({ autoCreate: true })
+    public createdAt
+
+    @column.dateTime({ autoCreate: true, autoUpdate: true })
+    public updatedAt
+
+    @hasMany(() => Task, {
+      localKey: "createdBy"
+    })
+    public tasks: hasMany<typeof Task>
+
+    @hasMany(() => User, {
+      foreignKey: "createdBy"
+    })
+    public creator: hasMany<typeof Task>
+
+`build` - compile typescript
+`invoke` - get instructions for installing new modules with adonis project
+`serve` - Serve application
+
+Users can create many tasks tasks belongs to a user
+
+    Migrations
+          Users                Tasks           Projects
+
+          id                    id                id
+          username              name              name
+          password              descrtiption      description
+          remember_me_token     due_at            satus_id
+                                created_by
+                                assigned_to
+                                status_id
+
+    project_users               project_tasks
+        id                          id
+        project_id                  project_id
+        user_id                     task_id
+        role_id                     sort_order
+
+        -------------------------------------------------------------------
+
+        ENUMS
+
+            Role                    Status
+                member                  idle
+                admin                   in_progress
+                                        complete
+
+### Docker tutorial for beginners
+
+#### Docker tutorial for beginners - Timelines
+
+    43.10, 52.00, 56.49, 56,19, 1:01:00, 01:03:09, 01:05:09, 01:07:24, 01:13:00, 01:31:00, 01:35:47, 01:57:49
+
+## Books
+
+### JavaScript Data Structures and Algorithms
+
+#### Stacks and Queues
 
 - Stacks
   - data structure in which
@@ -215,13 +410,13 @@
 - Queue and Stack Time Complexity Summary
 
 |       | Access | Search | Peek | Insertion | Deletion |
-|-------|--------|--------|------|-----------|----------|
+| ----- | ------ | ------ | ---- | --------- | -------- |
 | Queue | O(n)   | O(n)   | O(1) | O(1)      | O(n)     |
 | Stack | O(n)   | O(n)   | O(1) | O(1)      | O(1)     |
 
-###### Exercise ~ Stack and Queues
+##### Exercise ~ Stack and Queues
 
-##### Hash Tables```
+#### Hash Tables```
 
 - Hash Tables
   - Fixed size data structure
@@ -292,13 +487,13 @@
       - implement put
       - implement get
 
-###### Recap - Hash Tables
+##### Recap - Hash Tables
 
 Hash tables are fixed size data structures whose length are defined at the start. They are best
 used for quick storage and retrival of data base on key value pairs. they are similar to objects
 that defines keys and associated values.
 
-##### Hash Tables - 24:12:21
+#### Hash Tables - 24:12:21
 
 - Hash Tables
   - What are hash tables
@@ -351,7 +546,7 @@ that defines keys and associated values.
       last inserted element, removed, accessed, LIFO, priciple, constant time, lookup, insertion, first added element
       FIFO, buffer, prevent(avoid), modification, original
 
-###### Answers ~ Hash Tables
+##### Answers ~ Hash Tables
 
 `Hashtables` are fixed-sized data strtucture. Its lenght is ususlly defined at the start. They can be used for / 
 they are best used for quick retrival and storage of daata in key value pair.
@@ -362,7 +557,7 @@ and there is a collision between two different keys for particular a index locat
 manner
 
 <!-- Weekly actities -->
-##### Mnemonics Cache ~ 18:12:2021
+#### Mnemonics Cache ~ 18:12:2021
 
                    Creative inersia
 
@@ -395,7 +590,7 @@ So I will assign hooks to every one of the list.
 
 - Use Keywods for
 
-##### JavaScript Strigs
+#### JavaScript Strigs
 
 - javascript string accessing
   - `.charAt(index)`
@@ -458,44 +653,44 @@ So I will assign hooks to every one of the list.
 
 ## After Nine
 
-- Check instagram for some
-- 
-
+- ~~Check instagram for some~~
 - Delete unactive git repositories
 - Smoke some weed
 - Play some game
 - Watch videos on youtube
 - Social media e.g whatsapp status instagram etc
 
-## People
+## Personal
 
-### Bukunmi
+### People
 
-### Joseph
+#### Bukunmi
 
-### Fola
+#### Joseph
 
-### Hadijat
+#### Fola
+
+#### Hadijat
 
 Hello, Have you help to change the credit card information on the mailgun site.
 Let me send you the login for the site
 On the site go to ...
 
-### Iya Ariyo
+#### Iya Ariyo
 
-### Kunle
+#### Kunle
 
 Did you get any good tutorial to work with
 Find a tutorial that teaches you the basics
 
-## Information
+### Information
 
-### General Info
+#### General Info
 
 - facebook password - DDQl6HQEhShZBxriaB2UlXdm5Lu7cLsze4f0NXK41I
 - Secret recovery phrase **Meta mask**: fiction member dose occur decade fiscal shallow magnet lend gun deputy pilot
 
-### Travel Links
+#### Travel Links
 
 Residencies
 https://residencies.io/
@@ -515,22 +710,50 @@ https://www.d7visa.com/
 Digital Nomad Visa
 https://www.youtube.com/redirect?event=video_description&redir_token=QUFFLUhqbFZxcDd6VVRUNVZmSHZLdnJqTXZhQWhmb2tNd3xBQ3Jtc0ttaW83b3BoM1cxeDFLeEN6NXdUR0NqemlTNm81ZW1DVWc2Z3JFYnE2QTJ6Qy0wbFlTSUNjWVpaMTFocU9wV1hxWUlmQmJCWXYyTG9qZkN3bERXNWdWaks4Zk1vbWNCZ3loVlNUa0pkN1piSWs5SDB3SQ&q=https%3A%2F%2Fexpertvagabond.com%2Fdigital-nomad-work-visas%2F
 
-## How Tos
+### How Tos
 
-### How to avoid watching pornography
+#### How to avoid watching pornography
 
 - Read the bible
 - Code as much as possible
 - To **refocus** your mind, Read about business, do a lot of brainstorm and take a lot of notes
 - Think about some smoke (after nine)
 
-## Vocabulary
+### Rules
+
+- Put God first
+- Dont be basic
+
+### Thoughts / Ideas
+
+- No **porn** through out the new year
+
+- Always remember to think and formulate your thoughts completely
+  before you **write** down again on this **space**
+
+  - It helps in you to develop the ability to retrieve information quickly
+    and ultimately increase your memory shortterm
+
+- ability
+- Make english your **thought** language and `write` every thought you have in memory in english
+- Aways remain focused averytime you are learning something new and
+
+#### Process of Total Recall
+
+- ReRead
+- Review
+- Scan for **Words**
+- Search words in **Dictionary**
+
+## English
+
+### Vocabulary
 
 e.g => following
 
    following, memory location, unique index,
 
-### Nouns
+#### Nouns
 
 - format - [specified format]
 - ability
@@ -541,7 +764,7 @@ e.g => following
 - thoughts
 - Feelings
 
-### Verbs
+#### Verbs
 
 - represent (ted, ing, s)
 
@@ -563,11 +786,11 @@ e.g => following
   - To send a letter to someone or similar message, giving them information or expressing
   - your thoughts or feelings
 
-### Adverbs
+#### Adverbs
 
-### Adjectives
+#### Adjectives
 
-### Prepositions
+#### Prepositions
 
 - After
   - Following in time space and order
@@ -582,323 +805,12 @@ e.g => following
   - his dream in life of traveling and learning more about life and his carrer
   - Expanding is the keyword here it should be your baltle cry when you wake up in the morning
 
-## Quotes
+### Quotes
 
 - Because you didn’t get this far by being average.
 
-## ReCall / Run Downs
+## CS
 
-### Bubble Sort - JD&A
+### Algorithms
 
-### Selection Sort - JD&A
-
-- Selection sort: scanning through the array for the smallest item and putting it in the current position in the iteratiion
-- Iside the loop, it searches for the smallest element, and move them to the current position
-- Also it checks if the smaller element (after comparison with the iterator(item) position) has been assigned to current position
-  - If not swaps the smaller element with the current element
-
-### Thoughts
-
-### Process of Total Recall
-
-- ReRead
-- Review
-- Scan for **Words**
-- Search words in **Dictionary**
-
-### 20:11:2021
-
-- Selection sort
-  - invloves scanning through an array for the smallest item in the array
-  and putting it in the the current position of the array..
-  - Ite
-  
-## Blink
-
-- No **porn** through out the new year
-
-- Always remember to think and formulate your thoughts completely
-  before you **write** down again on this **space**
-
-  - It helps in you to develop the ability to retrieve information quickly
-    and ultimately increase your memory shortterm
-
-- ability
-- Make english your **thought** language and `write` every thought you have in memory in english
-- Aways remain focused averytime you are learning something new and
-
-## Notes
-
-### Brownies CBD Other Cannabis product
-
-- Browse for **similar** **sites** on the web
-
-### Iot Dashboard Vamp
-
-- Make **stat metrics** and **charts** responsive on breakpoint **992px**
-  - Increase **stats metrics** and **charts** to 100% at **992px**
-  - Make **info metric** responsive, fall below **charts** and **increase** div to **100%** at breakpoint **992px**
-- Change menu and submenu **icons**
-- Look for **dashboard chart** **themes**
-- Use apex chart **responsive option** to make chart responsive
-- Remove **row wrapper** for chart dashboard
-
-#### Generator Performance
-
-- Added **Generator Metrics** to**system_entities** with `id = 68`
-- Added **Diesel Tank** to **system_entities** with `id = 68`
-- Added **system functions** for listing generator metrics and diesel tanks
-- Allowable roles `1-FM,2-SYS,5-OA,7-TCHN`
-- Add **roles** **access** to **system function**
-
-##### Parameters
-
-- Voltage
-- Current
-- Power Factor
-- Frequency
-- Power
-- RPM
-- Battery Voltage
-- Coolant Temperature
-
-- Runhour
-- Fuel consumed
-- Energy Generated
-- Energy Generated per Unit Litre Fuel Consumed
-
-- Todays Runhour
-- Todays Energy
-- Fuel Consumed today
-
-- Daily  Report
-  - Summary report
-  - Daily report
-
-#### Loatsadd Case study / Sidebar
-
-- styles
-  - nav-item toggle-sidebar
-
-- Files
-  - static/assets/js/app.js
-    - toggleFunction()
-
-### Resido Revamp
-
-- Add delete button from residence(clients)
-- remove client onboarding
-- remove manage and add to side bar
-- Clear resido database
-  - Create new database
-
-### Docker tutorial for beginners
-
-#### Docker tutorial for beginners - Timelines
-
-    43.10, 52.00, 56.49, 56,19, 1:01:00, 01:03:09, 01:05:09, 01:07:24, 01:13:00, 01:31:00, 01:35:47, 01:57:49
-
-### Single Sign On
-
-- Login to account session
-- Return token from api
-- on the frontend setToken for Authorization
-- Redirect to the dashboard
-
-[IOT Login](https://accounts.datoms.io/login)
-Username: demo12@iobotech.com
-Password: 123456
-
-    {
-        email_id: "demo12@iobotech.com",
-        password: "123456",
-        source: "website",
-        source_id: 1,
-        target:
-          "https://app.datoms.io/enterprise/1083/dg-monitoring/detailed-view/?thing_id=7284",
-    }
-
-### Termii Integration with Vamp
-
-### Google Cloud Platform SimpliLearn
-
-What is cloud computing - It is the use of hardware and software components to deliver a service to a network.
-Users can also acces the files and application from any device that can access the internet.
-
-cloud providers privide access to resources e.g computing, memory, storage
-
-### Adonis 5 -JAGR
-
-    @column()
-    public description?: string
-
-    @column.dateTime({ autoCreate: true })
-    public createdAt
-
-    @column.dateTime({ autoCreate: true, autoUpdate: true })
-    public updatedAt
-
-    @hasMany(() => Task, {
-      localKey: "createdBy"
-    })
-    public tasks: hasMany<typeof Task>
-
-    @hasMany(() => User, {
-      foreignKey: "createdBy"
-    })
-    public creator: hasMany<typeof Task>
-
-`build` - compile typescript
-`invoke` - get instructions for installing new modules with adonis project
-`serve` - Serve application
-
-Users can create many tasks tasks belongs to a user
-
-    Migrations
-          Users                Tasks           Projects
-
-          id                    id                id
-          username              name              name
-          password              descrtiption      description
-          remember_me_token     due_at            satus_id
-                                created_by
-                                assigned_to
-                                status_id
-
-    project_users               project_tasks
-        id                          id
-        project_id                  project_id
-        user_id                     task_id
-        role_id                     sort_order
-
-        -------------------------------------------------------------------
-
-        ENUMS
-
-            Role                    Status
-                member                  idle
-                admin                   in_progress
-                                        complete
-
-### MailChimp integration
-
-host: smtp.mandrillapp.com
-You can use any active API key for your account as your SMTP password.
-but we recommend using your Mailchimp account’s primary contact email as the username.
-Use ports 25, 587, or 2525 for non-encrypted communication between your system and Mailchimp Transactional.
-For secure SSL connections, use port 465.
-Make sure your hosting provider or ISP allows outbound SMTP connections.
-
-### Gatepass Vamp Callbacks
-
-    https://us-central1-gatepass-test-environment.cloudfunctions.net/api/vampfi/callback/request/approved
-
-    select * from system_functions;
-    select * from system_entities;
-    select * from system_entity_params;
-    select * from system_event_triggers;
-    select * from system_events;
-    select * from system_event_web_hook;
-    select * from web_hooks;
-
-    select * from web_hook_params;
-    select * from web_hooks;
-    select * from system_entities;
-    select * from system_entity_params;
-    select * from web_hooks where id=8;
-
-
-    select * from work_requests;
-    select * from client_requests;
-    select * from equipment_criticalities;
-    select * from work_request_items;
-    select * from materials;
-
-    ------------------------------------------------------------
-
-    select * from users;
-    select * from residences;
-    select * from requests;
-    select * from request_statuses;
-    select * from request_logs;
-    select * from messages;
-    select * from estates;
-    select * from chat_groups;
-    select * from chat_group_user;
-    ----------------------------------------------------------------
-
-    select * from users;
-    select * from stages;
-    select * from requests;
-
-    ------------------------------------------------------------------------------
-
-    select * from users;
-    select * from occupants;
-    select * from unit_hierarchies;
-    select * from units;
-
-[CallBack Route](http://127.0.0.1:3333/callbacks/request/approved)
-
-### Work on ppms
-
-- [] create a new **relationship table** between **cycles** and **schedules**
-  - [] use relationship on the frontend
-- [] create a new **relationship table** between **cycles** and **work_request**
-
-- [x] Work on PPM **frontend**
-  - Add links to **location**
-  - Fix for both landmark and landwey
-
-- [x] Work on **ppm backend**
-
-- [x] Make reject button work
-
-- Learn how the **ppm** works, study the **flow** of the ppm or better yet **create** a new flow
-
-### Fix sales order on live version of landmark server
-
-`components/hagul/dashboard/request.vue`
-`pages/hagul/index`
-
-    data
-      requests: {
-        code,
-        workRequests,
-        salesOrder,
-
-      }
-
-- On work request delivery clicked, a **sales order** is generated
-
-      <span style='color:red'>Remove !!! Remove !!! Remove !!! Remove !!!</span>
-
-### Fix the delete user issue on loadstat
-
-I took the dates of all the pending ad campaign ignorant and those from the running and approved 
-
-### Toptal video
-
-- Make a **record** for toptal **video**
-  - Record a Video
-
-    To kick off the screening process, please introduce yourself in a short 4 to 7-minute recording. This is an opportunity for us to get to know you better, learn about your skills and career highlights, and gauge your ability to communicate clearly and professionally in English.
-
-    In your video, please respond to the following questions:
-
-        - What was the last project you worked on? How did you contribute to it?
-        - How many years of professional experience do you have in software development or QA?
-        - What are your strongest skills in terms of technologies and programming languages?
-
-    You can record straight from your browser – no app installation necessary.
-
-    Please note that you can review and re-record your audio multiple times before submitting it.
-
-## Algorithms
-
-### String Shortening
-
-## Rules
-
-- Put God first
-- Dont be basic
+#### String Shortening
