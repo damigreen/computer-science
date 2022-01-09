@@ -22,12 +22,12 @@ Stack.prototype.peek = function () {
 
 // Insertion
 Stack.prototype.push = function (value) {
-  this.array.push(value);
+  return this.array.push(value);
 };
 
 // Deletion
 Stack.prototype.pop = function () {
-  this.array.pop();
+  return this.array.pop();
 };
 
 /**
@@ -297,6 +297,7 @@ function isParenthesisValid(validationString) {
 
   return stack.isEmpty();
 }
+
 
 console.log("Valid Parenthesis >>----------->");
 console.log(isParenthesisValid("((()))"));
