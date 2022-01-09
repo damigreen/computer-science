@@ -303,3 +303,49 @@ console.log("Valid Parenthesis >>----------->");
 console.log(isParenthesisValid("((()))"));
 console.log(isParenthesisValid("((())"));
 console.log(isParenthesisValid("()))"));
+
+
+/**
+ * Sorted Stack
+ * [7,4,2,9]
+ * ms: [7,4,2,9]
+ * ss: [] [9] [9,2,4,7]
+ * temp = ms.pop() = 9->2
+ * ss.peek() = null->9
+ * while ss.peek() < temp
+  * ss.push(temp)
+ * 
+ */
+function SortableStack(size) {
+  this.size = size;
+
+  this.mainStack = new Stack();
+  this.sortedStack = new Stack();
+
+  for (var i = 0; i < size; i++) {
+    this.mainStack.push(Math.floor(Math.random() * 11));
+  }
+}
+
+// [1,2,4] -> [1,2] -> [1]
+// [] -> [4] -> [4,2]
+// [1,4,2] -> [1,4] -> [1,2]
+// [] -> [2] -> [4]
+// null < 
+// 
+SortableStack.prototype.sortStackDescending = function() {
+  while(!this.mainStack.isEmpty()) {
+    var temp = this.mainStack.pop();
+    var peek = this.sortedStack.peek();
+    while(!this.sortedStack.isEmpty() && peek < temp) {
+      this.mainStack.push(this.sortedStack.pop())
+    }
+    this.sortedStack.push(temp)
+  }
+}
+
+console.log("Sorted Stack >>----------->");
+var ss = new SortableStack(10);
+ss.sortStackDescending()
+console.log(ss.mainStack);
+console.log(ss.sortedStack);
