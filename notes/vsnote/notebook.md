@@ -267,7 +267,7 @@ I took the dates of all the pending ad campaign ignorant and those from the runn
 - faucet
 - block explorer
 - gas
-- 
+- Hash
 
 ### Angular & Typescript Tutorial by Mosh
 
@@ -939,6 +939,7 @@ e.g => following
 
 - Because you didn’t get this far by being average.
 - Tke actions regardless of how you feel - `Grant Cardone`
+- 
 
 ## CS
 
