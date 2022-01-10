@@ -54,12 +54,51 @@
 
 ### Gatepass Vamp Callbacks
 
+- Test
+  - Debug live webhook
+    - change live db in env
+    - switch branch ro live
+    - log response from webhook logic
+
+  - Process
+    - Create a new resident (skip*)
+    - Create a new request using the resident
+    - test the hooks
+      - resident assigned a unit
+      - request approved
+      - work started
+      - work completed
+
 - Live Database Update
   - web_hooks
   - system_entity_params
   - system_event_triggers
   - system_events
   - system_event_web_hook
+
+      {
+          "description": "Fix the door",
+          "name": "Fix the Door",
+          "requested_by": 31,
+          "unit_id": 17,
+          "request_id": "eopiisdjkandxnw"
+      }
+      {
+          "description": "Fix the door",
+          "name": "Fix the Door",
+          "requested_by": 8,
+          "unit_id": 1,
+          "request_id": "eopiisdjkandxnw"
+      }
+
+http://127.0.0.1:3333/webhook/approve
+http://127.0.0.1:3333/webhook/job-started
+http://127.0.0.1:3333/webhook/job-completed
+
+https://us-central1-gatepass-test-environment.cloudfunctions.net/api/vampfi/callback/residents/assigned	1	2021-10-19 19:17:49	2021-10-19 19:17:49			1		
+https://us-central1-gatepass-test-environment.cloudfunctions.net/api/vampfi/callback/request/approved	1	2021-10-20 12:17:49	2021-10-20 12:17:49			1		
+https://us-central1-gatepass-test-environment.cloudfunctions.net/api/vampfi/callback/work_started	1	2021-12-07 18:02:00	2021-12-07 18:02:00			1		
+https://us-central1-gatepass-test-environment.cloudfunctions.net/api/vampfi/callback/work_complete	1	2021-12-07 18:02:00	2021-12-07 18:02:00			1		
 
 unit_id'1', 'unit_id', '1', '23', '2021-10-19 19:17:49', '2021-10-19 19:17:49', NULL
 '2', 'occupants_id', '1', '24', '2021-10-19 19:17:49', '2021-10-19 19:17:49', NULL
@@ -81,6 +120,7 @@ unit_id'1', 'unit_id', '1', '23', '2021-10-19 19:17:49', '2021-10-19 19:17:49', 
 '19', 'unit_name', '4', '27', '2021-12-07 18:29:00', '2021-12-07 18:29:00', NULL
 '20', 'request_id', '3', '26', '2021-12-09 09:28:00', '2021-12-09 09:28:00', NULL
 '21', 'request_id', '4', '26', '2021-12-09 09:28:00', '2021-12-09 09:28:00', NULL
+
 
     https://us-central1-gatepass-test-environment.cloudfunctions.net/api/vampfi/callback/request/approved
 
