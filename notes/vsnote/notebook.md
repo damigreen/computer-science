@@ -258,6 +258,17 @@ I took the dates of all the pending ad campaign ignorant and those from the runn
 
 ## Courses
 
+### Solidity, Blockchain and Smart Contract Course - Beginner to Expert Python Tutorial
+
+#### Keywords | Solidity, Blockchain and Smart Contract Course
+
+- Dapp / Smart Contracts / Smart Protocol
+- DAOs
+- faucet
+- block explorer
+- gas
+- 
+
 ### Angular & Typescript Tutorial by Mosh
 
 - Angular
@@ -927,6 +938,7 @@ e.g => following
 ### Quotes
 
 - Because you didn’t get this far by being average.
+- Tke actions regardless of how you feel - `Grant Cardone`
 
 ## CS
 

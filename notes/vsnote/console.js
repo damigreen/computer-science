@@ -362,8 +362,6 @@ function dynamicArray(n, queries) {
 
   let lastAnswer = 0;
   let result = [];
-  // Query 1 x y
-  // idx = ((x (+) lastAnser) % n)
   for (var i = 0; i < queries.length; i++) {
     var index = (queries[i][1] ^ lastAnswer) % n;
     if (queries[i][0] == 1) {
