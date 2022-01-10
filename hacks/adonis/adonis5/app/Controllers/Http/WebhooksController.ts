@@ -2,7 +2,7 @@
 
 export default class WebhooksController {
     public async approve({ request, response }) {
-        console.log("getting request ---->")
+        console.log("job approved >>--------s---->")
         console.log(request.all())
 
         return response.json({
@@ -11,7 +11,7 @@ export default class WebhooksController {
     }
     
     public async started({ request, response }) {
-        console.log("getting request ---->")
+        console.log("job started >>------------>")
         console.log(request.all())
 
         return response.json({
@@ -20,7 +20,7 @@ export default class WebhooksController {
     }
 
     public async completed({ request, response }) {
-        console.log("getting request ---->")
+        console.log("job completed >>------------>")
         console.log(request.all())
 
         return response.json({
