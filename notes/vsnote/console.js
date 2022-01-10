@@ -247,7 +247,6 @@ console.log(stack);
 console.log(stack.inbox);
 console.log(stack.pop());
 
-
 /**
  * DESIGN A CASHIER CLASS THAT TAKES IN A CUSTOMER OBJECT AND HANDLES FOOD
  * ORDERING ON A FIRST-COME, FIRST-SERVED BASIS
@@ -273,12 +272,11 @@ Cashier.prototype.deliverOrder = function () {
   );
 };
 
-var cashier = new Cashier()
+var cashier = new Cashier();
 var customer = new Customer("dami", "Burger");
 var customer1 = new Customer("sun", "Moon");
-cashier.addOrder(customer)
-cashier.deliverOrder()
-
+cashier.addOrder(customer);
+cashier.deliverOrder();
 
 /**
  * Paranthesis Validation Checker using Stack
@@ -289,7 +287,7 @@ function isParenthesisValid(validationString) {
     var currentChar = validationString.charAt(i);
     if (currentChar == "(") {
       stack.push(currentChar);
-    }else if(currentChar == ")") {
+    } else if (currentChar == ")") {
       if (stack.isEmpty()) return false;
       stack.pop();
     }
@@ -298,12 +296,10 @@ function isParenthesisValid(validationString) {
   return stack.isEmpty();
 }
 
-
 console.log("Valid Parenthesis >>----------->");
 console.log(isParenthesisValid("((()))"));
 console.log(isParenthesisValid("((())"));
 console.log(isParenthesisValid("()))"));
-
 
 /**
  * Sorted Stack
@@ -313,8 +309,8 @@ console.log(isParenthesisValid("()))"));
  * temp = ms.pop() = 9->2
  * ss.peek() = null->9
  * while ss.peek() < temp
-  * ss.push(temp)
- * 
+ * ss.push(temp)
+ *
  */
 function SortableStack(size) {
   this.size = size;
@@ -331,21 +327,54 @@ function SortableStack(size) {
 // [] -> [4] -> [4,2]
 // [1,4,2] -> [1,4] -> [1,2]
 // [] -> [2] -> [4]
-// null < 
-// 
-SortableStack.prototype.sortStackDescending = function() {
-  while(!this.mainStack.isEmpty()) {
+// null <
+//
+SortableStack.prototype.sortStackDescending = function () {
+  while (!this.mainStack.isEmpty()) {
     var temp = this.mainStack.pop();
     var peek = this.sortedStack.peek();
-    while(!this.sortedStack.isEmpty() && peek < temp) {
-      this.mainStack.push(this.sortedStack.pop())
+    while (!this.sortedStack.isEmpty() && peek < temp) {
+      this.mainStack.push(this.sortedStack.pop());
     }
-    this.sortedStack.push(temp)
+    this.sortedStack.push(temp);
   }
-}
+};
 
 console.log("Sorted Stack >>----------->");
 var ss = new SortableStack(10);
-ss.sortStackDescending()
+ss.sortStackDescending();
 console.log(ss.mainStack);
 console.log(ss.sortedStack);
+
+const xy = [
+  [1, 0, 5],
+  [1, 1, 7],
+  [1, 0, 3],
+  [2, 1, 0],
+  [2, 1, 1],
+];
+
+function dynamicArray(n, queries) {
+  var arr = [];
+  for (var i = 0; i < n; i++) {
+    arr.push(new Array());
+  }
+
+  let lastAnswer = 0;
+  let result = [];
+  // Query 1 x y
+  // idx = ((x (+) lastAnser) % n)
+  for (var i = 0; i < queries.length; i++) {
+    var index = (queries[i][1] ^ lastAnswer) % n;
+    if (queries[i][0] == 1) {
+      arr[index].push(queries[i][2]);
+    } else {
+      let size = arr[index].length;
+      lastAnswer = arr[index][queries[i][2] % size];
+      result.push(lastAnswer);
+    }
+  }
+
+  return result;
+}
+console.log(dynamicArray(2, xy));
