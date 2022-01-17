@@ -35,6 +35,15 @@
                 "<node_internals>/**"
             ],
             "program": "${workspaceFolder}\\notes\\vsnote\\console.js"
+        },
+        {
+            "type": "pwa-node",
+            "request": "launch",
+            "name": "Launch Program ConsoleTS",
+            "skipFiles": [
+                "<node_internals>/**"
+            ],
+            "program": "${workspaceFolder}\\notes\\vsnote\\console_ts.js"
         }
     ]
 }
