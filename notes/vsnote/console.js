@@ -377,8 +377,6 @@ function dynamicArray(n, queries) {
 }
 console.log(dynamicArray(2, xy));
 
-
-
 /**
  * Rotate Left
  */
@@ -449,4 +447,163 @@ function rotateLeft(d, arr) {
 
   return arrNew;
 }
-console.log(rotateLeft(2, [1, 2, 3, 5]));
+// console.log(rotateLeft(2, [1, 2, 3, 5]));
+
+/** Sparse Array
+ * strings=["ab", 'ab, 'abc']
+ * queries=["ab", 'abc, 'bc']
+ */
+function sparseArrayJs(strings, queries) {
+  var countArray = [];
+  for (var j = 0; j < queries.length; j++) {
+    var stringCountForQuery = 0;
+    for (var i = 0; i < strings.length; i++) {
+      if (queries[j] == strings[i]) {
+        stringCountForQuery++;
+      }
+    }
+    countArray.push(stringCountForQuery);
+  }
+  return countArray;
+}
+console.log(sparseArrayJs(["ab", "ab", "abc"], ["ab", "bc", "abc"]));
+
+function fizzBuzz(n) {
+  // Write your code here
+  for (var i = 0; i <= n; i++) {
+    if (i % 3 == 0 && i % 5 == 0) {
+      console.log("fizzBuzz");
+    } else if (i % 3 == 0) {
+      console.log("fizz");
+    } else if (i % 5 == 0) {
+      console.log("Buzz");
+    } else console.log(i);
+  }
+}
+console.log(fizzBuzz(15));
+
+function SinglyLinkedListNode(data) {
+  this.data = data;
+  this.next = null;
+}
+
+function SinglyLinkedList() {
+  this.head = null;
+  this.size = 0;
+  return 0;
+}
+
+SinglyLinkedList.prototype.isEmpty = function () {
+  return this.size == 0;
+};
+
+/**
+ * Time complexity O(1)
+ */
+SinglyLinkedList.prototype.insert = function (value) {
+  if (this.head == null) {
+    this.head = new SinglyLinkedListNode(value);
+  } else {
+    var temp = this.head;
+    this.head = new SinglyLinkedListNode(value);
+    this.head.next = temp;
+  }
+  this.size++;
+};
+
+// SinglyLinkedList.prototype.remove = function (value) {
+//   var currentHead = this.head;
+//   if (currentHead.data == value) {
+//     this.head = currentHead.next;
+//     this.size--;
+//   } else {
+//     /**
+//      * [12]->[2]->[7]->[4]->null
+//      *
+//      * **************************
+//      * remove
+//      * [3]->[5]->[9]->[6]->null
+//      * value = [5]
+//      * currentHead = this.head
+//      *
+//      *
+//      */
+//     var prev = currentHead;
+//     while (currentHead.next) {
+//   }
+
+//   // set prev to currentHead
+//   const prev = currentHead;
+// };
+
+var sll1 = new SinglyLinkedList();
+console.log(sll1);
+sll1.insert(12);
+sll1.insert(1);
+sll1.insert(4);
+sll1.insert(7);
+console.log(sll1);
+
+function SLLN(data) {
+  this.data = data;
+  this.next = null;
+}
+function SLL() {
+  this.head = null;
+  this.size = 0;
+}
+SLL.prototype.isEmpty = function () {
+  return this.size == 0;
+};
+SLL.prototype.insert = function (value) {
+  if (this.head == null) {
+    this.head = new SLLN(value);
+  } else {
+    var temp = this.head;
+    this.head = new SLLN(value);
+    this.head.next = temp;
+  }
+  this.size++;
+};
+SLL.prototype.remove = function (value) {
+  var currentHead = this.head;
+  if (currentHead == value) {
+    this.head = currentHead.next;
+    this.size--;
+  } else {
+    // [] -> []
+    /* 
+        [2] -> [] -> [] -> [] -> null
+       prev         val
+        [2] -> [] -> X -> [] -> null
+       prev        val
+     */
+    var prev = currentHead;
+    while (currentHead.next) {
+      if (currentHead.data == value) {
+        console.log("current head IS value");
+        prev.next = currentHead.next;
+        prev = currentHead;
+        currentHead = currentHead.next;
+        break;
+      }
+      console.log("current head NOT value");
+      prev = currentHead;
+      currentHead = currentHead.next;
+    }
+    if (currentHead.data != value) {
+      prev.next = null;
+    }
+    this.size--;
+  }
+};
+
+sll1 = new SLL();
+console.log("SLL Empty--->");
+console.log(sll1.isEmpty());
+sll1.insert("damigreen");
+sll1.insert(42);
+sll1.insert(4);
+sll1.insert(24);
+console.log(sll1);
+sll1.remove(4);
