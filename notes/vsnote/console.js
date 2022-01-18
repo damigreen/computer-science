@@ -692,6 +692,23 @@ function arrayManipulation(n, queries) {
   return Math.max(...arrZero);
 }
 
+function arrayManipulation1(n, queries) {
+  const arr = Array(n + 1);
+  console.log("arr init", arr);
+  let maxValue = 0,
+    currentNumber = 0;
+  queries.forEach(([startIndex, endIndex, addNumber]) => {
+    console.log(startIndex, endIndex, addNumber);
+    arr[startIndex] = arr[startIndex] || { start: 0, end: 0 };
+    arr[endIndex] = arr[endIndex] || { start: 0, end: 0 };
+    arr[startIndex].start += addNumber;
+    arr[endIndex].end += addNumber;
+    console.log("arr pres ...", arr);
+  });
+  console.log("arr after ...", arr);
+
+  return 1;
+}
 
 var queries = [
   [1, 5, 3],
