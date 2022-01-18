@@ -687,7 +687,7 @@ DoublyLinkedList.prototype.isEmpty = function () {
   return this.size == 0;
 };
 
-DoublyLinkedList.prototype.addAtFront = function (value) {
+DoublyLinkedList.prototype.insertAtHead = function (value) {
   if (this.head == null) {
     this.head = new DoublyLinkedListNode(value);
     this.tail = this.head;
@@ -700,12 +700,30 @@ DoublyLinkedList.prototype.addAtFront = function (value) {
   }
   this.size++;
 };
+
+// [2]<-->[3]<-->[7]<-->  <--[temp(5)]null
+// temp.prev will be set to tail
+// tail.next will be temp
+// tail will now be temp
+
+DoublyLinkedList.prototype.insertAtTail = function (value) {
+  if (this.tail == null) {
+    this.tail = new DoublyLinkedListNode(value);
+    this.head = this.tail;
+  } else {
+    var temp = new DoublyLinkedListNode(value);
+    temp.prev = this.tail;
+    this.tail.next = temp;
+    this.tail = temp;
+  }
+  this.size++;
+}
 console.log("**********Doubly Linked List**********");
 var dll = new DoublyLinkedList();
 console.log("is linked list empty?...", dll.isEmpty());
-dll.addAtFront(5);
-dll.addAtFront(7);
-dll.addAtFront(9);
+dll.insertAtHead(7);
+dll.insertAtHead(9);
+dll.insertAtTail(3);
 console.log(dll);
 
 function arrayManipulation(n, queries) {
