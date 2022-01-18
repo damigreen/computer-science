@@ -671,7 +671,7 @@ console.log(sll1);
 console.log("42 present ? ...", sll1.search(42));
 console.log("430 present ? ...", sll1.search(430));
 
-function DoublyLinkedListNode() {
+function DoublyLinkedListNode(data) {
   this.data = data;
   this.next = null;
   this.prev = null;
@@ -686,6 +686,27 @@ function DoublyLinkedList() {
 DoublyLinkedList.prototype.isEmpty = function () {
   return this.size == 0;
 };
+
+DoublyLinkedList.prototype.addAtFront = function (value) {
+  if (this.head == null) {
+    this.head = new DoublyLinkedListNode(value);
+    this.tail = this.head;
+  } else {
+    // [temp] -> <--[3]<-->[4]<-->[5]
+    var temp = new DoublyLinkedListNode(value);
+    temp.next = this.head;
+    this.head.prev = temp;
+    this.head = temp;
+  }
+  this.size++;
+};
+console.log("**********Doubly Linked List**********");
+var dll = new DoublyLinkedList();
+console.log("is linked list empty?...", dll.isEmpty());
+dll.addAtFront(5);
+dll.addAtFront(7);
+dll.addAtFront(9);
+console.log(dll);
 
 function arrayManipulation(n, queries) {
   var arrZero = "0"
@@ -731,6 +752,6 @@ var queries = [
   [4, 8, 7],
   [6, 9, 1],
 ];
-console.log(arrayManipulation(10, queries));
-console.log("...");
-console.log(arrayManipulation1(10, queries));
+// console.log(arrayManipulation(10, queries));
+// console.log("...");
+// console.log(arrayManipulation1(10, queries));
