@@ -564,7 +564,6 @@ SLL.prototype.insert = function (value) {
     this.head.next = temp;
   }
   this.size++;
-  console.log(this.head);
 };
 SLL.prototype.remove = function (value) {
   var currentHead = this.head;
@@ -585,7 +584,7 @@ SLL.prototype.remove = function (value) {
      */
     var prev = currentHead;
     while (currentHead.next) {
-      if(currentHead.data == value) {
+      if (currentHead.data == value) {
         prev.next = currentHead.next;
         prev = currentHead;
         currentHead = currentHead.next;
@@ -595,26 +594,44 @@ SLL.prototype.remove = function (value) {
       currentHead = currentHead.next;
     }
     // if (currentHead.data == value) {
-      if (currentHead.data == value) {
-        prev.next = null;
-        console.log(currentHead)
+    if (currentHead.data == value) {
+      prev.next = null;
     }
     this.size--;
   }
-}
-
+};
+SLL.prototype.delete = function (value) {
+  var currentNode = this.head;
+  // Check if current node is value
+  // [2]-[3]-[4]
+  if (currentNode.data == value) {
+    this.head = currentNode.next;
+    this.size--;
+  } else {
+    var prevNode = currentNode;
+    while (currentNode.next) {
+      if (currentNode.data == value) {
+        prevNode.next = currentNode.next;
+        prevNode = currentNode;
+        currentNode = currentNode.next;
+        this.size--;
+      }
+      prev = currentNode;
+      currentNode = currentNode.next;
+    }
+  }
+};
 
 sll1 = new SLL();
-console.log("new sll1 ", sll1);
-console.log("SLL Empty--->");
-console.log(sll1.isEmpty());
+console.log("SLL Empty ...", sll1.isEmpty());
 sll1.insert(9);
 sll1.insert(42);
 sll1.insert(4);
 sll1.insert(24);
-console.log("Removing");
+console.log("Removing ... :(");
 // sll1.remove(9);
 // sll1.remove(42);
 // sll1.remove(4);
-sll1.remove(24);
+// sll1.remove(24);
+sll1.delete(4);
 console.log(sll1);
