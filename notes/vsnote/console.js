@@ -511,30 +511,52 @@ SinglyLinkedList.prototype.insert = function (value) {
   this.size++;
 };
 
-// SinglyLinkedList.prototype.remove = function (value) {
-//   var currentHead = this.head;
-//   if (currentHead.data == value) {
-//     this.head = currentHead.next;
-//     this.size--;
-//   } else {
-//     /**
-//      * [12]->[2]->[7]->[4]->null
-//      *
-//      * **************************
-//      * remove
-//      * [3]->[5]->[9]->[6]->null
-//      * value = [5]
-//      * currentHead = this.head
-//      *
-//      *
-//      */
-//     var prev = currentHead;
-//     while (currentHead.next) {
-//   }
+SinglyLinkedList.prototype.remove = function (value) {
+  var currentHead = this.head;
+  if (currentHead.data == value) {
+    this.head = currentHead.next;
+    this.size--;
+  } else {
+    // [] -> []
+    /* 
+        [24] -> [4] -> [42] -> [9] -> null
+        prev    val
 
-//   // set prev to currentHead
-//   const prev = currentHead;
-// };
+        [24] -> [4] -> [42] -> [9] -> null
+        prev    val
+
+        [24] ->*-> [42] -> [9] -> null
+        prev    val
+     */
+    var prev = currentHead;
+    while (currentHead.next) {
+      if (currentHead.data == value) {
+        prev.next = currentHead.next;
+        prev = currentHead;
+        currentHead = currentHead.next;
+        break;
+      }
+      prev = currentHead;
+      currentHead = currentHead.next;
+    }
+    // if (currentHead.data == value) {
+    if (currentHead.data == value) {
+      prev.next = null;
+    }
+    this.size--;
+  }
+};
+
+SinglyLinkedList.prototype.search = function (value) {
+  var currentHead = this.head;
+  while (currentHead.next) {
+    if (currentHead.data == value) {
+      return true;
+    }
+    currentHead = currentHead.next;
+  }
+  return false;
+};
 
 var sll1 = new SinglyLinkedList();
 console.log(sll1);
@@ -616,10 +638,21 @@ SLL.prototype.delete = function (value) {
         currentNode = currentNode.next;
         this.size--;
       }
-      prev = currentNode;
+      prevNode = currentNode;
       currentNode = currentNode.next;
     }
   }
+};
+
+SLL.prototype.search = function (value) {
+  var currentHead = this.head;
+  while (currentHead.next) {
+    if (currentHead.data == value) {
+      return true;
+    }
+    currentHead = currentHead.next;
+  }
+  return false;
 };
 
 sll1 = new SLL();
@@ -635,3 +668,36 @@ console.log("Removing ... :(");
 // sll1.remove(24);
 sll1.delete(4);
 console.log(sll1);
+console.log("42 present ? ...", sll1.search(42));
+console.log("430 present ? ...", sll1.search(430));
+
+function arrayManipulation(n, queries) {
+  var arrZero = "0"
+    .repeat(n)
+    .split("")
+    .map((e) => parseInt(e));
+
+  // for (var j = 0; j < queries.length; j++) {
+  //   queries[i][j]
+  //   queries[i][j]
+  // }
+  for (var i = 0; i < queries.length; i++) {
+    var startIndex = queries[i][0];
+    var endIndex = queries[i][1];
+    var addNumber = queries[i][2];
+    for (var j = startIndex; j <= endIndex; j++) {
+      arrZero[j - 1] += addNumber;
+    }
+  }
+  return Math.max(...arrZero);
+}
+
+
+var queries = [
+  [1, 5, 3],
+  [4, 8, 7],
+  [6, 9, 1],
+];
+console.log(arrayManipulation(10, queries));
+console.log("...");
+console.log(arrayManipulation1(10, queries));
