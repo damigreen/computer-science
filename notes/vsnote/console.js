@@ -671,6 +671,22 @@ console.log(sll1);
 console.log("42 present ? ...", sll1.search(42));
 console.log("430 present ? ...", sll1.search(430));
 
+function DoublyLinkedListNode() {
+  this.data = data;
+  this.next = null;
+  this.prev = null;
+}
+
+function DoublyLinkedList() {
+  this.head = null;
+  this.tail = null;
+  this.size = 0;
+}
+
+DoublyLinkedList.prototype.isEmpty = function () {
+  return this.size == 0;
+};
+
 function arrayManipulation(n, queries) {
   var arrZero = "0"
     .repeat(n)
