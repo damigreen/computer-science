@@ -718,13 +718,59 @@ DoublyLinkedList.prototype.insertAtTail = function (value) {
   }
   this.size++;
 }
+
+DoublyLinkedList.prototype.deleteAtHead = function () {
+  // [3]-[5]-[8]
+  var toReturn = null;
+  if (this.head !== null) {
+    toReturn = this.head.data;
+
+    if (this.head == this.tail) {
+      this.head = null;
+      this.tail = null;
+    } else {
+      this.head = this.head.next;
+      this.head.prev = null;
+    }
+  }
+  this.size--;
+  return toReturn;
+}
+
+DoublyLinkedList.prototype.deleteAtTail = function () {
+  var toReturn = null;
+
+  if (this.tail !== null) {
+    toReturn = this.tail.data;
+
+    if (this.tail === this.head) {
+      this.head = null;
+      this.tail = null;
+    } else {
+      this.tail = this.tail.prev;
+      this.tail.next = null;
+    }
+  }
+  this.size--;
+  return toReturn;
+}
 console.log("**********Doubly Linked List**********");
 var dll = new DoublyLinkedList();
 console.log("is linked list empty?...", dll.isEmpty());
 dll.insertAtHead(7);
 dll.insertAtHead(9);
 dll.insertAtTail(3);
+dll.insertAtTail(12);
+dll.insertAtHead(0);
+dll.insertAtTail(5);
 console.log(dll);
+dll.deleteAtHead(); // head=9 tail=5
+console.log("DLL after deleting at head...");
+console.log(dll);
+dll.deleteAtTail()
+console.log("DLL after deleting at tail...");
+console.log(dll); // tail=12 head=9
+
 
 function arrayManipulation(n, queries) {
   var arrZero = "0"
