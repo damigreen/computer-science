@@ -783,6 +783,8 @@ So I will assign hooks to every one of the list.
 
 ## After Nine
 
+- Shop for smart watches on aliexpress, others
+
 - ~~Check instagram for some~~
 - Delete unactive git repositories
 - Smoke some weed
@@ -791,6 +793,10 @@ So I will assign hooks to every one of the list.
 - Social media e.g whatsapp status instagram etc
 
 ## Personal
+
+### Account
+
+#### Withdrawal
 
 ### People
 
