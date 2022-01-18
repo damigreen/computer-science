@@ -564,46 +564,57 @@ SLL.prototype.insert = function (value) {
     this.head.next = temp;
   }
   this.size++;
+  console.log(this.head);
 };
 SLL.prototype.remove = function (value) {
   var currentHead = this.head;
-  if (currentHead == value) {
+  if (currentHead.data == value) {
     this.head = currentHead.next;
     this.size--;
   } else {
     // [] -> []
     /* 
-        [2] -> [] -> [] -> [] -> null
-       prev         val
-        [2] -> [] -> X -> [] -> null
-       prev        val
+        [24] -> [4] -> [42] -> [9] -> null
+        prev    val
+
+        [24] -> [4] -> [42] -> [9] -> null
+        prev    val
+
+        [24] ->*-> [42] -> [9] -> null
+        prev    val
      */
     var prev = currentHead;
     while (currentHead.next) {
-      if (currentHead.data == value) {
-        console.log("current head IS value");
+      if(currentHead.data == value) {
         prev.next = currentHead.next;
         prev = currentHead;
         currentHead = currentHead.next;
         break;
       }
-      console.log("current head NOT value");
       prev = currentHead;
       currentHead = currentHead.next;
     }
-    if (currentHead.data != value) {
-      prev.next = null;
+    // if (currentHead.data == value) {
+      if (currentHead.data == value) {
+        prev.next = null;
+        console.log(currentHead)
     }
     this.size--;
   }
-};
+}
+
 
 sll1 = new SLL();
+console.log("new sll1 ", sll1);
 console.log("SLL Empty--->");
 console.log(sll1.isEmpty());
-sll1.insert("damigreen");
+sll1.insert(9);
 sll1.insert(42);
 sll1.insert(4);
 sll1.insert(24);
+console.log("Removing");
+// sll1.remove(9);
+// sll1.remove(42);
+// sll1.remove(4);
+sll1.remove(24);
 console.log(sll1);
-sll1.remove(4);
