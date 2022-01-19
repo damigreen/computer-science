@@ -717,7 +717,7 @@ DoublyLinkedList.prototype.insertAtTail = function (value) {
     this.tail = temp;
   }
   this.size++;
-}
+};
 
 DoublyLinkedList.prototype.deleteAtHead = function () {
   // [3]-[5]-[8]
@@ -735,7 +735,7 @@ DoublyLinkedList.prototype.deleteAtHead = function () {
   }
   this.size--;
   return toReturn;
-}
+};
 
 DoublyLinkedList.prototype.deleteAtTail = function () {
   var toReturn = null;
@@ -753,29 +753,29 @@ DoublyLinkedList.prototype.deleteAtTail = function () {
   }
   this.size--;
   return toReturn;
-}
+};
 
 DoublyLinkedList.prototype.findStartingHead = function (value) {
   var currentHead = this.head;
-  while(currentHead.next) {
+  while (currentHead.next) {
     if (currentHead.data == value) {
       return true;
     }
     currentHead = currentHead.next;
   }
   return false;
-}
+};
 
 DoublyLinkedList.prototype.findStartingTail = function (value) {
   var currentTail = this.tail;
-  while(currentTail.prev) {
+  while (currentTail.prev) {
     if (currentTail.data == value) {
       return true;
     }
     currentTail = currentTail.prev;
   }
   return false;
-}
+};
 console.log("**********Doubly Linked List**********");
 var dll = new DoublyLinkedList();
 console.log("is linked list empty?...", dll.isEmpty());
@@ -789,7 +789,7 @@ console.log(dll);
 dll.deleteAtHead(); // head=9 tail=5
 console.log("DLL after deleting at head...");
 console.log(dll);
-dll.deleteAtTail()
+dll.deleteAtTail();
 console.log("DLL after deleting at tail...");
 console.log(dll); // tail=12 head=9
 console.log("Search starting from head...");
@@ -799,7 +799,9 @@ console.log("Search starting from tail...");
 console.log(dll.findStartingTail(7));
 console.log(dll.findStartingTail(17));
 
-
+/**
+ * Array Manipulations
+ */
 function arrayManipulation(n, queries) {
   var arrZero = "0"
     .repeat(n)
@@ -821,22 +823,75 @@ function arrayManipulation(n, queries) {
   return Math.max(...arrZero);
 }
 
-function arrayManipulation1(n, queries) {
+function arrayManipulatinOptimized(n, queries) {
   const arr = Array(n + 1);
-  console.log("arr init", arr);
   let maxValue = 0,
     currentNumber = 0;
   queries.forEach(([startIndex, endIndex, addNumber]) => {
     console.log(startIndex, endIndex, addNumber);
+    /* 
+    arr: [{}, {start: 0, end: 0}, {start: 0, end: 0}, {start: 0, end: 0}...]
+           0          1                 2
+
+    currentNumber: 0
+    maxValue: 0
+    startIndex: 1
+    endIndex: 5
+    addNumber: 3
+
+    arr: [{}, {start: 3, end: 0}, {start: 3, end: 0}, {start: 3, end: 0}...]
+           0          1                 4                       6
+    currentNumber
+      cell 1: {start: 3, end: 0}
+        currentNumber += start = 3
+        (currentNumber > maxValue): (3 > 0)
+        maxValue = 3
+        currentNumber -= end = (3 - 0) = 3
+
+      cell 4: {start: 3, end: 0}
+        currentNumber += start = (3 + 3) = 6
+        (currentNumber > maxValue): (6 > 3)
+        maxValue = 6
+        currentNumber -= end = (3 - 0) = 6
+        
+      cell 5: {start: 0, end: 3}
+        currentNumber += start = (6 + 0) = 6
+        (currentNumber > maxValue): (6 == 6)
+        // maxValue = 6
+        currentNumber -= end = (6 - 3) = 6
+        
+      cell 6: {start: 3, end: 0}
+        currentNumber += start = (6 + 3) = 9
+        (currentNumber > maxValue): (9 > 6)
+        maxValue = 6
+        currentNumber -= end = (9 - 0) = 9
+
+      [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+      [0, 3, 3, 3, 3, 3, 0, 0, 0, 0, 0, 0]
+      [0, 3, 3, 3, 10, 10, 7, 7, 7, 0, 0, 0]
+      [0, 3, 3, 3, 10, 10, 8, 8, 8, 1, 0, 0]
+
+      [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
+                      e
+                   s   
+     */
     arr[startIndex] = arr[startIndex] || { start: 0, end: 0 };
     arr[endIndex] = arr[endIndex] || { start: 0, end: 0 };
     arr[startIndex].start += addNumber;
     arr[endIndex].end += addNumber;
-    console.log("arr pres ...", arr);
   });
-  console.log("arr after ...", arr);
 
-  return 1;
+  arr.forEach((cell) => {
+    if (cell) {
+      currentNumber += cell.start;
+      if (currentNumber > maxValue) {
+        maxValue = currentNumber;
+      }
+      currentNumber -= cell.end;
+    }
+  });
+
+  return maxValue;
 }
 
 var queries = [
@@ -844,6 +899,8 @@ var queries = [
   [4, 8, 7],
   [6, 9, 1],
 ];
-// console.log(arrayManipulation(10, queries));
-// console.log("...");
-// console.log(arrayManipulation1(10, queries));
+console.log("**********Array Manipulations**********");
+console.log(arrayManipulation(10, queries));
+console.log("...");
+console.log("**********Array Manipulations Optimized**********");
+console.log(arrayManipulatinOptimized(10, queries));
