@@ -8,6 +8,25 @@
 
 ## Work
 
+### Vamp Maintenance Plan Reminder
+
+- test move to next cycle on landwey
+- send reminder
+  - if status not
+    - reminder sent
+    - job started
+- do not send reminder if status
+  - reminder dent
+  - job started
+
+#### Queries - Vamp Maintenance Plan Reminder
+
+    select * from work_requests;
+    select * from job_schedule_statuses;
+    select * from job_schedules;
+    select * from maintenance_cycles;
+    select * from maintenance_plans;
+
 ### Data Spooling
 
 ### Iot Dashboard Vamp
@@ -121,8 +140,9 @@ unit_id'1', 'unit_id', '1', '23', '2021-10-19 19:17:49', '2021-10-19 19:17:49', 
 '20', 'request_id', '3', '26', '2021-12-09 09:28:00', '2021-12-09 09:28:00', NULL
 '21', 'request_id', '4', '26', '2021-12-09 09:28:00', '2021-12-09 09:28:00', NULL
 
-
     https://us-central1-gatepass-test-environment.cloudfunctions.net/api/vampfi/callback/request/approved
+
+#### Queries - Gatepass Vamp Callbacks
 
     select * from system_functions;
     select * from system_entities;
@@ -528,7 +548,7 @@ Users can create many tasks tasks belongs to a user
           - ARRAY bufferQueue
           - WHILE (bufferQueue is not empty)
             <!-- - the last element removed from the top -->
-            - remove the last element in bufferQueue and
+            - remove the last element `dequeue` in bufferQueue and
             - compare it with the provided element
             - OUTPUT
               - true
