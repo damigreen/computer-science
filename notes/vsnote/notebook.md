@@ -8,6 +8,12 @@
 
 ## Work
 
+### Paystack Resido Integration
+
+- change resido whatsapp wallet check to residence rather than user
+- Integrate paystack with resido
+  - make sure it is wotking and does not clash with wema payment
+
 ### Vamp Maintenance Plan Reminder
 
 - test move to next cycle on landwey
