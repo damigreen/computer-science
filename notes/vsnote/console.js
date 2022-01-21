@@ -765,3 +765,36 @@ DoublyLinkedList.prototype.findStartingHead = function (value) {
   }
   return false;
 };
+
+DoublyLinkedList.prototype.findStartingTail = function (value) {
+  var currentTail = this.tail;
+  while (currentTail.prev) {
+    if (currentTail.data == value) {
+      return true;
+    }
+    currentTail = currentTail.prev;
+  }
+  return false;
+};
+console.log("**********Doubly Linked List**********");
+var dll = new DoublyLinkedList();
+console.log("is linked list empty?...", dll.isEmpty());
+dll.insertAtHead(7);
+dll.insertAtHead(9);
+dll.insertAtTail(3);
+dll.insertAtTail(12);
+dll.insertAtHead(0);
+dll.insertAtTail(5);
+console.log(dll);
+dll.deleteAtHead(); // head=9 tail=5
+console.log("DLL after deleting at head...");
+console.log(dll);
+dll.deleteAtTail();
+console.log("DLL after deleting at tail...");
+console.log(dll); // tail=12 head=9
+console.log("Search starting from head...");
+console.log(dll.findStartingHead(7));
+console.log(dll.findStartingHead(17));
+console.log("Search starting from tail...");
+console.log(dll.findStartingTail(7));
+console.log(dll.findStartingTail(17));
