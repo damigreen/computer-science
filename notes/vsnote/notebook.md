@@ -10,9 +10,25 @@
 
 ### Paystack Resido Integration
 
-- change resido whatsapp wallet check to residence rather than user
-- Integrate paystack with resido
-  - make sure it is wotking and does not clash with wema payment
+- Payment test link
+  - [Payment Link]('http://localhost:4040/pay/?transaction=6')
+
+- Todo
+  - Create transactions UI
+  - Create UI to save customer card details
+    - if card details exist
+      - charge authorization [charge customer]('https://paystack.com/docs/api/#transaction-charge-authorization')
+    - if customer details does not exist
+      - create customer details [create customer]('https://paystack.com/docs/api/#customer')
+  - update residenceId, ~~createdBy(user)~~, creditMethod(paystack) for transaction
+  - change resido whatsapp wallet check to residence rather than user
+  - Integrate paystack with resido
+    - make sure it is wotking and does not clash with wema payment
+
+- Paystack Frontend Trigger
+  - openPaystack -> payWithPaystack -> PaystackPop -> verifyPaystackTransaction -> handler.openIframe
+  - mounted
+    - payForRequest -> payWithPaystack -> PaystackPop -> verifyPaystackTransaction -> handler.openIframe
 
 ### Vamp Maintenance Plan Reminder
 
