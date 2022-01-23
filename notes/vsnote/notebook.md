@@ -14,8 +14,9 @@
   - [Payment Link]('http://localhost:4040/pay/?transaction=6')
 
 - Todo
-  - Create transactions UI
-  - Create UI to save customer card details
+  - Check **Aliexpress** transaction page (card details input)
+  - Create **transactions UI**
+  - Create UI to save **customer card details**
     - if card details exist
       - charge authorization [charge customer]('https://paystack.com/docs/api/#transaction-charge-authorization')
     - if customer details does not exist
@@ -867,6 +868,8 @@ Find a tutorial that teaches you the basics
 
 - facebook password - DDQl6HQEhShZBxriaB2UlXdm5Lu7cLsze4f0NXK41I
 - Secret recovery phrase **Meta mask**: fiction member dose occur decade fiscal shallow magnet lend gun deputy pilot
+- 22356363073
+- N-4853599
 
 #### Travel Links
 
