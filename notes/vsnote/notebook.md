@@ -423,9 +423,43 @@ Users can create many tasks tasks belongs to a user
 
 ### JavaScript Data Structures and Algorithms
 
-#### Stacks and Queues
+#### Linked Lists ~ 24:01:22
 
-- Stacks
+- `Linked List`
+  - data structure
+  - consisting of **nodes** where
+  - each nodes points to another **node**
+  - unlike **arrays** with fixed size
+  - they are **dynamic** data structures that
+  - can allocate and deallocate **memory** at **runtime**
+
+  - `Singly Linked List`
+    - each **node** has a **reference** to the next node
+    - has two properties
+    - **head** and **size**
+    - **start** of a linked list is refered to as the **head**
+  
+    - `Singly Linked List Node`
+      - a node has two properties
+      - **data** and **next**
+
+    - `Insertion`
+      - adding a new **node** into the linked list
+      - time complexity `O(1)`
+      - constant time operation
+      - no loop or **traversal**
+      - `Pseudocode`
+        - if the head of the linked list is empty
+          - the head is set to the new node otherwise
+        - the **old heap** is saved in **temp**
+        - the new **head** becomes the newly added node finally
+        - the new **heads next** points to **temp** (the old heap)
+
+> next node, node, reference, data, next, head, traversal, 
+
+#### Stacks and Queues ~ 01:01:22
+
+- `Stacks`
   - data structure in which
   - only the last **inserted element** can be
   - removed and accessed
@@ -589,7 +623,7 @@ Users can create many tasks tasks belongs to a user
 
 ##### Exercise ~ Stack and Queues
 
-#### Hash Tables```
+#### Hash Tables ~ JDSA```
 
 - Hash Tables
   - Fixed size data structure
