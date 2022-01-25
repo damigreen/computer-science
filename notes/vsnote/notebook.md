@@ -448,6 +448,7 @@ Users can create many tasks tasks belongs to a user
       - time complexity `O(1)`
       - constant time operation
       - no loop or **traversal**
+  
       - `Pseudocode`
         - if the head of the linked list is empty
           - the head is set to the new node otherwise
@@ -455,7 +456,88 @@ Users can create many tasks tasks belongs to a user
         - the new **head** becomes the newly added node finally
         - the new **heads next** points to **temp** (the old heap)
 
-> next node, node, reference, data, next, head, traversal, 
+    - `Deletion by Value`
+      - deleting an element(node) from the singly linked list
+      - based on a value provided
+      - It is done by removing
+      - the reference of that node
+      - if the node is in the middle
+      - we have the nodes next pointing to that node
+      - point to the node owns next instead
+      - [] -> [] -> [X] -> []
+      - [] -> [] -> --> -> []
+      - time complexity is `O(n)`
+
+    - `Deletion at the head`
+      - This is possible at `O(1)` and
+      - no traversal is required
+      - It allows the linked list to implement a stack where
+      - the last added element (the head) can be removed at `O(1)`
+
+    - `Search`
+      - To find out if an element exist in a linked list
+      - we **iterate** through its **next pointer**
+
+  - `Doubly Linked List`
+    - A doubly linked list can be thougth of as a **bi-directional** singly linked list
+    - each node has a **next pointer** and a **prev pointer**
+    - the **next pointer** points to the **right node**, while
+    - the **prev pointer** points to the **left node**
+    - In addition, a doulbly linked list has
+    - a **head pointer** and a **tail pointer**
+    - the head refers to the **start** of the linked list, and
+    - the tail refers to the **end** of the linked list
+    - Deletion, insertion, and search implementation in a doubly linked list are
+    - similar to that in a singly linked list
+    - However, for both insertion and deletion
+    - the next and prev properties must be updated
+
+    - `Insertion at the Head`
+      - If the head is empty
+      - both the head and tail are set to the **new node** i.e
+      - When there is only one element,
+      - that element is both the head and the tail
+      - Otherwise
+      - the temp is used to store the new node
+      - the new node next points to the current head and
+      - the current head prev points to the new node. Finally
+      - the head pointer is updated to the new node (temp)
+
+    - `Insertion at the Tail`
+      - If the tail is empty
+      - both the head and tail are set to the **new node**
+      - temp is used to store the new node
+      - the new node prev points to the current tail
+      - the current tail next points to the new node
+      - the tail is then updated to the new node (temp)
+
+    - `Deletion at the Head`
+      - Deleting a node at the head from a doubly linked list can be done in `O(1)` time
+      - If there is only one item in the list, i.e
+      - the head and the tail are the same
+      - both the head and the tail are set to null.
+      - Otherwise
+      - the head is set to the heads next pointer.
+      - Finally
+      - the new heads prev is set to null
+      - to remove the reference of the old head
+
+    - `Deletion at the Tail`
+      - A node can removed and returend from a DLL in `O(1)` time
+      - They can be thought of as a **bi-directional queue** data structure
+      - A queue can dequeue the last added item but
+      - a DLL can dequeue the item at the head and the item at the tail in O(1) time
+
+    - `Search`
+      - To find out whether a value exists in a DLL,
+      - you can start at the head and use the next pointer
+      - or
+      - start at the tail and use the prev pointer
+
+----------
+
+    next node, node, reference, data, next, head, traversal, insertion, start, end
+    next pointer, prev pointer, new node, bi-directional queue data structure,
 
 #### Stacks and Queues ~ 01:01:22
 
@@ -859,6 +941,8 @@ So I will assign hooks to every one of the list.
     - Selection Sort [scanning, inserting, current position, one for loop, nested for loop, scan, get minimum element]
 
 ## After Nine
+
+- 
 
 - Shop for smart watches on aliexpress, others
 
