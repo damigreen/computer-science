@@ -837,7 +837,7 @@ that defines keys and associated values.
 
 ##### Answers ~ Hash Tables
 
-`Hashtables` are fixed-sized data strtucture. Its lenght is ususlly defined at the start. They can be used for / 
+`Hashtables` are fixed-sized data strtucture. Its lenght is ususlly defined at the start. They can be used for /
 they are best used for quick retrival and storage of daata in key value pair.
 Objects also works similarly by defining a key(property) and its associated value
 `index collision` e.g. When trying to create an hashtable with distributed array index using `prime number hashing`
@@ -942,8 +942,6 @@ So I will assign hooks to every one of the list.
 
 ## After Nine
 
-- 
-
 - Shop for smart watches on aliexpress, others
 
 - ~~Check instagram for some~~
@@ -984,6 +982,7 @@ Find a tutorial that teaches you the basics
 
 #### General Info
 
+- https://www.twilio.com/quest?utm-source=twlozd - use for portfolio
 - facebook password - DDQl6HQEhShZBxriaB2UlXdm5Lu7cLsze4f0NXK41I
 - Secret recovery phrase **Meta mask**: fiction member dose occur decade fiscal shallow magnet lend gun deputy pilot
 - 22356363073
