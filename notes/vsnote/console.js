@@ -655,21 +655,77 @@ SLL.prototype.search = function (value) {
   return false;
 };
 
-sll1 = new SLL();
+function SLLN1 (data) {
+  this.data = data;
+  this.next = null
+}
+
+function SLL1 () {
+  this.head = null;
+  this.size = 0;
+}
+
+SLL1.prototype.isEmpty = function () {
+  return this.size == 0;
+}
+
+// []
+// [[2]] -> [3] -> [8]
+SLL1.prototype.insert = function (value) {
+  if (this.head == null) {
+    this.head = new SLLN1(value);
+  } else {
+    var temp = this.head;
+    this.head = new SLLN1(value)
+    this.head.next = temp;
+    this.size++
+  }
+}
+
+SLL1.prototype.remove = function (value) {
+  var currentHead = this.head;
+  if (currentHead.data == value) {
+    this.head = currentHead.next;
+    this.size--;
+  } else {
+    // [7]->[[2]]->[6]->[4]->null
+    var prev = currentHead; //7
+    while (currentHead.next) {
+      if (currentHead.data == value) {
+        prev = currentHead;
+        prev.next = currentHead.next;
+        currentHead = currentHead.next; //6
+        break;
+      }
+      prev = currentHead; //7
+      currentHead = currentHead.next; //2
+    }
+    // if it wasnt found in the middle or head
+    // must be tail
+    // [7]->[2]->[6]->[[4]]->null
+    if (currentHead.data == value) {
+      console.log(prev)
+      prev.next = null; // prev.next = [[4]]: set to null
+    }
+    this.size--;
+  }
+}
+
+sll1 = new SLL1();
 console.log("SLL Empty ...", sll1.isEmpty());
 sll1.insert(9);
-sll1.insert(42);
-sll1.insert(4);
+// sll1.insert(42);
+// sll1.insert(4);
 sll1.insert(24);
 console.log("Removing ... :(");
-// sll1.remove(9);
-// sll1.remove(42);
-// sll1.remove(4);
-// sll1.remove(24);
-sll1.delete(4);
+sll1.remove(9);
+// // sll1.remove(42);
+// // sll1.remove(4);
+// // sll1.remove(24);
+// sll1.delete(4);
 console.log(sll1);
-console.log("42 present ? ...", sll1.search(42));
-console.log("430 present ? ...", sll1.search(430));
+// console.log("42 present ? ...", sll1.search(42));
+// console.log("430 present ? ...", sll1.search(430));
 
 function DoublyLinkedListNode(data) {
   this.data = data;
@@ -776,6 +832,32 @@ DoublyLinkedList.prototype.findStartingTail = function (value) {
   }
   return false;
 };
+
+function DLLN (data) {
+  this.data = data;
+  this.next = null;
+  this.prev = null;
+}
+
+function DLL () {
+  this.head = null;
+  this.tail = null;
+}
+
+// [3]<->[9]<->[7]<->[2]<->[9]
+DLL.prototype.addAtFront = function (value) {
+  // null
+  if (this.head == null) {
+    this.head = new DLLN(value);
+    this.tail = this.head
+  } else {
+    var temp = new DLLN(value)
+    temp.next = this.head;
+    this.head.prev = temp;
+    this.head = temp;
+  }
+}
+
 console.log("**********Doubly Linked List**********");
 var dll = new DoublyLinkedList();
 console.log("is linked list empty?...", dll.isEmpty());
