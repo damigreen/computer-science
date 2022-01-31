@@ -655,19 +655,19 @@ SLL.prototype.search = function (value) {
   return false;
 };
 
-function SLLN1 (data) {
+function SLLN1(data) {
   this.data = data;
-  this.next = null
+  this.next = null;
 }
 
-function SLL1 () {
+function SLL1() {
   this.head = null;
   this.size = 0;
 }
 
 SLL1.prototype.isEmpty = function () {
   return this.size == 0;
-}
+};
 
 // []
 // [[2]] -> [3] -> [8]
@@ -676,11 +676,11 @@ SLL1.prototype.insert = function (value) {
     this.head = new SLLN1(value);
   } else {
     var temp = this.head;
-    this.head = new SLLN1(value)
+    this.head = new SLLN1(value);
     this.head.next = temp;
-    this.size++
+    this.size++;
   }
-}
+};
 
 SLL1.prototype.remove = function (value) {
   var currentHead = this.head;
@@ -704,12 +704,12 @@ SLL1.prototype.remove = function (value) {
     // must be tail
     // [7]->[2]->[6]->[[4]]->null
     if (currentHead.data == value) {
-      console.log(prev)
+      console.log(prev);
       prev.next = null; // prev.next = [[4]]: set to null
     }
     this.size--;
   }
-}
+};
 
 sll1 = new SLL1();
 console.log("SLL Empty ...", sll1.isEmpty());
@@ -833,50 +833,104 @@ DoublyLinkedList.prototype.findStartingTail = function (value) {
   return false;
 };
 
-function DLLN (data) {
+function DLLN(data) {
   this.data = data;
   this.next = null;
   this.prev = null;
 }
 
-function DLL () {
+function DLL() {
   this.head = null;
   this.tail = null;
+  this.size = 0;
 }
 
 // [3]<->[9]<->[7]<->[2]<->[9]
-DLL.prototype.addAtFront = function (value) {
+DLL.prototype.insertAtHead = function (value) {
   // null
   if (this.head == null) {
     this.head = new DLLN(value);
-    this.tail = this.head
+    this.tail = this.head;
   } else {
-    var temp = new DLLN(value)
-    temp.next = this.head;
-    this.head.prev = temp;
-    this.head = temp;
+    // [[3]]<->[9]<->[7]<->[2]<->[9]
+    var temp = new DLLN(value); // save new node to temp
+    temp.next = this.head; // set new node head to former head
+    this.head.prev = temp; // set former head prev to new node
+    this.head = temp; // set new head to new node
   }
+  this.size++;
+};
+
+DLL.prototype.insertAtTail = function (value) {
+  if (this.tail == null) {
+    this.tail = new DLLN(value);
+    this.head = this.tail;
+  } else {
+    var temp = new DLLN(value);
+    temp.prev = this.tail;
+    this.tail.next = temp;
+    this.tail = temp;
+  }
+  this.size++;
+};
+
+DLL.prototype.deleteAtHead = function (value) {
+  var toReturn = null;
+  if (this.head !== null) {
+    toReturn = this.head.data;
+
+    if (this.tail == this.head) {
+      this.head = null;
+      this.tail = null;
+    } else {
+      // [[3]]<->[9]<->[7]<->[2]<->[9]
+      //  null<->[9]<->[7]<->[2]<->[9]
+      this.head = this.head.next;
+      this.head.prev = null;
+    }
+  }
+  this.size--
+  return toReturn;
+};
+
+DLL.prototype.deleteAtTail = function (value) {
+  var toReturn = null;
+  if (this.tail !== null) {
+    toReturn = this.tail.data;
+
+    if (this.tail == this.head) {
+      this.tail = null;
+      this.head = null;
+    } else {
+      // [9]<->[7]<->[2]<->[9]<->[[3]]
+      this.tail = this.tail.prev;
+      this.tail.next = null;
+    }
+  }
+  this.size--
+  return toReturn;
 }
 
 console.log("**********Doubly Linked List**********");
-var dll = new DoublyLinkedList();
-console.log("is linked list empty?...", dll.isEmpty());
+// var dll = new DoublyLinkedList();
+var dll = new DLL();
+// console.log("is linked list empty?...", dll.isEmpty());
 dll.insertAtHead(7);
 dll.insertAtHead(9);
-dll.insertAtTail(3);
-dll.insertAtTail(12);
+// dll.insertAtTail(3);
+// dll.insertAtTail(12);
 dll.insertAtHead(0);
-dll.insertAtTail(5);
+// dll.insertAtTail(5);
 console.log(dll);
-dll.deleteAtHead(); // head=9 tail=5
-console.log("DLL after deleting at head...");
-console.log(dll);
-dll.deleteAtTail();
-console.log("DLL after deleting at tail...");
-console.log(dll); // tail=12 head=9
-console.log("Search starting from head...");
-console.log(dll.findStartingHead(7));
-console.log(dll.findStartingHead(17));
-console.log("Search starting from tail...");
-console.log(dll.findStartingTail(7));
-console.log(dll.findStartingTail(17));
+// dll.deleteAtHead(); // head=9 tail=5
+// console.log("DLL after deleting at head...");
+// console.log(dll);
+// dll.deleteAtTail();
+// console.log("DLL after deleting at tail...");
+// console.log(dll); // tail=12 head=9
+// console.log("Search starting from head...");
+// console.log(dll.findStartingHead(7));
+// console.log(dll.findStartingHead(17));
+// console.log("Search starting from tail...");
+// console.log(dll.findStartingTail(7));
+// console.log(dll.findStartingTail(17));
