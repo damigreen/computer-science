@@ -958,6 +958,32 @@ So I will assign hooks to every one of the list.
 
 ## Personal
 
+### Food Planner
+
+- options
+  - rice
+  - rice / beans
+  - beans
+  - yam
+  - potatoes
+  - spaghetti
+  - meats
+
+- Mon
+  - spaghetti
+- Tue
+  - yam / potatoes
+- Wed
+  - Rice
+- Thur
+  - spaghetti
+- Fri
+  - rice / beans **buy**
+- Sat
+  - beans
+- Sun
+  - Rice
+
 ### Account Statement
 
 #### Feb 2022
