@@ -14,11 +14,16 @@
   - [Payment Link]('http://localhost:4040/pay/?transaction=6')
 
 - Todo
-  - Check **Aliexpress** transaction page (card details input)
-  - Create **transactions UI**
-  - Create UI to save **customer card details**
+  - check paystack live and test secret and public key
+  - Update wallet_transaction
+    - credit_method
+    - confirmed_at
+    - residenceId
+  <!-- - Check **Aliexpress** transaction page (card details input) -->
+  <!-- - Create **transactions UI** -->
+  - Save **customer card details**
     - if card details exist
-      - charge authorization [charge customer]('https://paystack.com/docs/api/#transaction-charge-authorization')
+      - **charge authorization** [charge customer]('https://paystack.com/docs/api/#transaction-charge-authorization')
     - if customer details does not exist
       - create customer details [create customer]('https://paystack.com/docs/api/#customer')
   - update residenceId, ~~createdBy(user)~~, creditMethod(paystack) for transaction
@@ -953,9 +958,26 @@ So I will assign hooks to every one of the list.
 
 ## Personal
 
-### Account
+### Account Statement
 
-#### Withdrawal
+#### Feb 2022
+
+- Balance
+  - 171000
+  - 141000
+
+  - Target
+    - 100000
+
+- Withdrawals
+  - 10000
+
+- Transfers
+  - 20000
+
+- Deposit
+  - 65000
+  - 10000
 
 ### People
 
@@ -970,13 +992,6 @@ So I will assign hooks to every one of the list.
 Hello, Have you help to change the credit card information on the mailgun site.
 Let me send you the login for the site
 On the site go to ...
-
-#### Iya Ariyo
-
-#### Kunle
-
-Did you get any good tutorial to work with
-Find a tutorial that teaches you the basics
 
 ### Information
 
