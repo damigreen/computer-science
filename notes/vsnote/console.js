@@ -558,13 +558,13 @@ SinglyLinkedList.prototype.search = function (value) {
   return false;
 };
 
-var sll1 = new SinglyLinkedList();
-console.log(sll1);
-sll1.insert(12);
-sll1.insert(1);
-sll1.insert(4);
-sll1.insert(7);
-console.log(sll1);
+var sll = new SinglyLinkedList();
+console.log(sll);
+sll.insert(12);
+sll.insert(1);
+sll.insert(4);
+sll.insert(7);
+console.log(sll);
 
 function SLLN(data) {
   this.data = data;
@@ -711,21 +711,23 @@ SLL1.prototype.remove = function (value) {
   }
 };
 
-sll1 = new SLL1();
+// sll1 = new SLL1();
+var sll1 = new SLL();
 console.log("SLL Empty ...", sll1.isEmpty());
 sll1.insert(9);
-// sll1.insert(42);
-// sll1.insert(4);
+sll1.insert(42);
+sll1.insert(42);
+sll1.insert(4);
 sll1.insert(24);
 console.log("Removing ... :(");
-sll1.remove(9);
-// // sll1.remove(42);
-// // sll1.remove(4);
-// // sll1.remove(24);
-// sll1.delete(4);
+// sll1.remove(9);
+// sll1.remove(42);
+// sll1.remove(4);
+// sll1.remove(24);
+sll1.delete(4);
 console.log(sll1);
-// console.log("42 present ? ...", sll1.search(42));
-// console.log("430 present ? ...", sll1.search(430));
+console.log("42 present ? ...", sll1.search(42));
+console.log("430 present ? ...", sll1.search(430));
 
 function DoublyLinkedListNode(data) {
   this.data = data;
@@ -889,7 +891,7 @@ DLL.prototype.deleteAtHead = function (value) {
       this.head.prev = null;
     }
   }
-  this.size--
+  this.size--;
   return toReturn;
 };
 
@@ -907,30 +909,110 @@ DLL.prototype.deleteAtTail = function (value) {
       this.tail.next = null;
     }
   }
-  this.size--
+  this.size--;
   return toReturn;
-}
+};
 
 console.log("**********Doubly Linked List**********");
-// var dll = new DoublyLinkedList();
-var dll = new DLL();
-// console.log("is linked list empty?...", dll.isEmpty());
+var dll = new DoublyLinkedList();
+// var dll = new DLL();
+console.log("is linked list empty?...", dll.isEmpty());
 dll.insertAtHead(7);
 dll.insertAtHead(9);
-// dll.insertAtTail(3);
-// dll.insertAtTail(12);
+dll.insertAtTail(3);
+dll.insertAtTail(12);
 dll.insertAtHead(0);
-// dll.insertAtTail(5);
+dll.insertAtTail(5);
 console.log(dll);
-// dll.deleteAtHead(); // head=9 tail=5
-// console.log("DLL after deleting at head...");
-// console.log(dll);
-// dll.deleteAtTail();
-// console.log("DLL after deleting at tail...");
-// console.log(dll); // tail=12 head=9
-// console.log("Search starting from head...");
-// console.log(dll.findStartingHead(7));
-// console.log(dll.findStartingHead(17));
-// console.log("Search starting from tail...");
-// console.log(dll.findStartingTail(7));
-// console.log(dll.findStartingTail(17));
+dll.deleteAtHead(); // head=9 tail=5
+console.log("DLL after deleting at head...");
+console.log(dll);
+dll.deleteAtTail();
+console.log("DLL after deleting at tail...");
+console.log(dll); // tail=12 head=9
+console.log("Search starting from head...");
+console.log(dll.findStartingHead(7));
+console.log(dll.findStartingHead(17));
+console.log("Search starting from tail...");
+console.log(dll.findStartingTail(7));
+console.log(dll.findStartingTail(17));
+
+/**
+ * Exercises
+ */
+/**
+ * Reverse a Singly Linked List
+ * Time complexity is O(n)
+ * Space complexity is O(1)
+ */
+function reverseSinglyLinkedList(sll) {
+  var headNode = sll.head; // get the head of the sll
+  var prev = null; // set prev to null
+  // [24]->[42]->[9]->null
+  while (headNode) {
+    var temp = headNode.next; // save the next of the head node in temp
+    headNode.next = prev; // set the head node next to prev
+    prev = headNode; // set prev to head node
+    if (!temp) break;
+    headNode = temp; // set head node to temp
+  }
+  return headNode;
+}
+console.log("**********Reverse Singly Linked List***********");
+// console.log(sll1);
+// var reverse = reverseSinglyLinkedList(sll1)
+// console.log(reverse)
+
+/**
+ * Delete Duplicates in a Linked List
+ * Time complexity O(n2)
+ * Space complexith O(n)
+ */
+function deleteDuplicateInUnsortedSll(sll) {
+  var track = [];
+  var temp = sll.head;
+  var prev = null;
+
+  while (temp) {
+    // [2]->[4]->[2]->[3]->null
+    if (track.indexOf(temp.data) >= 0) {
+      prev.next = temp.next;
+      sll.size--;
+    } else {
+      track.push(temp.data);
+      prev = temp;
+    }
+    temp = temp.next;
+  }
+  // console.log(sll)
+  return sll;
+}
+console.log("**********Delete Duplicates in Singly Linked List***********");
+// var deleteDupl = deleteDuplicateInUnsortedSll(sll1);
+// console.log(deleteDupl);
+
+/**
+ * Delete Duplicates in a Linked List Best Hash map
+ * Time complexity O(n)
+ * Space complexith O(n)
+ */
+function deleteDuplicateInUnsortedSllBest(sll) {
+  var track = {};
+  var temp = sll.head;
+  var prev = null;
+
+  while (temp) {
+    if (track[temp.data]) {
+      prev.next = temp.next;
+      sll.size--;
+    } else {
+      track[temp.data] = true;
+      prev = temp;
+    }
+    temp = temp.next;
+  }
+  return sll;
+}
+console.log("**********Delete Duplicates in Singly Linked List Best***********");
+var deleteDupli = deleteDuplicateInUnsortedSll(sll1);
+console.log(deleteDupli);
