@@ -1029,9 +1029,9 @@ On the site go to ...
 
 #### General Info
 
-- https://www.twilio.com/quest?utm-source=twlozd - use for portfolio
+- [TwiloZD](https://www.twilio.com/quest?utm-source=twlozd) - use for portfolio
 - facebook password - DDQl6HQEhShZBxriaB2UlXdm5Lu7cLsze4f0NXK41I
-- Secret recovery phrase **Meta mask**: fiction member dose occur decade fiscal shallow magnet lend gun deputy pilot
+- ~~fiction member dose occur decade fiscal shallow magnet lend gun deputy pilot~~
 - 22356363073
 - N-4853599
 
