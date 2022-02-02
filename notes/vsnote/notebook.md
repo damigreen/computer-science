@@ -958,6 +958,12 @@ So I will assign hooks to every one of the list.
 
 ## Personal
 
+### Downloads
+
+- [complete react native](https://piratebay.party/torrent/42918738/Udemy-_Complete_React_Native_in_2021__Zero_to_Mastery_with_Hooks)
+- [Angular the complete guide real worid app](https://piratebay.party/torrent/38738248/Udemy_-_Complete_Angular_11_Ultimate_Guide_with_Real_World_App)
+- [Angular the complete guide](https://piratebay.party/torrent/45549857/Angular_-_The_Complete_Guide_(2021_Edition))
+
 ### Food Planner
 
 - options
