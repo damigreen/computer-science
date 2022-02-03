@@ -1,4 +1,2 @@
-const x = null
-const y = 8
-const z = x + y
-console.lo
+const role = ['damilola', 'faseun']
+if (role.includes('damilola')) console.log(true)
