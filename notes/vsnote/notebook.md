@@ -473,6 +473,22 @@ Users can create many tasks tasks belongs to a user
       - [] -> [] -> --> -> []
       - time complexity is `O(n)`
 
+      - create a varible to save the current head
+      - if the head is the node is the value to remove
+        - set the head to the next of the current head
+      - otherwise
+        - create a variable prev to save the current head (keep track of the previous head)
+        - iterate over the current head using its next
+          - if current head data is value to be removed
+            - set prev's next to currenthead's next
+            - set prev to current head (keep track of the previous head)
+            - set currenthead to current heads next (skip the current head which is the value to be deleted)
+            - break out of the loop
+          - track the previous head
+          - increment the head for the while loop
+        - if value was not found in the middle or head, then it must be tail
+        - set prev value to null
+
     - `Deletion at the head`
       - This is possible at `O(1)` and
       - no traversal is required
@@ -499,14 +515,15 @@ Users can create many tasks tasks belongs to a user
 
     - `Insertion at the Head`
       - If the head is empty
-      - both the head and tail are set to the **new node** i.e
-      - When there is only one element,
-      - that element is both the head and the tail
+        - both the head and tail are set to the **new node** i.e
+        - When there is only one element,
+          - that element is both the head and the tail
       - Otherwise
-      - the temp is used to store the new node
-      - the new node next points to the current head and
-      - the current head prev points to the new node. Finally
-      - the head pointer is updated to the new node (temp)
+        - the temp is used to store the new node
+        - the new node next points to the current head and
+        - the current head prev points to the new node. (making it the new head)
+        - Finally
+        - the head pointer is updated to the new node (temp) (making it the new head)
 
     - `Insertion at the Tail`
       - If the tail is empty
