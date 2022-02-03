@@ -428,7 +428,7 @@ Users can create many tasks tasks belongs to a user
 
 ### JavaScript Data Structures and Algorithms
 
-#### Linked Lists ~ 24:01:22
+#### Linked Lists ~ 24:01:22 [Linked List](../../cs/books/JSDSA/linked_list.js)
 
 - `Linked List`
   - data structure
@@ -960,9 +960,9 @@ So I will assign hooks to every one of the list.
 
 ### Downloads
 
-- [complete react native](https://piratebay.party/torrent/42918738/Udemy-_Complete_React_Native_in_2021__Zero_to_Mastery_with_Hooks)
-- [Angular the complete guide real worid app](https://piratebay.party/torrent/38738248/Udemy_-_Complete_Angular_11_Ultimate_Guide_with_Real_World_App)
-- [Angular the complete guide](https://piratebay.party/torrent/45549857/Angular_-_The_Complete_Guide_(2021_Edition))
+- [x] [complete react native](https://piratebay.party/torrent/42918738/Udemy-_Complete_React_Native_in_2021__Zero_to_Mastery_with_Hooks)
+- [x] [Angular the complete guide real worid app](https://piratebay.party/torrent/38738248/Udemy_-_Complete_Angular_11_Ultimate_Guide_with_Real_World_App)
+- [x] [Angular the complete guide](https://piratebay.party/torrent/45549857/Angular_-_The_Complete_Guide_(2021_Edition))
 
 ### Food Planner
 
@@ -1153,8 +1153,7 @@ e.g => following
 ### Quotes
 
 - Because you didn’t get this far by being average.
-- Tke actions regardless of how you feel - `Grant Cardone`
-- 
+- Take actions regardless of how you feel - `Grant Cardone`
 
 ## CS
 
