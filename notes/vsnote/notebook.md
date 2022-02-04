@@ -975,6 +975,16 @@ So I will assign hooks to every one of the list.
 
 ## Personal
 
+### Brand
+
+#### Inventory
+
+- Rolling papers
+  - Raw
+- Bongs
+- Vapes
+- 
+
 ### Downloads
 
 - [x] [complete react native](https://piratebay.party/torrent/42918738/Udemy-_Complete_React_Native_in_2021__Zero_to_Mastery_with_Hooks)
