@@ -58,7 +58,6 @@ SinglyLinkedList.prototype.remove = function (value) {
       prev = currentHead;
       currentHead = currentHead.next;
     }
-    // if (currentHead.data == value) {
     if (currentHead.data == value) {
       prev.next = null;
     }
@@ -96,23 +95,23 @@ function SLL() {
 SLL.prototype.isEmpty = function () {
   return this.size == 0;
 };
+
 SLL.prototype.insert = function (value) {
   if (this.head == null) {
     this.head = new SLLN(value);
   } else {
-    var temp = this.head;
-    this.head = new SLLN(value);
-    this.head.next = temp;
+    var temp = this.head; // save the old head to temp
+    this.head = new SLLN(value); // set the head to the new node to insert
+    this.head.next = temp; // set the new heads next to temp
   }
   this.size++;
 };
 SLL.prototype.remove = function (value) {
-  var currentHead = this.head;
-  if (currentHead.data == value) {
-    this.head = currentHead.next;
+  var currentHead = this.head; // create a varible to save the current head
+  if (currentHead.data == value) { // if the head is the node is the value to remove
+    this.head = currentHead.next; // set the head to the next of the current head
     this.size--;
-  } else {
-    // [] -> []
+  } else { // otherwise
     /* 
           [24] -> [4] -> [42] -> [9] -> null
           prev    val
@@ -123,20 +122,19 @@ SLL.prototype.remove = function (value) {
           [24] ->*-> [42] -> [9] -> null
           prev    val
        */
-    var prev = currentHead;
-    while (currentHead.next) {
-      if (currentHead.data == value) {
-        prev.next = currentHead.next;
-        prev = currentHead;
-        currentHead = currentHead.next;
-        break;
+    var prev = currentHead; // create a variable prev to save the current head (keep track of the previous head)
+    while (currentHead.next) { // iterate over the current head using its next
+      if (currentHead.data == value) { // if current head data is value to be removed
+        prev.next = currentHead.next; // set prev's next to currenthead's next
+        prev = currentHead; // set prev to current head (keep track of the previous head)
+        currentHead = currentHead.next; // set currenthead to current heads next (skip the current head which is the value to be deleted)
+        break; // break out of the loop
       }
-      prev = currentHead;
-      currentHead = currentHead.next;
+      prev = currentHead; // track the previous head
+      currentHead = currentHead.next; // increment the head for the while loop
     }
-    // if (currentHead.data == value) {
-    if (currentHead.data == value) {
-      prev.next = null;
+    if (currentHead.data == value) { // if value was not found in the middle or head, then it must be tail
+      prev.next = null; // set prev value to null
     }
     this.size--;
   }
@@ -193,6 +191,7 @@ SLL1.prototype.isEmpty = function () {
 SLL1.prototype.insert = function (value) {
   if (this.head == null) {
     this.head = new SLLN1(value);
+    this.size++;
   } else {
     var temp = this.head;
     this.head = new SLLN1(value);
@@ -200,6 +199,23 @@ SLL1.prototype.insert = function (value) {
     this.size++;
   }
 };
+
+SLL.prototype.insertAtTail = function (value) {
+  var currentHead = this.head;
+  if (this.head == null) {
+    this.head = new SLL(value);
+    this.size++;
+  }
+  // null
+  // [2]->null
+  // [2]->[3]->null
+  while (currentHead.next) {
+    currentHead = currentHead.next;
+  }
+  currentHead.next = new SLLN(value);
+  this.size++;
+};
+
 
 SLL1.prototype.remove = function (value) {
   var currentHead = this.head;
@@ -238,6 +254,7 @@ sll1.insert(42);
 sll1.insert(42);
 sll1.insert(4);
 sll1.insert(24);
+sll1.insertAtTail(7);
 console.log("Removing ... :(");
 // sll1.remove(9);
 // sll1.remove(42);
