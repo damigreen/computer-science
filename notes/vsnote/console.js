@@ -65,6 +65,7 @@ SLL.prototype.insertNodeAtPosition1 = function (value, position) {
   // currentNode.next = new SLLN(value);
   // this.size++;
 };
+
 SLL.prototype.insertNodeAtPosition = function (value, position) {
   var currentNode = this.head;
   // insert [7] at 2
