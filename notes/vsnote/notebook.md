@@ -8,6 +8,24 @@
 
 ## Work
 
+### PPM FM fix
+
+- select * from units;
+- select * from maintenance_cycles;
+- select * from `maintenance_cycles` where `organization_id`
+= 1 and `job_schedule_id` in (select `id` from `job_schedules` where `unit_id` = (select `unit_id` from `facility_manager_unit` where
+`facility_manager_id` = (select `id` from `facility_managers` where `user_id` = 12 limit 1))) and `maintenance_cycles`.`deleted_at` is null and `id` = 0 order by `due_at` asc
+- -- select * from units;
+-- select * from users;
+-- select * from facility_manager_unit;
+-- select * from facility_managers;
+select * from maintenance_cycles;
+select * from maintenance_plans;
+select * from job_schedules;
+select * from job_schedule_statuses;
+select * from job_statuses;
+select * from work_requests;
+
 ### Paystack Resido Integration
 
 - Payment test link
