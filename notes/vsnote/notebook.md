@@ -8,6 +8,17 @@
 
 ## Work
 
+### IOT generator performance endpoints
+
+- Power
+- current
+- battery voltage
+- coolant temperature
+- load
+- Energy Generated
+- Engine speed
+- Lube Oil Pressure
+
 ### PPM FM fix
 
 - select * from units;
