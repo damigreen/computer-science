@@ -1,7 +1,7 @@
 /**
  * Singlly Linked List
  */
-function SinglyLinkedListNode(data) {
+ function SinglyLinkedListNode(data) {
   this.data = data;
   this.next = null;
 }
@@ -108,10 +108,12 @@ SLL.prototype.insert = function (value) {
 };
 SLL.prototype.remove = function (value) {
   var currentHead = this.head; // create a varible to save the current head
-  if (currentHead.data == value) { // if the head is the node is the value to remove
+  if (currentHead.data == value) {
+    // if the head is the node is the value to remove
     this.head = currentHead.next; // set the head to the next of the current head
     this.size--;
-  } else { // otherwise
+  } else {
+    // otherwise
     /* 
           [24] -> [4] -> [42] -> [9] -> null
           prev    val
@@ -123,8 +125,10 @@ SLL.prototype.remove = function (value) {
           prev    val
        */
     var prev = currentHead; // create a variable prev to save the current head (keep track of the previous head)
-    while (currentHead.next) { // iterate over the current head using its next
-      if (currentHead.data == value) { // if current head data is value to be removed
+    while (currentHead.next) {
+      // iterate over the current head using its next
+      if (currentHead.data == value) {
+        // if current head data is value to be removed
         prev.next = currentHead.next; // set prev's next to currenthead's next
         prev = currentHead; // set prev to current head (keep track of the previous head)
         currentHead = currentHead.next; // set currenthead to current heads next (skip the current head which is the value to be deleted)
@@ -133,7 +137,8 @@ SLL.prototype.remove = function (value) {
       prev = currentHead; // track the previous head
       currentHead = currentHead.next; // increment the head for the while loop
     }
-    if (currentHead.data == value) { // if value was not found in the middle or head, then it must be tail
+    if (currentHead.data == value) {
+      // if value was not found in the middle or head, then it must be tail
       prev.next = null; // set prev value to null
     }
     this.size--;
@@ -216,7 +221,63 @@ SLL.prototype.insertAtTail = function (value) {
   this.size++;
 };
 
+SLL.prototype.insertNodeAtPosition1 = function (value, position) {
+  var currentNode = this.head;
+  // insert [7] at 2
+  // [2]->[3]->[4]->[8]->null
+  //  (size - 1) = position
+  var count = 0;
+  if (position == 0) {
+    this.head = new SLLN(value);
+    this.head.next = currentNode;
+    count++;
+    this.size++;
+  }
 
+  var prev = null;
+  while (currentNode.next) {
+    if (count == position && position != 0) {
+      const newNode = new SLLN(value);
+      prev.next = newNode;
+      newNode.next = currentNode;
+
+      this.size++;
+      break;
+    }
+    count++;
+    prev = currentNode;
+    currentNode = currentNode.next;
+  }
+  // currentNode.next = new SLLN(value);
+  // this.size++;
+};
+SLL.prototype.insertNodeAtPosition = function (value, position) {
+  var currentNode = this.head;
+  // insert [7] at 2
+  // [2]->[3]->[4]->[8]->null
+  //  (size - 1) = position
+  var count = 0;
+  if (position == 0) {
+    this.head = new SLLN(value);
+    this.head.next = currentNode;
+    count++;
+    this.size++;
+  } else {
+    var prev = null;
+    while (position-- != 0) {
+      prev = currentNode;
+      currentNode = currentNode.next;
+    }
+    const newNode = new SLLN(value);
+    prev.next = newNode;
+    newNode.next = currentNode;
+
+    this.size++;
+  }
+
+  // currentNode.next = new SLLN(value);
+  // this.size++;
+};
 SLL1.prototype.remove = function (value) {
   var currentHead = this.head;
   if (currentHead.data == value) {
@@ -255,12 +316,14 @@ sll1.insert(42);
 sll1.insert(4);
 sll1.insert(24);
 sll1.insertAtTail(7);
+sll1.insertNodeAtPosition(12, 1);
 console.log("Removing ... :(");
 // sll1.remove(9);
 // sll1.remove(42);
 // sll1.remove(4);
 // sll1.remove(24);
 sll1.delete(4);
+console.log("**********Singly Linked List**********");
 console.log(sll1);
 console.log("42 present ? ...", sll1.search(42));
 console.log("430 present ? ...", sll1.search(430));
