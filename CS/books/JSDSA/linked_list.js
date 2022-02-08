@@ -1,7 +1,18 @@
+var date = new Date(1644662144000);
+var date1 = new Date("2022-02-04T10:35:44.000Z");
+var date2 = new Date(1643970944000);
+var date3 = new Date("2022-02-04T20:48:00.000Z").getTime();
+var date4 = new Date(1628985600000);
+console.log(date);
+console.log(date1.getTime());
+console.log(date2);
+console.log(date3);
+console.log(date4);
+
 /**
  * Singlly Linked List
  */
- function SinglyLinkedListNode(data) {
+function SinglyLinkedListNode(data) {
   this.data = data;
   this.next = null;
 }
@@ -38,15 +49,15 @@ SinglyLinkedList.prototype.remove = function (value) {
   } else {
     // [] -> []
     /* 
-          [24] -> [4] -> [42] -> [9] -> null
-          prev    val
-  
-          [24] -> [4] -> [42] -> [9] -> null
-          prev    val
-  
-          [24] ->*-> [42] -> [9] -> null
-          prev    val
-       */
+            [24] -> [4] -> [42] -> [9] -> null
+            prev    val
+    
+            [24] -> [4] -> [42] -> [9] -> null
+            prev    val
+    
+            [24] ->*-> [42] -> [9] -> null
+            prev    val
+         */
     var prev = currentHead;
     while (currentHead.next) {
       if (currentHead.data == value) {
@@ -115,15 +126,15 @@ SLL.prototype.remove = function (value) {
   } else {
     // otherwise
     /* 
-          [24] -> [4] -> [42] -> [9] -> null
-          prev    val
-  
-          [24] -> [4] -> [42] -> [9] -> null
-          prev    val
-  
-          [24] ->*-> [42] -> [9] -> null
-          prev    val
-       */
+            [24] -> [4] -> [42] -> [9] -> null
+            prev    val
+    
+            [24] -> [4] -> [42] -> [9] -> null
+            prev    val
+    
+            [24] ->*-> [42] -> [9] -> null
+            prev    val
+         */
     var prev = currentHead; // create a variable prev to save the current head (keep track of the previous head)
     while (currentHead.next) {
       // iterate over the current head using its next
@@ -163,6 +174,23 @@ SLL.prototype.delete = function (value) {
       prevNode = currentNode;
       currentNode = currentNode.next;
     }
+  }
+};
+
+SLL.prototype.deleteAtPosition = function (position) {
+  var currentNode = this.head;
+  if (position == 0) {
+    this.head = currentNode.next;
+    this.size--;
+  } else {
+    var prev = currentNode;
+    while (position-- != 0) {
+      prev = currentNode;
+      currentNode = currentNode.next;
+    }
+    prev.next = currentNode.next;
+    currentNode = prev;
+    this.size--;
   }
 };
 
@@ -324,6 +352,7 @@ console.log("Removing ... :(");
 // sll1.remove(24);
 sll1.delete(4);
 console.log("**********Singly Linked List**********");
+sll1.deleteAtPosition(1);
 console.log(sll1);
 console.log("42 present ? ...", sll1.search(42));
 console.log("430 present ? ...", sll1.search(430));
