@@ -337,6 +337,14 @@ I took the dates of all the pending ad campaign ignorant and those from the runn
 
 ### Solidity, Blockchain and Smart Contract Course - Beginner to Expert Python Tutorial
 
+#### Notes~SBSCC
+
+- Notes
+  - [Github link]
+  - aava
+  - compound
+  - curve finace
+
 #### Keywords | Solidity, Blockchain and Smart Contract Course
 
 - Dapp / Smart Contracts / Smart Protocol
