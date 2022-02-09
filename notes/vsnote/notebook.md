@@ -340,10 +340,95 @@ I took the dates of all the pending ad campaign ignorant and those from the runn
 #### Notes~SBSCC
 
 - Notes
-  - [Github link]
+  - [Github link](https://github.com/smartcontractkit/full-blockchain-solidity-course-py)
   - aava
   - compound
   - curve finace
+  - polygon
+  - pokadot
+  - `Bitcoin`
+    - one of the first protocol to use the technology blockchain
+    - bitcoin whitepaper released by Satoshi Nakamoto
+    - used to make peer to peer transaction in a dicentralised network
+    - Network is powerd by cryptography
+    - Refered to as **digital gold**
+    - has scarse quantity
+  - `Ethereum`
+    - Use blockchain technology with additional featuers
+    - released in 2015
+    - to make decentralised app / organization
+    - build smart contracts
+    - `Smart Contracts`
+      - They are self executing set of instructions without 3rd parties
+      - Allows for aggrements without centralized intermediaries
+      - Nick zsabo relead smart contracts
+      - they are writen in code
+      - and automarically executed by the decentraised blockhain network
+      - Bitcoin smart contracts are not **turin** complete
+      - smart contracts need real world data
+      - Oracle Problem
+      - **Dapp** = **Smart Contract** == **Decentralised App / protocol**
+      - Decentralised applications is usually a combination of different smart contracts
+      - `Oracle`
+        - They are devices that brings data into blockchain or
+        - execute external computation
+        - centralised oracle are a point of failure
+        - `Hybrid Smart contracts`
+          - Combines on-chain and off-chain components
+          - ...
+        - `Chainlink`
+          - Provides data and external computation to smart contracts
+          - They access these datas using **oracle**
+          - Is a decentralised oracle network that
+          - allow you to bring data into smartcontract and
+          - interact with the real world
+          - It allows us to
+          - get data
+          - get randomness
+          - allows unlimited smart contract customization
+          - They also allows us to buld **hybrid smart contracts**
+      - `Features of Smart Contracts`
+        - `Decentalised`
+          - No centralised sourse that controls the blockchain
+          - Individual tha makes up the blockchain are **node operators**
+          - `Node operators`
+            - They are independent individuals running the software connecting the whole blockchain network together
+          - Summary
+            - Not controlled by a single centralised entity
+            - Run by a network of independent users
+        - `Transparency and Flexibility`
+          - Everything taht is done on the blockchain and all the rules that are made
+          - can be seen by everyone
+          - Everyone has to play by the same rules
+          - Not everything is tracked meaning that
+          - Blockchain is **pseudoanonymous** meaningn that
+          - you can create different accounts and interect with it in different ways
+        - `Speed and efficiency`
+          - They are quick and efficiency
+        - `Security and immutablility`
+          - They cant be changed / tampered with / corrupted in any way
+          - allows massive security on data / transactions
+          - On a blockchain if seveal nodes go down it doesnt matter
+          - as long as a single node is running your data is safe and secure
+          - There are hundred of thousands of node running the blockchain software
+          - Meaning every transaction is immutable on every node and wont change
+          - Hacking the blockchain is impossiblem
+          - You access your transaction using a private key
+        - `Removal of countemporary risk`
+          - smart contracts in particular remove massive confilct of interest
+        - `Trust Minimized Agreements`
+          - smart contract allows us to move from **brand based aggrements** to **math based aggrement**
+          - We dont need to trust that they are going to do the right thing
+      - `DAOs ~ Decentralised Autonomous Organizations`
+        - They are live online and live in smart contracts
+        - They do all there gorvenance on chains
+    - `Ethereum Paradym`
+      - Diphy
+      - NFTs
+      - Dows
+      - Layer Two
+    - `Ethereum Tools`
+      - [Etherscan]()
 
 #### Keywords | Solidity, Blockchain and Smart Contract Course
 
@@ -1012,18 +1097,25 @@ So I will assign hooks to every one of the list.
 
 ## Personal
 
-### Brand
+### Notes ~ Personal
 
-#### Inventory
+- Whenever you open **whatsapp status** quicky click on / open up **chess** on **android**
+
+### Brands
+
+#### Cannabis Startup
+
+##### Inventory ~ CS
 
 - Rolling papers
   - Raw
 - Bongs
 - Vapes
-- 
 
 ### Downloads
 
+- [ ] [Database Design Course](https://www.youtube.com/watch?v=ztHopE5Wnpc&t=2s)
+- [ ] [Database systems](https://youtu.be/4cWkVbC2bNE)
 - [x] [complete react native](https://piratebay.party/torrent/42918738/Udemy-_Complete_React_Native_in_2021__Zero_to_Mastery_with_Hooks)
 - [x] [Angular the complete guide real worid app](https://piratebay.party/torrent/38738248/Udemy_-_Complete_Angular_11_Ultimate_Guide_with_Real_World_App)
 - [x] [Angular the complete guide](https://piratebay.party/torrent/45549857/Angular_-_The_Complete_Guide_(2021_Edition))
@@ -1095,7 +1187,7 @@ On the site go to ...
 
 - [TwiloZD](https://www.twilio.com/quest?utm-source=twlozd) - use for portfolio
 - facebook password - DDQl6HQEhShZBxriaB2UlXdm5Lu7cLsze4f0NXK41I
-- ~~fiction member dose occur decade fiscal shallow magnet lend gun deputy pilot~~
+- fiction member dose occur decade fiscal shallow magnet lend gun deputy pilot
 - 22356363073
 - N-4853599
 
