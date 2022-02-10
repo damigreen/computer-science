@@ -10,6 +10,10 @@
 
 ### Database Relation for Users and Community
 
+- Relations
+  - community_unit
+  - household_unit
+
 - Create units
   - add `household_id` to `units` table
 - Create unit_hierarchies
