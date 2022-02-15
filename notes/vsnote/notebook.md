@@ -412,7 +412,6 @@ I took the dates of all the pending ad campaign ignorant and those from the runn
   - `Spring Boot Installation`
     - `Spring Boot Cli`
     - `Spring Tool Suite`
-  - 
 
 ### Solidity, Blockchain and Smart Contract Course - Beginner to Expert Python Tutorial
 
@@ -1178,7 +1177,6 @@ So I will assign hooks to every one of the list.
 
 ### School ~ Masters
 
-- 
 - Fairfield University
 - Florida Agricultural and Mechanical University
 - Prairie View A&M University
