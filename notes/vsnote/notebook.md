@@ -1176,6 +1176,13 @@ So I will assign hooks to every one of the list.
 
 ## Personal
 
+### School ~ Masters
+
+- 
+- Fairfield University
+- Florida Agricultural and Mechanical University
+- Prairie View A&M University
+
 ### Notes ~ Personal
 
 - Whenever you open **whatsapp status** quicky click on / open up **chess** on **android**
