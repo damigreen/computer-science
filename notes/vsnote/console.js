@@ -375,15 +375,20 @@ function reverseSinglyLinkedList(sll) {
     prev = headNode; // set prev to head node
     if (!temp) break;
     headNode = temp; // set head node to temp
+    console.log(prev.data);
   }
   console.log("prev------->");
-  console.log(prev);
   return prev;
 }
 
+function reverseSinglyLinkedListHack(sll) {
+  var headNode = sll.head;
+  // 16-12-4-2-5-null
+}
 console.log("**********Reverse Singly Linked List***********");
 console.log(sll1); // [24]-[42]-[9]-[7]-null
-var reverse = reverseSinglyLinkedList(sll1);
+// var reverse = reverseSinglyLinkedList(sll1);
+// var reverse = reverseSinglyLinkedListHack(sll1);
 
 /**
  * Delete Duplicates in a Linked List
