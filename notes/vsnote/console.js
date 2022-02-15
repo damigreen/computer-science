@@ -375,9 +375,10 @@ function reverseSinglyLinkedList(sll) {
     prev = headNode; // set prev to head node
     if (!temp) break;
     headNode = temp; // set head node to temp
-    console.log(headNode.data);
   }
-  // return headNode;
+  console.log("prev------->");
+  console.log(prev);
+  return prev;
 }
 
 console.log("**********Reverse Singly Linked List***********");
