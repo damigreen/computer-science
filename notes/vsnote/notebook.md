@@ -8,6 +8,17 @@
 
 ## Work
 
+### Landmark new features
+
+- Technician Dashboard
+  - **Technicians** can make request (button)
+  - FM can rate jobs
+- Better Dashboard / OM
+  - Analytics
+  - Approvals and Overview
+    - Ready for approval
+    - Approved request
+
 ### Database Relation for Users and Community
 
 - Relations
@@ -351,6 +362,57 @@ Make sure your hosting provider or ISP allows outbound SMTP connections.
 I took the dates of all the pending ad campaign ignorant and those from the running and approved 
 
 ## Courses
+
+### Spring Boot Full Course ~ Learn Spring Boot In 4 Hours
+
+- `Spring Boot`
+  - Spring boot is a spring module aim to simplify the use of spring framwork for
+  - java deveopment
+  - It is used to create standalone spring base application
+  - Makes it esay to create spring powered, production grade applications
+  - `Features`
+    - `sprintg cli`
+      - Allows the use of groovy for writing spring boot application and
+      - avoid boilerplate code
+    - `Starter Dependency`
+      - With this feature, sprong boot aggregates common dependencies together and
+      - eventuslly improves productivity
+    - `Sprong Initializer`
+      - This is a web app which can
+      - crate an internal project structure for you
+    - `Auto Configuration`
+      - This feature helps in the loading the defaulg configuration
+      - according to the project you are working on
+    - `Sprong Actuator`
+      - Provides help while running spring boot applications
+    - `Logging and security`
+      - Ensures all the application made using spring boot are properly
+      - secured without any hassle
+  - `Importance of Spring Boot`
+    - `Stability`
+      - Connect to Java virtual machine
+      - have rapid app developnent in java
+    - `Based on JVM`
+    - `Connectivity`
+      - Provides good connectivity with other web technology,
+      - database technologies like MYSQl, etc
+    - `Cloud-Native`
+    - `Flexibility`
+    - `Open Source`
+  - `Spring Vs Spring Boot`
+    - `Spring`
+      - Takes time to have spring application up and running
+      - Manage life cycle of java
+      - Dependency injection framework
+    - `Spring Boot`
+      - Shortest way to run spring applications
+      - Need not worry about configuring a data source i.e.
+        - provides auto configuration feauture
+      - Pre-configured set of frameworks/technology
+  - `Spring Boot Installation`
+    - `Spring Boot Cli`
+    - `Spring Tool Suite`
+  - 
 
 ### Solidity, Blockchain and Smart Contract Course - Beginner to Expert Python Tutorial
 
@@ -1209,6 +1271,7 @@ On the site go to ...
 - [TwiloZD](https://www.twilio.com/quest?utm-source=twlozd) - use for portfolio
 - facebook password - DDQl6HQEhShZBxriaB2UlXdm5Lu7cLsze4f0NXK41I
 - fiction member dose occur decade fiscal shallow magnet lend gun deputy pilot
+  - xLtFtYDUyiaNAB2rE3pu
 - 22356363073
 - N-4853599
 
@@ -1222,7 +1285,7 @@ https://www.youtube.com/redirect?event=video_description&redir_token=QUFFLUhqbGZ
 https://www.youtube.com/redirect?event=video_description&redir_token=QUFFLUhqbjdIZFJXcUVpb0J3X0txeW12RmZWQnVVT0Nyd3xBQ3Jtc0tuczNxNWVCUU1XeUU0REMwMlEtZzc4QzJuMDNaUDlOLUtVWEw4Y0RraVp0RkM3dXktMFhid01aMmhlS1ltVG1LZlNVeEF5SGpjTkxaWlcxYThtWTVUOW5yRnR6akM1dUU5NFdjNjFGVTJRanVsaU11dw&q=https%3A%2F%2Ftrello.com%2Fb%2F5Ye8Khdx%2Fmoving-to-canada-getting-a-pr
 
 UK
-Technation: https://youtu.be/P_QmVVzJz9U 
+Technation: https://youtu.be/P_QmVVzJz9U
 https://www.gov.uk/global-talent
 https://www.gov.uk/skilled-worker-visa
 
