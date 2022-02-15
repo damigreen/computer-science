@@ -1193,7 +1193,8 @@ So I will assign hooks to every one of the list.
 
 ### Downloads
 
-- [ ] [Database Design Course](https://www.youtube.com/watch?v=ztHopE5Wnpc&t=2s)
+- [ ] [MIT 15.S12 Blockchain and Money, Fall 2018](https://www.youtube.com/watch?v=EH6vE97qIP4&list=PLUl4u3cNGP63UUkfL0onkxF6MYgVa04Fn&ab_channel=MITOpenCourseWare)
+- [x] [Database Design Course](https://www.youtube.com/watch?v=ztHopE5Wnpc&t=2s)
 - [ ] [Database systems](https://youtu.be/4cWkVbC2bNE)
 - [x] [complete react native](https://piratebay.party/torrent/42918738/Udemy-_Complete_React_Native_in_2021__Zero_to_Mastery_with_Hooks)
 - [x] [Angular the complete guide real worid app](https://piratebay.party/torrent/38738248/Udemy_-_Complete_Angular_11_Ultimate_Guide_with_Real_World_App)
