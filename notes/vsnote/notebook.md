@@ -2,11 +2,29 @@
 
 ## Misc
 
+### 17:02:22
+
+- Create **pagination** for activity bar
+- Create **notification** for **unit FMs** and **resido admin**
+- Head first Java
+  - Complete **Chapter 2**
+- JavaScript data structure and algorithms
+  - Complete **Caching**
+- Hackerrank
+  - Reverse linked list
+
 ### Brownies CBD Other Cannabis product
 
 - Browse for **similar** **sites** on the web
 
 ## Work
+
+### Meeting ~ 17:02:22
+
+- Create **pagination** for activity bar
+- Create **notification** for **unit FMs** and **resido admin**
+- Remove **required field** for **materials**
+  - Work on the **save invoice** logic
 
 ### Landmark new features
 
