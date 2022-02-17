@@ -4,14 +4,23 @@
 
 ### 17:02:22
 
+- Add message
+  - if you have any feedback / complaint call **Resido manager**
 - Create **pagination** for activity bar
 - Create **notification** for **unit FMs** and **resido admin**
+- Remove **required field** for **materials**
+- **Notification** for **procurement**
+  - Work on the **save invoice** logic
 - Head first Java
   - Complete **Chapter 2**
 - JavaScript data structure and algorithms
   - Complete **Caching**
 - Hackerrank
   - Reverse linked list
+
+---
+
+- [x] Rating job from **1-10**
 
 ### Brownies CBD Other Cannabis product
 
@@ -1216,9 +1225,14 @@ So I will assign hooks to every one of the list.
 
 ### Downloads
 
+- [ ] [Foundation of Entrepreneurship](https://www.youtube.com/watch?v=UEngvxZ11sw)
+- [ ] [Docker and Kubernetes Tutorial](https://www.youtube.com/watch?v=bhBSlnQcq2k)
+- [ ] [Coding Interview with Dan Abramov](https://www.youtube.com/watch?v=XEt09iK8IXs&t=38s)
+- [ ] [Algorithmic Trading with Python](https://www.youtube.com/watch?v=xfzGZB4HhEE&t=41s)
+- [ ] [C++ Complete Course Freecodecamp](https://www.youtube.com/watch?v=8jLOx1hD3_o)
 - [ ] [MIT 15.S12 Blockchain and Money, Fall 2018](https://www.youtube.com/watch?v=EH6vE97qIP4&list=PLUl4u3cNGP63UUkfL0onkxF6MYgVa04Fn&ab_channel=MITOpenCourseWare)
-- [x] [Database Design Course](https://www.youtube.com/watch?v=ztHopE5Wnpc&t=2s)
 - [ ] [Database systems](https://youtu.be/4cWkVbC2bNE)
+- [x] [Database Design Course](https://www.youtube.com/watch?v=ztHopE5Wnpc&t=2s)
 - [x] [complete react native](https://piratebay.party/torrent/42918738/Udemy-_Complete_React_Native_in_2021__Zero_to_Mastery_with_Hooks)
 - [x] [Angular the complete guide real worid app](https://piratebay.party/torrent/38738248/Udemy_-_Complete_Angular_11_Ultimate_Guide_with_Real_World_App)
 - [x] [Angular the complete guide](https://piratebay.party/torrent/45549857/Angular_-_The_Complete_Guide_(2021_Edition))
