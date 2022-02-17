@@ -653,6 +653,16 @@ Users can create many tasks tasks belongs to a user
 
 ## Books
 
+### Head First Java
+
+- Word soup
+  - reference variable
+  - assign object to reference variable
+  - garbage collectible heap
+  - null referenece
+  - garbage collector
+  - 
+
 ### JavaScript Data Structures and Algorithms
 
 #### Linked Lists ~ 24:01:22 [Linked List](../../cs/books/JSDSA/linked_list.js)
