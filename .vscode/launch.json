@@ -6,6 +6,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch GameLauncher",
+            "request": "launch",
+            "mainClass": "GameLauncher",
+            "projectName": "VSCode_f36ec50d"
+        },
+        {
+            "type": "java",
+            "name": "Launch DogTestDrive",
+            "request": "launch",
+            "mainClass": "DogTestDrive",
+            "projectName": "VSCode_f36ec50d"
+        },
+        {
+            "type": "java",
             "name": "Launch dynamic_array",
             "request": "launch",
             "mainClass": "dynamic_array",
