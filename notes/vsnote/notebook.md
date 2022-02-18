@@ -661,7 +661,6 @@ Users can create many tasks tasks belongs to a user
   - garbage collectible heap
   - null referenece
   - garbage collector
-  - 
 
 ### JavaScript Data Structures and Algorithms
 
