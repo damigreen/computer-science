@@ -6,6 +6,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch Triangle",
+            "request": "launch",
+            "mainClass": "Triangle",
+            "projectName": "VSCode_f36ec50d"
+        },
+        {
+            "type": "java",
+            "name": "Launch Hobbits",
+            "request": "launch",
+            "mainClass": "Hobbits",
+            "projectName": "VSCode_f36ec50d"
+        },
+        {
+            "type": "java",
             "name": "Launch BooksTestDrive",
             "request": "launch",
             "mainClass": "BooksTestDrive",
