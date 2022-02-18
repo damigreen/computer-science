@@ -382,13 +382,41 @@ function reverseSinglyLinkedList(sll) {
 }
 
 function reverseSinglyLinkedListHack(sll) {
-  var headNode = sll.head;
-  // 16-12-4-2-5-null
+  const linkedList = new sll();
+  var currentNode = linkedList.head;
+  // Write your code here
+  // [2]->[3]->[4]->[5]->null
+  // [2]->null
+  // [5]->[4]->[3]->[2]->null
+  // [5]->[4]->[3]
+  var prev = null;
+  var dataArray = [currentNode.data];
+  // console.log(currentNode.data)
+  while (currentNode != null) {
+    // 16-12-4-2-5
+    // 5-2-4-12-16
+    // currentNode = 3-4-5
+    var temp = currentNode.next;
+    currentNode.next = prev;
+    prev = currentNode;
+    // if (!temp) break;
+    currentNode = temp;
+    dataArray.push(prev.data);
+    // console.log(prev.data);
+    // console.log(currentNode.next)
+    // console.log(currentNode.next)
+  }
+  for (var i = dataArray.length - 1; i > 0; i--) {
+    console.log(dataArray[i]);
+  }
+  // console.log(prev.data)
+  return prev;
 }
+
 console.log("**********Reverse Singly Linked List***********");
 console.log(sll1); // [24]-[42]-[9]-[7]-null
 // var reverse = reverseSinglyLinkedList(sll1);
-// var reverse = reverseSinglyLinkedListHack(sll1);
+var reverse = reverseSinglyLinkedListHack(sll1);
 
 /**
  * Delete Duplicates in a Linked List
