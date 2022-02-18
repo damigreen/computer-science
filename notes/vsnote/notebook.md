@@ -2,9 +2,23 @@
 
 ## Misc
 
+- `Brainstorm`
+  - Create **pagination** for activity bar
+  - Create **notification** for **unit FMs** and **resido admin**
+  - Remove **required field** for **materials**
+  - **Notification** for **procurement**
+
+### 18:02:22
+
+- Remove **required field** for **materials**
+  - Woek on job scoping logic
+- Create **pagination** for activity bar
+- Create **notification** for **unit FMs** and **resido admin**
+- **Notification** for **procurement**
+
 ### 17:02:22
 
-- Add message
+- Add message to completed requests
   - if you have any feedback / complaint call **Resido manager**
 - Create **pagination** for activity bar
 - Create **notification** for **unit FMs** and **resido admin**
@@ -27,6 +41,15 @@
 - Browse for **similar** **sites** on the web
 
 ## Work
+
+### Vampfi dashboard update
+
+```sql
+select * from client_requests;
+select * from users;
+select * from work_requests;
+select * from work_requests where id=384;
+```
 
 ### Meeting ~ 17:02:22
 
@@ -76,21 +99,23 @@
 
 ### PPM FM fix
 
-- select * from units;
-- select * from maintenance_cycles;
-- select * from `maintenance_cycles` where `organization_id`
+```SQL
+select * from units;
+select * from maintenance_cycles;
+select * from `maintenance_cycles` where `organization_id`
 = 1 and `job_schedule_id` in (select `id` from `job_schedules` where `unit_id` = (select `unit_id` from `facility_manager_unit` where
 `facility_manager_id` = (select `id` from `facility_managers` where `user_id` = 12 limit 1))) and `maintenance_cycles`.`deleted_at` is null and `id` = 0 order by `due_at` asc
-- -- select * from units;
--- select * from users;
--- select * from facility_manager_unit;
--- select * from facility_managers;
-select * from maintenance_cycles;
-select * from maintenance_plans;
-select * from job_schedules;
-select * from job_schedule_statuses;
-select * from job_statuses;
-select * from work_requests;
+select *from units;
+select* from users;
+select *from facility_manager_unit;
+select* from facility_managers;
+select *from maintenance_cycles;
+select* from maintenance_plans;
+select *from job_schedules;
+select* from job_schedule_statuses;
+select *from job_statuses;
+select* from work_requests;
+```
 
 ### Paystack Resido Integration
 
@@ -133,11 +158,13 @@ select * from work_requests;
 
 #### Queries - Vamp Maintenance Plan Reminder
 
-    select * from work_requests;
-    select * from job_schedule_statuses;
-    select * from job_schedules;
-    select * from maintenance_cycles;
-    select * from maintenance_plans;
+```SQL
+select * from work_requests;
+select * from job_schedule_statuses;
+select * from job_schedules;
+select * from maintenance_cycles;
+select * from maintenance_plans;
+```
 
 ### Data Spooling
 
@@ -222,14 +249,14 @@ select * from work_requests;
           "request_id": "eopiisdjkandxnw"
       }
 
-http://127.0.0.1:3333/webhook/approve
-http://127.0.0.1:3333/webhook/job-started
-http://127.0.0.1:3333/webhook/job-completed
+<http://127.0.0.1:3333/webhook/approve>
+<http://127.0.0.1:3333/webhook/job-started>
+<http://127.0.0.1:3333/webhook/job-completed>
 
-https://us-central1-gatepass-test-environment.cloudfunctions.net/api/vampfi/callback/residents/assigned	1	2021-10-19 19:17:49	2021-10-19 19:17:49			1		
-https://us-central1-gatepass-test-environment.cloudfunctions.net/api/vampfi/callback/request/approved	1	2021-10-20 12:17:49	2021-10-20 12:17:49			1		
-https://us-central1-gatepass-test-environment.cloudfunctions.net/api/vampfi/callback/work_started	1	2021-12-07 18:02:00	2021-12-07 18:02:00			1		
-https://us-central1-gatepass-test-environment.cloudfunctions.net/api/vampfi/callback/work_complete	1	2021-12-07 18:02:00	2021-12-07 18:02:00			1		
+<https://us-central1-gatepass-test-environment.cloudfunctions.net/api/vampfi/callback/residents/assigned> 1 2021-10-19 19:17:49 2021-10-19 19:17:49   1  
+<https://us-central1-gatepass-test-environment.cloudfunctions.net/api/vampfi/callback/request/approved> 1 2021-10-20 12:17:49 2021-10-20 12:17:49   1  
+<https://us-central1-gatepass-test-environment.cloudfunctions.net/api/vampfi/callback/work_started> 1 2021-12-07 18:02:00 2021-12-07 18:02:00   1  
+<https://us-central1-gatepass-test-environment.cloudfunctions.net/api/vampfi/callback/work_complete> 1 2021-12-07 18:02:00 2021-12-07 18:02:00   1  
 
 unit_id'1', 'unit_id', '1', '23', '2021-10-19 19:17:49', '2021-10-19 19:17:49', NULL
 '2', 'occupants_id', '1', '24', '2021-10-19 19:17:49', '2021-10-19 19:17:49', NULL
@@ -252,54 +279,53 @@ unit_id'1', 'unit_id', '1', '23', '2021-10-19 19:17:49', '2021-10-19 19:17:49', 
 '20', 'request_id', '3', '26', '2021-12-09 09:28:00', '2021-12-09 09:28:00', NULL
 '21', 'request_id', '4', '26', '2021-12-09 09:28:00', '2021-12-09 09:28:00', NULL
 
-    https://us-central1-gatepass-test-environment.cloudfunctions.net/api/vampfi/callback/request/approved
+[Gatepass Hooks](ttps://us-central1-gatepass-test-environment.cloudfunctions.net/api/vampfi/callback/request/approved)
 
 #### Queries - Gatepass Vamp Callbacks
 
-    select * from system_functions;
-    select * from system_entities;
-    select * from system_entity_params;
-    select * from system_event_triggers;
-    select * from system_events;
-    select * from system_event_web_hook;
-    select * from web_hooks;
+```SQL
+select * from system_functions;
+select * from system_entities;
+select * from system_entity_params;
+select * from system_event_triggers;
+select * from system_events;
+select * from system_event_web_hook;
+select * from web_hooks;
 
-    select * from web_hook_params;
-    select * from web_hooks;
-    select * from system_entities;
-    select * from system_entity_params;
-    select * from web_hooks where id=8;
+select * from web_hook_params;
+select * from web_hooks;
+select * from system_entities;
+select * from system_entity_params;
+select * from web_hooks where id=8;
 
 
-    select * from work_requests;
-    select * from client_requests;
-    select * from equipment_criticalities;
-    select * from work_request_items;
-    select * from materials;
+select * from work_requests;
+select * from client_requests;
+select * from equipment_criticalities;
+select * from work_request_items;
+select * from materials;
 
-    ------------------------------------------------------------
 
-    select * from users;
-    select * from residences;
-    select * from requests;
-    select * from request_statuses;
-    select * from request_logs;
-    select * from messages;
-    select * from estates;
-    select * from chat_groups;
-    select * from chat_group_user;
-    ----------------------------------------------------------------
+select * from users;
+select * from residences;
+select * from requests;
+select * from request_statuses;
+select * from request_logs;
+select * from messages;
+select * from estates;
+select * from chat_groups;
+select * from chat_group_user;
 
-    select * from users;
-    select * from stages;
-    select * from requests;
+select * from users;
+select * from stages;
+select * from requests;
 
-    ------------------------------------------------------------------------------
 
-    select * from users;
-    select * from occupants;
-    select * from unit_hierarchies;
-    select * from units;
+select * from users;
+select * from occupants;
+select * from unit_hierarchies;
+select * from units;
+```
 
 [CallBack Route](http://127.0.0.1:3333/callbacks/request/approved)
 
@@ -331,6 +357,7 @@ unit_id'1', 'unit_id', '1', '23', '2021-10-19 19:17:49', '2021-10-19 19:17:49', 
 Username: demo12@iobotech.com
 Password: 123456
 
+```JSON
     {
         email_id: "demo12@iobotech.com",
         password: "123456",
@@ -339,6 +366,7 @@ Password: 123456
         target:
           "https://app.datoms.io/enterprise/1083/dg-monitoring/detailed-view/?thing_id=7284",
     }
+```
 
 ### Termii Integration with Vamp
 
@@ -372,21 +400,25 @@ Make sure your hosting provider or ISP allows outbound SMTP connections.
 `components/hagul/dashboard/request.vue`
 `pages/hagul/index`
 
-    data
-      requests: {
-        code,
-        workRequests,
-        salesOrder,
+```JSON
+  data
+    requests: {
+      code,
+      workRequests,
+      salesOrder,
 
-      }
+    }
+```
 
 - On work request delivery clicked, a **sales order** is generated
 
-      <span style='color:red'>Remove !!! Remove !!! Remove !!! Remove !!!</span>
+```HTML
+<span style='color:red'>Remove !!! Remove !!! Remove !!! Remove !!!</span>
+```
 
 ### Fix the delete user issue on loadstat
 
-I took the dates of all the pending ad campaign ignorant and those from the running and approved 
+I took the dates of all the pending ad campaign ignorant and those from the running and approved
 
 ## Courses
 
@@ -594,24 +626,26 @@ cloud providers privide access to resources e.g computing, memory, storage
 
 ### Adonis 5 -JAGR
 
-    @column()
-    public description?: string
+```TYPESCRIPT
+@column()
+public description?: string
 
-    @column.dateTime({ autoCreate: true })
-    public createdAt
+@column.dateTime({ autoCreate: true })
+public createdAt
 
-    @column.dateTime({ autoCreate: true, autoUpdate: true })
-    public updatedAt
+@column.dateTime({ autoCreate: true, autoUpdate: true })
+public updatedAt
 
-    @hasMany(() => Task, {
-      localKey: "createdBy"
-    })
-    public tasks: hasMany<typeof Task>
+@hasMany(() => Task, {
+  localKey: "createdBy"
+})
+public tasks: hasMany<typeof Task>
 
-    @hasMany(() => User, {
-      foreignKey: "createdBy"
-    })
-    public creator: hasMany<typeof Task>
+@hasMany(() => User, {
+  foreignKey: "createdBy"
+})
+public creator: hasMany<typeof Task>
+```
 
 `build` - compile typescript
 `invoke` - get instructions for installing new modules with adonis project
@@ -619,7 +653,8 @@ cloud providers privide access to resources e.g computing, memory, storage
 
 Users can create many tasks tasks belongs to a user
 
-    Migrations
+```CSS
+       Migrations
           Users                Tasks           Projects
 
           id                    id                id
@@ -636,7 +671,6 @@ Users can create many tasks tasks belongs to a user
         user_id                     task_id
         role_id                     sort_order
 
-        -------------------------------------------------------------------
 
         ENUMS
 
@@ -644,12 +678,13 @@ Users can create many tasks tasks belongs to a user
                 member                  idle
                 admin                   in_progress
                                         complete
+```
 
 ### Docker tutorial for beginners
 
 #### Docker tutorial for beginners - Timelines
 
-    43.10, 52.00, 56.49, 56,19, 1:01:00, 01:03:09, 01:05:09, 01:07:24, 01:13:00, 01:31:00, 01:35:47, 01:57:49
+43.10, 52.00, 56.49, 56,19, 1:01:00, 01:03:09, 01:05:09, 01:07:24, 01:13:00, 01:31:00, 01:35:47, 01:57:49
 
 ## Books
 
@@ -792,10 +827,10 @@ Users can create many tasks tasks belongs to a user
       - or
       - start at the tail and use the prev pointer
 
-----------
-
-    next node, node, reference, data, next, head, traversal, insertion, start, end
-    next pointer, prev pointer, new node, bi-directional queue data structure,
+```HTML
+      next node, node, reference, data, next, head, traversal, insertion, start, end
+      next pointer, prev pointer, new node, bi-directional queue data structure,
+```
 
 #### Stacks and Queues ~ 01:01:22
 
@@ -1069,6 +1104,7 @@ that defines keys and associated values.
   - Write the **formala** describing the second hash function
   - `code` Implement hash table (`put()` and `get()`) using the three techniques described
 
+```HTML
         hashing, unique keys, generating, array index
         available index, incremental trials, quick storage and retrieval, key value pairs,
         native javascript object, persist, specified key, equal keys, equal hash values,
@@ -1076,7 +1112,8 @@ that defines keys and associated values.
         cluster issue, perfect squares, uniformly distribute the kwys, second hash function,
         original, result
 
-        yeild, 
+        yeild,
+```
 
 - stacks and Queues
   - describe them
@@ -1106,7 +1143,7 @@ manner
 <!-- Weekly actities -->
 #### Mnemonics Cache ~ 18:12:2021
 
-                   Creative inersia
+Creative inersia
 
   DG-Vile, that is what i am naming my **memory palace** for now,
 and inside the mansion, there are several beautiful tings that you will find
@@ -1131,9 +1168,9 @@ So I will assign hooks to every one of the list.
 - No **streaming youtube** anytime of the day. If you cannot download it do not watch it [stream]
 - NO **movies**, do not **download** movies, do not **watch** anu movie except on programming [google]
 
-        level 0 
+level 0
 
-    record(v) information(n)
+record(v) information(n)
 
 - Use Keywods for
 
@@ -1325,22 +1362,22 @@ On the site go to ...
 #### Travel Links
 
 Residencies
-https://residencies.io/
+<https://residencies.io/>
 
 Canada PR
-https://www.youtube.com/redirect?event=video_description&redir_token=QUFFLUhqbGZiZXZwdE5ucmJYYkdWbVc4R1BiSS1qVHpRQXxBQ3Jtc0tsNFR5ZzRTaV9LcE90YkxSZDJqQmFucUM5ZW9yaFhOdUtBMmdMVEZ0Wm1HU3Q5Y2xhTTg5UUhfeVlTc2NxODl4SUFQQS1pdUp1NnBJX3loYlFoT2p6UUFFTWFPeHRzRk9HYndkdV85TFZLV3UwZVVIRQ&q=https%3A%2F%2Fwww.canada.ca%2Fen%2Fimmigration-refugees-citizenship%2Fservices%2Fimmigrate-canada.html
-https://www.youtube.com/redirect?event=video_description&redir_token=QUFFLUhqbjdIZFJXcUVpb0J3X0txeW12RmZWQnVVT0Nyd3xBQ3Jtc0tuczNxNWVCUU1XeUU0REMwMlEtZzc4QzJuMDNaUDlOLUtVWEw4Y0RraVp0RkM3dXktMFhid01aMmhlS1ltVG1LZlNVeEF5SGpjTkxaWlcxYThtWTVUOW5yRnR6akM1dUU5NFdjNjFGVTJRanVsaU11dw&q=https%3A%2F%2Ftrello.com%2Fb%2F5Ye8Khdx%2Fmoving-to-canada-getting-a-pr
+<https://www.youtube.com/redirect?event=video_description&redir_token=QUFFLUhqbGZiZXZwdE5ucmJYYkdWbVc4R1BiSS1qVHpRQXxBQ3Jtc0tsNFR5ZzRTaV9LcE90YkxSZDJqQmFucUM5ZW9yaFhOdUtBMmdMVEZ0Wm1HU3Q5Y2xhTTg5UUhfeVlTc2NxODl4SUFQQS1pdUp1NnBJX3loYlFoT2p6UUFFTWFPeHRzRk9HYndkdV85TFZLV3UwZVVIRQ&q=https%3A%2F%2Fwww.canada.ca%2Fen%2Fimmigration-refugees-citizenship%2Fservices%2Fimmigrate-canada.html>
+<https://www.youtube.com/redirect?event=video_description&redir_token=QUFFLUhqbjdIZFJXcUVpb0J3X0txeW12RmZWQnVVT0Nyd3xBQ3Jtc0tuczNxNWVCUU1XeUU0REMwMlEtZzc4QzJuMDNaUDlOLUtVWEw4Y0RraVp0RkM3dXktMFhid01aMmhlS1ltVG1LZlNVeEF5SGpjTkxaWlcxYThtWTVUOW5yRnR6akM1dUU5NFdjNjFGVTJRanVsaU11dw&q=https%3A%2F%2Ftrello.com%2Fb%2F5Ye8Khdx%2Fmoving-to-canada-getting-a-pr>
 
 UK
-Technation: https://youtu.be/P_QmVVzJz9U
-https://www.gov.uk/global-talent
-https://www.gov.uk/skilled-worker-visa
+Technation: <https://youtu.be/P_QmVVzJz9U>
+<https://www.gov.uk/global-talent>
+<https://www.gov.uk/skilled-worker-visa>
 
 Portugal D7 Visa
-https://www.d7visa.com/
+<https://www.d7visa.com/>
 
 Digital Nomad Visa
-https://www.youtube.com/redirect?event=video_description&redir_token=QUFFLUhqbFZxcDd6VVRUNVZmSHZLdnJqTXZhQWhmb2tNd3xBQ3Jtc0ttaW83b3BoM1cxeDFLeEN6NXdUR0NqemlTNm81ZW1DVWc2Z3JFYnE2QTJ6Qy0wbFlTSUNjWVpaMTFocU9wV1hxWUlmQmJCWXYyTG9qZkN3bERXNWdWaks4Zk1vbWNCZ3loVlNUa0pkN1piSWs5SDB3SQ&q=https%3A%2F%2Fexpertvagabond.com%2Fdigital-nomad-work-visas%2F
+<https://www.youtube.com/redirect?event=video_description&redir_token=QUFFLUhqbFZxcDd6VVRUNVZmSHZLdnJqTXZhQWhmb2tNd3xBQ3Jtc0ttaW83b3BoM1cxeDFLeEN6NXdUR0NqemlTNm81ZW1DVWc2Z3JFYnE2QTJ6Qy0wbFlTSUNjWVpaMTFocU9wV1hxWUlmQmJCWXYyTG9qZkN3bERXNWdWaks4Zk1vbWNCZ3loVlNUa0pkN1piSWs5SDB3SQ&q=https%3A%2F%2Fexpertvagabond.com%2Fdigital-nomad-work-visas%2F>
 
 ### How Tos
 
