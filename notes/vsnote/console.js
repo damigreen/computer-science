@@ -414,9 +414,9 @@ function reverseSinglyLinkedListHack(sll) {
 }
 
 console.log("**********Reverse Singly Linked List***********");
-console.log(sll1); // [24]-[42]-[9]-[7]-null
+// console.log(sll1); // [24]-[42]-[9]-[7]-null
 // var reverse = reverseSinglyLinkedList(sll1);
-var reverse = reverseSinglyLinkedListHack(sll1);
+// var reverse = reverseSinglyLinkedListHack(sll1);
 
 /**
  * Delete Duplicates in a Linked List
@@ -681,3 +681,20 @@ var dll = new DoublyLinkedList();
 // console.log("Search starting from tail...");
 // console.log(dll.findStartingTail(7));
 // console.log(dll.findStartingTail(17));
+
+const a = [{a:1, b:2, c:3}];
+for (const item of a) {
+  const { a, b, c } = item;
+  console.log(a, c, b);
+}
+
+function xyz () {
+  const a = 3;
+  for (var i = 0; i < 3; i++){
+    console.log("oopppppppppp")
+    if  (a != 2) continue;
+  }
+  console.log("yyes")
+
+  console.log("hdsdjlajd")
+}
