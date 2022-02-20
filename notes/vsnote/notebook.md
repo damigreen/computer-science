@@ -4,16 +4,24 @@
 
 - `Brainstorm`
   - Create **pagination** for activity bar
+
   - Create **notification** for **unit FMs** and **resido admin**
+
   - Remove **required field** for **materials**
+
   - **Notification** for **procurement**
 
 ### 18:02:22
 
+- Return **unit_id** from registration api
+
 - Remove **required field** for **materials**
   - Woek on job scoping logic
+
 - Create **pagination** for activity bar
+
 - Create **notification** for **unit FMs** and **resido admin**
+
 - **Notification** for **procurement**
 
 ### 17:02:22
@@ -1480,6 +1488,36 @@ e.g => following
 - Take actions regardless of how you feel - `Grant Cardone`
 
 ## CS
+
+### Vue
+
+- watch
+
+```javascript
+var vm = new Vue({
+  data: {
+    a: 1,
+    b: 2,
+    c: 3,
+    d: 4,
+    e: {
+      f: {
+        g: 5
+      }
+    }
+  },
+  watch: {
+    a: function (val, oldVal) {
+      console.log('new: %s, old: %s', val, oldVal)
+    },
+    // string method name
+    b: 'someMethod',
+    // the callback will be called whenever any of the watched object properties change regardless of their nested depth
+    c: {
+      handler: function (val, oldVal) { /* ... */ },
+      deep: true
+    },
+```
 
 ### Algorithms
 
