@@ -337,23 +337,54 @@ SLL1.prototype.remove = function (value) {
 
 // sll1 = new SLL1();
 var sll1 = new SLL();
+var sll2 = new SLL();
+var sll3 = new SLL();
 console.log("SLL Empty ...", sll1.isEmpty());
 sll1.insert(9);
+sll2.insert(9);
+sll3.insert(9);
+
 sll1.insert(42);
-sll1.insert(42);
+sll2.insert(42);
+sll3.insert(42);
+
 sll1.insert(4);
+sll2.insert(4);
+sll3.insert(4);
+
 sll1.insert(24);
+sll2.insert(24);
+sll3.insert(24);
+
 sll1.insertAtTail(7);
+sll2.insertAtTail(7);
+sll3.insertAtTail(7);
+
 sll1.insertNodeAtPosition(12, 1);
+sll2.insertNodeAtPosition(12, 1);
+sll3.insertNodeAtPosition(12, 1);
+
 console.log("Removing ... :(");
 // sll1.remove(9);
 // sll1.remove(42);
 // sll1.remove(4);
 // sll1.remove(24);
+
 sll1.delete(4);
+sll2.delete(4);
+sll3.delete(4);
+
+// sll3.insert(3);
+sll3.insertAtTail(3);
+
 console.log("**********Singly Linked List**********");
+
 sll1.deleteAtPosition(1);
+sll2.deleteAtPosition(1);
+sll3.deleteAtPosition(1);
+
 console.log(sll1);
+console.log(sll3);
 console.log("42 present ? ...", sll1.search(42));
 console.log("430 present ? ...", sll1.search(430));
 
@@ -377,12 +408,10 @@ function reverseSinglyLinkedList(sll) {
     headNode = temp; // set head node to temp
     console.log(prev.data);
   }
-  console.log("prev------->");
-  return prev;
 }
 
 function reverseSinglyLinkedListHack(sll) {
-  const linkedList = new sll();
+  const linkedList = sll;
   var currentNode = linkedList.head;
   // Write your code here
   // [2]->[3]->[4]->[5]->null
@@ -409,7 +438,6 @@ function reverseSinglyLinkedListHack(sll) {
   for (var i = dataArray.length - 1; i > 0; i--) {
     console.log(dataArray[i]);
   }
-  // console.log(prev.data)
   return prev;
 }
 
@@ -417,6 +445,37 @@ console.log("**********Reverse Singly Linked List***********");
 // console.log(sll1); // [24]-[42]-[9]-[7]-null
 // var reverse = reverseSinglyLinkedList(sll1);
 // var reverse = reverseSinglyLinkedListHack(sll1);
+
+/**
+ * Compare Data and length of a singly linked list
+ * return 1 if they are the same otherwise
+ * return 0
+ */
+function CompareLists(sll1, sll2) {
+  var currentHead1 = sll1.head;
+  var currentHead2 = sll2.head;
+  // 24-42-9-7
+  // 3-24-42-9-7-4-5
+  // 9
+  while (currentHead1.next || currentHead2.next) {
+    if (currentHead1.data != currentHead2.data) return 0;
+
+    if (
+      (!currentHead1.next && currentHead2.next) ||
+      (currentHead1.next && !currentHead2.next)
+    )
+      return 0;
+
+    currentHead1 = currentHead1.next;
+    currentHead2 = currentHead2.next;
+  }
+  return 1;
+}
+console.log("**********Compare Singly Linked List***********");
+// CompareLists(sll1, sll2);
+// const compareList = CompareLists(sll1, sll2);
+const compareList = CompareLists(sll1, sll3);
+console.log(compareList);
 
 /**
  * Delete Duplicates in a Linked List
@@ -682,19 +741,19 @@ var dll = new DoublyLinkedList();
 // console.log(dll.findStartingTail(7));
 // console.log(dll.findStartingTail(17));
 
-const a = [{a:1, b:2, c:3}];
+const a = [{ a: 1, b: 2, c: 3 }];
 for (const item of a) {
   const { a, b, c } = item;
   console.log(a, c, b);
 }
 
-function xyz () {
+function xyz() {
   const a = 3;
-  for (var i = 0; i < 3; i++){
-    console.log("oopppppppppp")
-    if  (a != 2) continue;
+  for (var i = 0; i < 3; i++) {
+    console.log("oopppppppppp");
+    if (a != 2) continue;
   }
-  console.log("yyes")
+  console.log("yyes");
 
-  console.log("hdsdjlajd")
+  console.log("hdsdjlajd");
 }
