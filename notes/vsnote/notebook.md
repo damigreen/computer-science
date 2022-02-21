@@ -1256,6 +1256,29 @@ record(v) information(n)
 
 ## Personal
 
+### Dailys
+
+#### On Gatepass Update
+
+When a user is registered now from the mobile app
+the household of the user is automatically registerd as a unit on vamp
+using the user name
+
+for examle
+Say a user john simon is registerd as a new occupant
+the unit will be registered as john simons residence on vamp for that user
+
+I have spoken with **Efosa** and
+i dont think they have completed the live implementation of the mobile app logic.
+
+### On talking with efosa about the progress
+
+Greetings
+
+- live testing
+
+### Social Hacks / How tos
+
 ### School ~ Masters
 
 - Fairfield University
@@ -1342,20 +1365,6 @@ record(v) information(n)
   - 65000
   - 10000
 
-### People
-
-#### Bukunmi
-
-#### Joseph
-
-#### Fola
-
-#### Hadijat
-
-Hello, Have you help to change the credit card information on the mailgun site.
-Let me send you the login for the site
-On the site go to ...
-
 ### Information
 
 #### General Info
@@ -1387,14 +1396,12 @@ Portugal D7 Visa
 Digital Nomad Visa
 <https://www.youtube.com/redirect?event=video_description&redir_token=QUFFLUhqbFZxcDd6VVRUNVZmSHZLdnJqTXZhQWhmb2tNd3xBQ3Jtc0ttaW83b3BoM1cxeDFLeEN6NXdUR0NqemlTNm81ZW1DVWc2Z3JFYnE2QTJ6Qy0wbFlTSUNjWVpaMTFocU9wV1hxWUlmQmJCWXYyTG9qZkN3bERXNWdWaks4Zk1vbWNCZ3loVlNUa0pkN1piSWs5SDB3SQ&q=https%3A%2F%2Fexpertvagabond.com%2Fdigital-nomad-work-visas%2F>
 
-### How Tos
-
 #### How to avoid watching pornography
 
 - Read the bible
 - Code as much as possible
 - To **refocus** your mind, Read about business, do a lot of brainstorm and take a lot of notes
-- Think about some smoke (after nine)
+- Smoke some weed and plan for the future
 
 ### Rules
 
