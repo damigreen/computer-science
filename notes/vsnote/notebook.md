@@ -52,6 +52,8 @@
 
 ### Vamp Additional System Triggers
 
+- get others
+
 `Alerts/Hagul/Purchase/SalesOrder/Email.notifyProcurement`
 
 ### Vamp Procurement Notification
