@@ -50,6 +50,14 @@
 
 ## Work
 
+### Vamp Additional System Triggers
+
+`Alerts/Hagul/Purchase/SalesOrder/Email.notifyProcurement`
+
+### Vamp Procurement Notification
+
+event `Alerts/Hagul/Purchase/SalesOrder/Email.notifyProcurement`
+
 ### Vampfi dashboard update
 
 ```sql
