@@ -478,7 +478,6 @@ console.log("**********Compare Singly Linked List***********");
 const compareList = CompareLists(sll1, sll3);
 console.log(compareList);
 
-
 // 1-3-7
 // 2-9-3
 function mergeLists(sll1, sll3) {
@@ -487,79 +486,145 @@ function mergeLists(sll1, sll3) {
   var currentHead1 = sll1.head;
   var currentHead2 = sll3.head;
   var prev1 = currentHead1;
-    var prev2 = currentHead2;
-    while (currentHead1.next || currentHead2.next) {
-        // var currentHead1NodeData = currentHead1.data;
-        if (currentHead1.data < currentHead2.data) { // 3 < 4
-            // 2-9-5
-            // 3-4
-            
-            // 2-[3]-9-5
-            // 3-[4]
-            prev1.next = currentHead1.next; // 9-5 -> 9-5
-            prev2.next = currentHead2.next; // 4 -> null
-            
-            // 2-[9-4] -> 2-3-[9-5]
-            currentHead1.next = currentHead2; // 2-[3] -> 2-3-[4]
-            // console.log("currentHead1____")
-            // console.log(currentHead1.next.next)
-            
-            // 2-3-null -> 2-3-4-[null]
-            currentHead1.next.next = prev1.next; // 2-3-[9]-5 -> 2-3-4-[9]-5
-            
-            // [2]-3-9-5
-            currentHead1 = currentHead1.next; // 2-[3]-9-5
-            if (currentHead2.next) {
-                currentHead2 = currentHead2.next; // 3-[4]
-            } else {
-                currentHead2 = currentHead1.next.next;
-                while (currentHead2.next)  {
-                    if (currentHead2.data < currentHead2.next.data) {
-                        currentHead2 = currentHead2.next;
-                    } else {
-                        var dataValue = currentHead2;
-                        currentHead2.data = currentHead2.next.data;
-                        currentHead2.next.data = dataValue;
-                    }
-                }
-            }
-        } else {
-            // 4-9-5
-            // 3-6
-            var dataValue = currentHead1;
-            currentHead1.data = currentHead2.data;
-            
-            prev1.next = currentHead1.next; // 9-5
-            
-            // 3-4
-            currentHead1.next = dataValue;
-            // 3-4-[9]-5
-            console.log("currentHead1.next")
-            console.log(currentHead1.next)
-            currentHead1.next.next = prev1.next;
-            currentHead1 = currentHead1.next;
-            if (currentHead2.next) {
-                currentHead2 = currentHead2.next; // 3-[4]
-            } else {
-                currentHead2 = currentHead1.next.next;
-                while (currentHead2.next)  {
-                    if (currentHead2.data < currentHead2.next.data) {
-                        currentHead2 = currentHead2.next;
-                    } else {
-                        var dataValue = currentHead2.data;
-                        currentHead2.data = currentHead2.next.data;
-                        currentHead2.next.data = dataValue;
-                    }
-                }
-            }
+  var prev2 = currentHead2;
+  while (currentHead1.next || currentHead2.next) {
+    // var currentHead1NodeData = currentHead1.data;
+    if (currentHead1.data < currentHead2.data) {
+      // 3 < 4
+      // 2-9-5
+      // 3-4
+
+      // 2-[3]-9-5
+      // 3-[4]
+      prev1.next = currentHead1.next; // 9-5 -> 9-5
+      prev2.next = currentHead2.next; // 4 -> null
+
+      // 2-[9-4] -> 2-3-[9-5]
+      currentHead1.next = currentHead2; // 2-[3] -> 2-3-[4]
+      // console.log("currentHead1____")
+      // console.log(currentHead1.next.next)
+
+      // 2-3-null -> 2-3-4-[null]
+      currentHead1.next.next = prev1.next; // 2-3-[9]-5 -> 2-3-4-[9]-5
+
+      // [2]-3-9-5
+      currentHead1 = currentHead1.next; // 2-[3]-9-5
+      if (currentHead2.next) {
+        currentHead2 = currentHead2.next; // 3-[4]
+      } else {
+        currentHead2 = currentHead1.next.next;
+        while (currentHead2.next) {
+          if (currentHead2.data < currentHead2.next.data) {
+            currentHead2 = currentHead2.next;
+          } else {
+            var dataValue = currentHead2;
+            currentHead2.data = currentHead2.next.data;
+            currentHead2.next.data = dataValue;
+          }
         }
+      }
+    } else {
+      // 4-9-5
+      // 3-6
+      var dataValue = currentHead1;
+      currentHead1.data = currentHead2.data;
+
+      prev1.next = currentHead1.next; // 9-5
+
+      // 3-4
+      currentHead1.next = dataValue;
+      // 3-4-[9]-5
+      console.log("currentHead1.next");
+      console.log(currentHead1.next);
+      currentHead1.next.next = prev1.next;
+      currentHead1 = currentHead1.next;
+      if (currentHead2.next) {
+        currentHead2 = currentHead2.next; // 3-[4]
+      } else {
+        currentHead2 = currentHead1.next.next;
+        while (currentHead2.next) {
+          if (currentHead2.data < currentHead2.next.data) {
+            currentHead2 = currentHead2.next;
+          } else {
+            var dataValue = currentHead2.data;
+            currentHead2.data = currentHead2.next.data;
+            currentHead2.next.data = dataValue;
+          }
+        }
+      }
     }
-    return head1;
+  }
+  return head1;
 }
 
-console.log("********merge singly linked list***********")
-mergeLists(sllA, sllB)
-console.log(sllA)
+var sllA = new SLL();
+var sllB = new SLL();
+var sllC = new SLL();
+
+// 1-3-7
+// 2-3-9
+sllA.insert(7);
+sllB.insert(9);
+
+sllA.insert(3);
+sllB.insert(3);
+
+sllA.insert(1);
+sllB.insert(2);
+
+console.log("********merge singly linked list***********");
+// mergeLists(sllA, sllB)
+// console.log(sllA)
+
+// 1-3-7
+// 2-9-3
+function mergeList1(sll1, sll2) {
+  var head1 = sll1.head;
+  var head2 = sll2.head;
+
+  var newNode,
+    newHead,
+    prev = null;
+
+  while (head1 && head2) {
+    // 1-3-7        3-7    1->null
+    // 1-2-9-3 ->   2-9-3
+
+    if (head1.data == head2.data) {
+      newNode = new SLLN(head1.data);
+      head1 = head1.next;
+    } else if (head1.data < head2.data) {
+      // 2-7-8  2-3-7-8
+      // 3-8-null
+      newNode = new SLLN(head1.data);
+      head1 = head1.next;
+    } else if (head1.data > head2.data) {
+      newNode = new SLLN(head2.data);
+      head2 = head2.next;
+    }
+
+    if (newHead == null) {
+      newHead = newNode;
+      prev = newHead;
+    } else {
+      prev.next = newNode;
+      prev = newNode;
+    }
+
+    if (head1 == null) {
+      prev.next = head2;
+    }
+
+    if (head2 == null) {
+      prev.next = head1;
+    }
+  }
+
+  return newHead;
+}
+
+const x = mergeList1(sllA, sllB);
+console.log(x);
 
 /**
  * Delete Duplicates in a Linked List
