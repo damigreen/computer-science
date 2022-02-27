@@ -339,6 +339,7 @@ SLL1.prototype.remove = function (value) {
 var sll1 = new SLL();
 var sll2 = new SLL();
 var sll3 = new SLL();
+
 console.log("SLL Empty ...", sll1.isEmpty());
 sll1.insert(9);
 sll2.insert(9);
@@ -455,7 +456,7 @@ function CompareLists(sll1, sll2) {
   var currentHead1 = sll1.head;
   var currentHead2 = sll2.head;
   // 24-42-9-7
-  // 3-24-42-9-7-4-5
+  // 24-42-9-7-4
   // 9
   while (currentHead1.next || currentHead2.next) {
     if (currentHead1.data != currentHead2.data) return 0;
@@ -476,6 +477,89 @@ console.log("**********Compare Singly Linked List***********");
 // const compareList = CompareLists(sll1, sll2);
 const compareList = CompareLists(sll1, sll3);
 console.log(compareList);
+
+
+// 1-3-7
+// 2-9-3
+function mergeLists(sll1, sll3) {
+  // 24-42-9-7
+  // 24-42-9-7-4
+  var currentHead1 = sll1.head;
+  var currentHead2 = sll3.head;
+  var prev1 = currentHead1;
+    var prev2 = currentHead2;
+    while (currentHead1.next || currentHead2.next) {
+        // var currentHead1NodeData = currentHead1.data;
+        if (currentHead1.data < currentHead2.data) { // 3 < 4
+            // 2-9-5
+            // 3-4
+            
+            // 2-[3]-9-5
+            // 3-[4]
+            prev1.next = currentHead1.next; // 9-5 -> 9-5
+            prev2.next = currentHead2.next; // 4 -> null
+            
+            // 2-[9-4] -> 2-3-[9-5]
+            currentHead1.next = currentHead2; // 2-[3] -> 2-3-[4]
+            // console.log("currentHead1____")
+            // console.log(currentHead1.next.next)
+            
+            // 2-3-null -> 2-3-4-[null]
+            currentHead1.next.next = prev1.next; // 2-3-[9]-5 -> 2-3-4-[9]-5
+            
+            // [2]-3-9-5
+            currentHead1 = currentHead1.next; // 2-[3]-9-5
+            if (currentHead2.next) {
+                currentHead2 = currentHead2.next; // 3-[4]
+            } else {
+                currentHead2 = currentHead1.next.next;
+                while (currentHead2.next)  {
+                    if (currentHead2.data < currentHead2.next.data) {
+                        currentHead2 = currentHead2.next;
+                    } else {
+                        var dataValue = currentHead2;
+                        currentHead2.data = currentHead2.next.data;
+                        currentHead2.next.data = dataValue;
+                    }
+                }
+            }
+        } else {
+            // 4-9-5
+            // 3-6
+            var dataValue = currentHead1;
+            currentHead1.data = currentHead2.data;
+            
+            prev1.next = currentHead1.next; // 9-5
+            
+            // 3-4
+            currentHead1.next = dataValue;
+            // 3-4-[9]-5
+            console.log("currentHead1.next")
+            console.log(currentHead1.next)
+            currentHead1.next.next = prev1.next;
+            currentHead1 = currentHead1.next;
+            if (currentHead2.next) {
+                currentHead2 = currentHead2.next; // 3-[4]
+            } else {
+                currentHead2 = currentHead1.next.next;
+                while (currentHead2.next)  {
+                    if (currentHead2.data < currentHead2.next.data) {
+                        currentHead2 = currentHead2.next;
+                    } else {
+                        var dataValue = currentHead2.data;
+                        currentHead2.data = currentHead2.next.data;
+                        currentHead2.next.data = dataValue;
+                    }
+                }
+            }
+        }
+    }
+    return head1;
+}
+
+console.log("********merge singly linked list***********")
+mergeLists(sllA, sllB)
+console.log(sllA)
 
 /**
  * Delete Duplicates in a Linked List
@@ -740,20 +824,3 @@ var dll = new DoublyLinkedList();
 // console.log("Search starting from tail...");
 // console.log(dll.findStartingTail(7));
 // console.log(dll.findStartingTail(17));
-
-const a = [{ a: 1, b: 2, c: 3 }];
-for (const item of a) {
-  const { a, b, c } = item;
-  console.log(a, c, b);
-}
-
-function xyz() {
-  const a = 3;
-  for (var i = 0; i < 3; i++) {
-    console.log("oopppppppppp");
-    if (a != 2) continue;
-  }
-  console.log("yyes");
-
-  console.log("hdsdjlajd");
-}
