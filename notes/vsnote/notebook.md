@@ -2,6 +2,8 @@
 
 ## Misc
 
+### Todo List
+
 - `Brainstorm`
   - Create **pagination** for activity bar
 
@@ -43,6 +45,15 @@
 ---
 
 - [x] Rating job from **1-10**
+
+### Memory Muscle
+
+- Cache
+  - Explain cache
+  - list types
+  - Explain LFU cache
+
+### Recap Memory
 
 ### Brownies CBD Other Cannabis product
 
