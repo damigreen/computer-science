@@ -6,6 +6,41 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch Puzzle4",
+            "request": "launch",
+            "mainClass": "Puzzle4",
+            "projectName": "VSCode_f36ec50d"
+        },
+        {
+            "type": "java",
+            "name": "Launch ClockTestDrive",
+            "request": "launch",
+            "mainClass": "ClockTestDrive",
+            "projectName": "VSCode_f36ec50d"
+        },
+        {
+            "type": "java",
+            "name": "Launch XCopy",
+            "request": "launch",
+            "mainClass": "XCopy",
+            "projectName": "VSCode_f36ec50d"
+        },
+        {
+            "type": "java",
+            "name": "Launch PoorDogTestDrive",
+            "request": "launch",
+            "mainClass": "PoorDogTestDrive",
+            "projectName": "VSCode_f36ec50d"
+        },
+        {
+            "type": "java",
+            "name": "Launch GoodDogTestDrive",
+            "request": "launch",
+            "mainClass": "GoodDogTestDrive",
+            "projectName": "VSCode_f36ec50d"
+        },
+        {
+            "type": "java",
             "name": "Launch Triangle",
             "request": "launch",
             "mainClass": "Triangle",
