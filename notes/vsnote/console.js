@@ -443,9 +443,9 @@ function reverseSinglyLinkedListHack(sll) {
 }
 
 console.log("**********Reverse Singly Linked List***********");
-// console.log(sll1); // [24]-[42]-[9]-[7]-null
+console.log(sll1); // [24]-[42]-[9]-[7]-null
 // var reverse = reverseSinglyLinkedList(sll1);
-// var reverse = reverseSinglyLinkedListHack(sll1);
+var reverse = reverseSinglyLinkedListHack(sll1);
 
 /**
  * Compare Data and length of a singly linked list
@@ -625,6 +625,25 @@ function mergeList1(sll1, sll2) {
 
 const x = mergeList1(sllA, sllB);
 console.log(x);
+
+function getNode(llist, positionFromTail) {
+  var currentNode = llist.head;
+  var prev = null;
+  // 1-3-7
+  //
+  while (currentNode != null) {
+    var next = currentNode.next; // 3
+    currentNode.next = prev;
+    prev = currentNode;
+    if (!next) break;
+    currentNode = next;
+  }
+}
+
+console.log("**************Get Node**************");
+console.log(sllA)
+var node = getNode(sllA, 2);
+console.log(sllA)
 
 /**
  * Delete Duplicates in a Linked List
@@ -889,3 +908,4 @@ var dll = new DoublyLinkedList();
 // console.log("Search starting from tail...");
 // console.log(dll.findStartingTail(7));
 // console.log(dll.findStartingTail(17));
+console.log(new Date("01 Feb 2022").getTime())

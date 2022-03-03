@@ -337,23 +337,55 @@ SLL1.prototype.remove = function (value) {
 
 // sll1 = new SLL1();
 var sll1 = new SLL();
+var sll2 = new SLL();
+var sll3 = new SLL();
+
 console.log("SLL Empty ...", sll1.isEmpty());
 sll1.insert(9);
+sll2.insert(9);
+sll3.insert(9);
+
 sll1.insert(42);
-sll1.insert(42);
+sll2.insert(42);
+sll3.insert(42);
+
 sll1.insert(4);
+sll2.insert(4);
+sll3.insert(4);
+
 sll1.insert(24);
+sll2.insert(24);
+sll3.insert(24);
+
 sll1.insertAtTail(7);
+sll2.insertAtTail(7);
+sll3.insertAtTail(7);
+
 sll1.insertNodeAtPosition(12, 1);
+sll2.insertNodeAtPosition(12, 1);
+sll3.insertNodeAtPosition(12, 1);
+
 console.log("Removing ... :(");
 // sll1.remove(9);
 // sll1.remove(42);
 // sll1.remove(4);
 // sll1.remove(24);
+
 sll1.delete(4);
+sll2.delete(4);
+sll3.delete(4);
+
+// sll3.insert(3);
+// sll3.insertAtTail(3);
+
 console.log("**********Singly Linked List**********");
+
 sll1.deleteAtPosition(1);
+sll2.deleteAtPosition(1);
+sll3.deleteAtPosition(1);
+
 console.log(sll1);
+console.log(sll3);
 console.log("42 present ? ...", sll1.search(42));
 console.log("430 present ? ...", sll1.search(430));
 
@@ -646,3 +678,103 @@ console.log(
 );
 var deleteDupli = deleteDuplicateInUnsortedSll(sll1);
 console.log(deleteDupli);
+
+/**
+ * Compare Data and length of a singly linked list
+ * return 1 if they are the same otherwise
+ * return 0
+ */
+function CompareLists(sll1, sll2) {
+  var currentHead1 = sll1.head;
+  var currentHead2 = sll2.head;
+  // 24-42-9-7
+  // 24-42-9-7-4
+  // 9
+  while (currentHead1.next || currentHead2.next) {
+    if (currentHead1.data != currentHead2.data) return 0;
+
+    if (
+      (!currentHead1.next && currentHead2.next) ||
+      (currentHead1.next && !currentHead2.next)
+    )
+      return 0;
+
+    currentHead1 = currentHead1.next;
+    currentHead2 = currentHead2.next;
+  }
+  return 1;
+}
+console.log("**********Compare Singly Linked List***********");
+// CompareLists(sll1, sll2);
+// const compareList = CompareLists(sll1, sll2);
+const compareList = CompareLists(sll1, sll3);
+console.log(compareList);
+
+var sllA = new SLL();
+var sllB = new SLL();
+var sllC = new SLL();
+
+// 1-3-7
+// 2-3-9
+sllA.insert(7);
+sllB.insert(9);
+
+sllA.insert(3);
+sllB.insert(3);
+
+sllA.insert(1);
+sllB.insert(2);
+
+console.log("********merge singly linked list***********");
+// mergeLists(sllA, sllB)
+// console.log(sllA)
+
+// 1-3-7
+// 2-9-3
+function mergeLista(sll1, sll2) {
+  var head1 = sll1.head;
+  var head2 = sll2.head;
+
+  var newNode,
+    newHead,
+    prev = null;
+
+  while (head1 && head2) {
+    // 1-3-7        3-7    1->null
+    // 1-2-9-3 ->   2-9-3
+
+    if (head1.data == head2.data) {
+      newNode = new SLLN(head1.data);
+      head1 = head1.next;
+    } else if (head1.data < head2.data) {
+      // 2-7-8  2-3-7-8
+      // 3-8-null
+      newNode = new SLLN(head1.data);
+      head1 = head1.next;
+    } else if (head1.data > head2.data) {
+      newNode = new SLLN(head2.data);
+      head2 = head2.next;
+    }
+
+    if (newHead == null) {
+      newHead = newNode;
+      prev = newHead;
+    } else {
+      prev.next = newNode;
+      prev = newNode;
+    }
+
+    if (head1 == null) {
+      prev.next = head2;
+    }
+
+    if (head2 == null) {
+      prev.next = head1;
+    }
+  }
+
+  return newHead;
+}
+
+const x = mergeLista(sllA, sllB);
+console.log(x);
