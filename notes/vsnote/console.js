@@ -407,8 +407,8 @@ function reverseSinglyLinkedList(sll) {
     prev = headNode; // set prev to head node
     if (!temp) break;
     headNode = temp; // set head node to temp
-    console.log(prev.data);
   }
+  return prev;
 }
 
 function reverseSinglyLinkedListHack(sll) {
@@ -442,10 +442,23 @@ function reverseSinglyLinkedListHack(sll) {
   return prev;
 }
 
+function reverseSinglyLinkedListXOr(sll) {
+  var currentNode = sll.head;
+  var prev = null;
+  while (currentNode) {
+    var temp = headNode.next;
+    headNode.next = prev;
+    prev = headNode;
+    headNode = temp;
+  }
+}
+
 console.log("**********Reverse Singly Linked List***********");
 console.log(sll1); // [24]-[42]-[9]-[7]-null
-// var reverse = reverseSinglyLinkedList(sll1);
-var reverse = reverseSinglyLinkedListHack(sll1);
+console.log("-------------------------");
+var reverse = reverseSinglyLinkedList(sll1);
+console.log(reverse); // 7-9-42-24
+// var reverse = reverseSinglyLinkedListHack(sll1);
 
 /**
  * Compare Data and length of a singly linked list
@@ -629,6 +642,7 @@ console.log(x);
 function getNode(llist, positionFromTail) {
   var currentNode = llist.head;
   var prev = null;
+  var count = 0;
   // 1-3-7
   //
   while (currentNode != null) {
@@ -638,12 +652,19 @@ function getNode(llist, positionFromTail) {
     if (!next) break;
     currentNode = next;
   }
+
+  while (count++ != positionFromTail) {
+    prev = prev.next;
+  }
+  return prev.data;
+  // return prev;
 }
 
 console.log("**************Get Node**************");
-console.log(sllA)
-var node = getNode(sllA, 2);
-console.log(sllA)
+console.log(sllB); // 2 3 9
+console.log(sllA); // 1 3 7
+var node = getNode(sllA, 0);
+console.log(node); // 7-3-1
 
 /**
  * Delete Duplicates in a Linked List
@@ -908,4 +929,95 @@ var dll = new DoublyLinkedList();
 // console.log("Search starting from tail...");
 // console.log(dll.findStartingTail(7));
 // console.log(dll.findStartingTail(17));
-console.log(new Date("01 Feb 2022").getTime())
+console.log(new Date("01 Feb 2022").getTime());
+
+class Node {
+  constructor(val) {
+    this.val = val;
+    this.next = null;
+  }
+}
+
+const a = new Node("A");
+const b = new Node("B");
+const c = new Node("C");
+const d = new Node("D");
+
+a.next = b;
+b.next = c;
+c.next = d;
+
+const printLinkedList = (head) => {
+  let current = head;
+  while (current != null) {
+    console.log(current.val);
+    current = current.next;
+  }
+};
+const printLinkedListRec = (head) => {
+  if (head == null) return;
+  console.log(head.val);
+  printLinkedListRec(head.next);
+};
+console.log("print linked list_________");
+printLinkedList(a);
+console.log("print linked list Recursion_________");
+printLinkedListRec(a);
+
+const linkedListValues = (head) => {
+  var current = head;
+  var values = [];
+  while (current != null) {
+    values.push(current.val);
+    current = current.next;
+  }
+  return values;
+};
+const linkedListValuesRec1 = (head) => {
+  var values = [];
+  // fillValues(head, values);
+  const fillValues = (head, values) => {
+    if (head == null) return;
+    values.push(head.val);
+    console.log(values);
+    fillValues(head.next, values);
+  };
+  fillValues(head, values);
+  // linkedListValuesRec1(head.next);
+};
+const linkedListValuesRec = (head) => {
+  var values = [];
+  fillValuesRec(head, values);
+};
+const fillValuesRec = (head, values) => {
+  if (head == null) return;
+  values.push(head.val);
+  console.log(values);
+  fillValuesRec(head.next, values);
+};
+console.log("Linked list values_________");
+// linkedListValues(a);
+console.log("Linked list values Rec _________");
+linkedListValuesRec1(a);
+// linkedListValuesRec(a);
+
+const sumList = (head) => {
+  // let sum = 0;
+  let sum = "";
+  let current = head;
+  while (current) {
+    sum += current.val;
+    current = current.next;
+  }
+  console.log(sum);
+  return sum;
+};
+const sumListRec = (head) => {
+  if (head == null) return 0;
+  let result = head.val + sumListRec(head.next);
+  return result;
+};
+console.log("Sum list _________");
+sumList(a);
+var sumListRecA = sumListRec(a);
+console.log(sumListRec(a))
