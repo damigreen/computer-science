@@ -462,6 +462,10 @@ I took the dates of all the pending ad campaign ignorant and those from the runn
 
 ## Courses
 
+### Linked list for technical interviews
+
+
+
 ### Spring Boot Full Course ~ Learn Spring Boot In 4 Hours
 
 - `Spring Boot`
