@@ -2,6 +2,17 @@
 
 ## Misc
 
+### 04:03:2022
+
+- `21:00:00` - santana night
+  - Just continue with the headfirst javascipt
+  - and after that take a look at the hackerank challenge
+    - check the inverse singl linked ist code implementation
+    - and test on vs code hackerrank web ide
+
+  - Lets get started
+  - 
+
 ### Todo List
 
 - `Brainstorm`
@@ -725,7 +736,17 @@ Users can create many tasks tasks belongs to a user
   - garbage collectible heap
   - null referenece
   - garbage collector
-
+- High-level design - Developing a class
+  - figure out what the class is supposed to do
+    - what is the aim of writing the class
+    - what problem will the class be solving
+      - say a class that will help users to calculate the weight of an individal
+  - list the instance variable and methods
+    - write down the behaviours / prorties of the classes
+      - things you need to solve the challenge of witing the class
+      - in the first place
+      - Also you write down the 
+  - list
 ### JavaScript Data Structures and Algorithms
 
 #### Linked Lists ~ 24:01:22 [Linked List](../../cs/books/JSDSA/linked_list.js)
