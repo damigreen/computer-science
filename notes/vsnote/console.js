@@ -1002,7 +1002,7 @@ linkedListValuesRec1(a);
 // linkedListValuesRec(a);
 
 const sumList = (head) => {
-  // let sum = 0;
+// let sum = 0;
   let sum = "";
   let current = head;
   while (current) {
