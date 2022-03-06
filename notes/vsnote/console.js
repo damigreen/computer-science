@@ -456,8 +456,8 @@ function reverseSinglyLinkedListXOr(sll) {
 console.log("**********Reverse Singly Linked List***********");
 console.log(sll1); // [24]-[42]-[9]-[7]-null
 console.log("-------------------------");
-var reverse = reverseSinglyLinkedList(sll1);
-console.log(reverse); // 7-9-42-24
+// var reverse = reverseSinglyLinkedList(sll1);
+// console.log(reverse); // 7-9-42-24
 // var reverse = reverseSinglyLinkedListHack(sll1);
 
 /**
@@ -1002,7 +1002,7 @@ linkedListValuesRec1(a);
 // linkedListValuesRec(a);
 
 const sumList = (head) => {
-// let sum = 0;
+  // let sum = 0;
   let sum = "";
   let current = head;
   while (current) {
@@ -1020,4 +1020,26 @@ const sumListRec = (head) => {
 console.log("Sum list _________");
 sumList(a);
 var sumListRecA = sumListRec(a);
-console.log(sumListRec(a))
+console.log(sumListRec(a));
+
+const linkedListFind = (head, target) => {
+  let current = head;
+  while (current != null) {
+    if (current.data == target) {
+      return true;
+    }
+    current = current.next;
+  }
+  return false;
+};
+
+const linkedListFindRec = (head, target) => {
+  if (head == null) return false;
+  if (head.data == target) return true;
+  return linkedListFindRec(head.next, target);
+};
+console.log("Find Linked list _________");
+console.log(sll1);
+console.log(linkedListFind(sll1.head, 42));
+console.log(linkedListFindRec(sll1.head, 7));
+console.log(linkedListFindRec(sll1.head, 34));
