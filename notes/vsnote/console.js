@@ -1043,3 +1043,64 @@ console.log(sll1);
 console.log(linkedListFind(sll1.head, 42));
 console.log(linkedListFindRec(sll1.head, 7));
 console.log(linkedListFindRec(sll1.head, 34));
+
+const getNodeValue = (head, index) => {
+  let current = head;
+  let count = 0;
+  while (current != null) {
+    if (count == index) return current.data;
+    current = current.next;
+    count++;
+  }
+  return null;
+};
+
+const getNodeValueRec = (head, index) => {
+  if (head == null) return null;
+  if (index == 0) return head.data;
+  return getNodeValueRec(head.next, index - 1);
+};
+console.log("Get Nodes _________");
+console.log(getNodeValue(sll1.head, 0));
+console.log(getNodeValue(sll1.head, 1));
+console.log("Get Nodes REC _________");
+console.log(getNodeValueRec(sll1.head, 0));
+console.log(getNodeValueRec(sll1.head, 1));
+console.log(getNodeValueRec(sll1.head, 2));
+
+// reverse linked list
+/* 
+  prev - 4 - 5 - 6 - 2 - 7 - 4 - null
+        cur nxt
+*/
+const reverseList = (head) => {
+  if (head == null) return null;
+  var current = head,
+    prev = null;
+  while (current != null) {
+    var temp = current.next;
+    current.next = prev;
+    prev = current;
+    current = temp;
+  }
+  return prev;
+};
+
+const reverseListRec = (head) => {
+  var prev = null;
+  return reverseRec(head, prev);
+};
+
+const reverseRec = (head, prev) => {
+  if (head == null) return prev;
+  var temp = head.next;
+  head.next = prev;
+  prev = head;
+  return reverseRec(temp, prev);
+};
+
+console.log("Reverse list fcc_________");
+console.log(sll1);
+// var rev = reverseList(sll1.head);
+var rev = reverseListRec(sll1.head);
+console.log(rev);
