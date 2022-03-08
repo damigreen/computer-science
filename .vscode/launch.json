@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch SimpleDotComTestDrive",
+            "request": "launch",
+            "mainClass": "SimpleDotComTestDrive",
+            "projectName": "VSCode_f36ec50d"
+        },
+        {
+            "type": "java",
             "name": "Launch Puzzle4",
             "request": "launch",
             "mainClass": "Puzzle4",
