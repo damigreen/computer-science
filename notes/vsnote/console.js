@@ -1099,8 +1099,53 @@ const reverseRec = (head, prev) => {
   return reverseRec(temp, prev);
 };
 
+const reverseListRec1 = (head, prev = null) => {
+  if (head == null) return prev;
+  var next = head.next;
+  head.next = prev;
+  prev = head;
+  return reverseListRec1(next, head);
+};
+
 console.log("Reverse list fcc_________");
 console.log(sll1);
 // var rev = reverseList(sll1.head);
-var rev = reverseListRec(sll1.head);
-console.log(rev);
+// var rev = reverseListRec(sll1.head);
+// var rev = reverseListRec1(sll1.head);
+// console.log(rev);
+
+/* 
+* Zipper list
+          1   ->   2   ->   3   ->   9
+          7   ->   8   ->   5
+          1   ->   7   ->   2   ->   8   ->   3   ->   5   ->   9
+
+          1   ->   2   ->   3
+          7   ->   8   ->   5   ->   9
+          1   ->   7   ->   2   ->   8   ->   3   ->   5   ->   9
+*/
+const zipperList = (head1, head2) => {
+  var current = head1;
+  var current1 = head1;
+  var current2 = head2;
+
+  while (current1 != null && current2 != null) {
+    var temp1 = current1.next;
+    var temp2 = current2.next;
+    current.next = current2;
+    current2.next = temp1;
+    current1 = temp1;
+    current2 = temp2;
+    temp1.next = null;
+  }
+  if (current1 == null) current.next = current2;
+  if (current2 == null) current.next = current1;
+
+  return current;
+};
+console.log("Zipper list___________");
+console.log(sll1); //24-42-9-7
+// console.log(sll2);
+console.log(sll3);
+var zip = zipperList(sll1.head, sll3.head);
+console.log(zip);
