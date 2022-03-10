@@ -11,7 +11,6 @@
     - and test on vs code hackerrank web ide
 
   - Lets get started
-  - 
 
 ### Todo List
 
@@ -1291,6 +1290,10 @@ record(v) information(n)
 
 ## After Nine
 
+- Check out ufc on youtube
+- OOgie twitter
+- Browse more
+
 - Shop for smart watches on aliexpress, others
 
 - ~~Check instagram for some~~
@@ -1575,3 +1578,105 @@ var vm = new Vue({
 ### Algorithms
 
 #### String Shortening
+
+## Projects
+
+### Cash~
+
+- Elements of app
+  - income
+    - category
+      - salary,
+      - award,
+      - commision,
+      - savings
+      - other income
+    - TransferTypes (transfer to)
+      - wallet
+      - bank
+      - atm
+      - stash
+  - expensees
+    - categories
+        - food,child,education,entertainment,fashion,fuel,heaslth,house,sport,support
+  - budget
+    - multiple budget
+    - Visualization of income against expenses
+  - Transactions
+    - list transactions
+    - .
+    - Elements
+      - transaction type
+        - income
+          - transfer to
+          - .
+          - TransferTypes
+            - wallet
+            - bank
+            - atm
+            - stash
+          - .
+          - category
+            - salary,
+            - award,
+            - commision,
+            - savings
+            - other income
+        - expense (and transfer)
+          - transfer from
+          - .
+          - categoriestype
+            - food,child,education,entertainment,fashion,fuel,heaslth,house,sport,support
+        - date of transation
+      - transfer type
+        - transfer to (income)
+        - transfer from (expense)
+      - description
+      - amount
+      - category
+  - Settings
+    - language
+    - decimal places
+    - defaulg period
+      - month
+      - week
+      - ...
+    - currency symbol
+    - chart type
+    - set password
+    - categories
+    - accounts
+    - budget
+    - recurring categories
+    - remind    - backup || restore || reset all data
+    - loan calculator
+
+- db
+  - user
+    - name
+    - username
+    - password
+    - active
+    - suspended
+    - suspended_till
+    - email
+    - gender
+    - deleted
+  - income
+    - amount
+    - date
+    - type_id
+    - transfer-type
+      - type - transfer to
+    - categories
+      - salary
+      - others..
+  - expenses
+    - expenses categories
+  - transactions
+    - amount
+    - type
+    - date
+    - type_id
+    - category_id
+  - 
