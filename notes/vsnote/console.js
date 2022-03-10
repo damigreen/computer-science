@@ -339,23 +339,28 @@ SLL1.prototype.remove = function (value) {
 var sll1 = new SLL();
 var sll2 = new SLL();
 var sll3 = new SLL();
+var sll4 = new SLL();
 
 console.log("SLL Empty ...", sll1.isEmpty());
 sll1.insert(9);
 sll2.insert(9);
 sll3.insert(9);
+sll4.insert(3);
 
 sll1.insert(42);
 sll2.insert(42);
 sll3.insert(42);
+sll4.insert(12);
 
 sll1.insert(4);
 sll2.insert(4);
 sll3.insert(4);
+sll4.insert(7);
 
 sll1.insert(24);
 sll2.insert(24);
 sll3.insert(24);
+sll4.insert(5);
 
 sll1.insertAtTail(7);
 sll2.insertAtTail(7);
@@ -1124,28 +1129,71 @@ console.log(sll1);
           7   ->   8   ->   5   ->   9
           1   ->   7   ->   2   ->   8   ->   3   ->   5   ->   9
 */
-const zipperList = (head1, head2) => {
+const zipperList001 = (head1, head2) => {
   var current = head1;
   var current1 = head1;
   var current2 = head2;
 
-  while (current1 != null && current2 != null) {
+  while (current != null && current2 != null) {
     var temp1 = current1.next;
-    var temp2 = current2.next;
-    current.next = current2;
-    current2.next = temp1;
-    current1 = temp1;
-    current2 = temp2;
-    temp1.next = null;
-  }
-  if (current1 == null) current.next = current2;
-  if (current2 == null) current.next = current1;
 
-  return current;
+    current.next = current2;
+    current.next.next = temp1;
+
+    current1 = current1.next;
+    current2 = current2.next;
+    // current2.next = temp1;
+  }
+  if (current1 == null) {
+  }
+};
+
+const zipperList = (head1, head2) => {
+  let tail = head1;
+  let current1 = head1.next;
+  let current2 = head2;
+  let count = 0;
+
+  while (current1 != null && current2 != null) {
+    if (count % 2 == 0) {
+      tail.next = current2;
+      current2 = current2.next;
+    } else {
+      tail.next = current1;
+      current1 = current1.next;
+    }
+    tail = tail.next;
+    count++;
+  }
+  if (current1 == null) tail.next = current2;
+  if (current2 == null) tail.next = current1;
+  return head1;
+};
+
+const zipperListRec = (head1, head2) => {
+  if (head1 == null && head2 == null) return null;
+  if (head1 == null) return head2;
+  if (head2 == null) return head1;
+
+  const next1 = head1.next;
+  const next2 = head2.next;
+  head1.next = head2;
+  head2.next = zipperListRec(next1, next2);
+  return head1;
 };
 console.log("Zipper list___________");
 console.log(sll1); //24-42-9-7
 // console.log(sll2);
-console.log(sll3);
-var zip = zipperList(sll1.head, sll3.head);
+// console.log(sll3);
+console.log(sll4); // 5 7 12 3
+// var zip = zipperList(sll1.head, sll4.head);
+var zip = zipperListRec(sll1.head, sll4.head);
 console.log(zip);
+
+// let iis = { 0: 12 };
+// console.log("iis == null_________");
+
+// iis["a"] += 0 + 5;
+
+// iis = iis["c"] = 2;
+// console.log(iis);
