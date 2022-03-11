@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch SimpleDotCom",
+            "request": "launch",
+            "mainClass": "SimpleDotCom",
+            "projectName": "VSCode_f36ec50d"
+        },
+        {
+            "type": "java",
             "name": "Launch SimpleDotComTestDrive",
             "request": "launch",
             "mainClass": "SimpleDotComTestDrive",
