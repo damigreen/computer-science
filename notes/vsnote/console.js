@@ -106,3 +106,33 @@ LFUCache.prototype.set = function (key, value) {
     }
   }
 };
+
+LFUCache.prototype.get = function (key) {
+  var node = this.keys[key];
+
+  if (node == undefined) {
+    return null;
+  } else {
+    var oldFreqCount = node.freqCount;
+    node.freqCount++;
+
+    this.freq[oldFreqCount].removeNode(node);
+
+    if (this.keys[node.freqCount] == undefined) {
+      this.freq[node.freqCount] = new LFUDoublyLinkedList();
+    }
+
+    this.freq[node.freqCount].insertAtHead(node);
+
+    if (
+      oldFreqCount == this.minFreq &&
+      Object.keys(this.freq[oldFreqCount]).length == 0
+    ) {
+      this.minFreq++;
+    }
+    return node.data;
+  }
+};
+
+var myLFU = new LFUCache(5);
+myLFU.set(1, 1);
