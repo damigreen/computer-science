@@ -715,3 +715,44 @@ console.log(
 );
 var deleteDupli = deleteDuplicateInUnsortedSll(sll1);
 console.log(deleteDupli);
+
+
+var sll5 = new SLL();
+sll5.insert(8);
+sll5.insert(5);
+sll5.insert(2);
+sll5.insert(7);
+sll5.insert(3);
+// sll5.insert(6);
+// sll5.insert(5);
+sll5.insert(8);
+sll5.insert(5);
+sll5.insert(2);
+/*
+ * has cycle
+    5-3-7-2-5-8
+    5 --> 3 --> 7 --> 2 --> 5 --> 8 --> null
+
+ */
+function hasCycle(head) {
+  var slow = head;
+  var fast = head;
+  // var count = 0;
+  if (head == null) return 0;
+
+  while (fast) {
+    fast = fast.next;
+    if (fast) {
+      slow = slow.next;
+      fast = fast.next;
+      if (fast == slow) {
+        return 1;
+      }
+    }
+  }
+  return 0;
+}
+console.log("**********Singly Linked List Has Cycle***********");
+// var hasCycle = hasCycle(sll1.head);
+var hc = hasCycle(sll5.head);
+console.log(hc);
