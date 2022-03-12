@@ -40,14 +40,14 @@ function LFUCache(capacity) {
   prev      n
 */
 LFUDoublyLinkedList.prototype.insertAtHead = function (node) {
-  node.next = this.head.next;
-  this.head.next.prev = node;
+node.next = this.head;
+  this.head.next.prev = node; // remove
   this.head.next = node;
   node.prev = this.head;
   this.size++;
 };
 
-LFUDoublyLinkedList.prototype.removeAtTail = function (node) {
+LFUDoublyLinkedList.prototype.removeAtTail = function () {
   var oldTail = this.tail.prev;
   var prev = this.tail.prev;
   prev.prev.next = this.tail;
@@ -59,7 +59,7 @@ LFUDoublyLinkedList.prototype.removeAtTail = function (node) {
 LFUDoublyLinkedList.prototype.removeNode = function (node) {
   node.prev.next = node.next;
   node.next.prev = node.prev;
-  this.sizee--;
+  this.size--;
 };
 
 LFUCache.prototype.set = function (key, value) {
@@ -67,12 +67,14 @@ LFUCache.prototype.set = function (key, value) {
   if (node == undefined) {
     node = new LFUNode(key, value);
     this.keys[key] = node; // { 'hey': 6 }
+
     if (this.size != this.capacity) {
       // insert without deleting
       if (this.freq[1] == undefined) {
-        this.freq[1] = LFUDoublyLinkedList();
-        this.size++;
+        this.freq[1] = new LFUDoublyLinkedList();
       }
+      this.freq[1].insertAtHead(node);
+      this.size++;
     } else {
       // delete and insert
       var oldTail = this.freq[this.minFreq].removeAtTail();
@@ -82,8 +84,10 @@ LFUCache.prototype.set = function (key, value) {
         this.freq[1] = new LFUDoublyLinkedList();
       }
 
+      console.log("inserting at head+++++++++");
       this.freq[1].insertAtHead(node);
     }
+    // this.size++;
     this.minFreq = 1;
   } else {
     var oldFreqCount = node.freqCount;
@@ -114,7 +118,7 @@ LFUCache.prototype.get = function (key) {
     return null;
   } else {
     var oldFreqCount = node.freqCount;
-    node.freqCount++;
+    // node.freqCount++;
 
     this.freq[oldFreqCount].removeNode(node);
 
@@ -136,3 +140,14 @@ LFUCache.prototype.get = function (key) {
 
 var myLFU = new LFUCache(5);
 myLFU.set(1, 1);
+myLFU.set(4, 4);
+myLFU.set(4, 4);
+// myLFU.set(1, 1);
+myLFU.set(7, 7);
+myLFU.set(7, 7);
+myLFU.set(7, 7);
+var getLFU = myLFU.get(7);
+myLFU.set(9, 2);
+console.log(myLFU);
+console.log("+++++++++++++++++Get lfu " + "++++++++++++");
+console.log(getLFU);
