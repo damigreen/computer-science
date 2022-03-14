@@ -40,10 +40,16 @@ function LFUCache(capacity) {
   prev      n
 */
 LFUDoublyLinkedList.prototype.insertAtHead = function (node) {
-node.next = this.head;
-  this.head.next.prev = node; // remove
-  this.head.next = node;
-  node.prev = this.head;
+  // node.next = this.head.next;
+  // node.next = this.head;
+  // this.head.next.prev = node; // remove
+  // this.head = node;
+  // node.prev = this.head;
+
+  // var temp = node;
+  node.next = this.head;
+  this.head.prev = node;
+  this.head = node;
   this.size++;
 };
 
@@ -57,8 +63,16 @@ LFUDoublyLinkedList.prototype.removeAtTail = function () {
 };
 
 LFUDoublyLinkedList.prototype.removeNode = function (node) {
-  node.prev.next = node.next;
-  node.next.prev = node.prev;
+  // node.prev.next = node.next;
+  // node.next.prev = node.prev;
+  // 4-5-6
+  //
+  var temp = this.head;
+  if ((node = this.head)) {
+    node.next = temp.next;
+    this.head = node;
+  }
+
   this.size--;
 };
 
@@ -94,7 +108,7 @@ LFUCache.prototype.set = function (key, value) {
     node.data = value;
     node.freqCount++;
 
-    this.freq[oldFreqCount].removeNode(node);
+    // this.freq[oldFreqCount].removeNode(node);
 
     if (this.freq[node.freqCount] === undefined) {
       this.freq[node.freqCount] = new LFUDoublyLinkedList();
@@ -120,7 +134,7 @@ LFUCache.prototype.get = function (key) {
     var oldFreqCount = node.freqCount;
     // node.freqCount++;
 
-    this.freq[oldFreqCount].removeNode(node);
+    // this.freq[oldFreqCount].removeNode(node);
 
     if (this.keys[node.freqCount] == undefined) {
       this.freq[node.freqCount] = new LFUDoublyLinkedList();
@@ -138,19 +152,26 @@ LFUCache.prototype.get = function (key) {
   }
 };
 
+console.log("+++++++++++++++++ LFU " + "++++++++++++");
 var myLFU = new LFUCache(5);
 myLFU.set(1, 1);
 myLFU.set(4, 4);
-myLFU.set(4, 4);
-// myLFU.set(1, 1);
+myLFU.set(3, 3);
+myLFU.set(5, 5);
 myLFU.set(7, 7);
 myLFU.set(7, 7);
 myLFU.set(7, 7);
+console.log("+++++++++++++++++++++++++++++++");
+console.log(myLFU);
 var getLFU = myLFU.get(7);
 console.log(getLFU);
-var getLFU = myLFU.get(4);
 myLFU.set(9, 2);
-console.log("+++++++++++++++++Get lfu " + "++++++++++++");
+console.log("+++++++++++++++++++++++++++++++");
 console.log(getLFU);
+console.log("-------------------------------");
+console.log(myLFU);
+console.log("###############################");
+// console.log(myLFU.freq[1].head);
+console.log("===============================");
 var getLFU = myLFU.get(9);
 console.log(getLFU);
