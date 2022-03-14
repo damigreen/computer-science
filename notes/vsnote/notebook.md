@@ -1583,6 +1583,10 @@ var vm = new Vue({
 
 ### CashBox
 
+#### tasks ~ cashbox
+
+- re-format phonenumber
+
 #### process ~ cashbox
 
 - process
@@ -1592,17 +1596,17 @@ var vm = new Vue({
   - set up the frontend of the application by
   - installing vue
   - set up the api for the application by
+
   - Set up backend
     - installing adonisjs
     - setup routes
     - setup controllers
+  
     - Store user with password
       - create user controller
       - save user to db
       - create a 'store' validator
-        - 
-    - build controllers for oauth
-      - 
+      - build controllers for oauth
 
 #### elements ~ cashbox
 
@@ -1677,27 +1681,45 @@ var vm = new Vue({
 #### database ~ cashbox
 
 - db
+
   - user
-    - name
-    - username
-    - password
-    - active
-    - suspended
-    - suspended_till
-    - email
-    - gender
-    - deleted
+  
+    - fields
+      - name
+      - username
+      - password
+      - active
+      - suspended
+      - suspended_till
+      - email
+      - gender
+      - deleted
+
+    - parameters
+      - name
+      - email
+      - phone
+      - password
+      - roles
+        - sys -system admin
+        - mng -managers
+        - clt -clientele
+  
   - income
     - amount
     - date
     - type_id
+  
     - transfer-type
       - type - transfer to
+
     - categories
       - salary
       - others..
+  
   - expenses
     - expenses categories
+  
   - transactions
     - amount
     - type
