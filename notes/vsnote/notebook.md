@@ -1581,7 +1581,9 @@ var vm = new Vue({
 
 ## Projects
 
-### Cash~
+### CashBox
+
+#### process ~ cashbox
 
 - process
   - design the database
@@ -1594,7 +1596,15 @@ var vm = new Vue({
     - installing adonisjs
     - setup routes
     - setup controllers
+    - Store user with password
+      - create user controller
+      - save user to db
+      - create a 'store' validator
+        - 
     - build controllers for oauth
+      - 
+
+#### elements ~ cashbox
 
 - Elements of app
   - income
@@ -1611,7 +1621,7 @@ var vm = new Vue({
       - stash
   - expensees
     - categories
-        - food,child,education,entertainment,fashion,fuel,heaslth,house,sport,support
+      - food,child,education,entertainment,fashion,fuel,heaslth,house,sport,support
   - budget
     - multiple budget
     - Visualization of income against expenses
@@ -1664,6 +1674,8 @@ var vm = new Vue({
     - remind    - backup || restore || reset all data
     - loan calculator
 
+#### database ~ cashbox
+
 - db
   - user
     - name
@@ -1692,4 +1704,3 @@ var vm = new Vue({
     - date
     - type_id
     - category_id
-  - 
