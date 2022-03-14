@@ -1583,6 +1583,19 @@ var vm = new Vue({
 
 ### Cash~
 
+- process
+  - design the database
+  - design the user interface
+  - design the app
+  - set up the frontend of the application by
+  - installing vue
+  - set up the api for the application by
+  - Set up backend
+    - installing adonisjs
+    - setup routes
+    - setup controllers
+    - build controllers for oauth
+
 - Elements of app
   - income
     - category
