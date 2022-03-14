@@ -1585,7 +1585,8 @@ var vm = new Vue({
 
 #### tasks ~ cashbox
 
-- re-format phonenumber
+- set user **active** to **true** when **email** is verified
+- re-format **phonenumber**
 
 #### process ~ cashbox
 
