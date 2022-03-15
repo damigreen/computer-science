@@ -175,3 +175,10 @@ console.log("###############################");
 console.log("===============================");
 var getLFU = myLFU.get(9);
 console.log(getLFU);
+
+
+var name = "damilola faseun";
+var uname = name.slice(0, name.indexOf(' '));
+console.log(name);
+console.log(uname);
+console.log(name.indexOf(" "));
