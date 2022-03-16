@@ -198,3 +198,10 @@ console.log(chad.eatbrains());
 
 console.log(chad.__proto__.eatbrains());
 console.log(Object.getPrototypeOf(zeng).eatbrains);
+
+const ellipse = (text, length) => {
+  const ellipseText = text.length > length ? "..." : "";
+  return text.substring(0, length + 1) + ellipseText;
+}
+
+console.log(ellipse("where is my money now", 17))
