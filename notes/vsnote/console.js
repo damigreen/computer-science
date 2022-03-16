@@ -176,9 +176,8 @@ console.log("===============================");
 var getLFU = myLFU.get(9);
 console.log(getLFU);
 
-
 var name = "damilola faseun";
-var uname = name.slice(0, name.indexOf(' '));
+var uname = name.slice(0, name.indexOf(" "));
 console.log(name);
 console.log(uname);
 console.log(name.indexOf(" "));
@@ -186,13 +185,16 @@ console.log(name.indexOf(" "));
 let zombie = {
   eatbrains() {
     return "yum!!";
-  }
-}
+  },
+};
 
 console.log("=============================== Chad");
 // var chad = Object.create(zombie);
-var chad = Object.create(zombie, { age: { value: 42 }});
-var zeng = Object.create(zombie, { name: { value: 'green' } });
+var chad = Object.create(zombie, { age: { value: 42 } });
+var zeng = Object.create(zombie, { name: { value: "green" } });
 console.log(chad.age);
 console.log(zeng.name);
 console.log(chad.eatbrains());
+
+console.log(chad.__proto__.eatbrains());
+console.log(Object.getPrototypeOf(zeng).eatbrains);
