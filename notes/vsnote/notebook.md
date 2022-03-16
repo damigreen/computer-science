@@ -1608,6 +1608,7 @@ var vm = new Vue({
       - save user to db
       - create a 'store' validator
       - build controllers for oauth
+      - make first name username
 
 #### elements ~ cashbox
 
