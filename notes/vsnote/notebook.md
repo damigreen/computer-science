@@ -2,15 +2,17 @@
 
 ## Misc
 
+### 16:03:2022
+
+- fix `vendors.store`
+- create new power layout
+- Fix the landmark pagination
+
 ### 04:03:2022
 
-- `21:00:00` - santana night
-  - Just continue with the headfirst javascipt
-  - and after that take a look at the hackerank challenge
-    - check the inverse singl linked ist code implementation
-    - and test on vs code hackerrank web ide
-
-  - Lets get started
+- fix `vendors.store`
+- create new power layout
+- Fix the landmark pagination
 
 ### Todo List
 
@@ -71,6 +73,12 @@
 
 ## Work
 
+### Landwey iot dashboard ~ power consumption
+
+- fix `vendors.store`
+- change sidbar theme
+- get templates
+
 ### Vamp Additional System Triggers
 
 - get others
@@ -99,6 +107,7 @@ select * from work_requests where id=384;
 
 ### Landmark new features
 
+- Fix pagination
 - Technician Dashboard
   - **Technicians** can make request (button)
   - FM can rate jobs
