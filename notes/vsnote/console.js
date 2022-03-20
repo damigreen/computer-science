@@ -202,6 +202,166 @@ console.log(Object.getPrototypeOf(zeng).eatbrains);
 const ellipse = (text, length) => {
   const ellipseText = text.length > length ? "..." : "";
   return text.substring(0, length + 1) + ellipseText;
+};
+console.log(ellipse("where is my money now", 17));
+
+/**
+ * Step backwards
+ *        *
+ *       **
+ *      ***
+ *     ****
+ *
+ *  i: 0
+ *  #: 3 -> 4 - (1 + j) -> n - (1 + j)
+ *  *: 1 -> 0 + 1 -> 1
+ * ------------------------------
+ *  #: 3 -> 4 - 1 -> n - 1
+ *  *: 1 -> 0 + 1 -> j + 1
+ *
+ *
+ *  i: 1
+ *  #: 2 -> 4 - 2 -> n - 2
+ *  *: 2 -> 0 + 2 -> j + 2
+ *
+ *  i: 3
+ *  #: 0 -> 4 - 2 -> n - 2
+ *  *: 2 -> 0 + 2 -> j + 2
+ *
+ */
+console.log("------------------------------------- step backwards");
+function stepBackwards(n) {
+  for (var i = 0; i < n; i++) {
+    let step = "";
+    for (var j = 0; j < n; j++) {
+      step += "*";
+      console.log(step);
+    }
+    break;
+  }
 }
 
-console.log(ellipse("where is my money now", 17))
+stepBackwards(4);
+
+/**
+ * Step forward
+ *        *
+ *       **
+ *      ***
+ *     ****
+ *
+ *  i: 0
+ *  #: 3 -> 4 - (1 + j) -> n - (1 + j)
+ *  *: 1 -> 0 + 1 -> 1
+ * ------------------------------
+ *  #: 3 -> 4 - 1 -> n - 1
+ *  *: 1 -> 0 + 1 -> j + 1
+ *
+ *
+ *  i: 1
+ *  #: 2 -> 4 - 2 -> n - 2
+ *  *: 2 -> 0 + 2 -> j + 2
+ *
+ *  i: 3
+ *  #: 0 -> 4 - 2 -> n - 2
+ *  *: 2 -> 0 + 2 -> j + 2
+ *
+ */
+console.log("------------------------------------- step forward");
+function stepForward(n) {
+  for (var i = 0; i < n; i++) {
+    let step = "";
+    for (var j = 0; j < n; j++) {
+      if (j < n - 1 - i) {
+        step += " ";
+      } else step += "*";
+    }
+    console.log(step);
+    // break;
+  }
+}
+stepForward(4);
+
+console.log("------------------------------------- step forward 2");
+function stepForward2(n) {
+  for (var i = 0; i < n; i++) {
+    let step = "";
+    for (var j = 0; j < n - 1 - i; j++) {
+      step += " ";
+    }
+    for (var k = 0; k < i + 1; k++) {
+      step += "*";
+    }
+    console.log(step);
+  }
+}
+stepForward2(4);
+
+/**
+ * Step up
+ *        * *
+ *       ** **
+ *      *** ***
+ *     **** ****
+ *  [###**###]
+ *  [##****##]
+ *  [#******#]
+ *  [********]
+ *  i: 0
+ *  *:
+ */
+console.log("------------------------------------- step up");
+function stepUp(n) {
+  for (var i = 0; i < n; i++) {
+    let step = "";
+    let stepReverse = " ";
+    for (var j = 0; j < n - 1 - i; j++) {
+      step += " ";
+    }
+    for (var k = 0; k < i + 1; k++) {
+      step += "*";
+    }
+    for (var a = step.length - 1; a > -1; a--) {
+      stepReverse += step[a];
+    }
+
+    console.log(step + stepReverse);
+  }
+}
+stepUp(7);
+
+/**
+ *  [###* *###]
+ *  [##** **##]
+ *  [#*** ***#]
+ *  [**** ****]
+ *  [###**###]
+ *  [##****##]
+ *  [#******#]
+ *  [********]
+ *  i: 0
+ *  *:
+ */
+console.log("------------------------------------- step up U2");
+function stepUp2(n) {
+  for (var i = 0; i < n; i++) {
+    let step = "";
+    // for (var j = 0; j < 2 * n; j++) {
+    for (var j = 0; j < 2 * n; j++) {
+      if (j < n - 1 - i || (j > n) ) {
+        step += "#";
+      // } else if (j < j + 1 && j < 2*n - n + 1 + j) {
+      } else if (j < j + 1 || j < 2*n - n + 1) {
+        step += "$";
+      } 
+      // else if (j >= n && n + 1 + j < 2 * n - n - 1 + j) {
+      //   step += "$";
+      // } 
+      // else if (j > n + i + 1 && j < 2 * n - 1) {
+      //   step += "#";
+      // }
+    }
+    console.log(step);
+  }
+}
+stepUp2(4);
