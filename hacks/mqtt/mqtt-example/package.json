@@ -1,0 +1,12 @@
+{
+  "name": "mqtt-example",
+  "version": "1.0.0",
+  "description": "Mqtt",
+  "main": "index.js",
+  "repository": "http://github.com/damigreen",
+  "author": "damilola faseun",
+  "license": "MIT",
+  "dependencies": {
+    "mqtt": "^4.3.7"
+  }
+}
