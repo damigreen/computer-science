@@ -68,6 +68,7 @@ Route.post("request/approved", "GatepassCallbackController.approve")
   .prefix("callbacks")
   .namespace("App/Controllers/Http/CallBacks");
 
+Route.post("webhook/assign", "WebhooksController.assign");
 Route.post("webhook/approve", "WebhooksController.approve");
 Route.post("webhook/job-started", "WebhooksController.started");
 Route.post("webhook/job-completed", "WebhooksController.completed");

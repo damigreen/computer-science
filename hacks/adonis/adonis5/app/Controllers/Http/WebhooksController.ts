@@ -1,6 +1,15 @@
 // import { HttpContextContract } from '@ioc:Adonis/Core/HttpContext'
 
 export default class WebhooksController {
+    public async assign({ request, response }) {
+        console.log("user assigned >>--------s---->")
+        console.log(request.all())
+
+        return response.json({
+            status: true
+        })
+    }
+
     public async approve({ request, response }) {
         console.log("job approved >>--------s---->")
         console.log(request.all())
