@@ -1,6 +1,8 @@
-var x = { a: 1, b: 2 };
-var y = x;
-y.a = 5;
-y = { z: 3 };
-console.log(x);
-console.log(y);
+const a = 1;
+var b;
+var c;
+const x = { a, b, c }
+console.log(x.a)
+console.log(x.b)
+
+console.log(Date.parse(new Date()))
