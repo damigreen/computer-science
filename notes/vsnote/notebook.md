@@ -1624,10 +1624,19 @@ var vm = new Vue({
 
 ### CashBox
 
-#### tasks ~ cashbox
+- start server
+- open database
+- set up user controller
+  - set up index, store, update and delete for users
+- set up oauth
+  - enable user can login with username / email and password
+  - make authentication for users
+  - test authentication on created users
 
 - set user **active** to **true** when **email** is verified
 - re-format **phonenumber**
+
+
 
 #### process ~ cashbox
 
