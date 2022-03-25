@@ -105,8 +105,9 @@ select * from work_requests where id=384;
 - Remove **required field** for **materials**
   - Work on the **save invoice** logic
 
-### Landmark new features
+### Landmark new features || OM Dashboard
 
+- Create status table and chat on dashboard
 - Fix pagination
 - Technician Dashboard
   - **Technicians** can make request (button)
@@ -116,6 +117,37 @@ select * from work_requests where id=384;
   - Approvals and Overview
     - Ready for approval
     - Approved request
+
+```sql
+-- update organization_role set role_id=12 where role_id=10;
+-- update organization_role set role_id=10 where role_id=12;
+-- update organization_role set role_id=13 where role_id=11;
+-- update organization_role set role_id=11 where role_id=13;
+-- update organization_role set role_id=11 where role_id=13;
+-- update organization_role set role_id=10 where role_id=11;
+-- update organization_role set role_id=11 where role_id=10;
+
+-- update role_system_function set role_id=12 where role_id=10;
+-- update role_system_function set role_id=10 where role_id=12;
+-- update role_system_function set role_id=13 where role_id=11;
+-- update role_system_function set role_id=11 where role_id=13;
+-- update role_system_function set role_id=10 where role_id=11;
+-- update role_system_function set role_id=11 where role_id=10;
+
+
+-- update role_user set role_id=12 where role_id=10;
+-- update role_user set role_id=10 where role_id=12;
+-- update role_user set role_id=13 where role_id=11;
+-- update role_user set role_id=11 where role_id=13;
+update role_user set role_id=10 where role_id=11;
+update role_user set role_id=11 where role_id=10;
+
+
+select * from roles;
+select * from organization_role;
+select * from role_system_function;
+select * from role_user;
+```
 
 ### Database Relation for Users and Community
 
