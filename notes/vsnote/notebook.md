@@ -2,6 +2,12 @@
 
 ## Misc
 
+### 27:03:2022
+
+- enable oauth authentication for registered users on **cashbox**
+- Conclude the **hackerrank** problem
+- Write / Journal [writing]
+
 ### 16:03:2022
 
 - fix `vendors.store`
@@ -1624,10 +1630,16 @@ var vm = new Vue({
 
 ### CashBox
 
+- create user role relationship table
+  - user and role will have a many to many relationship
+  - they will have a pivot table to maintain their relationship
+  - 
 - start server
 - open database
 - set up user controller
   - set up index, store, update and delete for users
+  - locate the file needed
+  - search the code for where you stopped previoulsy
 - set up oauth
   - enable user can login with username / email and password
   - make authentication for users
@@ -1636,11 +1648,21 @@ var vm = new Vue({
 - set user **active** to **true** when **email** is verified
 - re-format **phonenumber**
 
+#### Entities - cb
 
+- **entities**
+  - users
+  - transactions
+    - income
+    - expenses
+  - accounts
+    - users
+  - roles
+  - budgets
 
-#### process ~ cashbox
+#### Process - cb
 
-- process
+- **process**
   - design the database
   - design the user interface
   - design the app
@@ -1648,12 +1670,12 @@ var vm = new Vue({
   - installing vue
   - set up the api for the application by
 
-  - Set up backend
+  - **Set up backend**
     - installing adonisjs
     - setup routes
     - setup controllers
   
-    - Store user with password
+    - **Store user with password**
       - create user controller
       - save user to db
       - create a 'store' validator
@@ -1732,49 +1754,175 @@ var vm = new Vue({
 
 #### database ~ cashbox
 
-- db
+- **user**
 
-  - user
-  
-    - fields
-      - name
-      - username
-      - password
-      - active
-      - suspended
-      - suspended_till
-      - email
-      - gender
-      - deleted
+  - **fields**
+    - name
+    - username
+    - password
+    - active
+    - suspended
+    - suspended_till
+    - email
+    - gender
+    - deleted
 
-    - parameters
-      - name
-      - email
-      - phone
-      - password
-      - roles
-        - sys -system admin
-        - mng -managers
-        - clt -clientele
-  
-  - income
-    - amount
-    - date
-    - type_id
-  
-    - transfer-type
-      - type - transfer to
+  - **parameters**
+    - name
+    - email
+    - phone
+    - password
+    - roles
+      - sys -system admin
+      - mng -managers
+      - clt -clientele
 
-    - categories
+- income
+  - amount
+  - date
+  - type_id
+
+  - transfer-type
+    - type - transfer to
+
+  - categories
+    - salary
+    - others..
+
+- expenses
+  - expenses categories
+
+- **transactions**
+  - amount
+  - type
+  - date
+  - type_id
+  - category_id
+
+  - **transaction_type**
+    - income
+    - expense
+
+  - **transaction_category**
+    - **transaction_type_income**
       - salary
-      - others..
-  
-  - expenses
-    - expenses categories
-  
-  - transactions
-    - amount
-    - type
-    - date
-    - type_id
-    - category_id
+      - savings
+      - award,
+      - commision,
+      - other income
+    - **transaction_type_expense**
+      - salary
+      - savings
+      - award,
+      - commision,
+      - other income
+
+- **role**
+
+- **role_scope**
+  - name: System Wide, Account
+  - code: SYS, ACC
+  - description: "lorem ipsum"
+
+#### Models - cb
+
+##### User - cb
+
+- id: integer
+- name: string
+- username?: string
+- email: string
+- password: string
+- roles: array
+- active?: boolean
+- suspended?: boolean
+- suspended_till?: date
+- updated_at: date
+- deleted_at: date
+- created_at: date
+
+##### Token
+
+- id: integer
+- user_id: integer
+- name: string
+- type: string
+- token: string
+- expires_at?: date
+- updated_at: date
+
+##### Roles
+
+<!-- columns -->
+- id: integer
+- name: string
+- code: string
+- description
+- role_scope*
+
+<!-- column - valuea -->
+```txt
+
+id: 1
+name: System Admin, Clientele, General Manager, Account Manager
+code: SYS, CLI, GMG, AMG
+description: "lorem ipsum
+role_scope: *
+
+```
+
+##### Role_scope
+
+<!-- columns -->
+- id: integer
+- name: System Wide, Account Wide
+- code: SYS, ACC
+- description: role defined for system, role defined for account
+
+<!-- relationships -->
+
+<!-- column - valuea -->
+```txt
+id: 1
+name: System Admin, Clientele, General Manager, Account Manager
+code: SYS, CLI, GMG, AMG
+description: "lorem ipsum
+```
+
+#### Relationships - cb
+
+- user - role
+- user - account
+- user - budget
+- user - transaction
+- 
+
+
+- **user**
+  - user - role
+  - user - account
+  - user - budget
+  - user - transaction
+
+- **transaction**
+  - transaction - user
+  - transaction - account
+  - transaction_transaction_type
+
+- **transaction_type**
+  - transaction_type_transaction_category
+  - transaction_type_transaction
+
+- **transaction_category**
+  - transaction_category - transaction_type
+
+- **budget**
+  - budget - user
+  - budget - account
+  - budget - budget_hierarchy
+
+- **budget_hierarchy**
+  - budget_hierarchy - budget
+
+- **role**
+  - role - user
