@@ -365,3 +365,11 @@ function stepUp2(n) {
   }
 }
 stepUp2(4);
+
+console.log(new Date(1657013991943))
+
+
+let v = new DataView(new ArrayBuffer(4));
+v.setUint32(0, 0x40D720000);
+var value = v.getFloat32(0);
+console.log(value);
