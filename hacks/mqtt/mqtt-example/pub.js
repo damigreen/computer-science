@@ -27,8 +27,8 @@ client.on("connect", function () {
   // setInterval(function () {
     var random = Math.random() * 50;
     console.log(random);
-    client.publish('green', '21')
-    client.publish('Energy', '15')
+    client.publish('Energy Lendway', '15')
+    client.publish('Fuel Monitoring Lendway', '45')
     // if (random < 30) {
       // client.publish("Damigreen", "God is good always!!" + random.toString());
       // client.publish("Energy Reading", "{ Energy: '100MW', time: 9 }", { qos: 1 });
