@@ -81,6 +81,38 @@
 
 ### Landwey iot dashboard ~ power consumption
 
+```text
+               <!-- VIEW -->
+
+|-------------------------------------------------------------|
+|           Water Flow Trehds- Phase One                      |
+|                                 |
+| (=:;"?)            46          10:28:00pm April 1st 2022    |
+| (=:;"?)            46          10:28:00pm April 1st 2022    |
+| (=:;"?)            46          10:28:00pm April 1st 2022    |
+| (=:;"?)            46          10:28:00pm April 1st 2022    |
+| (=:;"?)            46          10:28:00pm April 1st 2022    |
+|--------------------------------------------------------------|
+
+-=========================================================
+
+<!-- Water Flow Trends - Phase Two -->
+(=:;"?)            46          10:28:00pm April 1st 2022
+(=:;"?)            46          10:28:00pm April 1st 2022
+(=:;"?)            46          10:28:00pm April 1st 2022
+(=:;"?)            46          10:28:00pm April 1st 2022
+
+-=========================================================
+
+```
+
+- change images based on the value of water flow
+- change images based on the value of fuel flow
+- look for images of water guage or any other guage meter
+- make the cards rounded and add box shadows
+
+- sensor_units
+- create table for sensor_units
 - fix `vendors.store`
 - change sidbar theme
 - get templates
