@@ -369,7 +369,38 @@ stepUp2(4);
 console.log(new Date(1657013991943))
 
 
+let arrayX = [1,2,3,4,5]
+let arrayY = arrayX.slice(-3)
+console.log("arrayY-->", arrayY)
+arrayX.push(7)
+console.log("arrayX-->", arrayX)
+arrayY = arrayX.slice(-3)
+console.log("arrayY-->", arrayY)
+
+
 let v = new DataView(new ArrayBuffer(4));
 v.setUint32(0, 0x40D720000);
 var value = v.getFloat32(0);
 console.log(value);
+
+
+// var data = "01030473583E5730FA"
+
+let hexString = "01030404B93EB2BAF3"
+// let hexString = data.slice(-8, -4);
+hexString = hexString.padEnd(8, "0");
+
+console.log("hexString",hexString)
+
+v.setUint32(0, "0x" + "00200020");
+// v.setUint32(0, 0x00200000);
+
+value = v.getFloat32(0)
+
+
+console.log(hexString.substring(5));
+console.log(hexString.substring(6));
+console.log(hexString.substring(7));
+console.log(value);
+
+console.log(new Date(1648732800000))
