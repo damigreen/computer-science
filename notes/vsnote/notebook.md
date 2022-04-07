@@ -1440,7 +1440,374 @@ record(v) information(n)
 
 ## Personal
 
-### Dailys
+### 07:04:2022
+
+- download the 5 more courses on udemy
+- buy the mighty vapourizer
+
+Energy Lendway
+Water Lendwayph1
+Water Lendwayph2
+Fuel Monitoring Lendway
+Generator Monitoring Lendway
+Energy005
+
+```sql
+select * from maintenance_plans;
+select * from job_schedules;
+
+update maintenance_cycles set deleted_at='2022-03-29 10:39:51' where job_schedule_id=37;
+select * from maintenance_cycles;
+```
+
+weekly
+bi-weekly
+monthly
+bi-monthly
+quarterly
+bi-quarterly
+yearly
+bi-yearly
+
+Energy005 ---> {"devId":"493C220223030476","msgType":"rs485ValueRpt","data":"01030400000000FA33","timestamp":"1648563666"}
+Energy005 ---> {"devId":"493C220223030476","msgType":"rs485ValueRpt","data":"01030400000000FA33","timestamp":"1648563677"}
+Energy005 ---> {"devId":"493C220223030476","msgType":"rs485ValueRpt","data":"01030400000000FA33","timestamp":"1648563677"}
+Energy005 ---> {"devId":"493C220223030476","msgType":"diValueRpt","data":{"DI1":"0","DI2":"0"},"timestamp":"1648563683"}
+Energy005 ---> {"devId":"493C220223030476","msgType":"diValueRpt","data":{"DI1":"0","DI2":"0"},"timestamp":"1648563683"}
+Energy005 ---> {"devId":"493C220223030476","msgType":"aiValueRpt","data":{"AI1":"0"},"timestamp":"1648563683"}
+Energy005 ---> {"devId":"493C220223030476","msgType":"aiValueRpt","data":{"AI1":"0"},"timestamp":"1648563683"}
+Energy005 ---> {"devId":"493C220223030476","msgType":"rs485ValueRpt","data":"01030400000000FA33","timestamp":"1648563692"}
+Energy005 ---> {"devId":"493C220223030476","msgType":"rs485ValueRpt","data":"01030400000000FA33","timestamp":"1648563692"}
+Energy005 ---> {"devId":"493C220223030476","msgType":"rs485ValueRpt","data":"01030400000000FA33","timestamp":"1648563703"}
+Energy005 ---> {"devId":"493C220223030476","msgType":"rs485ValueRpt","data":"01030400000000FA33","timestamp":"1648563703"}
+Energy005 ---> {"devId":"493C220223030476","msgType":"diValueRpt","data":{"DI1":"0","DI2":"0"},"timestamp":"1648563713"}
+Energy005 ---> {"devId":"493C220223030476","msgType":"diValueRpt","data":{"DI1":"0","DI2":"0"},"timestamp":"1648563713"}
+Energy005 ---> {"devId":"493C220223030476","msgType":"aiValueRpt","data":{"AI1":"0"},"timestamp":"1648563713"}
+Energy005 ---> {"devId":"493C220223030476","msgType":"aiValueRpt","data":{"AI1":"0"},"timestamp":"1648563713"}
+Energy005 ---> {"devId":"493C220223030476","msgType":"rs485ValueRpt","data":"01030400000000FA33","timestamp":"1648563718"}
+Energy005 ---> {"devId":"493C220223030476","msgType":"rs485ValueRpt","data":"01030400000000FA33","timestamp":"1648563718"}
+Energy005 ---> {"devId":"493C220223030476","msgType":"rs485ValueRpt","data":"01030400000000FA33","timestamp":"1648563729"}
+Energy005 ---> {"devId":"493C220223030476","msgType":"rs485ValueRpt","data":"01030400000000FA33","timestamp":"1648563729"}
+Energy005 ---> {"devId":"493C220223030476","msgType":"diValueRpt","data":{"DI1":"0","DI2":"0"},"timestamp":"1648563743"}
+Energy005 ---> {"devId":"493C220223030476","msgType":"diValueRpt","data":{"DI1":"0","DI2":"0"},"timestamp":"1648563743"}
+Energy005 ---> {"devId":"493C220223030476","msgType":"aiValueRpt","data":{"AI1":"0"},"timestamp":"1648563743"}
+Energy005 ---> {"devId":"493C220223030476","msgType":"aiValueRpt","data":{"AI1":"0"},"timestamp":"1648563743"}
+Energy005 ---> {"devId":"493C220223030476","msgType":"rs485ValueRpt","data":"01030400000000FA33","timestamp":"1648563744"}
+Energy005 ---> {"devId":"493C220223030476","msgType":"rs485ValueRpt","data":"01030400000000FA33","timestamp":"1648563744"}
+Energy005 ---> {"devId":"493C220223030476","msgType":"rs485ValueRpt","data":"01030400000000FA33","timestamp":"1648563755"}
+Energy005 ---> {"devId":"493C220223030476","msgType":"rs485ValueRpt","data":"01030400000000FA33","timestamp":"1648563755"}
+Energy005 ---> {"devId":"493C220223030476","msgType":"rs485ValueRpt","data":"01030400000000FA33","timestamp":"1648563770"}
+Energy005 ---> {"devId":"493C220223030476","msgType":"rs485ValueRpt","data":"01030400000000FA33","timestamp":"1648563770"}
+Energy005 ---> {"devId":"493C220223030476","msgType":"diValueRpt","data":{"DI1":"0","DI2":"0"},"timestamp":"1648563773"}
+Energy005 ---> {"devId":"493C220223030476","msgType":"diValueRpt","data":{"DI1":"0","DI2":"0"},"timestamp":"1648563773"}
+Energy005 ---> {"devId":"493C220223030476","msgType":"aiValueRpt","data":{"AI1":"0"},"timestamp":"1648563773"}
+Energy005 ---> {"devId":"493C220223030476","msgType":"aiValueRpt","data":{"AI1":"0"},"timestamp":"1648563773"}
+Energy005 ---> {"devId":"493C220223030476","msgType":"rs485ValueRpt","data":"01030400000000FA33","timestamp":"1648563781"}
+Energy005 ---> {"devId":"493C220223030476","msgType":"rs485ValueRpt","data":"01030400000000FA33","timestamp":"1648563781"}
+Energy005 ---> {"devId":"493C220223030476","msgType":"rs485ValueRpt","data":"01030400000000FA33","timestamp":"1648563796"}
+Energy005 ---> {"devId":"493C220223030476","msgType":"rs485ValueRpt","data":"01030400000000FA33","timestamp":"1648563796"}
+Energy005 ---> {"devId":"493C220223030476","msgType":"diValueRpt","data":{"DI1":"0","DI2":"0"},"timestamp":"1648563803"}
+Energy005 ---> {"devId":"493C220223030476","msgType":"diValueRpt","data":{"DI1":"0","DI2":"0"},"timestamp":"1648563803"}
+Energy005 ---> {"devId":"493C220223030476","msgType":"aiValueRpt","data":{"AI1":"0"},"timestamp":"1648563803"}
+Energy005 ---> {"devId":"493C220223030476","msgType":"aiValueRpt","data":{"AI1":"0"},"timestamp":"1648563803"}
+Energy005 ---> {"devId":"493C220223030476","msgType":"rs485ValueRpt","data":"01030400000000FA33","timestamp":"1648563807"}
+Energy005 ---> {"devId":"493C220223030476","msgType":"rs485ValueRpt","data":"01030400000000FA33","timestamp":"1648563807"}
+
+
+Fuel Monitoring Lendway ---> {"devId":"493C211207027783","msgType":"rs485ValueRpt","data":"010304E84A435B9E8E","timestamp":"1648633786"}
+Fuel Monitoring Lendway ---> {"devId":"493C211207027783","msgType":"rs485ValueRpt","data":"01030400000000FA33","timestamp":"1648633797"}
+Fuel Monitoring Lendway ---> {"devId":"493C211207027783","msgType":"rs485ValueRpt","data":"01030400000000FA33","timestamp":"1648633797"}
+Fuel Monitoring Lendway ---> {"devId":"493C211207027783","msgType":"diValueRpt","data":{"DI1":"0","DI2":"0"},"timestamp":"1648633813"}
+Fuel Monitoring Lendway ---> {"devId":"493C211207027783","msgType":"diValueRpt","data":{"DI1":"0","DI2":"0"},"timestamp":"1648633813"}
+Fuel Monitoring Lendway ---> {"devId":"493C211207027783","msgType":"aiValueRpt","data":{"AI1":"0"},"timestamp":"1648633813"}
+Fuel Monitoring Lendway ---> {"devId":"493C211207027783","msgType":"aiValueRpt","data":{"AI1":"0"},"timestamp":"1648633813"}
+Fuel Monitoring Lendway ---> {"devId":"493C211207027783","msgType":"rs485ValueRpt","data":"010304E84A435B9E8E","timestamp":"1648633817"}
+Fuel Monitoring Lendway ---> {"devId":"493C211207027783","msgType":"rs485ValueRpt","data":"010304E84A435B9E8E","timestamp":"1648633817"}
+Fuel Monitoring Lendway ---> {"devId":"493C211207027783","msgType":"rs485ValueRpt","data":"01030400000000FA33","timestamp":"1648633828"}
+Fuel Monitoring Lendway ---> {"devId":"493C211207027783","msgType":"rs485ValueRpt","data":"01030400000000FA33","timestamp":"1648633828"}
+Energy005 ---> {"devId":"493C220223030476","msgType":"rs485ValueRpt","data":"010304D1FC4103736E","timestamp":"1648633809"}
+Energy005 ---> {"devId":"493C220223030476","msgType":"rs485ValueRpt","data":"010304D1FC4103736E","timestamp":"1648633809"}
+Energy005 ---> {"devId":"493C220223030476","msgType":"aiValueRpt","data":{"AI1":"0"},"timestamp":"1648633813"}
+Energy005 ---> {"devId":"493C220223030476","msgType":"diValueRpt","data":{"DI1":"0","DI2":"0"},"timestamp":"1648633813"}
+Energy005 ---> {"devId":"493C220223030476","msgType":"rs485ValueRpt","data":"010304E2413F420D9E","timestamp":"1648633824"}
+Energy005 ---> {"devId":"493C220223030476","msgType":"diValueRpt","data":{"DI1":"0","DI2":"0"},"timestamp":"1648633813"}
+Energy005 ---> {"devId":"493C220223030476","msgType":"aiValueRpt","data":{"AI1":"0"},"timestamp":"1648633813"}
+Energy005 ---> {"devId":"493C220223030476","msgType":"rs485ValueRpt","data":"010304E2413F420D9E","timestamp":"1648633824"}
+Energy005 ---> {"devId":"493C220223030476","msgType":"rs485ValueRpt","data":"010304D1FC4103736E","timestamp":"1648633835"}
+Energy005 ---> {"devId":"493C220223030476","msgType":"rs485ValueRpt","data":"010304D1FC4103736E","timestamp":"1648633835"}
+Energy005 ---> {"devId":"493C220223030476","msgType":"diValueRpt","data":{"DI1":"0","DI2":"0"},"timestamp":"1648633843"}
+Energy005 ---> {"devId":"493C220223030476","msgType":"diValueRpt","data":{"DI1":"0","DI2":"0"},"timestamp":"1648633843"}
+Energy005 ---> {"devId":"493C220223030476","msgType":"aiValueRpt","data":{"AI1":"0"},"timestamp":"1648633843"}
+Energy005 ---> {"devId":"493C220223030476","msgType":"aiValueRpt","data":{"AI1":"0"},"timestamp":"1648633843"}
+Energy005 ---> {"devId":"493C220223030476","msgType":"rs485ValueRpt","data":"0103041DD93F52BDA9","timestamp":"1648633850"}
+Energy005 ---> {"devId":"493C220223030476","msgType":"rs485ValueRpt","data":"0103041DD93F52BDA9","timestamp":"1648633850"}
+Fuel Monitoring Lendway ---> {"devId":"493C211207027783","msgType":"diValueRpt","data":{"DI1":"0","DI2":"0"},"timestamp":"1648633843"}
+Fuel Monitoring Lendway ---> {"devId":"493C211207027783","msgType":"diValueRpt","data":{"DI1":"0","DI2":"0"},"timestamp":"1648633843"}
+Fuel Monitoring Lendway ---> {"devId":"493C211207027783","msgType":"aiValueRpt","data":{"AI1":"0"},"timestamp":"1648633843"}
+Fuel Monitoring Lendway ---> {"devId":"493C211207027783","msgType":"rs485ValueRpt","data":"01030400000000FA33","timestamp":"1648633859"}
+Fuel Monitoring Lendway ---> {"devId":"493C211207027783","msgType":"rs485ValueRpt","data":"01030400000000FA33","timestamp":"1648633859"}
+Fuel Monitoring Lendway ---> {"devId":"493C211207027783","msgType":"rs485ValueRpt","data":"010304E84A435B9E8E","timestamp":"1648633848"}
+Fuel Monitoring Lendway ---> {"devId":"493C211207027783","msgType":"aiValueRpt","data":{"AI1":"0"},"timestamp":"1648633843"}
+Fuel Monitoring Lendway ---> {"devId":"493C211207027783","msgType":"rs485ValueRpt","data":"010304E84A435B9E8E","timestamp":"1648633848"}
+Fuel Monitoring Lendway ---> {"devId":"493C211207027783","msgType":"diValueRpt","data":{"DI1":"0","DI2":"0"},"timestamp":"1648633873"}
+Fuel Monitoring Lendway ---> {"devId":"493C211207027783","msgType":"diValueRpt","data":{"DI1":"0","DI2":"0"},"timestamp":"1648633873"}
+Fuel Monitoring Lendway ---> {"devId":"493C211207027783","msgType":"aiValueRpt","data":{"AI1":"0"},"timestamp":"1648633873"}
+Fuel Monitoring Lendway ---> {"devId":"493C211207027783","msgType":"aiValueRpt","data":{"AI1":"0"},"timestamp":"1648633873"}
+Fuel Monitoring Lendway ---> {"devId":"493C211207027783","msgType":"rs485ValueRpt","data":"010304E84A435B9E8E","timestamp":"1648633879"}
+Fuel Monitoring Lendway ---> {"devId":"493C211207027783","msgType":"rs485ValueRpt","data":"010304E84A435B9E8E","timestamp":"1648633879"}
+
+
+Energy005 ---> {"devId":"493C220223030476","msgType":"rs485ValueRpt","data":"01030482B941F373BB","timestamp":"1648645969"}
+Fuel Monitoring Lendway ---> {"devId":"493C211207027783","msgType":"aiValueRpt","data":{"AI1":"0"},"timestamp":"1648645979"}
+Fuel Monitoring Lendway ---> {"devId":"493C211207027783","msgType":"diValueRpt","data":{"DI1":"0","DI2":"0"},"timestamp":"1648645979"}
+Fuel Monitoring Lendway ---> {"devId":"493C211207027783","msgType":"aiValueRpt","data":{"AI1":"0"},"timestamp":"1648645949"}
+Fuel Monitoring Lendway ---> {"devId":"493C211207027783","msgType":"rs485ValueRpt","data":"01030400000000FA33","timestamp":"1648645962"}
+Fuel Monitoring Lendway ---> {"devId":"493C211207027783","msgType":"diValueRpt","data":{"DI1":"0","DI2":"0"},"timestamp":"1648645949"}
+Fuel Monitoring Lendway ---> {"devId":"493C211207027783","msgType":"rs485ValueRpt","data":"010304E84A435B9E8E","timestamp":"1648645951"}
+Fuel Monitoring Lendway ---> {"devId":"493C211207027783","msgType":"rs485ValueRpt","data":"01030400000000FA33","timestamp":"1648645931"}
+Fuel Monitoring Lendway ---> {"devId":"493C211207027783","msgType":"diValueRpt","data":{"DI1":"0","DI2":"0"},"timestamp":"1648645979"}
+Energy005 ---> {"devId":"493C220223030476","msgType":"diValueRpt","data":{"DI1":"0","DI2":"0"},"timestamp":"1648645980"}
+Energy005 ---> {"devId":"493C220223030476","msgType":"rs485ValueRpt","data":"01030482B941F373BB","timestamp":"1648645969"}
+Fuel Monitoring Lendway ---> {"devId":"493C211207027783","msgType":"aiValueRpt","data":{"AI1":"0"},"timestamp":"1648645979"}
+Energy005 ---> {"devId":"493C220223030476","msgType":"rs485ValueRpt","data":"0103040F394165D951","timestamp":"1648645980"}
+Energy005 ---> {"devId":"493C220223030476","msgType":"aiValueRpt","data":{"AI1":"0"},"timestamp":"1648645980"}
+Energy005 ---> {"devId":"493C220223030476","msgType":"rs485ValueRpt","data":"010304567941F40BB5","timestamp":"1648645995"}
+Energy005 ---> {"devId":"493C220223030476","msgType":"diValueRpt","data":{"DI1":"0","DI2":"0"},"timestamp":"1648645980"}
+Energy005 ---> {"devId":"493C220223030476","msgType":"aiValueRpt","data":{"AI1":"0"},"timestamp":"1648645980"}
+Energy005 ---> {"devId":"493C220223030476","msgType":"rs485ValueRpt","data":"0103040F394165D951","timestamp":"1648645980"}
+Energy005 ---> {"devId":"493C220223030476","msgType":"rs485ValueRpt","data":"010304567941F40BB5","timestamp":"1648645995"}
+Energy005 ---> {"devId":"493C220223030476","msgType":"rs485ValueRpt","data":"0103040F394165D951","timestamp":"1648646006"}
+Energy005 ---> {"devId":"493C220223030476","msgType":"rs485ValueRpt","data":"0103040F394165D951","timestamp":"1648646006"}
+Energy005 ---> {"devId":"493C220223030476","msgType":"diValueRpt","data":{"DI1":"0","DI2":"0"},"timestamp":"1648646010"}
+Energy005 ---> {"devId":"493C220223030476","msgType":"aiValueRpt","data":{"AI1":"0"},"timestamp":"1648646010"}
+Energy005 ---> {"devId":"493C220223030476","msgType":"aiValueRpt","data":{"AI1":"0"},"timestamp":"1648646010"}
+Energy005 ---> {"devId":"493C220223030476","msgType":"diValueRpt","data":{"DI1":"0","DI2":"0"},"timestamp":"1648646010"}
+Fuel Monitoring Lendway ---> {"devId":"493C211207027783","msgType":"rs485ValueRpt","data":"010304E84A435B9E8E","timestamp":"1648645982"}
+Fuel Monitoring Lendway ---> {"devId":"493C211207027783","msgType":"rs485ValueRpt","data":"01030400000000FA33","timestamp":"1648645993"}
+Fuel Monitoring Lendway ---> {"devId":"493C211207027783","msgType":"diValueRpt","data":{"DI1":"0","DI2":"0"},"timestamp":"1648646009"}
+Fuel Monitoring Lendway ---> {"devId":"493C211207027783","msgType":"rs485ValueRpt","data":"010304E84A435B9E8E","timestamp":"1648646013"}
+Fuel Monitoring Lendway ---> {"devId":"493C211207027783","msgType":"aiValueRpt","data":{"AI1":"0"},"timestamp":"1648646009"}
+Fuel Monitoring Lendway ---> {"devId":"493C211207027783","msgType":"rs485ValueRpt","data":"01030400000000FA33","timestamp":"1648646024"}
+Fuel Monitoring Lendway ---> {"devId":"493C211207027783","msgType":"rs485ValueRpt","data":"010304E84A435B9E8E","timestamp":"1648645982"}
+Fuel Monitoring Lendway ---> {"devId":"493C211207027783","msgType":"diValueRpt","data":{"DI1":"0","DI2":"0"},"timestamp":"1648646009"}
+Fuel Monitoring Lendway ---> {"devId":"493C211207027783","msgType":"aiValueRpt","data":{"AI1":"0"},"timestamp":"1648646009"}
+Fuel Monitoring Lendway ---> {"devId":"493C211207027783","msgType":"rs485ValueRpt","data":"010304E84A435B9E8E","timestamp":"1648646013"}
+Fuel Monitoring Lendway ---> {"devId":"493C211207027783","msgType":"rs485ValueRpt","data":"01030400000000FA33","timestamp":"1648645993"}
+
+0103040F394165D951
+
+010304E84A435B9E8E
+
+
+alter table sensor_readings auto_increment = 1;
+select * from sensor_readings;
+select * from sensor_units;
+select * from sensors
+
+
+<!-- right-col-4 -->
+        <div class="card flex-column">
+          <div class="col-lg-12 order-lg-1">
+            <!-- <div class="card">
+              <div class="card-body"> -->
+            <h6 class="slim-card-title mg-b-20">Water Level</h6>
+
+            <label class="mg-b-5">Mitsubishi A.C. Tank</label>
+            <div class="progress mg-b-15">
+              <div
+                class="progress-bar bg-warning progress-bar-xs wd-50p"
+                role="progressbar"
+                aria-valuenow="50"
+                aria-valuemin="0"
+                aria-valuemax="100"
+              ></div>
+            </div>
+            <!-- progress -->
+
+            <label class="mg-b-5">Panasonic A.C. Tank</label>
+            <div class="progress mg-b-15">
+              <div
+                class="progress-bar bg-primary progress-bar-xs wd-70p"
+                role="progressbar"
+                aria-valuenow="70"
+                aria-valuemin="0"
+                aria-valuemax="100"
+              ></div>
+            </div>
+            <!-- progress -->
+            <!-- </div> -->
+            <!-- card-body -->
+            <!-- </div> -->
+            <!-- card -->
+            <div class="card mg-b-5">
+              <div class="card-body pd-b-0">
+                <h6 class="slim-card-title">Current Level</h6>
+                <h1 class="tx-lato tx-primary">30000 m3</h1>
+                <p class="tx-12">
+                  <span class="tx-primary">25%</span> untill full
+                </p>
+              </div>
+              <!-- card-body -->
+              <div id="rs3" class="ht-50 ht-sm-70 mg-r--1 rickshaw_graph"></div>
+            </div>
+            <!-- card -->
+          </div>
+          <!-- col-3 -->
+        </div>
+		
+
+Ethereum and Solidity The Complete Developer's Guide
+carlos santana
+
+010304F0193CC80862
+010304F9BB3DEE2A56
+0103042B5F3CD11299
+010304F9BB3DEE2A56
+010304F9BB3DEE2A56
+01030466A53CD92402
+01030466A53CD9240
+
+F49917
+FA6400
+172540
+
+Energy Lendway
+Water Lendwayph1
+Water Lendwayph2
+Fuel Monitoring Lendway
+Generator Monitoring Lendway
+
+Energy005
+Fuel Monitoring Lendway
+Energy
+Water Landwayph2
+
+water
+flow rate
+volume
+
+frequency
+power factor
+energy
+frequency
+
+### 05:04:21
+
+```sql
+select * from system_functions;
+select * from role_system_function;
+```
+
+```javascript
+<form id="create-client-request-form" class="pd-20">
+  <div class="form-group">
+    <label class="form-control-label">
+      Select Level
+      <span class="d-none">ok</span>
+      <span class="tx-danger">*</span>
+    </label>
+    <!-- <div>{{ estateObject.topic }}</div> -->
+    <select class="form-control" name="select-estate">
+      <option :value="null">Select One</option>
+      <option
+        v-for="estate in ['Urban Prime One', 'Urban Prime Two']"
+        :key="estate"
+        :value="estate"
+        v-text="estate"
+      ></option>
+    </select>
+  </div>
+</form>
+```
+
+- `Topics`
+1.Energy Lendway
+2 Water Lendwayph1
+3.Water Lendwayph2
+4.Fuel Monitoring Lendway
+5.Generator Monitoring Lendway
+
+- phase one data
+
+{"devId":"493C220223030476","msgType":"rs485ValueRpt","data":"010304FDFB3EEA2B81","timestamp":"1649240011"}
+{"devId":"493C220223030476","msgType":"rs485ValueRpt","data":"010304FDFB3EEA2B81","timestamp":"1649240022"}
+
+{"devId":"493C220223030480","msgType":"rs485ValueRpt","data":"01030400000000FA33","timestamp":"1649239948"}
+
+- phase two data
+
+```json
+[
+   {
+      "id": 54197,
+      "value": 0,
+      "measurement_id": null,
+      "recorded_at": 1648732928,
+      "sensor_id": 3,
+      "sensor_unit_id": null,
+      "created_by": null,
+      "organization_id": 1,
+      "created_at": "2022-03-31 14:21:51",
+      "updated_at": "2022-03-31 14:21:51",
+      "deleted_at": null
+    },
+    {
+      "id": 54141,
+      "value": 0,
+      "measurement_id": null,
+      "recorded_at": 1648732800,
+      "sensor_id": 3,
+      "sensor_unit_id": null,
+      "created_by": null,
+      "organization_id": 1,
+      "created_at": "2022-03-31 14:20:39",
+      "updated_at": "2022-03-31 14:20:39",
+      "deleted_at": null
+    },
+    {
+      "id": 54164,
+      "value": 0,
+      "measurement_id": null,
+      "recorded_at": 1648732800,
+      "sensor_id": 6,
+      "sensor_unit_id": 4,
+      "created_by": null,
+      "organization_id": 1,
+      "created_at": "2022-03-31 14:21:11",
+      "updated_at": "2022-03-31 14:21:11",
+      "deleted_at": null
+   },
+]
+```
+
+```sql
+DELETE FROM your_table
+WHERE id >= a_value AND id <= another_value;
+
+delete from sensor_readings where id <= 60000;
+select * from sensor_types;
+select * from sensor_units;
+select * from sensors;
+select * from sensor_readings;
+```
+
+0103046ED9BD818610
+
+```javascript
+async setResidentUsers() {
+  await new Promise((resolve, reject) => {
+    resolve(this.getUsers());
+  }).then((value) => {
+    this.residenceUsers = this.users.filter((user) => {
+      return this.residents.some((resident) => {
+        return resident.user_id == user.id;
+      });
+    });
+  });
+},
+```
+
+- check out this site [React native developers]('https://fetchlylabs.com/)
 
 #### On Gatepass Update
 
@@ -1469,23 +1836,9 @@ Greetings
 - Florida Agricultural and Mechanical University
 - Prairie View A&M University
 
-### Notes ~ Personal
-
-- Whenever you open **whatsapp status** quicky click on / open up **chess** on **android**
-
-### Brands
-
-#### Cannabis Startup
-
-##### Inventory ~ CS
-
-- Rolling papers
-  - Raw
-- Bongs
-- Vapes
-
 ### Downloads
 
+- [ ] [nodejs udemy](https://www.udemy.com/course/nodejs-the-complete-guide/learn/lecture/11561804?start=15#overview)
 - [ ] [Foundation of Entrepreneurship](https://www.youtube.com/watch?v=UEngvxZ11sw)
 - [ ] [Docker and Kubernetes Tutorial](https://www.youtube.com/watch?v=bhBSlnQcq2k)
 - [ ] [Coding Interview with Dan Abramov](https://www.youtube.com/watch?v=XEt09iK8IXs&t=38s)
@@ -1500,6 +1853,7 @@ Greetings
 
 ### Links
 
+- [React native developers]('https://fetchlylabs.com/)
 - [Google](https://google.com)
 
 ### Food Planner
