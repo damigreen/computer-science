@@ -81,13 +81,69 @@
 
 ### Landwey iot dashboard ~ power consumption
 
+- Water Flow - Phase One --> Energy005
+- Water Flow - Phase Two --> Water Landwayph2
+- Energy --> Energy
+- Fuel Reading --> Fuel Monitoring Lendway
+
 ```text
                <!-- VIEW -->
 
-|-------------------------------------------------------------|
-|           Water Flow Trehds- Phase One                      |
-|                                 |
+|----------------------------------------------------------------------|
+|  (==-||) April 1st 2022 10:28:00pm                  42km/h           |
+|                                                                      |
+|  (==-||) April 1st 2022 10:28:00pm                  42km/h           |
+|                                                                      |
+|  (==-||) April 1st 2022 10:28:00pm                  42km/h           |
+|                                                                      |
+|                                                                      |
+|-====================================================================-|
+|                                                                      |
+|  Water Flow Phase One - Parameter Trend                              |
+|  April !st 2022                                                      |
+|                                                                      |
+|  Phase One                          Phase Two                        |
+|                                                                      |
+|  46   10:28:00pm April 1st 2022     46   10:28:00pm April 1st 2022   |
+|                                                                      |
+|  46   10:28:00pm April 1st 2022     46   10:28:00pm April 1st 2022   |
+|                                                                      |
+|  46   10:28:00pm April 1st 2022     46   10:28:00pm April 1st 2022   |
+|                                                                      |
+|                                                                      |
+|   Water Flow  46          10:28:00pm April 1st 2022                  |
+|                                                                      |
+|                                                                      |
+|-====================================================================-|
+|                                                             |
+|  Water Flow Trehds- Phase One                               |
+|  April !st 2022                                             |
+|                                                             |
+|   (=:;"?) phase One  46          10:28:00pm April 1st 2022  |
+|                                                             |
+|   (=:;"?) phase Two  46          10:28:00pm April 1st 2022  |
+|                                                             |
+|                                                             |
+|   phase one          46          10:28:00pm April 1st 2022  |
+|                                                             |
+|   phase two          46          10:28:00pm April 1st 2022  |
+|                                                             |
+|                                                             |
+==============================================================|
+|        ============               ============              |
+|        ============               ============              |    
+|        ============               ============              |
+|        ============               ============              |
+|                                                             |
+|         phase one                   phase two               |
+|                                                             |
+|                                                             |
 | (=:;"?)            46          10:28:00pm April 1st 2022    |
+| phase two                                                   |
+|                                                             |
+| (=:;"?)            46          10:28:00pm April 1st 2022    |
+| phase three                                                 |
+|                                                             |
 | (=:;"?)            46          10:28:00pm April 1st 2022    |
 | (=:;"?)            46          10:28:00pm April 1st 2022    |
 | (=:;"?)            46          10:28:00pm April 1st 2022    |
