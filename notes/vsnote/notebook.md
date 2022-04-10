@@ -1440,6 +1440,36 @@ record(v) information(n)
 
 ## Personal
 
+### 09:04:2022
+
+```javascript
+updateChart() {
+  this.$refs.apexChart.updateOptions({
+    xaxis: {
+      categories: this.dataTimestamp,
+    },
+    series: [
+      {
+        name: "Phase One",
+        data: this.dataSeries,
+      },
+      {
+        name: "Phase Two",
+        data: this.waterTwoDataSeries,
+      },
+    ],
+  });
+},
+```
+
+### 08:04:2022
+
+```text
+{"devId":"493C220223030476","msgType":"rs485ValueRpt","data":"01030440D740832FAA","timestamp":"1649421466"}
+
+{"devId":"493C211207027783","msgType":"rs485ValueRpt","data":"01030400000000FA33","timestamp":"1649421917"}
+```
+
 ### 07:04:2022
 
 - download the 5 more courses on udemy

@@ -403,4 +403,9 @@ console.log(hexString.substring(6));
 console.log(hexString.substring(7));
 console.log(value);
 
-console.log(new Date(1648732800000))
+let sensorData = "01030400000000FA33"
+
+let code = sensorData.substring(4, 6)
+console.log(code)
+
+console.log((new Date()).getTime())
