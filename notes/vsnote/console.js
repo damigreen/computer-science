@@ -386,7 +386,7 @@ console.log(value);
 
 // var data = "01030473583E5730FA"
 
-let hexString = "01030404B93EB2BAF3"
+let hexString = "0103045C8040C51818"
 // let hexString = data.slice(-8, -4);
 hexString = hexString.padEnd(8, "0");
 
@@ -401,11 +401,17 @@ value = v.getFloat32(0)
 console.log(hexString.substring(5));
 console.log(hexString.substring(6));
 console.log(hexString.substring(7));
-console.log(value);
+console.log("value", value);
 
-let sensorData = "01030400000000FA33"
+console.log(new Date(1649670528000))
 
-let code = sensorData.substring(4, 6)
-console.log(code)
+// let sensorData = "01030400000000FA33"
 
-console.log((new Date()).getTime())
+// let code = sensorData.substring(4, 6)
+// console.log(code)
+
+// console.log((new Date()).getTime())
+
+// let a = [1,2,4]
+// a.reverse()
+// console.log(a)
