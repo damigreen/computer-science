@@ -381,15 +381,15 @@ v.setUint32(0, 0x40d720000);
 var value = v.getFloat32(0);
 console.log(value);
 
-// var data = "01030473583E5730FA"
+var data = "01030473583E5730FA"
 
-let hexString = "0103045C8040C51818";
-// let hexString = data.slice(-8, -4);
+// let hexString = "0103045C8040C51818";
+let hexString = data.slice(-8, -4);
 hexString = hexString.padEnd(8, "0");
 
 console.log("hexString", hexString);
 
-v.setUint32(0, "0x" + "00200020");
+v.setUint32(0, "0x" + hexString);
 // v.setUint32(0, 0x00200000);
 
 value = v.getFloat32(0);
@@ -401,16 +401,11 @@ console.log("value", value);
 
 console.log(new Date(1649670528000));
 
-// let sensorData = "01030400000000FA33"
+console.log((new Date()).getTime())
 
-// let code = sensorData.substring(4, 6)
-// console.log(code)
-
-// console.log((new Date()).getTime())
-
-// let a = [1,2,4]
-// a.reverse()
-// console.log(a)
+let a = [1,2,4]
+a.reverse()
+console.log(a)
 
 let count = 0;
 while (count < 10) {
@@ -431,11 +426,57 @@ while (count < 10) {
   count++;
   console.log(res);
 }
-let sensorData = "01030C43533FC943511F97435281A6B5B9"
+
+// let sensorData = "01030C43533FC943511F97435281A6B5B9" // voltage 1,2,3,4
+let sensorData = "010320461A4E02460D867F46598AEE47005882448464F644892D8244E762D9457A850959EC" // power 5,6,7,8
+// let sensorData = "010310432A026D430D1313433F3B2543277037BBA6" // current // 9,10,11,12
 
 let dataRegister = sensorData.slice(0, 6)
-let voltage1Hex = sensorData.slice(6, 14);
-let voltage2Hex = sensorData.slice(14, 22);
-let voltage3Hex = sensorData.slice(22, 30);
+let power1Hex = sensorData.slice(6, 14);
+let power2Hex = sensorData.slice(14, 22);
+let power3Hex = sensorData.slice(22, 30);
+let powerAvgHex = sensorData.slice(30, 38);
 
-console.log(dataRegister, voltage1Hex, voltage2Hex, voltage3Hex);
+let v1 = new DataView(new ArrayBuffer(4));
+v1.setUint32(0, "0x" + power1Hex)
+let power1Data = Math.abs(v1.getFloat32(0)).toFixed(2);
+
+let v2 = new DataView(new ArrayBuffer(4));
+v2.setUint32(0, "0x" + power2Hex)
+let power2Data = Math.abs(v2.getFloat32(0)).toFixed(2);
+
+let v3 = new DataView(new ArrayBuffer(4));
+v3.setUint32(0, "0x" + power3Hex)
+let power3Data = Math.abs(v3.getFloat32(0)).toFixed(2);
+
+let vAvg = new DataView(new ArrayBuffer(4));
+vAvg.setUint32(0, "0x" + powerAvgHex)
+let powerAvgData = Math.abs(vAvg.getFloat32(0)).toFixed(2);
+
+console.log(dataRegister, power1Hex, power2Hex, power3Hex, powerAvgHex);
+console.log(power1Data, power2Data, power3Data, powerAvgData);
+
+// let dataRegister = sensorData.slice(0, 6)
+// let voltage1Hex = sensorData.slice(6, 14);
+// let voltage2Hex = sensorData.slice(14, 22);
+// let voltage3Hex = sensorData.slice(22, 30);
+// let voltageAvgHex = sensorData.slice(30, 38);
+
+// let v1 = new DataView(new ArrayBuffer(4));
+// v1.setUint32(0, "0x" + voltage1Hex)
+// let voltage1Data = Math.abs(v1.getFloat32(0)).toFixed(2);
+
+// let v2 = new DataView(new ArrayBuffer(4));
+// v2.setUint32(0, "0x" + voltage2Hex)
+// let voltage2Data = Math.abs(v2.getFloat32(0)).toFixed(2);
+
+// let v3 = new DataView(new ArrayBuffer(4));
+// v3.setUint32(0, "0x" + voltage3Hex)
+// let voltage3Data = Math.abs(v3.getFloat32(0)).toFixed(2);
+
+// let vAvg = new DataView(new ArrayBuffer(4));
+// vAvg.setUint32(0, "0x" + voltage3Hex)
+// let voltageAvgData = Math.abs(vAvg.getFloat32(0)).toFixed(2);
+
+// console.log(dataRegister, voltage1Hex, voltage2Hex, voltage3Hex, voltageAvgHex);
+// console.log(voltage1Data, voltage2Data, voltage3Data, voltageAvgData);
