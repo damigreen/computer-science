@@ -348,15 +348,15 @@ function stepUp2(n) {
     let step = "";
     // for (var j = 0; j < 2 * n; j++) {
     for (var j = 0; j < 2 * n; j++) {
-      if (j < n - 1 - i || (j > n) ) {
+      if (j < n - 1 - i || j > n) {
         step += "#";
-      // } else if (j < j + 1 && j < 2*n - n + 1 + j) {
-      } else if (j < j + 1 || j < 2*n - n + 1) {
+        // } else if (j < j + 1 && j < 2*n - n + 1 + j) {
+      } else if (j < j + 1 || j < 2 * n - n + 1) {
         step += "$";
-      } 
+      }
       // else if (j >= n && n + 1 + j < 2 * n - n - 1 + j) {
       //   step += "$";
-      // } 
+      // }
       // else if (j > n + i + 1 && j < 2 * n - 1) {
       //   step += "#";
       // }
@@ -366,44 +366,40 @@ function stepUp2(n) {
 }
 stepUp2(4);
 
-console.log(new Date(1657013991943))
+console.log(new Date(1657013991943));
 
-
-let arrayX = [1,2,3,4,5]
-let arrayY = arrayX.slice(-3)
-console.log("arrayY-->", arrayY)
-arrayX.push(7)
-console.log("arrayX-->", arrayX)
-arrayY = arrayX.slice(-3)
-console.log("arrayY-->", arrayY)
-
+let arrayX = [1, 2, 3, 4, 5];
+let arrayY = arrayX.slice(-3);
+console.log("arrayY-->", arrayY);
+arrayX.push(7);
+console.log("arrayX-->", arrayX);
+arrayY = arrayX.slice(-3);
+console.log("arrayY-->", arrayY);
 
 let v = new DataView(new ArrayBuffer(4));
-v.setUint32(0, 0x40D720000);
+v.setUint32(0, 0x40d720000);
 var value = v.getFloat32(0);
 console.log(value);
 
-
 // var data = "01030473583E5730FA"
 
-let hexString = "0103045C8040C51818"
+let hexString = "0103045C8040C51818";
 // let hexString = data.slice(-8, -4);
 hexString = hexString.padEnd(8, "0");
 
-console.log("hexString",hexString)
+console.log("hexString", hexString);
 
 v.setUint32(0, "0x" + "00200020");
 // v.setUint32(0, 0x00200000);
 
-value = v.getFloat32(0)
-
+value = v.getFloat32(0);
 
 console.log(hexString.substring(5));
 console.log(hexString.substring(6));
 console.log(hexString.substring(7));
 console.log("value", value);
 
-console.log(new Date(1649670528000))
+console.log(new Date(1649670528000));
 
 // let sensorData = "01030400000000FA33"
 
@@ -415,3 +411,31 @@ console.log(new Date(1649670528000))
 // let a = [1,2,4]
 // a.reverse()
 // console.log(a)
+
+let count = 0;
+while (count < 10) {
+  let res = 0;
+  let yup = 0;
+  // if (count == 2) {
+  //   yup = 5;
+  // } else if (count == 3) {
+  //   yup = 6;
+  // }
+  if (count == 2) {
+    yup = 5;
+  }
+  if (count == 3) {
+    yup = 6
+  }
+  res = count * yup * 5;
+  count++;
+  console.log(res);
+}
+let sensorData = "01030C43533FC943511F97435281A6B5B9"
+
+let dataRegister = sensorData.slice(0, 6)
+let voltage1Hex = sensorData.slice(6, 14);
+let voltage2Hex = sensorData.slice(14, 22);
+let voltage3Hex = sensorData.slice(22, 30);
+
+console.log(dataRegister, voltage1Hex, voltage2Hex, voltage3Hex);
