@@ -1440,9 +1440,63 @@ record(v) information(n)
 
 ## Personal
 
+### 12:04:2022
+
+010310 - current 01030C - voltage 010320-  power 010304 - flow rate
+{"devId":"493C211207027806","msgType":"rs485ValueRpt","data":"01030C43533FC943511F97435281A6B5B9","timestamp":"1649750260"}
+
+### 11:04:2022
+
+```txt
+58487
+69490
+
+landwey energy data
+landwey generator data
+landmark generator data
+
+54253
+58114
+
+010310 434963844333EE224349D753434262FDC98E
+010310 4349BC1E433434B84341BD0F433FE4A18017
+
+01030C 43554F4C4353286C4354492A83BB
+```
+
 ### 10:04:2022
 
-- 
+```javascript
+async setResidentUsers() {
+  await new Promise((resolve, reject) => {
+    resolve(this.getUsers());
+  }).then((value) => {
+    this.residenceUsers = this.users.filter((user) => {
+      return this.residents.some((resident) => {
+        return resident.user_id == user.id;
+      });
+    });
+  });
+},
+```
+
+```sql
+DELETE FROM your_table
+WHERE id >= a_value AND id <= another_value;
+
+delete from sensor_readings where id <= 60000;
+select * from sensor_types;
+select * from sensor_units;
+select * from sensors;
+select * from sensor_readings;
+```
+
+
+0103046ED9BD818610
+
+	
+
+ 
 
 ### 09:04:2022
 
