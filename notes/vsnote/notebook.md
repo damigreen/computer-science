@@ -1439,12 +1439,109 @@ record(v) information(n)
 - Social media e.g whatsapp status instagram etc
 
 ## Personal
-### 134:04:2022
+
+### 16:04:2022
+
+- sensor_readings
+  - value
+  - sensor_unit_id
+- power
+  - value
+  - measurement_id
+  - recorded_at
+  - sensor_id
+  - sensor_location_id
+  - energy_parameter_id
+  - created_by
+  - organizaton_id
+- voltage
+  - value
+  - measurement_id
+  - recorded_at
+  - sensor_id
+  - sensor_location_id
+  - energy_parameter_id
+  - created_by
+  - organizaton_id
+- current
+  - value
+  - measurement_id
+  - recorded_at
+  - sensor_id
+  - sensor_unit_id
+  - sensor_location_id
+  - energy_parameter_id
+  - created_by
+  - organizaton_id
+- water
+  - value
+  - measurement_id
+  - recorded_at
+  - sensor_id
+  - sensor_unit_id
+  - sensor_location_id
+  - energy_parameter_id
+  - created_by
+  - organizaton_id
+- fuel
+  - value
+  - measurement_id
+  - recorded_at
+  - sensor_id
+  - sensor_unit_id
+  - sensor_location_id
+  - energy_parameter_id
+  - created_by
+  - organizaton_id
+- energy
+  - value
+  - measurement_id
+  - recorded_at
+  - sensor_id
+  - sensor_unit_id
+  - sensor_location_id
+  - energy_parameter_id
+  - created_by
+  - organizaton_id
+- Generator
 
 ### 13:04:2022
 
 #### Database Setup for IoT
 
+- water
+  - value
+  - measurement_id
+  - recorded_at
+  - sensor_id
+  - sensor_unit_id
+  - sensor_location_id
+  - energy_parameter_id
+  - created_by
+  - organizaton_id
+- fuel
+  - value
+  - measurement_id
+  - recorded_at
+  - sensor_id
+  - sensor_unit_id
+  - sensor_location_id
+  - energy_parameter_id
+  - created_by
+  - organizaton_id
+- energy
+  - value
+  - measurement_id
+  - recorded_at
+  - sensor_id
+  - sensor_unit_id
+  - sensor_location_id
+  - energy_parameter_id
+  - created_by
+  - organizaton_id
+- Generator
+
+### 12:04:2022
 
 010310 - current
 01030C - voltage
