@@ -428,8 +428,8 @@ while (count < 10) {
 }
 
 // let sensorData = "01030C43533FC943511F97435281A6B5B9" // voltage 1,2,3,4
-let sensorData = "010320461A4E02460D867F46598AEE47005882448464F644892D8244E762D9457A850959EC" // power 5,6,7,8
-// let sensorData = "010310432A026D430D1313433F3B2543277037BBA6" // current // 9,10,11,12
+// let sensorData = "010320461A4E02460D867F46598AEE47005882448464F644892D8244E762D9457A850959EC" // power 5,6,7,8
+let sensorData = "010310432A026D430D1313433F3B2543277037BBA6" // current // 9,10,11,12
 
 let dataRegister = sensorData.slice(0, 6)
 let power1Hex = sensorData.slice(6, 14);
@@ -480,3 +480,31 @@ console.log(power1Data, power2Data, power3Data, powerAvgData);
 
 // console.log(dataRegister, voltage1Hex, voltage2Hex, voltage3Hex, voltageAvgHex);
 // console.log(voltage1Data, voltage2Data, voltage3Data, voltageAvgData);
+
+console.log(new Date(1649790720000))
+
+// 00000A14 - Positive active energy - kWh
+
+// let sensorData1 = "01037800000A140000089C0000088500001B35000027A9000025290000217D00006E4F002000200020002000200020002000200000011F000000E4000000F7000002FA00000535000004450000039200000D0C00200020002000200020002000200020000032D700002EEC00002ABE00008C8100200020002000204C37"
+// let hexString1 = sensorData1.slice(6, 14)
+// console.log(hexString1)
+
+// function hexToDec(s) {
+//   var i, j, digits = [0], carry;
+//   for (i = 0; i < s.length; i += 1) {
+//       carry = parseInt(s.charAt(i), 16);
+//       for (j = 0; j < digits.length; j += 1) {
+//           digits[j] = digits[j] * 16 + carry;
+//           carry = digits[j] / 10 | 0;
+//           digits[j] %= 10;
+//       }
+//       while (carry > 0) {
+//           digits.push(carry % 10);
+//           carry = carry / 10 | 0;
+//       }
+//   }
+//   return digits.reverse().join('');
+// }
+// let res = hexToDec(hexString1)
+// const energyValue = res * 0.1
+// console.log(res, energyValue)

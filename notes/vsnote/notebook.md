@@ -1439,15 +1439,18 @@ record(v) information(n)
 - Social media e.g whatsapp status instagram etc
 
 ## Personal
+### 134:04:2022
 
-### 12:04:2022
+### 13:04:2022
+
+#### Database Setup for IoT
+
 
 010310 - current
 01030C - voltage
 010320-  power
 010304 - flow rate
 010378 - Energy
-
 {"devId":"493C211207027806","msgType":"rs485ValueRpt","data":"01030C43533FC943511F97435281A6B5B9","timestamp":"1649750260"}
 
 ### 11:04:2022
