@@ -81,6 +81,89 @@
 
 ### Landwey iot dashboard ~ power consumption
 
+`16:04:22`
+
+```txt
+010310 - current
+01030C - voltage
+010320-  power
+010304 - flow rate
+010378 - Energy
+{"devId":"493C211207027806","msgType":"rs485ValueRpt","data":"01030C43533FC943511F97435281A6B5B9","timestamp":"1649750260"}
+```
+
+- sensor_readings
+  - value
+  - sensor_unit_id
+- power
+  - value
+  - measurement_id
+  - recorded_at
+  - sensor_id
+  - sensor_location_id
+  - energy_parameter_id
+  - created_by
+  - organizaton_id
+- voltage
+  - value
+  - measurement_id
+  - recorded_at
+  - sensor_id
+  - sensor_location_id
+  - energy_parameter_id
+  - created_by
+  - organizaton_id
+- current
+  - value
+  - measurement_id
+  - recorded_at
+  - sensor_id
+  - sensor_unit_id
+  - sensor_location_id
+  - energy_parameter_id
+  - created_by
+  - organizaton_id
+- water
+  - value
+  - measurement_id
+  - recorded_at
+  - sensor_id
+  - sensor_unit_id
+  - sensor_location_id
+  - energy_parameter_id
+  - created_by
+  - organizaton_id
+- fuel
+  - value
+  - measurement_id
+  - recorded_at
+  - sensor_id
+  - sensor_unit_id
+  - sensor_location_id
+  - energy_parameter_id
+  - created_by
+  - organizaton_id
+- energy
+  - value
+  - measurement_id
+  - recorded_at
+  - sensor_id
+  - sensor_unit_id
+  - sensor_location_id
+  - energy_parameter_id
+  - created_by
+  - organizaton_id
+- Generator
+  - power
+    - sensor_id
+    - sensor_unit_id
+  - voltage
+    - sensor_id
+    - sensor_unit_id
+  - current
+    - sensor_id
+    - sensor_unit_id
+
 - Water Flow - Phase One --> Energy005
 - Water Flow - Phase Two --> Water Landwayph2
 - Energy --> Energy
