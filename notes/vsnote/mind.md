@@ -1,4 +1,4 @@
-# Mind
+# Journal
 
 ## Mind Cloud
 
