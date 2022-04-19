@@ -1874,63 +1874,63 @@ Fuel Monitoring Lendway ---> {"devId":"493C211207027783","msgType":"rs485ValueRp
 
 010304E84A435B9E8E
 
-
+```sql
 alter table sensor_readings auto_increment = 1;
 select * from sensor_readings;
 select * from sensor_units;
 select * from sensors
+```
 
+```html
+<div class="card flex-column">
+  <div class="col-lg-12 order-lg-1">
+    <!-- <div class="card">
+      <div class="card-body"> -->
+    <h6 class="slim-card-title mg-b-20">Water Level</h6>
 
-<!-- right-col-4 -->
-        <div class="card flex-column">
-          <div class="col-lg-12 order-lg-1">
-            <!-- <div class="card">
-              <div class="card-body"> -->
-            <h6 class="slim-card-title mg-b-20">Water Level</h6>
+    <label class="mg-b-5">Mitsubishi A.C. Tank</label>
+    <div class="progress mg-b-15">
+      <div
+        class="progress-bar bg-warning progress-bar-xs wd-50p"
+        role="progressbar"
+        aria-valuenow="50"
+        aria-valuemin="0"
+        aria-valuemax="100"
+      ></div>
+    </div>
+    <!-- progress -->
 
-            <label class="mg-b-5">Mitsubishi A.C. Tank</label>
-            <div class="progress mg-b-15">
-              <div
-                class="progress-bar bg-warning progress-bar-xs wd-50p"
-                role="progressbar"
-                aria-valuenow="50"
-                aria-valuemin="0"
-                aria-valuemax="100"
-              ></div>
-            </div>
-            <!-- progress -->
-
-            <label class="mg-b-5">Panasonic A.C. Tank</label>
-            <div class="progress mg-b-15">
-              <div
-                class="progress-bar bg-primary progress-bar-xs wd-70p"
-                role="progressbar"
-                aria-valuenow="70"
-                aria-valuemin="0"
-                aria-valuemax="100"
-              ></div>
-            </div>
-            <!-- progress -->
-            <!-- </div> -->
-            <!-- card-body -->
-            <!-- </div> -->
-            <!-- card -->
-            <div class="card mg-b-5">
-              <div class="card-body pd-b-0">
-                <h6 class="slim-card-title">Current Level</h6>
-                <h1 class="tx-lato tx-primary">30000 m3</h1>
-                <p class="tx-12">
-                  <span class="tx-primary">25%</span> untill full
-                </p>
-              </div>
-              <!-- card-body -->
-              <div id="rs3" class="ht-50 ht-sm-70 mg-r--1 rickshaw_graph"></div>
-            </div>
-            <!-- card -->
-          </div>
-          <!-- col-3 -->
-        </div>
-		
+    <label class="mg-b-5">Panasonic A.C. Tank</label>
+    <div class="progress mg-b-15">
+      <div
+        class="progress-bar bg-primary progress-bar-xs wd-70p"
+        role="progressbar"
+        aria-valuenow="70"
+        aria-valuemin="0"
+        aria-valuemax="100"
+      ></div>
+    </div>
+    <!-- progress -->
+    <!-- </div> -->
+    <!-- card-body -->
+    <!-- </div> -->
+    <!-- card -->
+    <div class="card mg-b-5">
+      <div class="card-body pd-b-0">
+        <h6 class="slim-card-title">Current Level</h6>
+        <h1 class="tx-lato tx-primary">30000 m3</h1>
+        <p class="tx-12">
+          <span class="tx-primary">25%</span> untill full
+        </p>
+      </div>
+      <!-- card-body -->
+      <div id="rs3" class="ht-50 ht-sm-70 mg-r--1 rickshaw_graph"></div>
+    </div>
+    <!-- card -->
+  </div>
+  <!-- col-3 -->
+</div>
+```
 
 Ethereum and Solidity The Complete Developer's Guide
 carlos santana
