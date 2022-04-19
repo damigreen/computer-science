@@ -508,3 +508,8 @@ console.log(new Date(1649790720000))
 // let res = hexToDec(hexString1)
 // const energyValue = res * 0.1
 // console.log(res, energyValue)
+
+console.log(Date.parse(new Date())/1000)
+let obj = {a: 1, b: 2}
+let objs = {...obj, c: 12}
+console.log(objs)
