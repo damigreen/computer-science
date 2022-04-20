@@ -550,3 +550,15 @@ var de = new Date();
 var e = formatDate(de);
 
 console.log(e);
+
+console.log(new Date().toString()); // e.g. "Fri Nov 21 2016 08:00:00 GMT+0100 (W. Europe Standard Time)"
+
+console.log(new Date(1648854000000))
+console.log(new Date("2022-04-20T12:08:52.537Z").getTime())
+console.log(new Date("2022-04-20T13:08:52.537Z").getTime())
+
+function moneyFormat(value) {
+  value = value || 0;
+  return value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+}
+console.log(moneyFormat(400000000))
