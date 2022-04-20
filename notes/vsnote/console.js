@@ -513,3 +513,24 @@ console.log(Date.parse(new Date())/1000)
 let obj = {a: 1, b: 2}
 let objs = {...obj, c: 12}
 console.log(objs)
+
+const date = new Date("2010-08-10");
+
+let d=new Intl.DateTimeFormat('en-GB',{year:"numeric", month:"short",day:"2-digit"}).format(date).split(" ").join("-");
+
+console.log(d);
+
+function formatAMPM(date = new Date()) { // This is to display 12 hour format like you asked
+  var hours = date.getHours();
+  var minutes = date.getMinutes();
+  var ampm = hours >= 12 ? 'pm' : 'am';
+  hours = hours % 12;
+  hours = hours ? hours : 12; // the hour '0' should be '12'
+  minutes = minutes < 10 ? '0'+minutes : minutes;
+  var strTime = hours + ':' + minutes + ' ' + ampm;
+  return strTime;
+}
+
+var myDate = new Date();
+var displayDate = myDate.getMonth()+ '/' +myDate.getDate()+ '/' +myDate.getFullYear()+ ' ' +formatAMPM(myDate);
+console.log(displayDate);
