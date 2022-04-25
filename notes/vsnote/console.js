@@ -381,7 +381,7 @@ v.setUint32(0, 0x40d720000);
 var value = v.getFloat32(0);
 console.log(value);
 
-var data = "01030473583E5730FA"
+var data = "01030473583E5730FA";
 
 // let hexString = "0103045C8040C51818";
 let hexString = data.slice(-8, -4);
@@ -401,11 +401,11 @@ console.log("value", value);
 
 console.log(new Date(1649670528000));
 
-console.log((new Date()).getTime())
+console.log(new Date().getTime());
 
-let a = [1,2,4]
-a.reverse()
-console.log(a)
+let a = [1, 2, 4];
+a.reverse();
+console.log(a);
 
 let count = 0;
 while (count < 10) {
@@ -420,7 +420,7 @@ while (count < 10) {
     yup = 5;
   }
   if (count == 3) {
-    yup = 6
+    yup = 6;
   }
   res = count * yup * 5;
   count++;
@@ -429,28 +429,28 @@ while (count < 10) {
 
 // let sensorData = "01030C43533FC943511F97435281A6B5B9" // voltage 1,2,3,4
 // let sensorData = "010320461A4E02460D867F46598AEE47005882448464F644892D8244E762D9457A850959EC" // power 5,6,7,8
-let sensorData = "010310432A026D430D1313433F3B2543277037BBA6" // current // 9,10,11,12
+let sensorData = "010310432A026D430D1313433F3B2543277037BBA6"; // current // 9,10,11,12
 
-let dataRegister = sensorData.slice(0, 6)
+let dataRegister = sensorData.slice(0, 6);
 let power1Hex = sensorData.slice(6, 14);
 let power2Hex = sensorData.slice(14, 22);
 let power3Hex = sensorData.slice(22, 30);
 let powerAvgHex = sensorData.slice(30, 38);
 
 let v1 = new DataView(new ArrayBuffer(4));
-v1.setUint32(0, "0x" + power1Hex)
+v1.setUint32(0, "0x" + power1Hex);
 let power1Data = Math.abs(v1.getFloat32(0)).toFixed(2);
 
 let v2 = new DataView(new ArrayBuffer(4));
-v2.setUint32(0, "0x" + power2Hex)
+v2.setUint32(0, "0x" + power2Hex);
 let power2Data = Math.abs(v2.getFloat32(0)).toFixed(2);
 
 let v3 = new DataView(new ArrayBuffer(4));
-v3.setUint32(0, "0x" + power3Hex)
+v3.setUint32(0, "0x" + power3Hex);
 let power3Data = Math.abs(v3.getFloat32(0)).toFixed(2);
 
 let vAvg = new DataView(new ArrayBuffer(4));
-vAvg.setUint32(0, "0x" + powerAvgHex)
+vAvg.setUint32(0, "0x" + powerAvgHex);
 let powerAvgData = Math.abs(vAvg.getFloat32(0)).toFixed(2);
 
 console.log(dataRegister, power1Hex, power2Hex, power3Hex, powerAvgHex);
@@ -481,7 +481,7 @@ console.log(power1Data, power2Data, power3Data, powerAvgData);
 // console.log(dataRegister, voltage1Hex, voltage2Hex, voltage3Hex, voltageAvgHex);
 // console.log(voltage1Data, voltage2Data, voltage3Data, voltageAvgData);
 
-console.log(new Date(1649790720000))
+console.log(new Date(1649790720000));
 
 // 00000A14 - Positive active energy - kWh
 
@@ -509,41 +509,65 @@ console.log(new Date(1649790720000))
 // const energyValue = res * 0.1
 // console.log(res, energyValue)
 
-console.log(Date.parse(new Date())/1000)
-let obj = {a: 1, b: 2}
-let objs = {...obj, c: 12}
-console.log(objs)
+console.log(Date.parse(new Date()) / 1000);
+let obj = { a: 1, b: 2 };
+let objs = { ...obj, c: 12 };
+console.log(objs);
 
 const date = new Date("2010-08-10");
 
-let d=new Intl.DateTimeFormat('en-GB',{year:"numeric", month:"short",day:"2-digit"}).format(date).split(" ").join("-");
+let d = new Intl.DateTimeFormat("en-GB", {
+  year: "numeric",
+  month: "short",
+  day: "2-digit",
+})
+  .format(date)
+  .split(" ")
+  .join("-");
 
 console.log(d);
 
-function formatAMPM(date = new Date()) { // This is to display 12 hour format like you asked
+function formatAMPM(date = new Date()) {
+  // This is to display 12 hour format like you asked
   var hours = date.getHours();
   var minutes = date.getMinutes();
-  var ampm = hours >= 12 ? 'pm' : 'am';
+  var ampm = hours >= 12 ? "pm" : "am";
   hours = hours % 12;
   hours = hours ? hours : 12; // the hour '0' should be '12'
-  minutes = minutes < 10 ? '0'+minutes : minutes;
-  var strTime = hours + ':' + minutes + ' ' + ampm;
+  minutes = minutes < 10 ? "0" + minutes : minutes;
+  var strTime = hours + ":" + minutes + " " + ampm;
   return strTime;
 }
 
 var myDate = new Date();
-var displayDate = myDate.getMonth()+ '/' +myDate.getDate()+ '/' +myDate.getFullYear()+ ' ' +formatAMPM(myDate);
+var displayDate =
+  myDate.getMonth() +
+  "/" +
+  myDate.getDate() +
+  "/" +
+  myDate.getFullYear() +
+  " " +
+  formatAMPM(myDate);
 console.log(displayDate);
 
 function formatDate(date = new Date()) {
   var hours = date.getHours();
   var minutes = date.getMinutes();
-  var ampm = hours >= 12 ? 'pm' : 'am';
+  var ampm = hours >= 12 ? "pm" : "am";
   hours = hours % 12;
   hours = hours ? hours : 12; // the hour '0' should be '12'
-  minutes = minutes < 10 ? '0'+minutes : minutes;
-  var strTime = hours + ':' + minutes + ' ' + ampm;
-  return (date.getMonth()+1) + "/" + date.getDate() + "/" + date.getFullYear() + "  " + strTime;
+  minutes = minutes < 10 ? "0" + minutes : minutes;
+  var strTime = hours + ":" + minutes + " " + ampm;
+  return (
+    date.getMonth() +
+    1 +
+    "/" +
+    date.getDate() +
+    "/" +
+    date.getFullYear() +
+    "  " +
+    strTime
+  );
 }
 
 var de = new Date();
@@ -553,15 +577,15 @@ console.log(e);
 
 console.log(new Date().toString()); // e.g. "Fri Nov 21 2016 08:00:00 GMT+0100 (W. Europe Standard Time)"
 
-console.log(new Date(1648854000000))
-console.log(new Date("2022-04-20T12:08:52.537Z").getTime())
-console.log(new Date("2022-04-20T13:08:52.537Z").getTime())
+console.log(new Date(1648854000000));
+console.log(new Date("2022-04-20T12:08:52.537Z").getTime());
+console.log(new Date("2022-04-20T13:08:52.537Z").getTime());
 
 function moneyFormat(value) {
   value = value || 0;
   return value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 }
-console.log(moneyFormat(400000000))
+console.log(moneyFormat(400000000));
 
 function dateToday() {
   const today = new Date();
@@ -576,4 +600,66 @@ function dateToday() {
 }
 console.log(dateToday());
 
-console.log(new Date(1650529024000))
+console.log(new Date(1650529024000));
+
+const dates = [...Array(7)].map((_, i) => {
+  const d = new Date();
+  d.setDate(d.getDate() - i);
+  return d;
+});
+console.log(dates);
+
+const dateArray = [
+  { date: "Apr 15", average: 200 },
+  { date: "Apr 16", average: 300 },
+  { date: "Apr 16", average: 400 },
+  { date: "Apr 17", average: 500 },
+  { date: "Apr 18", average: 600 },
+];
+
+console.log(new Date(1649977200000));
+console.log(new Date(1650063599000));
+
+let akwer = [
+  1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 10, 21, 22,
+  23, 24, 25, 26, 27, 28, 29, 30,
+];
+let newArrrr = [];
+for (var i = 0; i < akwer.length; i++) {
+  if (i % 4 == 0) {
+    newArrrr.push(akwer[i]);
+  }
+}
+newArrrr.push(akwer[akwer.length - 1]);
+
+console.log(newArrrr);
+
+function getDaysInMonth(month, year) {
+  var date = new Date(year, month, 1);
+  var days = [];
+  while (date.getMonth() === month) {
+    days.push(new Date(date));
+    date.setDate(date.getDate() + 1);
+  }
+  return days;
+}
+console.log(getDaysInMonth(3, 2022));
+
+function getFirstDayPreviousMonth() {
+  const date = new Date();
+  return new Date(date.getFullYear(), date.getMonth() - 1, 1);
+}
+
+console.log(getFirstDayPreviousMonth());
+
+const current = new Date();
+current.setMonth(current.getMonth() - 1);
+const previousMonth = current.toLocaleString("default", { month: "long" });
+
+console.log(previousMonth);
+
+// let jsonString = "{"devId":"493C211207027806","msgType":"rs485ValueRpt","data":"01030C434E888E434D7573434DADDC73D3","timestamp":"1650632741"}"
+// console.log(jsonString)
+
+console.log(new Date(1650668400000));
+console.log(new Date(1650754799000));
