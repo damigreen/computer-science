@@ -110,12 +110,22 @@ sllB.insert(9);
     // return the node value
 function findMergeNode(headA, headB) {
   console.log(headA);
-  let currentA = headA;
-  let currentB = headB;
-    while (currentA != currentB) {
-        currentA = currentA.next;
+//   let currentA = headA;
+//   let currentB = headB;
+//     while (currentA != currentB) {
+//         currentA = currentA.next;
 
-    }
+//     }
 }
 
 findMergeNode(sllA.head, sllB.head);
+
+const person = {
+    name: "damigreen",
+    age: 29
+}
+const printName = ({age}) => {
+    console.log(age);
+}
+
+printName(person)
