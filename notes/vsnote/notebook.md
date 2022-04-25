@@ -79,6 +79,24 @@
 
 ## Work
 
+select * from sensors;
+select * from energy_readings;
+-- update energy_readings
+-- set unit_id=1
+-- where id>0;
+select * from voltage_readings;
+-- update voltage_readings
+-- set unit_id=1
+-- where id>0;
+select * from current_readings;
+-- update current_readings
+-- set unit_id=1
+-- where id>0;
+select * from power_readings;
+-- update power_readings
+-- set unit_id=1
+-- where id>0;
+
 ### Landwey iot dashboard ~ power consumption
 
 `16:04:22`
