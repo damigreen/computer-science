@@ -697,9 +697,18 @@ I took the dates of all the pending ad campaign ignorant and those from the runn
 
 ## Courses
 
+### NodeJs the complete guide (mvc, rest apis, graphql, deno)
+
+- nodejs
+  - a javascript runtime
+  - buit on javacditpt
+  - allows running javascript on the server
+  - use V8 engine
+    - takes js anc compiles to machine code
+    - v8 is written in c++
+    - add extra feauteres like file
+
 ### Linked list for technical interviews
-
-
 
 ### Spring Boot Full Course ~ Learn Spring Boot In 4 Hours
 
