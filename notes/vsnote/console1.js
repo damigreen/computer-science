@@ -129,3 +129,8 @@ const printName = ({age}) => {
 }
 
 printName(person)
+
+const habits = ["good", "bad"]
+const [good, bad] = habits
+console.log(good);
+console.log(bad);
