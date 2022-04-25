@@ -708,14 +708,14 @@ I took the dates of all the pending ad campaign ignorant and those from the runn
     - v8 is written in c++
     - add extra feauteres like file
   - implement REPL (Read, evalueaet, print, loop)
-  - 
+  - How the web works
+    - 
 
 - questions
   - what is js
     - weakly typed langueage
     - oop
     - versatile
-    - 
 
 ### Linked list for technical interviews
 
