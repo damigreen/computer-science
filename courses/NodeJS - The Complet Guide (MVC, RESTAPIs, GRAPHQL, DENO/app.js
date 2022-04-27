@@ -24,6 +24,7 @@ const server = http.createServer(function (req, res) {
       console.log("&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&");
       body.push(chunk);
     });
+    
     req.on("end", () => {
       const parsedBody = Buffer.concat(body).toString();
       console.log("****************************");
