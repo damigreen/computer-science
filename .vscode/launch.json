@@ -5,6 +5,19 @@
     "version": "0.2.0",
     "configurations": [
         {
+            "name": "Launch Program NodeJs Complete Guide",
+            "program": "${workspaceFolder}\\courses\\NodeJS - The Complet Guide\\server.js",
+            "request": "launch",
+            "restart": true,
+            "runtimeExecutable": "nodemon",
+            "skipFiles": [
+                "<node_internals>/**"
+            ],
+            "type": "node",
+            "console": "integratedTerminal",
+        },
+
+        {
             "type": "java",
             "name": "Launch SimpleDotCom",
             "request": "launch",
