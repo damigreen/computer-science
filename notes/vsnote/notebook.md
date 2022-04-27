@@ -709,7 +709,8 @@ I took the dates of all the pending ad campaign ignorant and those from the runn
     - add extra feauteres like file
   - implement REPL (Read, evalueaet, print, loop)
   - How the web works
-    - 
+    - client-request-server-response-client
+  - runs non blocking js code using an event driven code (event loop) for runnig node logic
 
 - questions
   - what is js
