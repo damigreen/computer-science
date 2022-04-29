@@ -84,7 +84,7 @@ sllB.insert(10);
 sllA.insert(1);
 sllB.insert(5);
 
-sllA.insert(8)
+sllA.insert(8);
 
 sllA.insert(7);
 sllB.insert(7);
@@ -105,32 +105,37 @@ sllB.insert(9);
       10-5-7-4-9    
 */
 // iterate through both list
-    // check if the data is the same
-    // if it is the same check the next value it they are the same
-    // return the node value
+// check if the data is the same
+// if it is the same check the next value it they are the same
+// return the node value
 function findMergeNode(headA, headB) {
   console.log(headA);
-//   let currentA = headA;
-//   let currentB = headB;
-//     while (currentA != currentB) {
-//         currentA = currentA.next;
+  //   let currentA = headA;
+  //   let currentB = headB;
+  //     while (currentA != currentB) {
+  //         currentA = currentA.next;
 
-//     }
+  //     }
 }
 
 findMergeNode(sllA.head, sllB.head);
 
 const person = {
-    name: "damigreen",
-    age: 29
-}
-const printName = ({age}) => {
-    console.log(age);
-}
+  name: "damigreen",
+  age: 29,
+};
+const printName = ({ age }) => {
+  console.log(age);
+};
 
-printName(person)
+printName(person);
 
-const habits = ["good", "bad"]
-const [good, bad] = habits
+const habits = ["good", "bad"];
+const [good, bad] = habits;
 console.log(good);
 console.log(bad);
+
+let series = [{ a: 12, b: 15 }, { a: 12, b: 12 }, { b: 11 }];
+let seriesResult = series.filter((s) => s.a == 12).pop();
+// let seriesResult = series.find((s) => s.a == 12)
+console.log(seriesResult);
