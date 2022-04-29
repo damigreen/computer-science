@@ -697,6 +697,26 @@ I took the dates of all the pending ad campaign ignorant and those from the runn
 
 ## Courses
 
+### Learn Docker in 7 Easy steps
+
+- Docker
+  - docker is a way to package software so it can run on any hardware
+  - docerfile
+    - a blueprint for building di(o)cker images
+    - contains instructions
+    - required to build a nodejs image
+    - images
+      - a template for running a docker containter
+    - containers
+      - a running process
+  
+- getting started with docker
+  - first you buid a node js application
+  - after that we also want to create a node js image to run as a containter
+  - to do that you create a new dockerfile and they contains instructions required to build a nodejs image
+  - we want to run the newly built image as a container
+  - set up local development environment to connect a database to the container
+
 ### NodeJs the complete guide (mvc, rest apis, graphql, deno)
 
 - nodejs
