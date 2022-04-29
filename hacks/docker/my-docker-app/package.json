@@ -1,0 +1,17 @@
+{
+  "name": "my-docker-app",
+  "version": "1.0.0",
+  "description": "Docker application",
+  "main": "index.js",
+  "author": "Damilola Faseun",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "dotenv": "^16.0.0",
+    "express": "^4.18.0",
+    "nodemon": "^2.0.16"
+  }
+}
