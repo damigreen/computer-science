@@ -663,4 +663,162 @@ console.log(previousMonth);
 
 console.log(new Date(1650668400000));
 console.log(new Date(1650754799000));
+console.log(new Date(1651083008000));
 
+const datas = [
+  {
+    id: 462,
+    value: 27,
+    measurement_id: 11,
+    recorded_at: 1651083776,
+    sensor_id: 2,
+    energy_parameter_id: 17,
+    unit_id: 1,
+    created_by: null,
+    organization_id: 1,
+    created_at: "2022-04-27 09:22:18",
+    updated_at: "2022-04-27 09:22:18",
+    deleted_at: null,
+  },
+  {
+    id: 461,
+    value: 27,
+    measurement_id: 11,
+    recorded_at: 1651083776,
+    sensor_id: 2,
+    energy_parameter_id: 17,
+    unit_id: 1,
+    created_by: null,
+    organization_id: 1,
+    created_at: "2022-04-27 19:22:18",
+    updated_at: "2022-04-27 19:22:18",
+    deleted_at: null,
+  },
+  {
+    id: 379,
+    value: 0,
+    measurement_id: 11,
+    recorded_at: 1651083136,
+    sensor_id: 2,
+    energy_parameter_id: 20,
+    unit_id: 1,
+    created_by: null,
+    organization_id: 1,
+    created_at: "2022-04-27 19:11:17",
+    updated_at: "2022-04-27 19:11:17",
+    deleted_at: null,
+  },
+  {
+    id: 370,
+    value: 102,
+    measurement_id: 11,
+    recorded_at: 1651083008,
+    sensor_id: 2,
+    energy_parameter_id: 19,
+    unit_id: 1,
+    created_by: null,
+    organization_id: 1,
+    created_at: "2022-04-27 19:10:18",
+    updated_at: "2022-04-27 19:10:18",
+    deleted_at: null,
+  },
+  {
+    id: 369,
+    value: 102,
+    measurement_id: 11,
+    recorded_at: 1651083008,
+    sensor_id: 2,
+    energy_parameter_id: 19,
+    unit_id: 1,
+    created_by: null,
+    organization_id: 1,
+    created_at: "2022-04-27 19:10:18",
+    updated_at: "2022-04-27 19:10:18",
+    deleted_at: null,
+  },
+  {
+    id: 371,
+    value: 0,
+    measurement_id: 11,
+    recorded_at: 1651083008,
+    sensor_id: 2,
+    energy_parameter_id: 20,
+    unit_id: 1,
+    created_by: null,
+    organization_id: 1,
+    created_at: "2022-04-28 11:10:18",
+    updated_at: "2022-04-28 11:10:18",
+    deleted_at: null,
+  },
+  {
+    id: 372,
+    value: 0,
+    measurement_id: 11,
+    recorded_at: 1651083008,
+    sensor_id: 2,
+    energy_parameter_id: 20,
+    unit_id: 1,
+    created_by: null,
+    organization_id: 1,
+    created_at: "2022-04-28 15:10:18",
+    updated_at: "2022-04-28 15:10:18",
+    deleted_at: null,
+  },
+];
+
+/* 
+  [
+    {
+      date:
+      firsttime:
+      lasttime
+    }
+  ]
+*/
+console.log(new Date("2022-04-28 15:10:18"));
+
+function getHours() {
+  let dateArr = [];
+  let dateObj = {};
+  for (var i = 0; i < datas.length; i++) {
+    const reading = datas[i];
+    let created = reading.created_at;
+    let dateCreated = new Date(created);
+    let date = dateCreated.getDate();
+
+    if (date != dateObj.date) {
+      console.log(date, dateObj.date);
+      if (i != 0) dateArr.push(dateObj);
+      dateObj = {
+        date,
+        onTime: reading.created_at,
+        offTime: "",
+      };
+    }
+    dateObj.offTime = reading.created_at;
+  }
+  dateArr.push(dateObj);
+  console.log(dateArr);
+
+  let runtimeSeries = [];
+  let runtimeTimestamp = [];
+  let dateArrWithRunHour = dateArr.map((obj) => {
+    //create date format
+    var timeStart = new Date(obj.onTime).getHours();
+    var timeEnd = new Date(obj.offTime).getHours();
+
+    var hourDiff = timeEnd - timeStart;
+
+    runtimeSeries.push(hourDiff);
+    runtimeTimestamp.push(obj.onTime);
+
+
+    return {
+      date: obj.onTime,
+      hourDiff
+    };
+  });
+}
+console.log("------------");
+getHours();
+getHours();
