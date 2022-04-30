@@ -706,7 +706,7 @@ I took the dates of all the pending ad campaign ignorant and those from the runn
     - contains instructions
     - required to build a nodejs image
     - images
-      - a template for running a docker containter
+      - a template for running a docker conggtainter
     - containers
       - a running process
   
