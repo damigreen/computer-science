@@ -97,7 +97,15 @@ select * from power_readings;
 -- set unit_id=1
 -- where id>0;
 
-### Landwey iot dashboard ~ power consumption
+### Landwey IoT Dashboard
+
+#### Settings button setup
+
+- delete duplicates for a particular day
+  - retain max vaoue of duplicate
+- 
+
+#### Landwey iot dashboard ~ power consumption
 
 `16:04:22`
 
