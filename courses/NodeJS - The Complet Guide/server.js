@@ -4,6 +4,7 @@ const app = express();
 
 // app.use((req, res, next) => {
 //   console.log("middleware");
+
 //   next(); // Allow request to continue to the next middlewate in line
 // });
 
