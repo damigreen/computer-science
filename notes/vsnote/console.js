@@ -821,4 +821,3 @@ function getHours() {
 }
 console.log("------------");
 getHours();
-getHours();
