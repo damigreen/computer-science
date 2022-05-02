@@ -176,648 +176,83 @@ console.log("===============================");
 var getLFU = myLFU.get(9);
 console.log(getLFU);
 
-var name = "damilola faseun";
-var uname = name.slice(0, name.indexOf(" "));
-console.log(name);
-console.log(uname);
-console.log(name.indexOf(" "));
+function DLLNode(key, data) {
+  this.key = key;
+  this.data = data;
+  this.next = null;
+  this.prev = null;
+}
 
-let zombie = {
-  eatbrains() {
-    return "yum!!";
-  },
+function LRUCache(capacity) {
+  this.keys = {};
+  this.capacity = capacity;
+  this.head = new DLLNode("", null);
+  this.tail = new DLLNode("", null);
+  this.head.next = this.tail;
+  this.tail.prev = this.head;
+}
+
+LRUCache.prototype.removeNode = function (node) {
+  var prev = node.prev;
+  var next = node.next;
+  prev.next = next;
+  next.prev = prev;
 };
 
-console.log("=============================== Chad");
-// var chad = Object.create(zombie);
-var chad = Object.create(zombie, { age: { value: 42 } });
-var zeng = Object.create(zombie, { name: { value: "green" } });
-console.log(chad.age);
-console.log(zeng.name);
-console.log(chad.eatbrains());
+LRUCache.prototype.addNode = function (node) {
+  var realTail = this.tail.prev;
+  realTail.next = node;
 
-console.log(chad.__proto__.eatbrains());
-console.log(Object.getPrototypeOf(zeng).eatbrains);
-
-const ellipse = (text, length) => {
-  const ellipseText = text.length > length ? "..." : "";
-  return text.substring(0, length + 1) + ellipseText;
+  this.tail.prev = node;
+  node.prev = realTail;
+  node.next = this.tail;
 };
-console.log(ellipse("where is my money now", 17));
 
-/**
- * Step backwards
- *        *
- *       **
- *      ***
- *     ****
- *
- *  i: 0
- *  #: 3 -> 4 - (1 + j) -> n - (1 + j)
- *  *: 1 -> 0 + 1 -> 1
- * ------------------------------
- *  #: 3 -> 4 - 1 -> n - 1
- *  *: 1 -> 0 + 1 -> j + 1
- *
- *
- *  i: 1
- *  #: 2 -> 4 - 2 -> n - 2
- *  *: 2 -> 0 + 2 -> j + 2
- *
- *  i: 3
- *  #: 0 -> 4 - 2 -> n - 2
- *  *: 2 -> 0 + 2 -> j + 2
- *
- */
-console.log("------------------------------------- step backwards");
-function stepBackwards(n) {
-  for (var i = 0; i < n; i++) {
-    let step = "";
-    for (var j = 0; j < n; j++) {
-      step += "*";
-      console.log(step);
-    }
-    break;
+LRUCache.prototype.get = function (key) {
+  var node = this.keys[key];
+  if (node == undefined) {
+    return null;
+  } else {
+    this.removeNode(node);
+    this.addNode(node);
+    return node.data;
   }
-}
+};
 
-stepBackwards(4);
-
-/**
- * Step forward
- *        *
- *       **
- *      ***
- *     ****
- *
- *  i: 0
- *  #: 3 -> 4 - (1 + j) -> n - (1 + j)
- *  *: 1 -> 0 + 1 -> 1
- * ------------------------------
- *  #: 3 -> 4 - 1 -> n - 1
- *  *: 1 -> 0 + 1 -> j + 1
- *
- *
- *  i: 1
- *  #: 2 -> 4 - 2 -> n - 2
- *  *: 2 -> 0 + 2 -> j + 2
- *
- *  i: 3
- *  #: 0 -> 4 - 2 -> n - 2
- *  *: 2 -> 0 + 2 -> j + 2
- *
- */
-console.log("------------------------------------- step forward");
-function stepForward(n) {
-  for (var i = 0; i < n; i++) {
-    let step = "";
-    for (var j = 0; j < n; j++) {
-      if (j < n - 1 - i) {
-        step += " ";
-      } else step += "*";
-    }
-    console.log(step);
-    // break;
+LRUCache.prototype.set = function (key, value) {
+  var node = this.keys[key];
+  if (node) {
+    this.removeNode(node);
   }
-}
-stepForward(4);
+  var newNode = new DLLNode(key, value);
 
-console.log("------------------------------------- step forward 2");
-function stepForward2(n) {
-  for (var i = 0; i < n; i++) {
-    let step = "";
-    for (var j = 0; j < n - 1 - i; j++) {
-      step += " ";
-    }
-    for (var k = 0; k < i + 1; k++) {
-      step += "*";
-    }
-    console.log(step);
+  this.addNode(newNode);
+  this.keys[key] = newNode;
+
+  // evict a anode
+  if (Object.keys(this.keys).length > this.capacity) {
+    var realHead = this.head.next;
+    this.removeNode(realHead);
+    delete this.keys[realHead.key];
   }
-}
-stepForward2(4);
-
-/**
- * Step up
- *        * *
- *       ** **
- *      *** ***
- *     **** ****
- *  [###**###]
- *  [##****##]
- *  [#******#]
- *  [********]
- *  i: 0
- *  *:
- */
-console.log("------------------------------------- step up");
-function stepUp(n) {
-  for (var i = 0; i < n; i++) {
-    let step = "";
-    let stepReverse = " ";
-    for (var j = 0; j < n - 1 - i; j++) {
-      step += " ";
-    }
-    for (var k = 0; k < i + 1; k++) {
-      step += "*";
-    }
-    for (var a = step.length - 1; a > -1; a--) {
-      stepReverse += step[a];
-    }
-
-    console.log(step + stepReverse);
-  }
-}
-stepUp(7);
-
-/**
- *  [###* *###]
- *  [##** **##]
- *  [#*** ***#]
- *  [**** ****]
- *  [###**###]
- *  [##****##]
- *  [#******#]
- *  [********]
- *  i: 0
- *  *:
- */
-console.log("------------------------------------- step up U2");
-function stepUp2(n) {
-  for (var i = 0; i < n; i++) {
-    let step = "";
-    // for (var j = 0; j < 2 * n; j++) {
-    for (var j = 0; j < 2 * n; j++) {
-      if (j < n - 1 - i || j > n) {
-        step += "#";
-        // } else if (j < j + 1 && j < 2*n - n + 1 + j) {
-      } else if (j < j + 1 || j < 2 * n - n + 1) {
-        step += "$";
-      }
-      // else if (j >= n && n + 1 + j < 2 * n - n - 1 + j) {
-      //   step += "$";
-      // }
-      // else if (j > n + i + 1 && j < 2 * n - 1) {
-      //   step += "#";
-      // }
-    }
-    console.log(step);
-  }
-}
-stepUp2(4);
-
-console.log(new Date(1657013991943));
-
-let arrayX = [1, 2, 3, 4, 5];
-let arrayY = arrayX.slice(-3);
-console.log("arrayY-->", arrayY);
-arrayX.push(7);
-console.log("arrayX-->", arrayX);
-arrayY = arrayX.slice(-3);
-console.log("arrayY-->", arrayY);
-
-let v = new DataView(new ArrayBuffer(4));
-v.setUint32(0, 0x40d720000);
-var value = v.getFloat32(0);
-console.log(value);
-
-var data = "01030473583E5730FA";
-
-// let hexString = "0103045C8040C51818";
-let hexString = data.slice(-8, -4);
-hexString = hexString.padEnd(8, "0");
-
-console.log("hexString", hexString);
-
-v.setUint32(0, "0x" + hexString);
-// v.setUint32(0, 0x00200000);
-
-value = v.getFloat32(0);
-
-console.log(hexString.substring(5));
-console.log(hexString.substring(6));
-console.log(hexString.substring(7));
-console.log("value", value);
-
-console.log(new Date(1649670528000));
-
-console.log(new Date().getTime());
-
-let a = [1, 2, 4];
-a.reverse();
-console.log(a);
-
-let count = 0;
-while (count < 10) {
-  let res = 0;
-  let yup = 0;
-  // if (count == 2) {
-  //   yup = 5;
-  // } else if (count == 3) {
-  //   yup = 6;
-  // }
-  if (count == 2) {
-    yup = 5;
-  }
-  if (count == 3) {
-    yup = 6;
-  }
-  res = count * yup * 5;
-  count++;
-  console.log(res);
-}
-
-// let sensorData = "01030C43533FC943511F97435281A6B5B9" // voltage 1,2,3,4
-// let sensorData = "010320461A4E02460D867F46598AEE47005882448464F644892D8244E762D9457A850959EC" // power 5,6,7,8
-let sensorData = "010310432A026D430D1313433F3B2543277037BBA6"; // current // 9,10,11,12
-
-let dataRegister = sensorData.slice(0, 6);
-let power1Hex = sensorData.slice(6, 14);
-let power2Hex = sensorData.slice(14, 22);
-let power3Hex = sensorData.slice(22, 30);
-let powerAvgHex = sensorData.slice(30, 38);
-
-let v1 = new DataView(new ArrayBuffer(4));
-v1.setUint32(0, "0x" + power1Hex);
-let power1Data = Math.abs(v1.getFloat32(0)).toFixed(2);
-
-let v2 = new DataView(new ArrayBuffer(4));
-v2.setUint32(0, "0x" + power2Hex);
-let power2Data = Math.abs(v2.getFloat32(0)).toFixed(2);
-
-let v3 = new DataView(new ArrayBuffer(4));
-v3.setUint32(0, "0x" + power3Hex);
-let power3Data = Math.abs(v3.getFloat32(0)).toFixed(2);
-
-let vAvg = new DataView(new ArrayBuffer(4));
-vAvg.setUint32(0, "0x" + powerAvgHex);
-let powerAvgData = Math.abs(vAvg.getFloat32(0)).toFixed(2);
-
-console.log(dataRegister, power1Hex, power2Hex, power3Hex, powerAvgHex);
-console.log(power1Data, power2Data, power3Data, powerAvgData);
-
-// let dataRegister = sensorData.slice(0, 6)
-// let voltage1Hex = sensorData.slice(6, 14);
-// let voltage2Hex = sensorData.slice(14, 22);
-// let voltage3Hex = sensorData.slice(22, 30);
-// let voltageAvgHex = sensorData.slice(30, 38);
-
-// let v1 = new DataView(new ArrayBuffer(4));
-// v1.setUint32(0, "0x" + voltage1Hex)
-// let voltage1Data = Math.abs(v1.getFloat32(0)).toFixed(2);
-
-// let v2 = new DataView(new ArrayBuffer(4));
-// v2.setUint32(0, "0x" + voltage2Hex)
-// let voltage2Data = Math.abs(v2.getFloat32(0)).toFixed(2);
-
-// let v3 = new DataView(new ArrayBuffer(4));
-// v3.setUint32(0, "0x" + voltage3Hex)
-// let voltage3Data = Math.abs(v3.getFloat32(0)).toFixed(2);
-
-// let vAvg = new DataView(new ArrayBuffer(4));
-// vAvg.setUint32(0, "0x" + voltage3Hex)
-// let voltageAvgData = Math.abs(vAvg.getFloat32(0)).toFixed(2);
-
-// console.log(dataRegister, voltage1Hex, voltage2Hex, voltage3Hex, voltageAvgHex);
-// console.log(voltage1Data, voltage2Data, voltage3Data, voltageAvgData);
-
-console.log(new Date(1649790720000));
-
-// 00000A14 - Positive active energy - kWh
-
-// let sensorData1 = "01037800000A140000089C0000088500001B35000027A9000025290000217D00006E4F002000200020002000200020002000200000011F000000E4000000F7000002FA00000535000004450000039200000D0C00200020002000200020002000200020000032D700002EEC00002ABE00008C8100200020002000204C37"
-// let hexString1 = sensorData1.slice(6, 14)
-// console.log(hexString1)
-
-// function hexToDec(s) {
-//   var i, j, digits = [0], carry;
-//   for (i = 0; i < s.length; i += 1) {
-//       carry = parseInt(s.charAt(i), 16);
-//       for (j = 0; j < digits.length; j += 1) {
-//           digits[j] = digits[j] * 16 + carry;
-//           carry = digits[j] / 10 | 0;
-//           digits[j] %= 10;
-//       }
-//       while (carry > 0) {
-//           digits.push(carry % 10);
-//           carry = carry / 10 | 0;
-//       }
-//   }
-//   return digits.reverse().join('');
-// }
-// let res = hexToDec(hexString1)
-// const energyValue = res * 0.1
-// console.log(res, energyValue)
-
-console.log(Date.parse(new Date()) / 1000);
-let obj = { a: 1, b: 2 };
-let objs = { ...obj, c: 12 };
-console.log(objs);
-
-const date = new Date("2010-08-10");
-
-let d = new Intl.DateTimeFormat("en-GB", {
-  year: "numeric",
-  month: "short",
-  day: "2-digit",
-})
-  .format(date)
-  .split(" ")
-  .join("-");
-
-console.log(d);
-
-function formatAMPM(date = new Date()) {
-  // This is to display 12 hour format like you asked
-  var hours = date.getHours();
-  var minutes = date.getMinutes();
-  var ampm = hours >= 12 ? "pm" : "am";
-  hours = hours % 12;
-  hours = hours ? hours : 12; // the hour '0' should be '12'
-  minutes = minutes < 10 ? "0" + minutes : minutes;
-  var strTime = hours + ":" + minutes + " " + ampm;
-  return strTime;
-}
-
-var myDate = new Date();
-var displayDate =
-  myDate.getMonth() +
-  "/" +
-  myDate.getDate() +
-  "/" +
-  myDate.getFullYear() +
-  " " +
-  formatAMPM(myDate);
-console.log(displayDate);
-
-function formatDate(date = new Date()) {
-  var hours = date.getHours();
-  var minutes = date.getMinutes();
-  var ampm = hours >= 12 ? "pm" : "am";
-  hours = hours % 12;
-  hours = hours ? hours : 12; // the hour '0' should be '12'
-  minutes = minutes < 10 ? "0" + minutes : minutes;
-  var strTime = hours + ":" + minutes + " " + ampm;
-  return (
-    date.getMonth() +
-    1 +
-    "/" +
-    date.getDate() +
-    "/" +
-    date.getFullYear() +
-    "  " +
-    strTime
-  );
-}
-
-var de = new Date();
-var e = formatDate(de);
-
-console.log(e);
-
-console.log(new Date().toString()); // e.g. "Fri Nov 21 2016 08:00:00 GMT+0100 (W. Europe Standard Time)"
-
-console.log(new Date(1648854000000));
-console.log(new Date("2022-04-20T12:08:52.537Z").getTime());
-console.log(new Date("2022-04-20T13:08:52.537Z").getTime());
-
-function moneyFormat(value) {
-  value = value || 0;
-  return value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-}
-console.log(moneyFormat(400000000));
-
-function dateToday() {
-  const today = new Date();
-  var dd = today.getDate();
-  var mm = today.getMonth() + 1; // January is 01
-  const yyyy = today.getFullYear();
-
-  if (dd < 10) dd = "0" + dd;
-  if (mm < 10) mm = "0" + mm;
-
-  return yyyy + "-" + mm + "-" + dd;
-}
-console.log(dateToday());
-
-console.log(new Date(1650529024000));
-
-const dates = [...Array(7)].map((_, i) => {
-  const d = new Date();
-  d.setDate(d.getDate() - i);
-  return d;
-});
-console.log(dates);
-
-const dateArray = [
-  { date: "Apr 15", average: 200 },
-  { date: "Apr 16", average: 300 },
-  { date: "Apr 16", average: 400 },
-  { date: "Apr 17", average: 500 },
-  { date: "Apr 18", average: 600 },
-];
-
-console.log(new Date(1649977200000));
-console.log(new Date(1650063599000));
-
-let akwer = [
-  1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 10, 21, 22,
-  23, 24, 25, 26, 27, 28, 29, 30,
-];
-let newArrrr = [];
-for (var i = 0; i < akwer.length; i++) {
-  if (i % 4 == 0) {
-    newArrrr.push(akwer[i]);
-  }
-}
-newArrrr.push(akwer[akwer.length - 1]);
-
-console.log(newArrrr);
-
-function getDaysInMonth(month, year) {
-  var date = new Date(year, month, 1);
-  var days = [];
-  while (date.getMonth() === month) {
-    days.push(new Date(date));
-    date.setDate(date.getDate() + 1);
-  }
-  return days;
-}
-console.log(getDaysInMonth(3, 2022));
-
-function getFirstDayPreviousMonth() {
-  const date = new Date();
-  return new Date(date.getFullYear(), date.getMonth() - 1, 1);
-}
-
-console.log(getFirstDayPreviousMonth());
-
-const current = new Date();
-current.setMonth(current.getMonth() - 1);
-const previousMonth = current.toLocaleString("default", { month: "long" });
-
-console.log(previousMonth);
-
-// let jsonString = "{"devId":"493C211207027806","msgType":"rs485ValueRpt","data":"01030C434E888E434D7573434DADDC73D3","timestamp":"1650632741"}"
-// console.log(jsonString)
-
-console.log(new Date(1650668400000));
-console.log(new Date(1650754799000));
-console.log(new Date(1651083008000));
-
-const datas = [
-  {
-    id: 462,
-    value: 27,
-    measurement_id: 11,
-    recorded_at: 1651083776,
-    sensor_id: 2,
-    energy_parameter_id: 17,
-    unit_id: 1,
-    created_by: null,
-    organization_id: 1,
-    created_at: "2022-04-27 09:22:18",
-    updated_at: "2022-04-27 09:22:18",
-    deleted_at: null,
-  },
-  {
-    id: 461,
-    value: 27,
-    measurement_id: 11,
-    recorded_at: 1651083776,
-    sensor_id: 2,
-    energy_parameter_id: 17,
-    unit_id: 1,
-    created_by: null,
-    organization_id: 1,
-    created_at: "2022-04-27 19:22:18",
-    updated_at: "2022-04-27 19:22:18",
-    deleted_at: null,
-  },
-  {
-    id: 379,
-    value: 0,
-    measurement_id: 11,
-    recorded_at: 1651083136,
-    sensor_id: 2,
-    energy_parameter_id: 20,
-    unit_id: 1,
-    created_by: null,
-    organization_id: 1,
-    created_at: "2022-04-27 19:11:17",
-    updated_at: "2022-04-27 19:11:17",
-    deleted_at: null,
-  },
-  {
-    id: 370,
-    value: 102,
-    measurement_id: 11,
-    recorded_at: 1651083008,
-    sensor_id: 2,
-    energy_parameter_id: 19,
-    unit_id: 1,
-    created_by: null,
-    organization_id: 1,
-    created_at: "2022-04-27 19:10:18",
-    updated_at: "2022-04-27 19:10:18",
-    deleted_at: null,
-  },
-  {
-    id: 369,
-    value: 102,
-    measurement_id: 11,
-    recorded_at: 1651083008,
-    sensor_id: 2,
-    energy_parameter_id: 19,
-    unit_id: 1,
-    created_by: null,
-    organization_id: 1,
-    created_at: "2022-04-27 19:10:18",
-    updated_at: "2022-04-27 19:10:18",
-    deleted_at: null,
-  },
-  {
-    id: 371,
-    value: 0,
-    measurement_id: 11,
-    recorded_at: 1651083008,
-    sensor_id: 2,
-    energy_parameter_id: 20,
-    unit_id: 1,
-    created_by: null,
-    organization_id: 1,
-    created_at: "2022-04-28 11:10:18",
-    updated_at: "2022-04-28 11:10:18",
-    deleted_at: null,
-  },
-  {
-    id: 372,
-    value: 0,
-    measurement_id: 11,
-    recorded_at: 1651083008,
-    sensor_id: 2,
-    energy_parameter_id: 20,
-    unit_id: 1,
-    created_by: null,
-    organization_id: 1,
-    created_at: "2022-04-28 15:10:18",
-    updated_at: "2022-04-28 15:10:18",
-    deleted_at: null,
-  },
-];
-
-/* 
-  [
-    {
-      date:
-      firsttime:
-      lasttime
-    }
-  ]
-*/
-console.log(new Date("2022-04-28 15:10:18"));
-
-function getHours() {
-  let dateArr = [];
-  let dateObj = {};
-  for (var i = 0; i < datas.length; i++) {
-    const reading = datas[i];
-    let created = reading.created_at;
-    let dateCreated = new Date(created);
-    let date = dateCreated.getDate();
-
-    if (date != dateObj.date) {
-      console.log(date, dateObj.date);
-      if (i != 0) dateArr.push(dateObj);
-      dateObj = {
-        date,
-        onTime: reading.created_at,
-        offTime: "",
-      };
-    }
-    dateObj.offTime = reading.created_at;
-  }
-  dateArr.push(dateObj);
-  console.log(dateArr);
-
-  let runtimeSeries = [];
-  let runtimeTimestamp = [];
-  let dateArrWithRunHour = dateArr.map((obj) => {
-    //create date format
-    var timeStart = new Date(obj.onTime).getHours();
-    var timeEnd = new Date(obj.offTime).getHours();
-
-    var hourDiff = timeEnd - timeStart;
-
-    runtimeSeries.push(hourDiff);
-    runtimeTimestamp.push(obj.onTime);
-
-
-    return {
-      date: obj.onTime,
-      hourDiff
-    };
-  });
-}
-console.log("------------");
-getHours();
+};
+
+var myLRU = new LRUCache(5);
+console.log(">>----------->");
+// console.log(myLRU);
+
+myLRU.set(1, 1);
+myLRU.set(2, 2);
+myLRU.set(3, 3);
+myLRU.set(4, 4);
+myLRU.set(5, 5);
+myLRU.set(6, 6);
+console.log(myLRU);
+console.log(">>>----------->");
+console.log(myLRU.get(1));
+console.log(">>>>----------->");
+console.log(myLRU.get(2));
+console.log(myLRU);
+console.log(">||>----------->");
+console.log(myLRU.get(4));
+console.log(myLRU);
