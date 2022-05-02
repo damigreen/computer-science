@@ -136,6 +136,15 @@
         {
             "type": "pwa-node",
             "request": "launch",
+            "name": "Console One",
+            "skipFiles": [
+                "<node_internals>/**"
+            ],
+            "program": "${workspaceFolder}\\notes\\vsnote\\console1.js"
+        },
+        {
+            "type": "pwa-node",
+            "request": "launch",
             "name": "Launch Program ConsoleTS",
             "skipFiles": [
                 "<node_internals>/**"
