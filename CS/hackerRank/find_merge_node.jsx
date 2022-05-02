@@ -38,15 +38,15 @@ SinglyLinkedList.prototype.remove = function (value) {
   } else {
     // [] -> []
     /* 
-              [24] -> [4] -> [42] -> [9] -> null
-              prev    val
-      
-              [24] -> [4] -> [42] -> [9] -> null
-              prev    val
-      
-              [24] ->*-> [42] -> [9] -> null
-              prev    val
-           */
+                [24] -> [4] -> [42] -> [9] -> null
+                prev    val
+        
+                [24] -> [4] -> [42] -> [9] -> null
+                prev    val
+        
+                [24] ->*-> [42] -> [9] -> null
+                prev    val
+             */
     var prev = currentHead;
     while (currentHead.next) {
       if (currentHead.data == value) {
@@ -102,17 +102,17 @@ sllB.insert(1);
 // sllB.insert(2);
 
 /* 
-    12-1-8
-          \
-           7-4-9-null
-         /
-    10-5
-
-    12-1-8-7-4-9    
-      10-5-7-4-9    
-
-      [12]
-*/
+      12-1-8
+            \
+             7-4-9-null
+           /
+      10-5
+  
+      12-1-8-7-4-9    
+        10-5-7-4-9    
+  
+        [12]
+  */
 // iterate through both list
 // check if the data is the same
 // if it is the same check the next value it they are the same
