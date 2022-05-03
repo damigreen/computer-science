@@ -7,12 +7,11 @@ const adminRouter = require("./routes/admin");
 const shopRouter = require("./routes/shop");
 const middleware = require("./middleware/request");
 
+app.set('view engine', 'pug');
+app.set('views', 'views')
+
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, "public")));
-
-app.get("/", (req, res) => {
-  res.send({ message: "God is good" });
-});
 
 app.use("/admin", adminRouter);
 app.use(shopRouter);
