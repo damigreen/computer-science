@@ -1,16 +1,21 @@
 const express = require("express");
 const path = require("path");
 
-const rootDir = require('../util/path')
+const rootDir = require("../util/path");
 
 const router = express.Router();
+
+const products = [];
 
 router.get("/add-product", (req, res, next) => {
   res.sendFile(path.join(rootDir, "views", "add-product.html"));
 });
 
 router.post("/add-product", (req, res, next) => {
-  res.redirect("/admin");
+  products.push({ title: req.body.title });
+  console.log(products);
+  res.redirect("/");
+  // res.redirect("/admin");
 });
 
 router.get("/", (req, res, next) => {
@@ -21,3 +26,4 @@ router.get("/", (req, res, next) => {
 // const server = http.createServer(routes );
 
 module.exports = router;
+exports.products = products;
