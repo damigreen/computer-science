@@ -25,5 +25,5 @@ router.get("/", (req, res, next) => {
 // const routes = require("./routes");
 // const server = http.createServer(routes );
 
-module.exports = router;
+exports.routes = router;
 exports.products = products;
