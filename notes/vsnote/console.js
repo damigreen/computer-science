@@ -19,6 +19,13 @@ BinaryTree.prototype.traversePreOrder = function () {
   }
 };
 
+// [40[20, 10], 30[2, 3]]
+// [40, 30]
+// 40 - [30]
+// [30, 10, 20]
+// 20 - [30, 10]
+// 10 - [30]
+// 30
 BinaryTree.prototype.traversePreOrderIterative = function () {
   // Create an empty staci and push root to it
   var nodeStack = [];
@@ -44,19 +51,48 @@ BinaryTree.prototype.traversePreOrderIterative = function () {
     }
   }
 };
-// [40[20, 10], 30[2, 3]]
-// [40, 30]
-// 40 - [30]
-// [30, 10, 20]
-// 20 - [30, 10]
-// 10 - [30]
-// 30
+
+BinaryTree.prototype.traverseInOrder = function () {
+  traverseInOrderHelper(this._root);
+
+  function traverseInOrderHelper(node) {
+    if (!node) return;
+    traverseInOrderHelper(node.left);
+    console.log(node.value);
+    traverseInOrderHelper(node.right);
+  }
+};
+
+BinaryTree.prototype.traverseInOrderIterative = function () {
+  var current = this._root,
+    s = [],
+    done = false;
+  while (!done) {
+    // Reach the leftmost node
+    if (current != null) {
+      // Place pointer to a tree node on the stack
+      // before traversing the node's left subtree
+      s.push(current);
+      current = current.left;
+    } else {
+      if (s.length) {
+        current = s.pop();
+        console.log(current.value);
+        current = current.right;
+      } else {
+        done = true;
+      }
+    }
+  }
+};
 
 /*
             42
         41      50
     10     40 45       75    
  */
+
+// Pre-Order Traversal
 const one = new BinaryTreeNode(42);
 const two = new BinaryTreeNode(41);
 const five = new BinaryTreeNode(50);
@@ -77,4 +113,6 @@ two.right = four;
 const tree = new BinaryTree();
 tree._root = one;
 // tree.traversePreOrder();
-tree.traversePreOrderIterative();
+// tree.traversePreOrderIterative();
+// tree.traverseInOrder();
+tree.traverseInOrderIterative();
