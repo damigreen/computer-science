@@ -2194,6 +2194,8 @@ Greetings
 
 ### Links
 
+- [Adrian Megia Blog Site](https://adrianmejia.com/#trending-posts)
+- [Gitlab GCP](https://medium.com/google-cloud/using-gitlab-and-cloud-build-to-achieve-ci-cd-for-cloud-run-4c6db26f04ed)
 - [React native developers]('https://fetchlylabs.com/)
 - [Google](https://google.com)
 
