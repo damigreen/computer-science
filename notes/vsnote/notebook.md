@@ -1033,6 +1033,7 @@ Users can create many tasks tasks belongs to a user
       - in the first place
       - Also you write down the 
   - list
+
 ### JavaScript Data Structures and Algorithms
 
 #### Linked Lists ~ 24:01:22 [Linked List](../../cs/books/JSDSA/linked_list.js)
@@ -2194,6 +2195,7 @@ Greetings
 
 ### Links
 
+- [Jagr Global property to http](https://jagr.co/lessons/how-to-add-a-global-property-to-your-http-context-in-adonisjs-5)
 - [Adrian Megia Blog Site](https://adrianmejia.com/#trending-posts)
 - [Gitlab GCP](https://medium.com/google-cloud/using-gitlab-and-cloud-build-to-achieve-ci-cd-for-cloud-run-4c6db26f04ed)
 - [React native developers]('https://fetchlylabs.com/)
@@ -2413,7 +2415,17 @@ var vm = new Vue({
 
 ## Projects
 
-### CashBox
+### Foxwire
+
+- 07:05:22
+
+- Allow user to activate account from email
+  - when user register
+  - send a mail to **verify** accountxxxx 
+
+
+- Login with **socials**
+- Create verified field for users
 
 - create user role relationship table
   - user and role will have a many to many relationship
@@ -2430,8 +2442,24 @@ var vm = new Vue({
   - make authentication for users
   - test authentication on created users
 
+#### Foxwire Features
+
+- Display message for users that mail has been sent to mail for **verifying** account
 - set user **active** to **true** when **email** is verified
 - re-format **phonenumber**
+
+#### Foxwire api
+
+- [x] user
+- [x] login
+- [x] logout
+- [ ] reset-code
+
+
+#### Foxwire event
+
+- [ ] send welcome message
+- [ ] send reset code
 
 #### Entities - cb
 
