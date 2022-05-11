@@ -8,6 +8,9 @@ function BinaryTree() {
   this._root = null;
 }
 
+/*
+ * Pre-Order Traversal
+ */
 BinaryTree.prototype.traversePreOrder = function () {
   traversePreOrderHelper(this._root);
 
@@ -52,6 +55,9 @@ BinaryTree.prototype.traversePreOrderIterative = function () {
   }
 };
 
+/*
+ * In-Order Traversal
+ */
 BinaryTree.prototype.traverseInOrder = function () {
   traverseInOrderHelper(this._root);
 
@@ -86,6 +92,9 @@ BinaryTree.prototype.traverseInOrderIterative = function () {
   }
 };
 
+/*
+ * Post-Order Traversal
+ */
 BinaryTree.prototype.traversePostOrder = function () {
   traversePostOrderHelper(this._root);
 
@@ -96,6 +105,65 @@ BinaryTree.prototype.traversePostOrder = function () {
   }
 };
 
+BinaryTree.prototype.traversePostOrderIterative = function () {
+  // create two stacks
+  var s1 = [],
+    s2 = [];
+
+  // push root to the first stack
+  s1.push(this._root);
+
+  // run while first stack is not empty
+  while (s1.length) {
+    // pop an item from s1 and append it to s2
+    var node = s1.pop();
+    s2.push(node);
+
+    // push the left and right children of removed item to s1
+    if (node.left) s1.push(node.left);
+    if (node.right) s1.push(node.right);
+  }
+  // print all elememnt of second stack
+  while (s2.length) {
+    var node = s2.pop();
+    console.log(node.value);
+  }
+};
+
+/**
+ * * Level-Order Traversal
+ * create a queue[]
+ * create a variable root to hold the root node
+ * check root
+ * if there is no root
+ * return
+ * search queue
+ * while queue[] is not empty
+ * shift queue and save the shifted node to temp /
+ * remove the first element in queue[] and
+ * create a variable temp to hold it
+ * print the the value of the node temp.value
+ *
+ * check if the node has a left child (temp.left)
+ * push the left child to queue
+ * check if the node has a right child (temp.right)
+ * push the right child to queue
+ *
+ */
+BinaryTree.prototype.traverseLevelOrder = function () {
+  // breadth first search
+  var root = this._root,
+    queue = [];
+  if (!root) return;
+  queue.push(root);
+
+  while (queue.length) {
+    var temp = queue.shift();
+    console.log(temp.value);
+    if (temp.left) queue.push(temp.left);
+    if (temp.right) queue.push(temp.right);
+  }
+};
 /*
             42
         41      50
@@ -125,4 +193,6 @@ tree._root = one;
 // tree.traversePreOrderIterative();
 // tree.traverseInOrder();
 // tree.traverseInOrderIterative();
-tree.traversePostOrder();
+// tree.traversePostOrder();
+// tree.traversePostOrderIterative();
+tree.traverseLevelOrder();
