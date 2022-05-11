@@ -86,12 +86,21 @@ BinaryTree.prototype.traverseInOrderIterative = function () {
   }
 };
 
+BinaryTree.prototype.traversePostOrder = function () {
+  traversePostOrderHelper(this._root);
+
+  function traversePostOrderHelper(node) {
+    if (node.left) traversePostOrderHelper(node.left);
+    if (node.right) traversePostOrderHelper(node.right);
+    console.log(node.value);
+  }
+};
+
 /*
             42
         41      50
     10     40 45       75    
- */
-
+  */
 // Pre-Order Traversal
 const one = new BinaryTreeNode(42);
 const two = new BinaryTreeNode(41);
@@ -115,4 +124,5 @@ tree._root = one;
 // tree.traversePreOrder();
 // tree.traversePreOrderIterative();
 // tree.traverseInOrder();
-tree.traverseInOrderIterative();
+// tree.traverseInOrderIterative();
+tree.traversePostOrder();
