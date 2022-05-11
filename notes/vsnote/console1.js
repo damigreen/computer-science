@@ -29,13 +29,25 @@ DoublyLinkedList.prototype.insertAtHead = function (value) {
 };
 
 let dll = new DoublyLinkedList();
-dll.insertAtHead(10);
-dll.insertAtHead(4);
 dll.insertAtHead(3);
+dll.insertAtHead(2);
 dll.insertAtHead(1);
+
+// dll.insertAtHead(4);
+// dll.insertAtHead(3);
+// dll.insertAtHead(2);
+// dll.insertAtHead(3);
+
+// dll.insertAtHead(10);
+// dll.insertAtHead(4);
+// dll.insertAtHead(3);
+// dll.insertAtHead(1);
 // console.log("dll >>---------------------------->");
 // console.log(dll);
 
+/* 
+
+ */
 console.log("dll.head, 5 >>--------------------->");
 function sortedInsert(llist, data) {
   if (llist == null) return new DoublyLinkedListNode(data);
@@ -43,16 +55,30 @@ function sortedInsert(llist, data) {
   var prev = current;
   while (current) {
     // 1<->3<->4<->10
-    if (data <= current.data) {
+    if (current.data >= data) {
       var newNode = new DoublyLinkedListNode(data);
-      current.prev = newNode
-      newNode.next = current;
-      prev.next = newNode;
-      newNode.prev = prev;
-      return llist;
+      if (current.prev == null) {
+        newNode.next = current;
+        current.prev = newNode;
+        llist = newNode;
+        // current = newNode;
+        return llist;
+      } else {
+        current.prev = newNode;
+        newNode.next = current;
+        prev.next = newNode;
+        newNode.prev = prev;
+        return llist;
+      }
     } else {
       prev = current;
       current = current.next;
+      if (current == null) {
+        var newNode = new DoublyLinkedListNode(data);
+        newNode.prev = llist;
+        prev.next = newNode;
+        return llist;
+      }
     }
   }
 
@@ -61,16 +87,27 @@ function sortedInsert(llist, data) {
   //   llist = llist.next;
   // }
 }
-let sorted_insert = sortedInsert(dll.head, 5);
+
+// let sorted_insert = sortedInsert(dll.head, 5);
+// let sorted_insert = sortedInsert(dll.head, 1);
+let sorted_insert = sortedInsert(dll.head, 4);
 console.log(sorted_insert);
 
-let obj = {
-  a: 1,
-  b: 2
-}
-// let objClone = obj
-obj.a = 12;
-let objClone = obj
-// objClone.b = 1
-console.log(obj);
-console.log(objClone);
+// let obj = {
+//   a: 1,
+//   b: 2,
+// };
+// let objClone = obj;
+// objClone.a = 12;
+// // let objClone = obj
+// // objClone.b = 1
+// console.log("obj=======");
+// console.log(obj);
+// console.log(objClone);
+// objClone = {
+//   a: 200,
+//   b: 200,
+// };
+// console.log("obj=======");
+// console.log(obj);
+// console.log(objClone);
