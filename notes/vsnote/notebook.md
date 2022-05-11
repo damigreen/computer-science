@@ -2423,7 +2423,6 @@ var vm = new Vue({
   - when user register
   - send a mail to **verify** accountxxxx 
 
-
 - Login with **socials**
 - Create verified field for users
 
@@ -2444,9 +2443,9 @@ var vm = new Vue({
 
 #### Foxwire Features
 
-- Display message for users that mail has been sent to mail for **verifying** account
-- set user **active** to **true** when **email** is verified
-- re-format **phonenumber**
+- [ ] Display message for users that mail has been sent to mail for **verifying** account
+- [ ] set user **active** to **true** when **email** is verified
+- [ ] re-format **phonenumber**
 
 #### Foxwire api
 
@@ -2454,7 +2453,6 @@ var vm = new Vue({
 - [x] login
 - [x] logout
 - [ ] reset-code
-
 
 #### Foxwire event
 
@@ -2639,6 +2637,30 @@ var vm = new Vue({
 
 #### Models - cb
 
+##### Banks
+
+##### Bank Account
+
+##### Contacts
+
+##### Currencies
+
+##### Comments
+##### Invoices
+##### Invoice Log
+##### Invoice Transaction
+##### Accounts(Orgs)
+##### Account User
+##### Password Reset Code
+
+
+
+
+dsdsdse
+
+
+
+
 ##### User - cb
 
 - id: integer
@@ -2692,6 +2714,7 @@ role_scope: *
 - code: SYS, ACC
 - description: role defined for system, role defined for account
 
+
 <!-- relationships -->
 
 <!-- column - valuea -->
@@ -2708,8 +2731,6 @@ description: "lorem ipsum
 - user - account
 - user - budget
 - user - transaction
-- 
-
 
 - **user**
   - user - role
