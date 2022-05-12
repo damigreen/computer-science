@@ -1036,6 +1036,11 @@ Users can create many tasks tasks belongs to a user
 
 ### JavaScript Data Structures and Algorithms
 
+#### Trees ~ 11:05:2022
+
+- **trees**
+  - d
+
 #### Linked Lists ~ 24:01:22 [Linked List](../../cs/books/JSDSA/linked_list.js)
 
 - `Linked List`
