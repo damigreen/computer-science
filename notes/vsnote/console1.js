@@ -45,10 +45,9 @@ dll.insertAtHead(1);
 // console.log("dll >>---------------------------->");
 // console.log(dll);
 
-/* 
-
+/**
+ * * Sorted Insert
  */
-console.log("dll.head, 5 >>--------------------->");
 function sortedInsert(llist, data) {
   if (llist == null) return new DoublyLinkedListNode(data);
   let current = llist;
@@ -81,33 +80,29 @@ function sortedInsert(llist, data) {
       }
     }
   }
-
-  // while (llist) {
-  //   console.log(llist.data);
-  //   llist = llist.next;
-  // }
 }
 
 // let sorted_insert = sortedInsert(dll.head, 5);
 // let sorted_insert = sortedInsert(dll.head, 1);
-let sorted_insert = sortedInsert(dll.head, 4);
-console.log(sorted_insert);
+// let sorted_insert = sortedInsert(dll.head, 4);
+// console.log(sorted_insert);
 
-// let obj = {
-//   a: 1,
-//   b: 2,
-// };
-// let objClone = obj;
-// objClone.a = 12;
-// // let objClone = obj
-// // objClone.b = 1
-// console.log("obj=======");
-// console.log(obj);
-// console.log(objClone);
-// objClone = {
-//   a: 200,
-//   b: 200,
-// };
-// console.log("obj=======");
-// console.log(obj);
-// console.log(objClone);
+/**
+ * * Reverse Doubly Linked List
+    [1]<->[2]<->[3]<->[4]
+ */
+function reverse(llist) {
+  let current = llist;
+  let prev = null;
+  while (current) {
+    var temp = current.next;
+    current.next = prev;
+    current.prev = temp;
+    prev = current;
+    current = temp;
+  }
+  return prev;
+}
+console.log("reverse >>------------------------->");
+let _reverse = reverse(dll.head);
+console.log(_reverse);
