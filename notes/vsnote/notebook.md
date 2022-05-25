@@ -2,83 +2,190 @@
 
 ## Misc
 
-### 27:03:2022
+## Projects
 
-- enable oauth authentication for registered users on **cashbox**
-- Conclude the **hackerrank** problem
-- Write / Journal [writing]
+### Foxwire
 
-### 16:03:2022
+#### features ~ foxwire
 
-- fix `vendors.store`
-- create new power layout
-- Fix the landmark pagination
+- [ ] Display message for users that mail has been sent to mail for **verifying** account
+- [ ] set user **active** to **true** when **email** is verified
+- [ ] re-format **phonenumber**
 
-### 04:03:2022
+#### entities ~ foxwire
 
-- fix `vendors.store`
-- create new power layout
-- Fix the landmark pagination
+- **entities**
+  - users
+  - transactions
+    - income
+    - expenses
+  - accounts
+    - users
+  - role
+  - budgetse
 
-### Todo List
+#### elements ~ foxwire
 
-- `Brainstorm`
-  - Create **pagination** for activity bar
+- Elements of app
+- 
+  - income
+    - category
+      - salary,
+      - award,
+      - commision,
+      - savings
+      - other income
+    - TransferTypes (transfer to)
+      - wallet
+      - bank
+      - atm
+      - stash
+  - expensees
+    - categories
+      - food,child,education,entertainment,fashion,fuel,heaslth,house,sport,support
+  - budget
+    - multiple budget
+    - Visualization of income against expenses
+  - Transactions
+    - list transactions
+    - Elements
+      - transaction type
+        - income
+          - transfer to
+          - .
+          - TransferTypes
+            - wallet
+            - bank
+            - atm
+            - stash
+          - .
+          - category
+            - salary,
+            - award,
+            - commision,
+            - savings
+            - other income
+        - expense (and transfer)
+          - transfer from
+          - .
+          - categories_type
+            - food,child,education,entertainment,fashion,fuel,heaslth,house,sport,support
+        - date of transation
+      - transfer type
+        - transfer to (income)
+        - transfer from (expense)
+      - description
+      - amount
+      - category
+  - Settings
+    - language
+    - decimal places
+    - defaulg period
+      - month
+      - week
+      - ...
+    - currency symbol
+    - chart type
+    - set password
+    - categories
+    - accounts
+    - budget
+    - recurring categories
+    - remind    - backup || restore || reset all data
+    - loan calculator
 
-  - Create **notification** for **unit FMs** and **resido admin**
+#### models - foxwire
 
-  - Remove **required field** for **materials**
+- [x] users
+- [x] auth
+- [ ] roles
+- [ ] accounts
+- [ ] transactions
+- [x] third_party_apps
+- [x] third_party_tokens
+- [x] password_reset
+- [ ] banks
+- [ ] bank_accounts
+- [ ] contacts
+- [ ] currencies
+- [ ] comments
+- [ ] invoices
 
-  - **Notification** for **procurement**
+#### relationships - foxwire
 
-### 18:02:22
+- user - role
+- user - account
+- user - budget
+- user - transaction
 
-- Return **unit_id** from registration api
+- **user**
+  - user - role
+  - user - account
+  - user - budget
+  - user - transaction
 
-- Remove **required field** for **materials**
-  - Woek on job scoping logic
+- **transaction**
+  - transaction - user
+  - transaction - account
+  - transaction_transaction_type
 
-- Create **pagination** for activity bar
+- **transaction_type**
+  - transaction_type_transaction_category
+  - transaction_type_transaction
 
-- Create **notification** for **unit FMs** and **resido admin**
+- **transaction_category**
+  - transaction_category - transaction_type
 
-- **Notification** for **procurement**
+- **budget**
+  - budget - user
+  - budget - account
+  - budget - budget_hierarchy
 
-### 17:02:22
+- **budget_hierarchy**
+  - budget_hierarchy - budget
 
-- Add message to completed requests
-  - if you have any feedback / complaint call **Resido manager**
-- Create **pagination** for activity bar
-- Create **notification** for **unit FMs** and **resido admin**
-- Remove **required field** for **materials**
-- **Notification** for **procurement**
-  - Work on the **save invoice** logic
-- Head first Java
-  - Complete **Chapter 2**
-- JavaScript data structure and algorithms
-  - Complete **Caching**
-- Hackerrank
-  - Reverse linked list
+- **role**
+  - role - user
 
----
+#### Controllers ~ foxwire
 
-- [x] Rating job from **1-10**
+- [x] auth
+  - [x] login
+  - [x] log
+  
+- [x] user (api)
 
-### Memory Muscle
+- [x] email
+  - [x] verify_email
+  
+- password
+  - [x] send_code
+  - [ ] verify_and_reset
+  - [ ] change
 
-- Cache
-  - Explain cache
-  - list types
-  - Explain LFU cache
+#### database ~ foxwire
 
-### Recap Memory
+- role
+  - name: Administrator
+  - code: administrator
+  - description: System Administrator
+  - active: true
+  
+  - name: Customer
+  - code: customer
+  - description: Customer
+  - active: true
 
-### Brownies CBD Other Cannabis product
+#### seeders ~ foxwire
 
-- Browse for **similar** **sites** on the web
+- [x] role
+- [ ] user
+- [ ] account
+- [x] account_type
 
 ## Work
 
+```sql
 select * from sensors;
 select * from energy_readings;
 -- update energy_readings
@@ -96,6 +203,7 @@ select * from power_readings;
 -- update power_readings
 -- set unit_id=1
 -- where id>0;
+```
 
 ### Landwey IoT Dashboard
 
@@ -103,7 +211,6 @@ select * from power_readings;
 
 - delete duplicates for a particular day
   - retain max vaoue of duplicate
-- 
 
 #### Landwey iot dashboard ~ power consumption
 
@@ -2417,354 +2524,6 @@ var vm = new Vue({
 ### Algorithms
 
 #### String Shortening
-
-## Projects
-
-### Foxwire
-
-- 07:05:22
-
-- Allow user to activate account from email
-  - when user register
-  - send a mail to **verify** accountxxxx 
-
-- Login with **socials**
-- Create verified field for users
-
-- create user role relationship table
-  - user and role will have a many to many relationship
-  - they will have a pivot table to maintain their relationship
-  - 
-- start server
-- open database
-- set up user controller
-  - set up index, store, update and delete for users
-  - locate the file needed
-  - search the code for where you stopped previoulsy
-- set up oauth
-  - enable user can login with username / email and password
-  - make authentication for users
-  - test authentication on created users
-
-#### Foxwire Features
-
-- [ ] Display message for users that mail has been sent to mail for **verifying** account
-- [ ] set user **active** to **true** when **email** is verified
-- [ ] re-format **phonenumber**
-
-#### Foxwire api
-
-- [x] user
-- [x] login
-- [x] logout
-- [ ] reset-code
-
-#### Foxwire event
-
-- [ ] send welcome message
-- [ ] send reset code
-
-#### Entities - cb
-
-- **entities**
-  - users
-  - transactions
-    - income
-    - expenses
-  - accounts
-    - users
-  - roles
-  - budgets
-
-#### Process - cb
-
-- **process**
-  - design the database
-  - design the user interface
-  - design the app
-  - set up the frontend of the application by
-  - installing vue
-  - set up the api for the application by
-
-  - **Set up backend**
-    - installing adonisjs
-    - setup routes
-    - setup controllers
-  
-    - **Store user with password**
-      - create user controller
-      - save user to db
-      - create a 'store' validator
-      - build controllers for oauth
-      - make first name username
-
-#### elements ~ cashbox
-
-- Elements of app
-  - income
-    - category
-      - salary,
-      - award,
-      - commision,
-      - savings
-      - other income
-    - TransferTypes (transfer to)
-      - wallet
-      - bank
-      - atm
-      - stash
-  - expensees
-    - categories
-      - food,child,education,entertainment,fashion,fuel,heaslth,house,sport,support
-  - budget
-    - multiple budget
-    - Visualization of income against expenses
-  - Transactions
-    - list transactions
-    - .
-    - Elements
-      - transaction type
-        - income
-          - transfer to
-          - .
-          - TransferTypes
-            - wallet
-            - bank
-            - atm
-            - stash
-          - .
-          - category
-            - salary,
-            - award,
-            - commision,
-            - savings
-            - other income
-        - expense (and transfer)
-          - transfer from
-          - .
-          - categoriestype
-            - food,child,education,entertainment,fashion,fuel,heaslth,house,sport,support
-        - date of transation
-      - transfer type
-        - transfer to (income)
-        - transfer from (expense)
-      - description
-      - amount
-      - category
-  - Settings
-    - language
-    - decimal places
-    - defaulg period
-      - month
-      - week
-      - ...
-    - currency symbol
-    - chart type
-    - set password
-    - categories
-    - accounts
-    - budget
-    - recurring categories
-    - remind    - backup || restore || reset all data
-    - loan calculator
-
-#### database ~ cashbox
-
-- **user**
-
-  - **fields**
-    - name
-    - username
-    - password
-    - active
-    - suspended
-    - suspended_till
-    - email
-    - gender
-    - deleted
-
-  - **parameters**
-    - name
-    - email
-    - phone
-    - password
-    - roles
-      - sys -system admin
-      - mng -managers
-      - clt -clientele
-
-- income
-  - amount
-  - date
-  - type_id
-
-  - transfer-type
-    - type - transfer to
-
-  - categories
-    - salary
-    - others..
-
-- expenses
-  - expenses categories
-
-- **transactions**
-  - amount
-  - type
-  - date
-  - type_id
-  - category_id
-
-  - **transaction_type**
-    - income
-    - expense
-
-  - **transaction_category**
-    - **transaction_type_income**
-      - salary
-      - savings
-      - award,
-      - commision,
-      - other income
-    - **transaction_type_expense**
-      - salary
-      - savings
-      - award,
-      - commision,
-      - other income
-
-- **role**
-
-- **role_scope**
-  - name: System Wide, Account
-  - code: SYS, ACC
-  - description: "lorem ipsum"
-
-#### Models - cb
-
-##### Banks
-
-##### Bank Account
-
-##### Contacts
-
-##### Currencies
-
-##### Comments
-##### Invoices
-##### Invoice Log
-##### Invoice Transaction
-##### Accounts(Orgs)
-##### Account User
-##### Password Reset Code
-
-
-
-
-dsdsdse
-
-
-
-
-##### User - cb
-
-- id: integer
-- name: string
-- username?: string
-- email: string
-- password: string
-- roles: array
-- active?: boolean
-- suspended?: boolean
-- suspended_till?: date
-- updated_at: date
-- deleted_at: date
-- created_at: date
-
-##### Token
-
-- id: integer
-- user_id: integer
-- name: string
-- type: string
-- token: string
-- expires_at?: date
-- updated_at: date
-
-##### Roles
-
-<!-- columns -->
-- id: integer
-- name: string
-- code: string
-- description
-- role_scope*
-
-<!-- column - valuea -->
-```txt
-
-id: 1
-name: System Admin, Clientele, General Manager, Account Manager
-code: SYS, CLI, GMG, AMG
-description: "lorem ipsum
-role_scope: *
-
-```
-
-##### Role_scope
-
-<!-- columns -->
-- id: integer
-- name: System Wide, Account Wide
-- code: SYS, ACC
-- description: role defined for system, role defined for account
-
-
-<!-- relationships -->
-
-<!-- column - valuea -->
-```txt
-id: 1
-name: System Admin, Clientele, General Manager, Account Manager
-code: SYS, CLI, GMG, AMG
-description: "lorem ipsum
-```
-
-#### Relationships - cb
-
-- user - role
-- user - account
-- user - budget
-- user - transaction
-
-- **user**
-  - user - role
-  - user - account
-  - user - budget
-  - user - transaction
-
-- **transaction**
-  - transaction - user
-  - transaction - account
-  - transaction_transaction_type
-
-- **transaction_type**
-  - transaction_type_transaction_category
-  - transaction_type_transaction
-
-- **transaction_category**
-  - transaction_category - transaction_type
-
-- **budget**
-  - budget - user
-  - budget - account
-  - budget - budget_hierarchy
-
-- **budget_hierarchy**
-  - budget_hierarchy - budget
-
-- **role**
-  - role - user
 
 ## Questions
 
