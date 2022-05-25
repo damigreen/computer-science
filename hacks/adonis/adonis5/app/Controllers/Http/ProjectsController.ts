@@ -3,6 +3,7 @@ import Status from 'Contracts/status';
 import Database from '@ioc:Adonis/Lucid/Database';
 import { HttpContextContract } from '@ioc:Adonis/Core/HttpContext'
 import Project from 'App/Models/Project'
+import ProjectValidator from 'App/Validators/ProjectValidator';
 
 export default class ProjectsController {
   public async index({ response }: HttpContextContract) {
@@ -16,9 +17,10 @@ export default class ProjectsController {
   }
 
   public async store({ request, response }: HttpContextContract) {
-    const name = request.input('name')
-    const description = request.input("description")
-    // const name = request.only(['name', "description"])
+    console.log("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx");
+    console.log("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx");
+    let payload = await request.validate(ProjectValidator)
+    const {name, description } = payload
 
     // const project = new Project();
     // project.name = "Model Example 1";
