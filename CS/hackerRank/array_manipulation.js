@@ -101,3 +101,5 @@ console.log("**********Array Manipulations**********");
 console.log("...");
 console.log("**********Array Manipulations Optimized**********");
 console.log(arrayManipulatinOptimized(10, queries));
+
+
