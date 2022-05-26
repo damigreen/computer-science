@@ -363,8 +363,8 @@ select * from power_readings;
 | (=:;"?)            46          10:28:00pm April 1st 2022    |
 | (=:;"?)            46          10:28:00pm April 1st 2022    |
 | (=:;"?)            46          10:28:00pm April 1st 2022    |
-| (=:;"?)            46          10:28:00pm April 1st 2022    |
-|--------------------------------------------------------------|
+| (=:;"?)            46          10:28:00pm April 1st 2022 |
+| -------------------------------------------------------- |
 
 -=========================================================
 
@@ -1146,7 +1146,278 @@ Users can create many tasks tasks belongs to a user
 #### Trees ~ 11:05:2022
 
 - **trees**
-  - d
+  - A general tree data structure is composed of nodes with children node
+  - the first/top node is called the root node
+
+  - types of trees
+    - binary trees,
+    - binary searh trees,
+    - self-balancing binary search trees
+  
+    - binary trees
+      - has only two children
+      - always has a root node(at the top)
+      - which is initiailize to null before any element is inserted
+
+  - tree Traversal
+    - to traverse through trees
+    - you need to follow the left and right pointer
+    - in order to go through every element in the tree
+
+    - types of tree traversal
+      - pre-order traversal
+      - post-order traversal
+      - in-order traversal
+      - level-order traversal
+
+      - pre-order traversal
+        - visits node in the following order
+        - root(the current node), left, right
+
+      - in-order traversal
+        - visits node in the following order
+        - left, root(the current node), right
+
+  - tree summary
+    - Time Complexity: `O(n)`
+    - The time complexity of any of these traversals is the same because
+    - each traversal requires that all nodes are visited.
+
+##### Trees ~ Code
+
+```javascript
+function TreeNode(value) {
+  this.value = value;
+  this.children = [];
+}
+
+function BinaryTreeNode(value) {
+  this.value = value;
+  this.left = null;
+  this.right = null;
+}
+
+function BinaryTree() {
+  this._root = null;
+}
+
+/*
+            42
+
+        41      50
+
+    10     40 45       75
+*/
+/**
+ * * Pre-Order Traversal
+ * [42, 41, 10, 40, 50, 45, 75]
+ * 
+ * base case is null
+ * in non base case,
+ * prints the current node
+ * the recursive function is called on the left
+ * and then call the recursive function on the right child
+ */
+BinaryTree.prototype.traversePreOrder = function () {
+  traversePreOrderHelper(this._root);
+
+  function traversePreOrderHelper(node) {
+    if (!node) return;
+    console.log(node.value);
+    traversePreOrderHelper(node.left);
+    traversePreOrderHelper(node.right);
+  }
+};
+
+// [40[20, 10], 30[2, 3]]
+// [40, 30]
+// 40 - [30]
+// [30, 10, 20]
+// 20 - [30, 10]
+// 10 - [30]
+// 30
+BinaryTree.prototype.traversePreOrderIterative = function () {
+  // Create an empty staci and push root to it
+  var nodeStack = [];
+  nodeStack.push(this._root);
+
+  // Pop all items one by one. Do following for every popped item
+  // a) print it
+  // b) push its left child
+  // c) push its right child
+  // Note that right child is pushed first so that left
+  // is processed first
+  while (nodeStack.length) {
+    // pop items from stack and print it
+    var node = nodeStack.pop();
+    console.log(node.value);
+
+    if (node.right) {
+      nodeStack.push(node.right);
+    }
+
+    if (node.left) {
+      nodeStack.push(node.left);
+    }
+  }
+};
+
+
+/*
+            42
+
+        41      50
+
+    10     40 45       75
+*/
+/**
+ * * In-Order Traversal
+ * [10, 41, 40, 42, 45, 50, 75]
+ * 
+ * base case is null
+ * in non base case,
+ * the recursive function is called on the left
+ * prints the current node
+ * and then call the recursive function on the right child
+ */
+BinaryTree.prototype.traverseInOrder = function () {
+  traverseInOrderHelper(this._root);
+
+  function traverseInOrderHelper(node) {
+    if (!node) return;
+    traverseInOrderHelper(node.left);
+    console.log(node.value);
+    traverseInOrderHelper(node.right);
+  }
+};
+
+// [42[41[10]-[40]]-50[45]-[75]]
+// 42 - [[41], 50]
+// 41 - [[10], 40]
+// --> 10 - 41 - 40 - 42
+// 50 - [[45], 75]
+// --> 45 - 50 - 75
+BinaryTree.prototype.traverseInOrderIterative = function () {
+  var current = this._root,
+    s = [],
+    done = false;
+  while (!done) {
+    // Reach the leftmost node
+    if (current != null) {
+      // Place pointer to a tree node on the stack
+      // before traversing the node's left subtree
+      s.push(current);
+      current = current.left;
+    } else {
+      if (s.length) {
+        current = s.pop();
+        console.log(current.value);
+        current = current.right;
+      } else {
+        done = true;
+      }
+    }
+  }
+};
+
+/*
+            42
+
+        41      50
+
+    10     40 45       75
+*/
+/**
+ * * Post-Order Traversal
+ * [10, 40, 41, 45, 45, 75, 42]
+ * 
+ * in non base case,
+ * checks the current node
+ * if there is a left node call
+   * call the recursive function on the left node
+ * if there is a left node call
+   * call the recursive function on the right node
+ * prints the current node
+ */
+BinaryTree.prototype.traversePostOrder = function () {
+  traversePostOrderHelper(this._root);
+
+  function traversePostOrderHelper(node) {
+    if (node.left) traversePostOrderHelper(node.left);
+    if (node.right) traversePostOrderHelper(node.right);
+    console.log(node.value);
+  }
+};
+
+BinaryTree.prototype.traversePostOrderIterative = function () {
+  // create two stacks
+  var s1 = [],
+    s2 = [];
+
+  // push root to the first stack
+  s1.push(this._root);
+
+  // run while first stack is not empty
+  while (s1.length) {
+    // pop an item from s1 and append it to s2
+    var node = s1.pop();
+    s2.push(node);
+
+    // push the left and right children of removed item to s1
+    if (node.left) s1.push(node.left);
+    if (node.right) s1.push(node.right);
+  }
+  // print all elememnt of second stack
+  while (s2.length) {
+    var node = s2.pop();
+    console.log(node.value);
+  }
+};
+
+/*
+            42
+
+        41      50
+
+    10     40 45       75
+*/
+/**
+ * * Level-Order Traversal
+ * [42, 41, 40, 42, 45, 50, 75]
+ * 
+ * create a queue[]
+ * create a variable root to hold the root node
+ * check root
+ * if there is no root
+ * return
+ * search queue
+ * while queue[] is not empty
+ * shift queue and save the shifted node to temp /
+ * remove the first element in queue[] and
+ * create a variable temp to hold it
+ * print the the value of the node temp.value
+ *
+ * check if the node has a left child (temp.left)
+ * push the left child to queue
+ * check if the node has a right child (temp.right)
+ * push the right child to queue
+ *
+ */
+BinaryTree.prototype.traverseLevelOrder = function () {
+  // breadth first search
+  var root = this._root,
+    queue = [];
+  if (!root) return;
+  queue.push(root);
+
+  while (queue.length) {
+    var temp = queue.shift();
+    console.log(temp.value);
+    if (temp.left) queue.push(temp.left);
+    if (temp.right) queue.push(temp.right);
+  }
+};
+```
 
 #### Linked Lists ~ 24:01:22 [Linked List](../../cs/books/JSDSA/linked_list.js)
 
