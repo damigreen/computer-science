@@ -1,5 +1,167 @@
 # Journal
 
+## 01-06-22:: Wednesday
+
+- "0*/3***"
+
+```javascript
+<div>
+  {{ waterReadings }}
+</div>
+```
+
+## 31-05-22:: Tuesday
+
+```txt
+1 Work Request Created 01
+2 Incorrect Work Order Type 02
+3 Ready For Approval 05
+4 Job Planning 10
+5 Held For External Resources 20
+6 Held in Engineering 30
+7 Held for Operations 35
+8 Held for Materials 40
+9 Partial Materials Recieved 41
+10 Materials at Warehouse 42
+11 Materials Staged 43
+12 Materials at Job Site 45
+13 Ready to Schedule 50
+14 Scheduled 55
+15 Work in Progress 60
+16 Complete Awaiting Data Entry 61
+17 Complete Ready for Review 65
+18 More Information Needed 75
+19 Reviewed Complete 80
+20 Data Reviewed and Accurate 81
+21 Closed History 85
+22 Confirm Rejection 90
+23 Rejected 95
+24 Awaiting Purge 99
+25 Invoice Generated 100
+26 Job Approved 105
+```
+
+- 23,7,5,1,3,17,19,26,15,10
+
+- planing [1,3,5]
+- pending
+- scoping
+- costed
+- started
+- completed
+
+## 29-05-22:: Sunday
+
+```docker
+docker run \
+  -it --rm \
+  -p 8080:80 -p 443:443 \
+  --name php8site \
+  -v "$PWD":/var/www/html \
+  php8
+```
+
+```env
+APP_NAME=vamp
+APP_ENV=development
+APP_KEY=base64:2/yvyx5iPm6WzZqL1/mlTn0JSeISwm+5iSvpXxRf4v4=
+APP_DEBUG=false
+# APP_URL=https://vamp.filmorealty.com
+APP_URL=http://localhost:8000
+
+LOG_CHANNEL=stack
+
+BUGSNAG_API_KEY="b64b8e848a5c1d17f555203b37f4faad"
+
+DB_CONNECTION=mysql
+DB_HOST=104.154.34.80
+DB_PORT=3306
+DB_USERNAME=root
+DB_PASSWORD='pGC7d1ssGG10GOCD'
+DB_DATABASE=vamp_ffm_live
+
+BROADCAST_DRIVER=log
+CACHE_DRIVER=file
+SESSION_DRIVER=file
+SESSION_LIFETIME=120
+QUEUE_DRIVER=sync
+
+REDIS_HOST=127.0.0.1
+REDIS_PASSWORD=null
+REDIS_PORT=6379
+
+MAIL_MAILER=smtp
+MAIL_HOST='smtp.office365.com'
+MAIL_PORT=587
+MAIL_USERNAME='hello@proplab.africa'
+MAIL_PASSWORD='Gax11130'
+MAIL_ENCRYPTION=tls
+MAIL_FROM_ADDRESS='hello@proplab.africa'
+MAIL_FROM_NAME='PropLab Africa'
+
+PUSHER_APP_ID=
+PUSHER_APP_KEY=
+PUSHER_APP_SECRET=
+PUSHER_APP_CLUSTER=mt1
+
+MIX_PUSHER_APP_KEY="${PUSHER_APP_KEY}"
+MIX_PUSHER_APP_CLUSTER="${PUSHER_APP_CLUSTER}"
+
+GOOGLE_CLOUD_PROJECT_ID="vamp-filmo"
+GOOGLE_CLOUD_KEY_FILE="gcp-service-account.json"
+GOOGLE_CLOUD_STORAGE_BUCKET="vamp-filmo.appspot.com"
+GOOGLE_CLOUD_STORAGE_PATH_PREFIX="vamp.live"
+
+FILESYSTEM_DRIVER="gcs"
+FILESYSTEM_CLOUD="gcs"
+
+VAMPFI_BASE_URL="https://apiv1.vampfi.com"
+VAMPFI_CLIENT_ID=2
+VAMPFI_CLIENT_SECRET="bmbeevjcswr1agoeoneuig"
+VAMPFI_AUTH_KEY="=2DHLtc?bcQ@dQVkCrvnxhnZKC-KHbmY28cGEZuMX6e-UtLYyw7$!veLGcsT3Mj36wr7L?K43D*_nZcnu-Jk3p!bwwne!j99r*xXHBbrM87KuGfrS+pfvMLRwBpjsKe"
+VAMPFI_EMAIL="vampfi@filmorealty.com"
+```
+
+4187 4518 5608 4688
+
+- buy docker ebook
+
+
+## 28-05-22:: Saturday
+
+- agents in surulere
+  - affable properties: 08128340044
+  - SOJ Smith Agency: 0816 668 1845 : 300k kilo
+  - Olalekan Afolabi: tel:07065270372
+  - Ontale Oladipo Int&#39;L Ontale (yaba)
+  - longinus-ejikeme flat-apartment-for-rent-off-randle-avenue-08082088667
+  - Toa okiki nig: Call for real estate developer,lettings, renovation and management.office:81 itire road off Ogunlana drive surulere. 08023521449
+  
+- [Docker for web developers](https://dockerwebdev.com/tutorials/docker-php-development/)
+
+```dockerfile
+FROM php:8-apache
+
+RUN a2enmod ssl && a2enmod rewrite
+RUN mkdir -p /etc/apache2/ssl
+RUN mv "$PHP_INI_DIR/php.ini-development" "$PHP_INI_DIR/php.ini"
+
+COPY ./ssl/*.pem /etc/apache2/ssl/
+COPY ./apache/000-default.conf /etc/apache2/sites-available/000-default.conf
+
+EXPOSE 80
+EXPOSE 443
+```
+
+
+- mnt/c/users/filmo/dami/dami/vscode/hacks/docker/dockerphp
+## 27-05-22:: Friday
+
+        "php": "^7.2.5|^8.0",
+
+8.1.0
+  return request()->is($route) ? $className : (($route == $currentRouteName) ? $className : '');
+
 ## 25-05-22:: Wednesday
 
 - user account relationship
@@ -13,7 +175,7 @@
 - add change_account_name to account controller
 
 - customer
-  - 
+
 
 ## 24-05-22:: Tuessay
 
