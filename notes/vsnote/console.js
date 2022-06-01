@@ -130,7 +130,6 @@ BinaryTree.prototype.traversePostOrderIterative = function () {
   }
 };
 
-
 /**
  * * Level-Order Traversal
  * create a queue[]
@@ -438,7 +437,7 @@ console.log(tomorrow.getTime());
 
 class ClassWithStaticMethod {
   static staticProperty = "someValue";
-  static staticMethod(a,b) {
+  static staticMethod(a, b) {
     return "static method has been called.";
   }
   static {
@@ -448,6 +447,6 @@ class ClassWithStaticMethod {
 
 console.log(ClassWithStaticMethod.staticProperty);
 // output: "someValue"
-console.log(ClassWithStaticMethod.staticMethod(4,2));
+console.log(ClassWithStaticMethod.staticMethod(4, 2));
 console.log(ClassWithStaticMethod);
 // output: "static method has been called."
