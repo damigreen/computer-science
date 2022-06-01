@@ -2697,6 +2697,24 @@ Digital Nomad Visa
 
 ## English
 
+### Register
+
+#### Docker ~ 28:05:22
+
+- From
+- baseImage
+- FROM baseImage:tag
+- RUN Command
+- COPY source dest
+- EXPOSE ports
+- docker-compose.yml
+- docker-compose up
+
+```dockerfile
+docker image build -t php8 .
+  docker-compose up
+```
+
 ### Vocabulary
 
 e.g => following
