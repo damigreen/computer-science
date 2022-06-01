@@ -1,0 +1,16 @@
+# Enables Apache’s SSL and rewrite modules. Further modules can be enabled if necessary.
+# Copies the PHP development configuration file to php.ini so errors and warnings are shown.
+# Creates an /etc/apache2/ssl directory and copies the SSL .pem certificate files created above.
+# Copies the Apache configuration file.
+# Exposes ports 80 and 443 for HTTP and HTTPS accordingly
+
+FROM php:8-apache
+
+RUN a2enmod ssl && a2enmod rewrite
+RUN mkdir -p /etc/apache2/ssl
+# RUN mv "C:/xampp/php/php.ini-development" "C:/xampp/php/php.ini"
+
+COPY ./ssl/*.pem / etc/apache2/ssl/
+COPY ./apache/000-default.conf /etc/apache2/sites-available/000-default.conf
+
+EXPOSE 80 443
