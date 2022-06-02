@@ -1138,7 +1138,7 @@ Users can create many tasks tasks belongs to a user
     - write down the behaviours / prorties of the classes
       - things you need to solve the challenge of witing the class
       - in the first place
-      - Also you write down the 
+      - Also you write down the
   - list
 
 ### JavaScript Data Structures and Algorithms
@@ -1182,6 +1182,16 @@ Users can create many tasks tasks belongs to a user
     - Time Complexity: `O(n)`
     - The time complexity of any of these traversals is the same because
     - each traversal requires that all nodes are visited.
+
+- questions
+  - what are binary search tree
+  - balanced and un-balanced search tree (time complexity)
+  - height of a perfect balanced tree
+  - insertion
+  - steps to insertion of a binary search tree
+  - deletion
+  - list the cases involved in deletion
+  - what is the return value for all cases involeved in deletion
 
 ##### Trees ~ Code
 
