@@ -197,6 +197,82 @@ tree._root = one;
 // tree.traversePostOrderIterative();
 tree.traverseLevelOrder();
 
+/**
+ * * Binary Search Tree
+ */
+function BinarySearchTree() {
+  this._root = null;
+}
+
+BinarySearchTree.prototype.insertCP = function (value) {
+  var node = new BinaryTreeNode(value);
+  if (!this._root) {
+    this._root = node;
+    return;
+  }
+
+  var current = this._root;
+  while (true) {
+    if (value < current.value) {
+      if (!current.left) {
+        current.left = node;
+        return;
+      }
+      current = current.left;
+    } else {
+      if (!current.right) {
+        current.right = node;
+        return;
+      }
+      current = current.right;
+    }
+  }
+};
+
+/**
+ * * Insertion
+ * check the root of the tree if it is empty
+ * if it is empty
+ * set / make root to the new node
+ * if it is not empty
+ * traverse the root of the tree
+ * if the value of the new node is less than the value of the current node
+ * check if the current node has a left child
+ * set current root to the left child
+ * check if the current node has no left child
+ * set the left child of the current root to the new node
+ * if the value of the new node is greater than the value of the current node
+ * check if the current node has a right child
+ * set current root to the right child
+ * check if the current node has no right child
+ * set the right child of the current root to the new node
+ */
+BinarySearchTree.prototype.insert = function (value) {
+  var thisNode = { left: null, right: null, value: value };
+  if (!this._root) {
+    this._root = thisNode;
+  } else {
+    var currentRoot = this._root;
+    while (true) {
+      if (value < currentRoot.value) {
+        if (currentRoot.left == null) {
+          currentRoot.left = thisNode;
+          break;
+        } else {
+          currentRoot = currentRoot.left;
+        }
+      } else if (value > currentRoot.value) {
+        if (currentRoot.right == null) {
+          currentRoot.right = thisNode;
+          break;
+        } else {
+          currentRoot = currentRoot.left;
+        }
+      } else break; // in case they are both the same value
+    }
+  }
+};
+
 console.log("pppppp".slice(0, "pppppp".indexOf(" ")));
 console.log(new Date(1703074944000));
 
