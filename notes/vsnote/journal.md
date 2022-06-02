@@ -1,5 +1,9 @@
 # Journal
 
+## 02-06-22:: Thursday
+
+- 
+
 ## 01-06-22:: Wednesday
 
 - "0*/3***"
