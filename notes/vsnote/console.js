@@ -361,7 +361,7 @@ BinarySearchTree.prototype.removeCP = function (value) {
 };
 
 BinarySearchTree.prototype.remove = function (value) {
-  return deleteRecursively(this._root);
+  return deleteRecursively(this._root, value);
 
   function deleteRecursively(root, value) {
     // case 1: no children
@@ -369,9 +369,9 @@ BinarySearchTree.prototype.remove = function (value) {
       return null;
     } else if (value < root.value) {
       root.left = deleteRecursively(root.left, value);
-    } else if (value > root.value)
+    } else if (value > root.value) {
       root.right = deleteRecursively(root.right, value);
-    else {
+    } else {
       if (!root.left && !root.right) {
         return null; //case 1
       } else if (!root.left) {
@@ -387,6 +387,7 @@ BinarySearchTree.prototype.remove = function (value) {
         return root;
       }
     }
+    return root;
   }
 };
 
@@ -397,13 +398,41 @@ function findMin(root) {
   return root;
 }
 
-let bst_remove = new BinarySearchTree();
-bst_remove.insert(5);
-bst_remove.insert(4);
-bst_remove.insert(3);
-bst_remove.insert(2);
-bst_remove.insert(1);
-bst_remove.insert(6);
-bst_remove.insert(7);
-bst_remove.insert(8);
-console.log(bst_remove);
+let bst_a = new BinarySearchTree();
+// bst_a.insert(5);
+// bst_a.insert(4);
+// bst_a.insert(3);
+// bst_a.insert(2);
+// bst_a.insert(1);
+// bst_a.insert(6);
+// bst_a.insert(7);
+// bst_a.insert(8);
+// bst_a.remove(1);
+// bst_a.insert(20);
+// console.log(bst_a);
+
+let bst_b = new BinarySearchTree();
+bst_b.insert(5);
+bst_b.insert(6);
+bst_b.insert(4);
+bst_b.insert(7);
+bst_b.insert(8);
+bst_b.remove(5);
+console.log(bst_b);
+// let bst_b = new BinarySearchTree();
+// let bst_b = {left: {left: {left: null, right: null, value: 8}, right: {left: null, right: null, value: 9}, value: 10}, right: {left: {left: null, right: null, value: 11}, right: {left: null, right: null, value: 12}, value: 13}};
+// let bst_b = {
+//   left: {
+//     left: { left: null, right: null, value: 0.1 },
+//     right: { left: null, right: null, value: 1.1 },
+//     value: 1,
+//   },
+//   right: {
+//     left: { left: null, right: null, value: 8.5 },
+//     right: { left: null, right: null, value: 10 },
+//     value: 9,
+//   },
+//   value: 2,
+// };
+
+
