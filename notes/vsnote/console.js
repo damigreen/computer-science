@@ -238,14 +238,19 @@ BinarySearchTree.prototype.insertCP = function (value) {
  * traverse the root of the tree
  * if the value of the new node is less than the value of the current node
  * check if the current node has a left child
+ * if there is a left child
  * set current root to the left child
- * check if the current node has no left child
+ * if the current node has no left child
  * set the left child of the current root to the new node
  * if the value of the new node is greater than the value of the current node
  * check if the current node has a right child
+ * if there is a right child
  * set current root to the right child
- * check if the current node has no right child
+ * if the current node has no right child
  * set the right child of the current root to the new node
+ *
+ * Time Complexity (for balanced trees): O(log2(n))
+ * Time Complexity (for unbalanced trees): O(n)
  */
 BinarySearchTree.prototype.insert = function (value) {
   var thisNode = { left: null, right: null, value: value };
@@ -266,263 +271,139 @@ BinarySearchTree.prototype.insert = function (value) {
           currentRoot.right = thisNode;
           break;
         } else {
-          currentRoot = currentRoot.left;
+          currentRoot = currentRoot.right;
         }
       } else break; // in case they are both the same value
     }
   }
 };
 
-console.log("pppppp".slice(0, "pppppp".indexOf(" ")));
-console.log(new Date(1703074944000));
+console.log("**********************Binary Search Tree**********************");
+let bst = new BinarySearchTree();
+bst.insert(10);
+bst.insert(12);
+bst.insert(11);
+bst.insert(9);
+bst.insert(9.5);
+bst.insert(8);
+// console.log(bst);
 
-/**
- * [{a: 1, b: 5}, {a: 10, b: 3}, {a: 3, b: 4}]
- * [1,10, 3]
- * [5,3,4]
- * [-4,7,-1]
- * 7-1 = 6
- * 6-4 = 2
- *
- * petrol:     [3,4,6,3,4,3,7]
- * distance:   [2,4,9,1,3,6,2]
- * difference: [1,0,-3,2,1,-3,5]
- * 0: 1+0 = (1)-3 = (-2)
- * 1: (-3)
- * 2: (-3)
- * 3: 2+1=(3)-3=(0)-3=(-3)
- * 4: 0+1=(1)-3=(-2)
- * 5: 0-3=(-3)
- * 6: 0+5=(5)+1=(6)+0=(6)-3=(3)+2=(5)+1=(6)-3=(3)
- *
- *
- */
-let petrolpump = [
-  [1, 5],
-  [3, 4],
-  [10, 3],
-];
-// let petrolpump = [ [ 1, 5 ], [ 10, 3 ], [ 3, 4 ] ]
-// let petrolpump = [ [ 10, 3 ], [ 1, 5 ], [ 3, 4 ] ]
-function truckTour(petrolpumps) {
-  let n = petrolpumps.length,
-    petrolDiff = 0,
-    index = 0;
-  for (let i = 0; i < n; i++) {
-    petrolDiff += petrolpumps[i][0] - petrolpumps[i][1];
-    if (petrolDiff < 0) {
-      index = i + 1;
-      petrolDiff = 0;
-    }
-  }
-  return index;
-}
-let truck_tour = truckTour(petrolpump);
-console.log(truck_tour);
+let bst_cp = new BinarySearchTree();
+bst_cp.insertCP(10);
+bst_cp.insertCP(12);
+bst_cp.insertCP(11);
+bst_cp.insertCP(9);
+bst_cp.insertCP(9.5);
+bst_cp.insertCP(8);
+// console.log(bst_cp);
 
-console.log(new Date("2022-05-19 21:53:46").getTime());
-console.log(new Date().getTime());
-console.log(new Date(1653156378606));
-console.log(new Date(1653156378606));
-// 1652993626000
-// 1653156378606
-
-function solve1(arr, queries) {
-  /**
-   *
-   * [33,11,44,11,55]
-   * i: i < len;  i++
-   * j: j < len
-   *
-   * [33,11], [11,44], [44,11],
-   */
-  let n = arr.length,
-    arrMin = [];
-
-  for (let i = 0; i < n; i++) {
-    let arrMax = [],
-      j = 0;
-
-    while (i + j < n && j < queries) {
-      arrMax.push(arr[i + j]);
-      j++;
-    }
-    if (arrMax.length == queries) arrMin.push(Math.max(...arrMax));
-  }
-
-  return Math.min(...arrMin);
-}
-
-// let arr = [33, 11, 44, 11, 55];
-// let query1 = 1;
-// let query2 = 2;
-// let query3 = 3;
-// let query4 = 4;
-// let query5 = 5;
-
-// console.log(solve(arr, query2));
-// console.log(solve1(arr, query2));
-
-function solve(arr, queries) {
-  /**
-   *
-   * [33,11,44,11,55]
-   * i: i < len;  i++
-   * j: j < len
-   *
-   * [33,11], [11,44], [44,11],
-   */
-
-  let n = arr.length,
-    arrMinMax = [];
-  for (let k = 0; k < queries.length; k++) {
-    let arrMin = [];
-    for (let i = 0; i < n; i++) {
-      let arrMax = [],
-        j = 0;
-
-      while (i + j < n && j < queries[k]) {
-        arrMax.push(arr[i + j]);
-        j++;
+BinarySearchTree.prototype.removeCP = function (value) {
+  var current = this._root;
+  var parent = null;
+  while (current) {
+    if (value < current.value) {
+      parent = current;
+      current = current.left;
+    } else if (value > current.value) {
+      parent = current;
+      current = current.right;
+    } else {
+      // we have found the node to be deleted
+      // case 1: no children
+      if (!current.left && !current.right) {
+        if (parent) {
+          if (parent.left === current) {
+            parent.left = null;
+          } else {
+            parent.right = null;
+          }
+        } else {
+          this._root = null;
+        }
+      } else if (!current.left) {
+        if (parent) {
+          if (parent.left === current) {
+            parent.left = current.right;
+          } else {
+            parent.right = current.right;
+          }
+        } else {
+          this._root = current.right;
+        }
+      } else if (!current.right) {
+        if (parent) {
+          if (parent.left === current) {
+            parent.left = current.left;
+          } else {
+            parent.right = current.left;
+          }
+        } else {
+          this._root = current.left;
+        }
+      } else {
+        // case 2: two children
+        var temp = current.right;
+        var tempParent = current;
+        while (temp.left) {
+          tempParent = temp;
+          temp = temp.left;
+        }
+        current.value = temp.value;
+        if (tempParent === current) {
+          tempParent.right = temp.right;
+        } else {
+          tempParent.left = temp.right;
+        }
       }
-      if (arrMax.length == queries[k]) arrMin.push(Math.max(...arrMax));
+      break;
     }
-    console.log(Math.min(...arrMin));
-    // return Math.min(...arrMin);
-    arrMinMax.push(Math.min(...arrMin));
   }
-  return arrMinMax;
-}
+};
 
-function solveX(arr, queries) {
-  const answers = [];
-  for (let q of queries) {
-    let t = [];
-    let x = false;
-    let max = Math.max(...arr.slice(0, q));
-    let j = 0;
-    while (q + j <= arr.length) {
-      max = x
-        ? Math.max(...arr.slice(j, j + q))
-        : Math.max(max, arr[j + q - 1]);
-      t.push(max);
-      x = max === arr[j];
-      j++;
-    }
-    answers.push(Math.min(...t));
-  }
-  return answers;
-}
+BinarySearchTree.prototype.remove = function (value) {
+  return deleteRecursively(this._root);
 
-function solveY(arr, queries) {
-  const n = arr.length,
-    // Arrays to store previous and next larger
-    left = Array(n).fill(-1),
-    right = Array(n).fill(n);
-
-  // The stack (used to find previous and next larger):
-  let s = [],
-    s_peek = () => s[s.length - 1];
-
-  /* Fill elements of left[] (the closest
-  larger value on the left of i) */
-  for (let i = 0; i < n; i++) {
-    while (arr[s_peek()] <= arr[i]) s.pop();
-    if (s.length) left[i] = s_peek();
-    s.push(i);
-  }
-
-  //Empty the stack, as stack is going to be used for right[]
-  s = [];
-
-  /* Fill elements of right[] (the closest
-  larger value on the right of i) */
-  for (let i = n - 1; i >= 0; i--) {
-    while (arr[s_peek()] <= arr[i]) s.pop();
-    if (s.length) right[i] = s_peek();
-    s.push(i);
-  }
-
-  // Create and initialize the result array
-  const result = Array(n + 1).fill(Infinity);
-
-  /* Fill result[] by comparing maximums of all 
-  sizes computed using left[] and right[] */
-  for (let i = 0; i < n; i++) {
-    // size of the window
-    const size = right[i] - left[i] - 1;
-    /* arr[i] is a possible result for this size window,
-      so check if arr[i] is lesser than min for 'size' */
-    result[size] = Math.min(result[size], arr[i]);
-  }
-
-  // Some entries in result[] may not be filled yet. Fill
-  // them by taking values from right side of result[]
-  for (let i = n - 1; i >= 1; i--) {
-    result[i] = Math.min(result[i], result[i + 1]);
-  }
-
-  /* return the mapped 'query' array, replacing each query
-  number (i.e. window size) by the result computed for it */
-  return queries.map((query) => result[query]);
-}
-
-function arrayMax(arr, start, end) {
-  let max = 0;
-  while (start < end) {
-    max = Math.max(max, arr[start++]);
-  }
-  return max;
-}
-
-function solveA(n, arr, queries) {
-  return queries.map((d) => {
-    let max = arrayMax(arr, 0, d);
-    let min = max;
-    let start = 0;
-    for (let end = d + 1; end <= n; ++end) {
-      // Equivalent to dequeue.
-      if (arr[start++] === max) {
-        max = arrayMax(arr, start, end);
-        if (max < min) min = max;
+  function deleteRecursively(root, value) {
+    // case 1: no children
+    if (!root) {
+      return null;
+    } else if (value < root.value) {
+      root.left = deleteRecursively(root.left, value);
+    } else if (value > root.value)
+      root.right = deleteRecursively(root.right, value);
+    else {
+      if (!root.left && !root.right) {
+        return null; //case 1
+      } else if (!root.left) {
+        root = root.right; // case 2
+        return root;
+      } else if (!root.right) {
+        root = root.left; // case 2
+        return root;
+      } else {
+        var temp = findMin(root.right); //case 3
+        root.value = temp.value;
+        root.right = deleteRecursively(root.right, temp.value);
+        return root;
       }
     }
-    return min;
-  });
+  }
+};
+
+function findMin(root) {
+  while (root.left) {
+    root = root.left;
+  }
+  return root;
 }
 
-console.log("=================== solve ===================");
-let arr = [33, 11, 44, 11, 55];
-let query1 = 1;
-let query2 = 2;
-let query3 = 3;
-let query4 = 4;
-let query5 = 5;
-
-console.log("=================== solve ===================");
-// console.log(solve(arr, query2));
-console.log(solve(arr, [1, 2, 3, 4, 5]));
-console.log(solveX(arr, [1, 2, 3, 4, 5]));
-console.log(solveY(arr, [1, 2, 3, 4, 5]));
-console.log(solveA(arr.length, arr, [1, 2, 3, 4, 5]));
-console.log(new Date().getTime() / 1000);
-
-var tomorrow = new Date();
-tomorrow.setDate(tomorrow.getDate() + 1);
-console.log(tomorrow.getTime());
-
-class ClassWithStaticMethod {
-  static staticProperty = "someValue";
-  static staticMethod(a, b) {
-    return "static method has been called.";
-  }
-  static {
-    console.log("Class static initialization block called");
-  }
-}
-
-console.log(ClassWithStaticMethod.staticProperty);
-// output: "someValue"
-console.log(ClassWithStaticMethod.staticMethod(4, 2));
-console.log(ClassWithStaticMethod);
-// output: "static method has been called."
+let bst_remove = new BinarySearchTree();
+bst_remove.insert(5);
+bst_remove.insert(4);
+bst_remove.insert(3);
+bst_remove.insert(2);
+bst_remove.insert(1);
+bst_remove.insert(6);
+bst_remove.insert(7);
+bst_remove.insert(8);
+console.log(bst_remove);
