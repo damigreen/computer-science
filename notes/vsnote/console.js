@@ -234,14 +234,17 @@ BinarySearchTree.prototype.insertCP = function (value) {
  * check the root of the tree if it is empty
  * if it is empty
  * set / make root to the new node
+ *
  * if it is not empty
  * traverse the root of the tree
+ *
  * if the value of the new node is less than the value of the current node
  * check if the current node has a left child
  * if there is a left child
  * set current root to the left child
  * if the current node has no left child
  * set the left child of the current root to the new node
+ *
  * if the value of the new node is greater than the value of the current node
  * check if the current node has a right child
  * if there is a right child
@@ -360,6 +363,25 @@ BinarySearchTree.prototype.removeCP = function (value) {
   }
 };
 
+/**
+ * * Deletion
+ * There are three cases to consider:
+ *
+ * case 1: no children
+ * return null
+ *
+ * case 2: one child
+ * return the child then child replaces parent
+ *
+ * case 3: two children
+ * find the inorder successor
+ * i.e find the maximum of the left subtree or
+ * find the minumum of the right subtree
+ * and replace the node with it
+ *
+ * Time Complexity (for balanced tree): O(log2(n))
+ * Time Complexity (for unbalanced trees): O(n)
+ */
 BinarySearchTree.prototype.remove = function (value) {
   return deleteRecursively(this._root, value);
 
@@ -418,7 +440,9 @@ bst_b.insert(4);
 bst_b.insert(7);
 bst_b.insert(8);
 bst_b.remove(5);
-console.log(bst_b);
+// console.log(bst_b);
+
+
 // let bst_b = new BinarySearchTree();
 // let bst_b = {left: {left: {left: null, right: null, value: 8}, right: {left: null, right: null, value: 9}, value: 10}, right: {left: {left: null, right: null, value: 11}, right: {left: null, right: null, value: 12}, value: 13}};
 // let bst_b = {
@@ -435,4 +459,48 @@ console.log(bst_b);
 //   value: 2,
 // };
 
+/**
+ * * Search
+ * Traverse the tree
+ * check if the current root is smaller or greater than the value
+ * if it is smaller, go to the left (recursively)
+ * if it is greater, go to the right (recursively)
+ * 
+ * Time Complexity (for balanced tree): O(log2(n))
+ * Time Complexity (for unbalanced trees): O(n)
+ */
+BinarySearchTree.prototype.searchCP = function (value) {
+  return searchRecursively(this._root, value);
 
+  function searchRecursively(root, value) {
+    if (!root) {
+      return false;
+    } else if (value < root.value) {
+      return searchRecursively(root.left, value);
+    } else if (value > root.value) {
+      return searchRecursively(root.right, value);
+    } else {
+      return true;
+    }
+  }
+};
+
+BinarySearchTree.prototype.search = function (value) {
+  var current = this._root;
+  while (current) {
+    if (value < current.value) {
+      current = current.left;
+    } else if (value > current.value) {
+      current = current.right;
+    } else {
+      return true;
+    }
+  }
+  return false;
+};
+
+console.log(bst_b.search(7));
+console.log(bst_b.search(5));
+
+console.log(bst_b.searchCP(5));
+console.log(bst_b.searchCP(7));
