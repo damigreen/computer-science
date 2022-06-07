@@ -377,7 +377,8 @@ BinarySearchTree.prototype.removeCP = function (value) {
  * find the inorder successor
  * i.e find the maximum of the left subtree or
  * find the minumum of the right subtree
- * and replace the node with it
+ * and replace the node with it /
+ * to replace that node
  *
  * Time Complexity (for balanced tree): O(log2(n))
  * Time Complexity (for unbalanced trees): O(n)
@@ -504,3 +505,9 @@ console.log(bst_b.search(5));
 
 console.log(bst_b.searchCP(5));
 console.log(bst_b.searchCP(7));
+
+const hashCode =  (s) =>  {
+  return s.split("").reduce(function (a, b) { a = ((a << 5) - a) + b.charCodeAt(0); return a & a }, 0);
+}
+
+console.log(hashCode("damis"))
