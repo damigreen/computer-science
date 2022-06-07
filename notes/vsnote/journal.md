@@ -1,8 +1,133 @@
 # Journal
 
+## 06-06-22:: monday
+
+- `TODO`
+  - create seeders for web-hook verbs
+  - create controllers for
+    - system_events
+    - system_event trigggers
+    - system_functions
+    - webhooks
+    - webhook_params
+
+```sql
+select * from notifications;
+select * from user_notifications;
+select * from comments;
+select * from system_event_triggers;
+select * from system_events;
+select * from web_hooks;
+select * from web_hook_web_hook_header;
+select * from web_hook_headers;
+select * from web_hook_logs;
+select * from web_hook_params;
+select * from system_entities;
+select * from system_entity_params;
+select * from system_alerts;
+select * from system_alert_logs;
+select * from system_event_logs;
+```
+
+- **model**
+  - [x] system function
+  - [x] system entities
+  - [x] system events
+  - [x] system triggers
+  - [x] web_hooks;
+  - [x] web_hook_verbs;
+  - [x] web_hook_headers;
+  - [x] ~~~web_hook_web_hook_header~~~;
+  - [ ] web_hook_params;
+  - [ ] web_hook_logs;
+
+- **migrations**
+  - [x] system function
+  - [x] system entities
+  - [x] system events
+  - [x] system triggers
+  - [x] web_hooks;
+  - [x] web_hook_verbs;
+  - [x] web_hook_headers;
+  - [x] web_hook_web_hook_header (pivot);
+  - [x] web_hook_params;
+  - [ ] web_hook_logs;
+
+- **controllers**
+  - [ ] system function
+  - [ ] system entities
+  - [ ] system events
+  - [ ] system triggers
+
+- **relationships**
+  - system_functions
+    - [x] roles ~ manyToMany
+
+  - system_entities
+    - [x] params ~ hasMany
+    - [x] eventTriggers ~ hasMany
+    - [x] system_entity_params as params ~ hasMany
+  
+  - system_events
+    - [x] system_trigger as trigger ~ manyToMany
+    - [x] system_alert as alert ~ belongsTo
+  
+  - system_triggers
+    - [x] system_events as events ~ hasMany
+    - [x] system_entity as entity ~ belongsTo
+
+  - web_hooks
+    - [x] web_hook_verb as verb ~ belongsTo
+    - [x] account ~ belongsTo
+    - [x] web_hook_headers as headers ~ manyToMany
+    - [x] system_entity_params as params ~ hasMany
+
+  - web_hook_params
+    <!-- - [x] web_hook -->
+
+- **seeders**
+  - [ ] web_hook_verbs
+  - [ ] system_entities
+  - [ ] system_functions  
+
+## 04-06-22:: saturday
+
+- questions
+  - height needed to traverse to find and delete a node in a binary search tree
+  - what is the time complexith for a balanced and unbalanced BST
+  - what property of the BST enables us to perform a search on the tree
+  - what property of the BST makes it possible to search operation on it
+
+  - describe avl trees
+  - who are the inventors of the avl tree
+  - how does avl tree balances it self
+
+## 03-06-22:: Friday
+
+```sql
+select * from notifications;
+select * from comments;
+select * from job_statuses;
+select * from work_requests;
+select * from maintenance_cycles;
+select * from job_schedules;
+select * from water_readings;
+select * from sensors;
+select * from system_event_triggers;
+select * from system_events;
+select * from web_hooks;
+select * from web_hook_params;
+select * from system_entities;
+select * from system_entity_params;
+select * from maintenance_cycles;
+select * from sensors;
+
+```
+
 ## 02-06-22:: Thursday
 
-- 
+- FFM/PO/6425
+- https://vamp.filmofacilities.com/account-officer
 
 ## 01-06-22:: Wednesday
 
