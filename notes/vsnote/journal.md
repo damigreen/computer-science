@@ -1,5 +1,110 @@
 # Journal
 
+## 13-06-22 :: Monday
+
+- main-layoout
+- 
+
+## 12-06-22 :: Sunday
+
+- transactions
+  - daily
+  - monthly
+  - yearly
+- expenses
+- income
+- tranfer
+- create transaction
+
+- models
+  - transaction
+  - transaction type
+
+## 09-06-22 :: thursday
+
+```json
+{
+  "name": "webhook two",
+  "url": "webhook two",
+  "accountId": 1,
+  "systemEntityId": 1,
+  "webHookVerbId": 1,
+  "systemEventTriggerId": 1,
+  "header_name": [
+    "header three",
+    "header four"
+  ],
+  "header_value": [
+    "3",
+    "4"
+  ],
+  "system_entity_param_id": [
+    1
+  ],
+  "param_name": [
+    "User ID"
+  ]
+}
+```
+
+## 08-06-22 :: wednesday
+
+- sync user with roles
+  
+- chess
+
+- `TODO`
+
+  - [ ] create seeders for
+    - [ ] system_functions
+    - [ ] system entitites
+    - [ ] system event trigger
+    - [ ] system entitites param
+
+  - create trigger in config
+  - create seeder
+
+## 07-06-22:: tuesday
+
+- `TODO`
+  - [x] create seeders for web-hook verbs
+  - [ ] create controllers for
+    - [ ] system_events
+    - [ ] system_event trigggers
+    - [ ] system_functions
+    - [ ] webhooks
+    - [ ] webhook_params
+
+```sql
+alter TABLE users auto_increment=0;
+alter TABLE accounts auto_increment=0;
+alter TABLE customers auto_increment=0;
+
+select * from users;
+select * from accounts;
+select * from customers;
+```
+
+- **model**
+  - [ ] web_hook_logs;
+
+- **migrations**
+
+  - [ ] web_hook_logs;
+
+- **controllers**
+  - [ ] system function
+  - [ ] system entities
+  - [ ] system events
+  - [ ] system triggers
+
+- **relationships**
+  
+- **seeders**
+  - [x] web_hook_verbs
+  - [ ] system_entities
+  - [ ] system_functions  
+  
 ## 06-06-22:: monday
 
 - `TODO`
@@ -30,27 +135,9 @@ select * from system_event_logs;
 ```
 
 - **model**
-  - [x] system function
-  - [x] system entities
-  - [x] system events
-  - [x] system triggers
-  - [x] web_hooks;
-  - [x] web_hook_verbs;
-  - [x] web_hook_headers;
-  - [x] ~~~web_hook_web_hook_header~~~;
-  - [ ] web_hook_params;
   - [ ] web_hook_logs;
 
 - **migrations**
-  - [x] system function
-  - [x] system entities
-  - [x] system events
-  - [x] system triggers
-  - [x] web_hooks;
-  - [x] web_hook_verbs;
-  - [x] web_hook_headers;
-  - [x] web_hook_web_hook_header (pivot);
-  - [x] web_hook_params;
   - [ ] web_hook_logs;
 
 - **controllers**

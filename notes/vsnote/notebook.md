@@ -6,13 +6,13 @@
 
 ### Foxwire
 
-#### features ~ foxwire
+#### Features ~ foxwire
 
 - [ ] Display message for users that mail has been sent to mail for **verifying** account
 - [ ] set user **active** to **true** when **email** is verified
 - [ ] re-format **phonenumber**
 
-#### entities ~ foxwire
+#### Entities ~ foxwire
 
 - **entities**
   - users
@@ -24,7 +24,7 @@
   - role
   - budgetse
 
-#### elements ~ foxwire
+#### Elements ~ foxwire
 
 - Elements of app
 - 
@@ -98,12 +98,20 @@
 
 - [x] users
 - [x] auth
-- [ ] roles
-- [ ] accounts
-- [ ] transactions
+- [x] roles
+- [x] accounts
+- [x] system_alerts
+- [x] system_functions
+- [x] system_event
+- [x] system_event_triggers
+- [x] system_entities
+- [x] web_hooks
+- [x] web_hook_verbs
+- [x] web_hook_headers
 - [x] third_party_apps
 - [x] third_party_tokens
 - [x] password_reset
+- [ ] transactions
 - [ ] banks
 - [ ] bank_accounts
 - [ ] contacts
@@ -147,21 +155,49 @@
 - **role**
   - role - user
 
+- **system_functions**
+  - [x] roles ~ manyToMany
+
+- **system_entities**
+  - [x] params ~ hasMany
+  - [x] eventTriggers ~ hasMany
+  - [x] system_entity_params as params ~ hasMany
+
+- **system_events**
+  - [x] system_trigger as trigger ~ manyToMany
+  - [x] system_alert as alert ~ belongsTo
+
+- **system_triggers**
+  - [x] system_events as events ~ hasMany
+  - [x] system_entity as entity ~ belongsTo
+
+- **web_hooks**
+  - [x] web_hook_verb as verb ~ belongsTo
+  - [x] account ~ belongsTo
+  - [x] web_hook_headers as headers ~ manyToMany
+  - [x] system_entity_params as params ~ hasMany
+
+- **web_hook_params**
+
 #### Controllers ~ foxwire
 
-- [x] auth
-  - [x] login
-  - [x] log
+- **oauth**
+  - [x] auth
+    - [x] login
+    - [x] logout
   
-- [x] user (api)
+- **people**
+  - [x] user (api)
+  - [x] email
+    - [x] verify_email
+    - [x] resend_email
+  - password
+    - [x] send_code
+    - [x] verify_and_reset
+    - [x] change
 
-- [x] email
-  - [x] verify_email
-  
-- password
-  - [x] send_code
-  - [ ] verify_and_reset
-  - [ ] change
+- **system**
+- 
 
 #### database ~ foxwire
 
@@ -179,9 +215,14 @@
 #### seeders ~ foxwire
 
 - [x] role
-- [ ] user
-- [ ] account
+- [x] user
+- [x] account
 - [x] account_type
+- [x] web_hook_verbs
+- [x] system_entities
+- [x] system_alert_types
+- [ ] system_functions  
+  
 
 ## Work
 
