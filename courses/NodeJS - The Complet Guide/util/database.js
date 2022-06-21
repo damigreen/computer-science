@@ -8,4 +8,3 @@ const pool = mysql.createPool({
 });
 
 module.exports = pool.promise();
-//# sourceMappingURL=database.js.map
