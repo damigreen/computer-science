@@ -1,9 +1,53 @@
 # Journal
 
+## 21-06-22 :: Tuesday
+
+- whatsappbot resido api
+- twilio
+- mysql workbench
+
+
+fm jobs dashboard
+
+[ job                                          ]
+[ jobs                                         ]
+[ Clean the tanks                              ]
+[ Clean the tanks                              ]
+[ Clean the tanks                              ]
+
+- disable approve and edit buttons
+
+## 20-06-22 :: Monday
+
+https://dev-dot-api-resido-whatsapp.uc.r.appspot.com/rejection-hook
+https://dev-dot-api-resido-whatsapp.uc.r.appspot.com/vendor-hook
+https://dev-dot-api-resido-whatsapp.uc.r.appspot.com/completed-hook
+https://dev-dot-api-resido-whatsapp.uc.r.appspot.com/payment-hook
+https://dev-dot-api-resido-whatsapp.uc.r.appspot.com/delivery-hook
+
+https://7857-102-89-32-27.ngrok.io
+
+## 15-06-22 :: Wednesday
+
+- press 4 to check your pending requests
+  - displaus link to request
+    - user click link
+    - [link](https://app.resido.ng/requests/?user=5)
+
+```txt
+> press 4 to check your pending requests
+       click on link [ | ]
+        https://app.resido.ng/requests/?user=5 <
+
+>[1.                                             ]
+>[2.                                             ]
+>[3.                                             ]
+>[4.                                             ]
+```
+
 ## 13-06-22 :: Monday
 
 - main-layoout
-- 
 
 ## 12-06-22 :: Sunday
 
@@ -715,7 +759,6 @@ get user of phone or email
 - password reset
   - generate code
   - send code to mail
-  - 
 
 ## 13:05:22
 
