@@ -1,11 +1,89 @@
 # Journal
 
+## 21-06-22 :: Wednesday
+
+⭐✨⚡✅❇#️⃣❎⚫🔵🔹♣‍️☎🛠‍️🗒🗓📌
+
+```javascript
+let emojis = [
+        "⭐",
+        "✨",
+        "⚡",
+        "✅",
+        "❇",
+        "#️⃣",
+        "❎",
+        "⚫",
+        "🔵",
+        "🔹",
+        "♣‍️",
+        "☎",
+        "🛠‍️",
+        "🗒",
+        "🗓",
+        "📌",
+        "0️⃣",
+        "1️⃣",
+        "2️⃣",
+        "3️⃣",
+        "4️⃣",
+        "5️⃣",
+        "6️⃣",
+        "7️⃣",
+        "8️⃣",
+        "9️⃣",
+        "🔟",
+        "#️⃣",
+        "*️⃣",
+        "🔹"
+      ];
+```
+
+- resido flow
+
+  - home (initiated)
+
+    - create-request
+
+      - state-request
+        - input-request
+        - upload-image
+          - confirm-upload
+
+    - list-request
+
+    - check-balance
+
+    - update-balance
+
+    - talk-to-agent
+
+  - costed
+    - accept-cost
+      - accept
+      - reject
+        - confirm
+          - reject-Job
+          - accept-job
+
+  - payed
+
+  - approved
+
+  - started
+
+  - completed
+
+laptop model - HP 14-dq1033cl
+prodID - 7RP94UA#ABA
+S/N # - 5CD941D5w8
+Warranty - 1y1y0y
+
 ## 21-06-22 :: Tuesday
 
 - whatsappbot resido api
 - twilio
 - mysql workbench
-
 
 fm jobs dashboard
 

@@ -511,3 +511,6 @@ const hashCode =  (s) =>  {
 }
 
 console.log(hashCode("damis"))
+
+const ueye = 'slfnasknflasdnfafnanfl oooooo'
+console.log(ueye.replace('oooooo', ''))
