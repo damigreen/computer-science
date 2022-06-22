@@ -79,6 +79,10 @@ prodID - 7RP94UA#ABA
 S/N # - 5CD941D5w8
 Warranty - 1y1y0y
 
+```sql
+insert into products (titlt, price, description, imageUrl) VALUES (?, ?, ?, ?), [this.title, ...remaining]
+```
+
 ## 21-06-22 :: Tuesday
 
 - whatsappbot resido api
