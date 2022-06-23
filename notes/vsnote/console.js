@@ -9,7 +9,17 @@ function BinaryTree() {
 }
 
 /*
+            42
+
+        41      50
+
+    10     40 45       75    
+*/
+
+/**
  * Pre-Order Traversal
+ * 42 -> 41 -> 10 <->
+ * 40 -> 50 -> 45 -> 75
  */
 BinaryTree.prototype.traversePreOrder = function () {
   traversePreOrderHelper(this._root);
@@ -22,6 +32,7 @@ BinaryTree.prototype.traversePreOrder = function () {
   }
 };
 
+// nodeStack: []
 // [40[20, 10], 30[2, 3]]
 // [40, 30]
 // 40 - [30]
@@ -44,7 +55,6 @@ BinaryTree.prototype.traversePreOrderIterative = function () {
     // pop items from stack and print it
     var node = nodeStack.pop();
     console.log(node.value);
-
     if (node.right) {
       nodeStack.push(node.right);
     }
@@ -164,11 +174,7 @@ BinaryTree.prototype.traverseLevelOrder = function () {
     if (temp.right) queue.push(temp.right);
   }
 };
-/*
-            42
-        41      50
-    10     40 45       75    
-  */
+
 // Pre-Order Traversal
 const one = new BinaryTreeNode(42);
 const two = new BinaryTreeNode(41);
@@ -443,7 +449,6 @@ bst_b.insert(8);
 bst_b.remove(5);
 // console.log(bst_b);
 
-
 // let bst_b = new BinarySearchTree();
 // let bst_b = {left: {left: {left: null, right: null, value: 8}, right: {left: null, right: null, value: 9}, value: 10}, right: {left: {left: null, right: null, value: 11}, right: {left: null, right: null, value: 12}, value: 13}};
 // let bst_b = {
@@ -466,7 +471,7 @@ bst_b.remove(5);
  * check if the current root is smaller or greater than the value
  * if it is smaller, go to the left (recursively)
  * if it is greater, go to the right (recursively)
- * 
+ *
  * Time Complexity (for balanced tree): O(log2(n))
  * Time Complexity (for unbalanced trees): O(n)
  */
@@ -506,11 +511,14 @@ console.log(bst_b.search(5));
 console.log(bst_b.searchCP(5));
 console.log(bst_b.searchCP(7));
 
-const hashCode =  (s) =>  {
-  return s.split("").reduce(function (a, b) { a = ((a << 5) - a) + b.charCodeAt(0); return a & a }, 0);
-}
+const hashCode = (s) => {
+  return s.split("").reduce(function (a, b) {
+    a = (a << 5) - a + b.charCodeAt(0);
+    return a & a;
+  }, 0);
+};
 
-console.log(hashCode("damis"))
+console.log(hashCode("damis"));
 
-const ueye = 'slfnasknflasdnfafnanfl oooooo'
-console.log(ueye.replace('oooooo', ''))
+const ueye = "slfnasknflasdnfafnanfl oooooo";
+console.log(ueye.replace("oooooo", ""));
