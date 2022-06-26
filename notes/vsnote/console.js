@@ -45,7 +45,7 @@ BinaryTree.prototype.traversePreOrderIterative = function () {
   var nodeStack = [];
   nodeStack.push(this._root);
 
-  // Pop all items one by one. Do following for every popped item
+  // Pop all items one by one. Do follomonthing for every popped item
   // a) print it
   // b) push its left child
   // c) push its right child
@@ -522,3 +522,131 @@ console.log(hashCode("damis"));
 
 const ueye = "slfnasknflasdnfafnanfl oooooo";
 console.log(ueye.replace("oooooo", ""));
+
+let x = [
+  { month: "21 June", value: 122465.9 },
+  { month: "21 June", value: 42465.1 },
+  { month: "27 June", value: 72464.5 },
+  { month: "27 June", value: 32463.5 },
+  { month: "27 June", value: 42464.5 },
+  { month: "26 June", value: 32463.7 },
+  { month: "26 June", value: 42463.7 },
+  { month: "25 June", value: 2462.9 },
+  { month: "25 June", value: 42462.9 },
+  { month: "25 June", value: 52462.9 },
+  { month: "24 June", value: 82462.3 },
+  { month: "24 June", value: 32462.3 },
+  { month: "24 June", value: 42462.3 },
+  { month: "23 June", value: 32461.5 },
+  { month: "23 June", value: 72461.5 },
+  { month: "23 June", value: 42461.5 },
+  { month: "22 June", value: 32460.8 },
+  { month: "22 June", value: 42460.8 },
+  { month: "22 June", value: 62460.8 },
+];
+
+// let result = Array.from(
+//   // x.reduce(
+//   //   (m, { month, value }) => m.set(month, Math.max(m.get(month) || 0, value)),
+//   //   new Map()
+//   // )
+// );
+let uniqueMonth = "";
+// let y = Array.from(
+//   x.reduce((p, c, i, a) => {
+//     console.log(c);
+//     console.log(p);
+//     console.log("--------------------");
+
+//     // w = c.month;
+//     if (w == c.month) {
+//       return p + c.value;
+//     } else w = c.month;
+//   }, 0)
+// );
+
+// let z = x.reduce((p, curr, i, a) => {
+//   if (month == curr.month) {
+//     arr.push(curr.value);
+//   } else {
+//     if (arr.length > 0) {
+//       result.push(Math.max(arr));
+//     } else arr.push(curr.value);
+//     arr = [];
+//     month = curr.month;
+//   }
+//   return result;
+// }, []);
+
+/**
+ *
+ * group readings based on date
+ *
+ * parseDateMonth
+ *
+ *           a            b           c
+ * input: [10,11,12...,10,11,12,...10,11,12,...]
+ * output: [[mon], [tue], [wed], [thurs], [fri],...]
+ *
+ * individual array element
+ * mon = [10,11,12,13...]
+ * tue = [10,11,12,13...]
+ * wed = [10,11,12,13...]
+ * ...
+ * max value
+ * mon = [100]
+ * tue = [700]
+ * wed = [400]
+ * ...
+ *
+ * return array
+ * [100,700,400,500,1000,...]
+ */
+/**
+ * index = 0
+ * month = 25 june
+ * temp = 25 june
+ * arr = [10]
+ *
+ * index = 1
+ * month = 26 june
+ * temp = 25 june
+ * arr = [10]
+ *
+ */
+// let month = "";
+let result = [];
+let arr = [];
+let temp;
+
+let z = Array.from(
+  x.reduce((p, curr, i, a) => {
+    // find the max for a
+    let month = curr.month; // 25 june
+    // compare temp and current month
+    // if they are the same
+    // push month value to arr
+    // else
+    if (temp == month) {
+      let value = curr.value;
+      arr.push(value);
+      if (i == a.length - 1) result.push(Math.max(...arr));
+    } else {
+      if (arr.length > 0) {
+        result.push(Math.max(...arr));
+        arr = [];
+      }
+      temp = month;
+      arr.push(curr.value);
+    }
+    //get the value
+    //push value into arr
+    // arr.push(value);
+    return result;
+    // if (arr.length) return result.push(Math.max(...arr))
+  }, [])
+);
+
+// console.log(result);
+// console.log(y);
+// console.log(z);
