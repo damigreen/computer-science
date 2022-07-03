@@ -1,5 +1,13 @@
 # Journal
 
+## 30-06-22 :: Thursday
+
+## 28-06-22 :: Tuesday
+
+- {"devId":"493C220304030602","msgType":"aiValueRpt","data":{"AI1":"4139"},"timestamp":"1656429846"}
+- image upload
+- get the last request and update the image
+
 ## 21-06-22 :: Wednesday
 
 ⭐✨⚡✅❇#️⃣❎⚫🔵🔹♣‍️☎🛠‍️🗒🗓📌
@@ -7,8 +15,11 @@
 ```javascript
 let emojis = [
         "⭐",
-        "✨",
-        "⚡",
+        "✨",      "⚡",
+        "✨",      "⚡",
+        "✨",      "⚡",
+        "✨",      "⚡",
+        "✨",      "⚡",
         "✅",
         "❇",
         "#️⃣",
