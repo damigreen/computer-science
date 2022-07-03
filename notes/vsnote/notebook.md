@@ -854,6 +854,12 @@ I took the dates of all the pending ad campaign ignorant and those from the runn
 ## Courses
 
 ### Learn Docker in 7 Easy steps
+### Learn Docker in 7 Easy step
+- profit
+- people
+- 
+
+### Learn Docker in 7 Easy steps
 
 - Docker
   - docker is a way to package software so it can run on any hardware
